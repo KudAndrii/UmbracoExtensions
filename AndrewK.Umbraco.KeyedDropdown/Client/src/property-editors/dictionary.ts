@@ -8,19 +8,21 @@ import {
     UmbSubmittableWorkspaceContextBase,
 } from '@umbraco-cms/backoffice/workspace';
 import type { UmbChangeEvent } from '@umbraco-cms/backoffice/event';
-import type { UmbInputMultipleTextStringElement } from '@umbraco-cms/backoffice/components';
+import type { InputMultipleKeyValuePairElement } from './input-multiple-key-value-pair.ts';
 import type {
     UmbPropertyEditorConfigCollection,
     UmbPropertyEditorUiElement,
 } from '@umbraco-cms/backoffice/property-editor';
 
+import './input-multiple-key-value-pair.ts';
+
 /**
- * @element umb-property-editor-ui-multiple-text-string
+ * @element property-editor-ui-dictionary
  */
-@customElement('umb-property-editor-ui-multiple-text-string')
-export class UmbPropertyEditorUIMultipleTextStringElement extends UmbLitElement implements UmbPropertyEditorUiElement {
+@customElement('property-editor-ui-dictionary')
+export class PropertyEditorUIDictionaryElement extends UmbLitElement implements UmbPropertyEditorUiElement {
     @property({ type: Array })
-    value?: Array<string>;
+    value?: Record<string, string>;
 
     public set config(config: UmbPropertyEditorConfigCollection | undefined) {
         if (!config) return;
@@ -66,7 +68,7 @@ export class UmbPropertyEditorUIMultipleTextStringElement extends UmbLitElement 
     private _max = Infinity;
 
     @query('#input', true)
-    protected _inputElement?: UmbInputMultipleTextStringElement;
+    protected _inputElement?: InputMultipleKeyValuePairElement;
 
     protected _validationContext = new UmbValidationContext(this);
 
@@ -95,7 +97,7 @@ export class UmbPropertyEditorUIMultipleTextStringElement extends UmbLitElement 
 
     #onChange(event: UmbChangeEvent) {
         event.stopPropagation();
-        const target = event.currentTarget as UmbInputMultipleTextStringElement;
+        const target = event.currentTarget as InputMultipleKeyValuePairElement;
         this.value = target.items;
         this.dispatchEvent(new UmbPropertyValueChangeEvent());
     }
@@ -129,10 +131,10 @@ export class UmbPropertyEditorUIMultipleTextStringElement extends UmbLitElement 
     }
 }
 
-export default UmbPropertyEditorUIMultipleTextStringElement;
+export default PropertyEditorUIDictionaryElement;
 
 declare global {
     interface HTMLElementTagNameMap {
-        'umb-property-editor-ui-multiple-text-string': UmbPropertyEditorUIMultipleTextStringElement;
+        'property-editor-ui-dictionary': PropertyEditorUIDictionaryElement;
     }
 }

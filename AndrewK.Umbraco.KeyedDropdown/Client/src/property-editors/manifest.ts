@@ -20,7 +20,7 @@ export const manifests: Array<UmbExtensionManifest> = [
                     },
                     {
                         alias: 'items',
-                        label: 'Add keyed 1 options',
+                        label: 'Add keyed options',
                         propertyEditorUiAlias: 'AndrewK.Umbraco.Dictionary'
                     }
                 ]
@@ -58,5 +58,11 @@ export const manifests: Array<UmbExtensionManifest> = [
                 // ],
             },
         },
-    }
+    },
+    // {
+    //     type: 'propertyEditorUi',
+    //     alias: 'AndrewK.Umbraco.Dictionary',
+    //     name: 'AndrewK Dictionary',
+    //     js: () => import('./dictionary.ts'),
+    // }
 ];
