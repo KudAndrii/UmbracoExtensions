@@ -1,0 +1,1 @@
+export type { KeyValuePair } from './key-value-pair.ts'

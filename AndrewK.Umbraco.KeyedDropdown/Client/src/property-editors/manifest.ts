@@ -1,34 +1,6 @@
 export const manifests: Array<UmbExtensionManifest> = [
     {
         type: 'propertyEditorUi',
-        alias: 'AndrewK.Umbraco.KeyedDropdown',
-        name: 'AndrewK KeyedDropdown',
-        js: () => import('./keyed-dropdown.ts'),
-        // element: '/App_Plugins/Suggestions/dist/keyed-dropdown.js',
-        // elementName: 'AndrewK-umbraco-keyedDropdown',
-        meta: {
-            label: 'KeyedDropdown',
-            icon: 'icon-list',
-            group: 'common',
-            propertyEditorSchemaAlias: 'Umbraco.Plain.String',
-            settings: {
-                properties: [
-                    {
-                        alias: 'multiple',
-                        label: 'Enable multiple choice',
-                        propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle'
-                    },
-                    {
-                        alias: 'items',
-                        label: 'Add keyed options',
-                        propertyEditorUiAlias: 'AndrewK.Umbraco.Dictionary'
-                    }
-                ]
-            }
-        }
-    },
-    {
-        type: 'propertyEditorUi',
         alias: 'AndrewK.Umbraco.Dictionary',
         name: 'AndrewK Dictionary',
         js: () => import('./dictionary.ts'),
@@ -52,17 +24,11 @@ export const manifests: Array<UmbExtensionManifest> = [
                         propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer'
                     },
                 ],
-                // defaultData: [
-                //     {alias: 'min', value: 0},
-                //     {alias: 'max', value: 0},
-                // ],
+                defaultData: [
+                    {alias: 'min', value: 0},
+                    {alias: 'max', value: 0},
+                ],
             },
         },
-    },
-    // {
-    //     type: 'propertyEditorUi',
-    //     alias: 'AndrewK.Umbraco.Dictionary',
-    //     name: 'AndrewK Dictionary',
-    //     js: () => import('./dictionary.ts'),
-    // }
+    }
 ];
