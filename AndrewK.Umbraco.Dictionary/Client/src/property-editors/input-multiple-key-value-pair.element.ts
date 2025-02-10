@@ -12,7 +12,7 @@ import type { UmbInputMultipleKeyValuePairItemElement } from './input-multiple-k
  * @element input-multiple-key-value-pair
  */
 @customElement('input-multiple-key-value-pair')
-export class UmbInputMultipleKeyValuePairElement extends UmbFormControlMixin<undefined | string, typeof UmbLitElement>(
+export class UmbInputMultipleKeyValuePairElement extends UmbFormControlMixin<KeyValuePair[], typeof UmbLitElement>(
     UmbLitElement,
     undefined,
 ) {
@@ -146,8 +146,8 @@ export class UmbInputMultipleKeyValuePairElement extends UmbFormControlMixin<und
 
     public set items(items: Array<KeyValuePair>) {
         // TODO: when we have a way to overwrite the missing value validator we can remove this
-        this.value = items?.length > 0 ? 'some value' : '';
         this._items = items ?? [];
+        this.value = this._items;
         this.#sorter.setModel(this.items);
     }
 

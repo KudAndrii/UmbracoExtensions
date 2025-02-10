@@ -120,17 +120,17 @@ export class UmbPropertyEditorUIMultipleKeyValuePairsElement extends UmbLitEleme
     override render() {
         return html`
           <umb-form-validation-message id="validation-message" @invalid=${ this.#onInvalid } @valid=${ this.#onValid }>
-            <umb-input-multiple-key-value-pair
+            <input-multiple-key-value-pair
               id="input"
-              max=${ this._max }
               min=${ this._min }
+              max=${ this._max }
               .items=${ this.value ?? [] }
               ?disabled=${ this.disabled }
               ?readonly=${ this.readonly }
               ?required=${ this.required }
               @change=${ this.#onChange }
               ${ umbBindToValidation(this) }>
-            </umb-input-multiple-key-value-pair>
+            </input-multiple-key-value-pair>
           </umb-form-validation-message>
         `;
     }
