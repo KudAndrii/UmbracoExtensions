@@ -6,7 +6,8 @@ export default defineConfig({
             entry: "src/my-element.ts", // your web component source file
             formats: ["es"],
         },
-        outDir: "../App_Plugins/client", // all compiled files will be placed here
+        //outDir: "../App_Plugins/client", // all compiled files will be placed here
+        outDir: "../wwwroot",
         emptyOutDir: true,
         sourcemap: true,
         rollupOptions: {

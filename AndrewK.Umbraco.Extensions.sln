@@ -5,7 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.Example", "AndrewK.Umbraco.Extensions.Example\AndrewK.Umbraco.Extensions.Example.csproj", "{47D64E9C-FF74-47BE-82DB-B50061BCD1C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.Test", "AndrewK.Umbraco.Extensions.Test\AndrewK.Umbraco.Extensions.Test.csproj", "{47D64E9C-FF74-47BE-82DB-B50061BCD1C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.Dictionary", "AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj", "{63DD9123-C717-4D5A-8953-1458CD64E6E8}"
 EndProject

@@ -4,7 +4,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <CompressionEnabled>false</CompressionEnabled>
-        <UserSecretsId>1857b1a5-04b0-468d-990c-f6734419a8f1</UserSecretsId> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
+        <UserSecretsId>1857b1a5-04b0-468d-990c-f6734419a8f1</UserSecretsId>
+        <RootNamespace>AndrewK.Umbraco.Extensions.Example</RootNamespace> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,8 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="App_Plugins\my-vanilla-extension\umbraco-package.json" />
-      <Content Include="App_Plugins\my-vanilla-extension\vanilla-extension.js" />
+        <Content Include="App_Plugins\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>

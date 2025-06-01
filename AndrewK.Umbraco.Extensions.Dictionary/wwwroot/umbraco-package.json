@@ -1,0 +1,18 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "My Dashboard",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "dashboard",
+      "alias": "My.Dashboard.MyExtension",
+      "name": "My Dashboard",
+      "element": "/App_Plugins/client/client.js",
+      "elementName": "my-element",
+      "meta": {
+        "label": "My Dashboard",
+        "pathname": "my-dashboard"
+      }
+    }
+  ]
+}
