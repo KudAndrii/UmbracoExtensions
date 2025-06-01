@@ -4,13 +4,13 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "module": "ESNext",
-    "lib": [ "ES2020", "DOM", "DOM.Iterable" ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
 
@@ -18,9 +18,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-
-    "types": [ "@umbraco-cms/backoffice/extension-types" ]
+    "noUncheckedSideEffectImports": true
   },
-  "include": [ "src" ]
+  "include": ["src"],
+  "types": [
+    "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
+  ]
 }
