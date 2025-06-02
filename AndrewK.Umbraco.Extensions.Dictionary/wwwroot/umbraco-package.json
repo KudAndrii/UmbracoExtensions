@@ -1,17 +1,19 @@
 {
-  "$schema": "../../umbraco-package-schema.json",
-  "name": "My Dashboard",
+  "name": "AndrewK Umbraco Dictionary",
   "version": "0.1.0",
   "extensions": [
     {
-      "type": "dashboard",
-      "alias": "My.Dashboard.MyExtension",
-      "name": "My Dashboard",
-      "element": "/App_Plugins/client/client.js",
-      "elementName": "my-element",
+      "type": "propertyEditorUi",
+      "alias": "AndrewK.Umbraco.Dictionary",
+      "name": "AndrewK Dictionary",
+      "element": "/App_Plugins/AndrewKDictionary/client.js",
+      "elementName": "andrew-k-dictionary",
       "meta": {
-        "label": "My Dashboard",
-        "pathname": "my-dashboard"
+        "label": "AndrewK Dictionary",
+        "propertyEditorSchemaAlias": "Umbraco.MultipleTextstring",
+        "icon": "icon-ordered-list",
+        "group": "lists",
+        "supportsReadOnly": true
       }
     }
   ]
