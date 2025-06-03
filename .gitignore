@@ -33,3 +33,4 @@ dist-ssr
 *.sw?
 
 **/umbraco/models/**
+*.sln.DotSettings.user

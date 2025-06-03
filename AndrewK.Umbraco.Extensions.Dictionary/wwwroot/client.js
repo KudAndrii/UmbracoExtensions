@@ -103,7 +103,7 @@ x = function(t) {
 Q = function(t) {
   t.stopPropagation();
   const e = t.currentTarget;
-  this._kvp = { ...this._kvp, key: e.value }, this.dispatchEvent(new f()), console.warn("this._kvp: ", this._kvp);
+  this._kvp = { ...this._kvp, key: e.value }, this.dispatchEvent(new f());
 };
 Z = function(t) {
   t.stopPropagation();

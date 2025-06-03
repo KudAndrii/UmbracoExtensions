@@ -66,7 +66,6 @@ export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElem
         const target = event.currentTarget as UUIInputElement
         this._kvp = { ...this._kvp, key: target.value as string }
         this.dispatchEvent(new UmbChangeEvent())
-        console.warn('this._kvp: ', this._kvp)
     }
     
     #onValueChange(event: UUIInputEvent) {
