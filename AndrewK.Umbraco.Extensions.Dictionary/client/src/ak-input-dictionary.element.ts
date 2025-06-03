@@ -9,14 +9,14 @@ import AkInputDictionaryItemElement from './ak-input-dictionary-item.element'
 
 @customElement('ak-input-dictionary')
 export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement, undefined) {
-    @state() private _items: Array<string> = []
+    @state() private _items: Array<{ key: string, value: string }> = []
 
     #disabled = false
     #readonly = false
     
     #sorter = new UmbSorterController(this, {
         getUniqueOfElement: (element) => element.getAttribute('data-sort-entry-id'),
-        getUniqueOfModel: (modelEntry: string) => modelEntry,
+        getUniqueOfModel: (modelEntry: { key: string, value: string }) => modelEntry.key,
         identifier: 'AndrewK.SorterIdentifier.Dictionary',
         itemSelector: 'ak-input-dictionary-item',
         containerSelector: '#sorter-wrapper',
@@ -86,11 +86,11 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
     }
 
     @property({ type: Array })
-    public get items(): Array<string> {
+    public get items(): Array<{ key: string, value: string }> {
         return this._items
     }
 
-    public set items(items: Array<string>) {
+    public set items(items: Array<{ key: string, value: string }>) {
         // TODO: when we have a way to overwrite the missing value validator we can remove this
         this.value = items?.length > 0 ? 'some value' : ''
         this._items = items ?? []
@@ -119,7 +119,7 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
     }
 
     async #onAdd() {
-        this._items = [ ...this._items, '' ]
+        this._items = [ ...this._items, { key: '', value: '' } ]
         this.pristine = false
         this.dispatchEvent(new UmbChangeEvent())
         await this.#focusNewItem()
@@ -128,8 +128,9 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
     #onInput(event: UmbInputEvent, currentIndex: number) {
         event.stopPropagation()
         const target = event.currentTarget as AkInputDictionaryItemElement
-        const value = target.value as string
-        this._items = this._items.map((item, index) => (index === currentIndex ? value : item))
+        const value = target.kvp
+        this._items = this._items
+            .map((item, index) => (index === currentIndex ? value : item))
         this.dispatchEvent(new UmbChangeEvent())
     }
 
@@ -157,10 +158,10 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
             (item, index) => html`
               <ak-input-dictionary-item
                 name="item-${ index }"
-                data-sort-entry-id=${ item }
+                data-sort-entry-id=${ item.key }
                 required
                 required-message="Item ${ index + 1 } is missing a value"
-                value=${ item }
+                .kvp=${ item }
                 ?disabled=${ this.disabled }
                 ?readonly=${ this.readonly }
                 @enter=${ this.#onAdd }

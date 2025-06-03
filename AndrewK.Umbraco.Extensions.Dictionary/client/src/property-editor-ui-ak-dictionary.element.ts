@@ -38,7 +38,7 @@ export class AkPropertyEditorUIDictionaryElement extends UmbLitElement implement
         })
     }
 
-    @property({ type: Array }) value?: Array<string>
+    @property({ type: Array }) value?: Array<{ key: string, value: string }>
     @property({ type: Boolean, reflect: true }) disabled = false
     @property({ type: Boolean, reflect: true }) readonly = false
     @property({ type: Boolean, reflect: true }) required = false
