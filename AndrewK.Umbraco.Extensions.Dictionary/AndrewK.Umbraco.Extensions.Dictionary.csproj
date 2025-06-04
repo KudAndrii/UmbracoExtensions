@@ -17,12 +17,12 @@
         <PackageTags>Umbraco;Extension;Dictionary;Backoffice</PackageTags>
         <AssemblyVersion>0.9.0</AssemblyVersion>
         <FileVersion>0.9.0</FileVersion>
-<!--        <PackageProjectUrl>https://github.com/KudAndrii/ScopedLogging</PackageProjectUrl>-->
-<!--        <RepositoryUrl>https://github.com/KudAndrii/ScopedLogging</RepositoryUrl>-->
-<!--        <RepositoryType>git</RepositoryType>-->
-<!--        <PackageIcon>Icon.png</PackageIcon>-->
-<!--        <PackageReadmeFile>README.md</PackageReadmeFile>-->
-<!--        <PackageLicenseFile>LICENSE</PackageLicenseFile>-->
+        <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>Icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
     <PropertyGroup>
