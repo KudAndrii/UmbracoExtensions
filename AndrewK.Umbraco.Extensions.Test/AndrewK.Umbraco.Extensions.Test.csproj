@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="0.9.0" />
         <PackageReference Include="Umbraco.Cms" Version="16.0.0-rc4" />
     </ItemGroup>
 
@@ -22,10 +23,6 @@
         <Content Include="App_Plugins\**">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

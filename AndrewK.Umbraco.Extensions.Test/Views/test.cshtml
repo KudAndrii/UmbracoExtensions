@@ -1,8 +1,14 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@using Newtonsoft.Json;
+﻿@using Newtonsoft.Json;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = null;
 }
 
-<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</p>
+<section>
+	<h2>multipleTextstring</h2>
+	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<string>>("multipleTextstring")))</p>
+</section>
+<section>
+	<h2>dictionary</h2>
+	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</p>
+</section>
