@@ -1,0 +1,53 @@
+name: Publish Dictionary NuGet Package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers on tags like v1.2.3
+
+env:
+  PROJECT_PATH: AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj
+  DOTNET_VERSION: '9.0.x'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Extract version from tag
+        id: get_version
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - name: Build project
+        run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+
+      - name: Pack project with version
+        run: |
+          dotnet pack ${{ env.PROJECT_PATH }} \
+            --configuration Release \
+            --no-build \
+            --output ./nupkg \
+            /p:PackageVersion=${{ steps.get_version.outputs.version }}
+
+      - name: Verify package was created
+        run: |
+          if [ ! -f ./nupkg/*.nupkg ]; then
+            echo "No NuGet package found in ./nupkg/"
+            exit 1
+          fi
+          echo "Package created successfully:"
+          ls -la ./nupkg/
+
+      - name: Push package to NuGet.org
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
