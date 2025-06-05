@@ -4,6 +4,13 @@ on:
   push:
     tags:
       - 'v*.*.*'  # Triggers on tags like v1.2.3
+  workflow_dispatch:  # Enables manual trigger
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0)'
+        required: true
+        default: '1.0.0'
+        type: string
 
 env:
   PROJECT_PATH: AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj
@@ -22,9 +29,14 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Extract version from tag
+      - name: Extract version from tag or input
         id: get_version
-        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+          fi
 
       - name: Restore dependencies
         run: dotnet restore ${{ env.PROJECT_PATH }}
