@@ -12,3 +12,11 @@
 	<h2>dictionary</h2>
 	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</p>
 </section>
+<section>
+	<h2>dropdown</h2>
+	<p>@(Model.Value<string>("dropdown"))</p>
+</section>
+<section>
+	<h2>dropdownMultiple</h2>
+	<p>@(JsonConvert.SerializeObject(Model.Value<IEnumerable<string>>("dropdownMultiple")))</p>
+</section>

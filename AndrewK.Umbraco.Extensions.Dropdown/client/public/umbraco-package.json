@@ -1,0 +1,53 @@
+{
+  "name": "AndrewK Umbraco Dropdown",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "AndrewK.Umbraco.Dropdown",
+      "name": "AndrewK Dropdown",
+      "element": "/App_Plugins/AndrewKDropdown/client.js",
+      "elementName": "andrew-k-dropdown",
+      "meta": {
+        "label": "AndrewK Dropdown",
+        "propertyEditorSchemaAlias": "Umbraco.Plain.Json",
+        "icon": "icon-list",
+        "group": "lists",
+        "supportsReadOnly": true,
+        "settings": {
+          "properties": [
+            {
+              "alias": "multiple",
+              "label": "Enable multiple choice",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
+            },
+            {
+              "alias": "items",
+              "label": "Add options",
+              "propertyEditorUiAlias": "AndrewK.Umbraco.Dictionary"
+            },
+            {
+              "alias": "default",
+              "label": "Specify default value",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+            }
+          ],
+          "defaultData": [
+            {
+              "alias": "multiple",
+              "value": false
+            },
+            {
+              "alias": "items",
+              "value": []
+            },
+            {
+              "alias": "default",
+              "value": ""
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
