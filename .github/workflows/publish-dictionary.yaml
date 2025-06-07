@@ -1,16 +1,17 @@
 name: Publish Dictionary NuGet Package
 
-on:
-  push:
-    tags:
-      - 'v*.*.*'  # Triggers on tags like v1.2.3
-  workflow_dispatch:  # Enables manual trigger
-    inputs:
-      version:
-        description: 'Version to publish (e.g., 1.0.0)'
-        required: true
-        default: '1.0.0'
-        type: string
+# Deprecated approach
+#on:
+#  push:
+#    tags:
+#      - 'v*.*.*'  # Triggers on tags like v1.2.3
+#  workflow_dispatch:  # Enables manual trigger
+#    inputs:
+#      version:
+#        description: 'Version to publish (e.g., 1.0.0)'
+#        required: true
+#        # default: '1.0.0'
+#        type: string
 
 env:
   PROJECT_PATH: AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj

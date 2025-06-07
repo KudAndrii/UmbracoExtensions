@@ -1,0 +1,156 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+    tags:
+      - 'dictionary-v*.*.*'  # For dictionary package
+      - 'dropdown-v*.*.*'    # For dropdown package
+      - 'all-v*.*.*'         # For both packages
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package to publish'
+        required: true
+        default: 'dictionary'
+        type: choice
+        options:
+          - dictionary
+          - dropdown
+          - both
+      version:
+        description: 'Version to publish (e.g., 1.0.0)'
+        required: true
+        type: string
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  DICTIONARY_PATH: AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj
+  DROPDOWN_PATH: AndrewK.Umbraco.Extensions.Dropdown/AndrewK.Umbraco.Extensions.Dropdown.csproj
+
+jobs:
+  determine-packages:
+    runs-on: ubuntu-latest
+    outputs:
+      publish-dictionary: ${{ steps.determine.outputs.publish-dictionary }}
+      publish-dropdown: ${{ steps.determine.outputs.publish-dropdown }}
+      version: ${{ steps.determine.outputs.version }}
+    steps:
+      - name: Determine packages to publish
+        id: determine
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # Manual trigger
+            case "${{ github.event.inputs.package }}" in
+              "dictionary")
+                echo "publish-dictionary=true" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=false" >> $GITHUB_OUTPUT
+                ;;
+              "dropdown")
+                echo "publish-dictionary=false" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=true" >> $GITHUB_OUTPUT
+                ;;
+              "both")
+                echo "publish-dictionary=true" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=true" >> $GITHUB_OUTPUT
+                ;;
+            esac
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          else
+            # Tag-based trigger
+            TAG="${GITHUB_REF#refs/tags/}"
+            VERSION="${TAG#*-v}"
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+            case "$TAG" in
+              dictionary-v*)
+                echo "publish-dictionary=true" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=false" >> $GITHUB_OUTPUT
+                ;;
+              dropdown-v*)
+                echo "publish-dictionary=false" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=true" >> $GITHUB_OUTPUT
+                ;;
+              all-v*)
+                echo "publish-dictionary=true" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=true" >> $GITHUB_OUTPUT
+                ;;
+            esac
+          fi
+
+  publish-dictionary:
+    runs-on: ubuntu-latest
+    needs: determine-packages
+    if: needs.determine-packages.outputs.publish-dictionary == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.DICTIONARY_PATH }}
+
+      - name: Build project
+        run: dotnet build ${{ env.DICTIONARY_PATH }} --configuration Release --no-restore
+
+      - name: Pack Dictionary package
+        run: |
+          dotnet pack ${{ env.DICTIONARY_PATH }} \
+            --configuration Release \
+            --no-build \
+            --output ./nupkg-dictionary \
+            /p:PackageVersion=${{ needs.determine-packages.outputs.version }}
+
+      - name: Verify Dictionary package
+        run: |
+          if [ ! -f ./nupkg-dictionary/*.nupkg ]; then
+            echo "No Dictionary NuGet package found"
+            exit 1
+          fi
+          echo "Dictionary package created:"
+          ls -la ./nupkg-dictionary/
+
+      - name: Push Dictionary package
+        run: dotnet nuget push ./nupkg-dictionary/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+  publish-dropdown:
+    runs-on: ubuntu-latest
+    needs: determine-packages
+    if: needs.determine-packages.outputs.publish-dropdown == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.DROPDOWN_PATH }}
+
+      - name: Build project
+        run: dotnet build ${{ env.DROPDOWN_PATH }} --configuration Release --no-restore
+
+      - name: Pack Dropdown package
+        run: |
+          dotnet pack ${{ env.DROPDOWN_PATH }} \
+            --configuration Release \
+            --no-build \
+            --output ./nupkg-dropdown \
+            /p:PackageVersion=${{ needs.determine-packages.outputs.version }}
+
+      - name: Verify Dropdown package
+        run: |
+          if [ ! -f ./nupkg-dropdown/*.nupkg ]; then
+            echo "No Dropdown NuGet package found"
+            exit 1
+          fi
+          echo "Dropdown package created:"
+          ls -la ./nupkg-dropdown/
+
+      - name: Push Dropdown package
+        run: dotnet nuget push ./nupkg-dropdown/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
