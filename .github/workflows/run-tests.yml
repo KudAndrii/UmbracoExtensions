@@ -26,7 +26,8 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test --configuration Release --no-build --verbosity normal --logger trx --results-directory "TestResults"
+        run: dotnet test --configuration Release --verbosity normal --logger trx --results-directory "TestResults"
+        continue-on-error: false
 
       - name: Upload test results
         uses: actions/upload-artifact@v4

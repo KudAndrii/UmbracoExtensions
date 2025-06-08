@@ -7,7 +7,8 @@ using Umbraco.Cms.Core.Web;
 
 namespace AndrewK.Umbraco.Extensions.Tests.Integration;
 
-public class DropdownPropertyTests : IntegrationTestBase
+public class DropdownPropertyTests(
+    SharedWebApplicationFactory sharedFactory) : IntegrationTestBase(sharedFactory)
 {
     private const string PropertyAlias = "testDropdown";
 

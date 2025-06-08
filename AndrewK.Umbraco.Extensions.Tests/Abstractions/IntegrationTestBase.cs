@@ -6,6 +6,7 @@ using Umbraco.Cms.Core.Strings;
 
 namespace AndrewK.Umbraco.Extensions.Tests.Abstractions;
 
+[Collection("IntegrationTestCollection")]
 public abstract class IntegrationTestBase : IDisposable
 {
     private AsyncServiceScope Scope { get; set; }
@@ -13,9 +14,9 @@ public abstract class IntegrationTestBase : IDisposable
     protected DataTypeCreator DataTypeCreator { get; }
     protected ContentTypeCreator ContentTypeCreator { get; }
 
-    protected IntegrationTestBase()
+    protected IntegrationTestBase(SharedWebApplicationFactory sharedFactory)
     {
-        WebsiteFactory = new ExampleWebApplicationFactory();
+        WebsiteFactory = sharedFactory.Factory;
         Scope = WebsiteFactory.Services.GetRequiredService<IServiceScopeFactory>().CreateAsyncScope();
 
         DataTypeCreator = GetService<DataTypeCreator>();
@@ -32,6 +33,6 @@ public abstract class IntegrationTestBase : IDisposable
     public void Dispose()
     {
         Scope.Dispose();
-        WebsiteFactory.Dispose();
+        //WebsiteFactory.Dispose();
     }
 }
