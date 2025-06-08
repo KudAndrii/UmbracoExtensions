@@ -4,8 +4,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <CompressionEnabled>false</CompressionEnabled>
-        <UserSecretsId>1857b1a5-04b0-468d-990c-f6734419a8f1</UserSecretsId>
-        <RootNamespace>AndrewK.Umbraco.Extensions.Example</RootNamespace> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
+        <UserSecretsId>36ba8a15-7255-40c9-9fb6-3b8070342425</UserSecretsId> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,12 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="App_Plugins\**">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj" />
       <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dropdown\AndrewK.Umbraco.Extensions.Dropdown.csproj" />
     </ItemGroup>
 

@@ -1,0 +1,19 @@
+{
+  "Umbraco": {
+    "CMS": {
+      "Unattended": {
+        "UpgradeUnattended": true,
+        "InstallUnattended": true,
+        "UnattendedUserName": "Test",
+        "UnattendedUserEmail": "test@test.nl",
+        "UnattendedUserPassword": "1234567890"
+      },
+      "Hosting": {
+        "Debug": true
+      },
+      "ModelsBuilder": {
+        "ModelsMode": "Nothing"
+      }
+    }
+  }
+}
