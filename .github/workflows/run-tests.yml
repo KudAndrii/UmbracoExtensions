@@ -37,8 +37,8 @@ jobs:
           path: TestResults/*.trx
 
       - name: Test Summary
+        if: ${{ github.event_name != 'pull_request' || github.repository == github.event.pull_request.head.repo.full_name }}
         uses: dorny/test-reporter@v1
-        if: always()
         with:
           name: Test Results
           path: TestResults/*.trx
