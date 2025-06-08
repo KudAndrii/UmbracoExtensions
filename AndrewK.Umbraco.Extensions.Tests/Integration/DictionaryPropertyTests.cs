@@ -1,5 +1,6 @@
 using AndrewK.Umbraco.Extensions.Tests.Abstractions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
@@ -7,38 +8,26 @@ using Umbraco.Cms.Core.Web;
 
 namespace AndrewK.Umbraco.Extensions.Tests.Integration;
 
-public class DropdownPropertyTests : IntegrationTestBase
+public class DictionaryPropertyTests : IntegrationTestBase
 {
-    private const string PropertyAlias = "testDropdown";
-
-    public static TheoryData<bool, List<KeyValuePair<string, string>>, string, List<string>> TestCases => new()
+    private const string PropertyAlias = "testDictionary";
+    public static TheoryData<int, int, List<KeyValuePair<string, string>>> TestCases => new()
     {
         {
-            false,
+            0,
+            4,
             [
                 new KeyValuePair<string, string>("key1", "value1"),
                 new KeyValuePair<string, string>("key2", "value2"),
                 new KeyValuePair<string, string>("key3", "value3")
-            ],
-            string.Empty,
-            ["key2"]
-        },
-        {
-            true,
-            [
-                new KeyValuePair<string, string>("key1", "value1"),
-                new KeyValuePair<string, string>("key2", "value2"),
-                new KeyValuePair<string, string>("key3", "value3")
-            ],
-            string.Empty,
-            ["key2", "key3"]
+            ]
         }
     };
 
     [Theory]
     [MemberData(nameof(TestCases))]
-    public async Task Can_Create_Content_And_Read_Custom_Property(bool multiple,
-        ICollection<KeyValuePair<string, string>> items, string defaultValue, List<string> values)
+    public async Task Can_Create_Content_And_Read_Custom_Property(int min, int max,
+        ICollection<KeyValuePair<string, string>> values)
     {
         #region Arrange
 
@@ -53,17 +42,17 @@ public class DropdownPropertyTests : IntegrationTestBase
         var dataTypeSaveAttempt = await DataTypeCreator.CreateAsync(
             DataEditor(),
             ValueStorageType.Ntext,
-            "AndrewK.Umbraco.Dropdown",
+            "AndrewK.Umbraco.Dictionary",
+            //TODO: consider implementing IDataValidator to validate min, max and values itself
             new Dictionary<string, object>
             {
-                ["multiple"] = multiple,
-                ["items"] = items,
-                ["default"] = defaultValue
+                ["min"] = min,
+                ["max"] = max
             }
         );
         Assert.True(dataTypeSaveAttempt.Success, "Data type should be saved successfully");
         Assert.NotNull(dataTypeSaveAttempt.Result);
-
+        
         // creating content type
         var contentTypeSaveAttempt = await ContentTypeCreator.CreateAsync(
             new PropertyType(ShortStringHelper, dataTypeSaveAttempt.Result, PropertyAlias)
@@ -75,17 +64,19 @@ public class DropdownPropertyTests : IntegrationTestBase
         Assert.NotNull(contentTypeSaveAttempt.Result);
 
         // creating a content node of the content type with the value set
-        var content = new Content("Test Dropdown Content", -1, contentTypeSaveAttempt.Result);
-        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(values));
+        var content = new Content("Test Dictionary Content", -1, contentTypeSaveAttempt.Result);
+        var settings = new JsonSerializerSettings
+        {
+            ContractResolver = new CamelCasePropertyNamesContractResolver()
+        };
+        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(values, settings));
         var saveResult = contentService.Save(content);
         var publishResult = contentService.Publish(content, ["*"]);
 
         // retrieving the content node
         using var contextReference = umbracoContextFactory.EnsureUmbracoContext();
         var retrievedContent = await contextReference.UmbracoContext.Content.GetByIdAsync(content.Id);
-        ICollection<string?> retrievedValues = multiple
-            ? retrievedContent?.Value<IEnumerable<string?>>(PropertyAlias)?.ToList() ?? []
-            : [retrievedContent?.Value<string>(PropertyAlias)];
+        var retrievedValues = retrievedContent?.Value<ICollection<KeyValuePair<string, string>>>(PropertyAlias);
 
         #endregion
 
@@ -95,9 +86,10 @@ public class DropdownPropertyTests : IntegrationTestBase
         Assert.True(publishResult.Success, "Content should be published successfully");
         Assert.NotNull(retrievedContent);
         Assert.NotNull(retrievedValues);
-        foreach (var (index, value) in values.Index())
+        Assert.Equal(values.Count, retrievedValues.Count);
+        foreach (var (index, kvp) in values.Index())
         {
-            Assert.Equal(value, retrievedValues.ElementAt(index));
+            Assert.Equal(kvp.Value, retrievedValues.ElementAt(index).Value);
         }
 
         #endregion
