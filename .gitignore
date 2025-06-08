@@ -34,3 +34,4 @@ dist-ssr
 
 **/umbraco/models/**
 *.sln.DotSettings.user
+**/TestResults/**
