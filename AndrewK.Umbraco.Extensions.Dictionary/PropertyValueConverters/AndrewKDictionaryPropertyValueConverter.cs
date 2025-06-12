@@ -6,6 +6,7 @@ namespace AndrewK.Umbraco.Extensions.Dictionary.PropertyValueConverters;
 
 public class AndrewKDictionaryPropertyValueConverter : PropertyValueConverterBase
 {
+    public const string EditorUiAlias = "AndrewK.Umbraco.Dictionary";
     private readonly IJsonSerializer _jsonSerializer;
 
     public AndrewKDictionaryPropertyValueConverter(IJsonSerializer jsonSerializer)
@@ -14,7 +15,7 @@ public class AndrewKDictionaryPropertyValueConverter : PropertyValueConverterBas
     }
 
     public override bool IsConverter(IPublishedPropertyType propertyType)
-        => propertyType.EditorUiAlias == "AndrewK.Umbraco.Dictionary";
+        => propertyType.EditorUiAlias == EditorUiAlias;
 
     public override Type GetPropertyValueType(IPublishedPropertyType propertyType)
         => typeof(ICollection<KeyValuePair<string, string>>);
@@ -27,6 +28,6 @@ public class AndrewKDictionaryPropertyValueConverter : PropertyValueConverterBas
             return null;
         }
 
-        return _jsonSerializer.Deserialize<IEnumerable<KeyValuePair<string, string>>>(stringValue)?.ToList() ?? [];
+        return _jsonSerializer.Deserialize<IEnumerable<KeyValuePair<string, string>>>(stringValue)?.ToList();
     }
 }

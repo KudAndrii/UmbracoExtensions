@@ -1,3 +1,4 @@
+using AndrewK.Umbraco.Extensions.Dictionary.PropertyValueConverters;
 using AndrewK.Umbraco.Extensions.Tests.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -13,23 +14,33 @@ public class DictionaryPropertyTests(
 {
     private const string PropertyAlias = "testDictionary";
 
-    public static TheoryData<int, int, List<KeyValuePair<string, string>>> TestCases => new()
+    public static TheoryData<int, int, List<KeyValuePair<string, string>>?> TestCases => new()
     {
         {
             0,
-            4,
+            0,
             [
                 new KeyValuePair<string, string>("key1", "value1"),
                 new KeyValuePair<string, string>("key2", "value2"),
                 new KeyValuePair<string, string>("key3", "value3")
             ]
+        },
+        {
+            0,
+            0,
+            []
+        },
+        {
+            0,
+            0,
+            null
         }
     };
 
     [Theory]
     [MemberData(nameof(TestCases))]
     public async Task Can_Create_Content_And_Read_Custom_Property(int min, int max,
-        ICollection<KeyValuePair<string, string>> values)
+        ICollection<KeyValuePair<string, string>>? values)
     {
         #region Arrange
 
@@ -44,7 +55,7 @@ public class DictionaryPropertyTests(
         var dataTypeSaveAttempt = await DataTypeCreator.CreateAsync(
             DataEditor(),
             ValueStorageType.Ntext,
-            "AndrewK.Umbraco.Dictionary",
+            AndrewKDictionaryPropertyValueConverter.EditorUiAlias,
             //TODO: consider implementing IDataValidator to validate min, max and values itself
             new Dictionary<string, object>
             {
@@ -87,11 +98,14 @@ public class DictionaryPropertyTests(
         Assert.True(saveResult.Success, "Content should be saved successfully");
         Assert.True(publishResult.Success, "Content should be published successfully");
         Assert.NotNull(retrievedContent);
-        Assert.NotNull(retrievedValues);
-        Assert.Equal(values.Count, retrievedValues.Count);
-        foreach (var (index, kvp) in values.Index())
+        Assert.Equal(values?.Count, retrievedValues?.Count);
+
+        if (values != null && retrievedValues != null)
         {
-            Assert.Equal(kvp.Value, retrievedValues.ElementAt(index).Value);
+            foreach (var (index, kvp) in values.Index())
+            {
+                Assert.Equal(kvp.Value, retrievedValues.ElementAt(index).Value);
+            }
         }
 
         #endregion

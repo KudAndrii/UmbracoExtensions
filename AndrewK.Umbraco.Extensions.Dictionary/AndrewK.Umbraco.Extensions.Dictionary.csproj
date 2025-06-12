@@ -35,7 +35,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
-        <PackageReference Include="Umbraco.Cms.Core" Version="16.0.0-rc4" />
+        <PackageReference Include="Umbraco.Cms.Core" Version="16.0.0" />
     </ItemGroup>
 
     <ItemGroup>
