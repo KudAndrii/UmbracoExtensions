@@ -7,7 +7,7 @@ public class ProjectIntegrationTests(
     SharedWebApplicationFactory sharedFactory) : IntegrationTestBase(sharedFactory)
 {
     [Fact(DisplayName = "Project is running")]
-    public async Task GetRootPage_HappyFlow_ReturnsOK()
+    public async Task GetBackofficePage_HappyFlow_ReturnsOK()
     {
         // arrange
         var client = WebsiteFactory.CreateClient();
