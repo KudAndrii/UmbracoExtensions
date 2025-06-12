@@ -8,15 +8,15 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dictionary</PackageId>
-        <Version>0.9.0</Version>
+        <Version>1.0.0</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dictionary</Product>
         <Title>AndrewK.Umbraco.Dictionary</Title>
         <Description>Makes it possible to store multiple key-value pairs or use it as UI property editor</Description>
         <PackageDescription>Makes it possible to store multiple key-value pairs or use it as UI property editor</PackageDescription>
         <PackageTags>Umbraco;Extension;Dictionary;Backoffice</PackageTags>
-        <AssemblyVersion>0.9.0</AssemblyVersion>
-        <FileVersion>0.9.0</FileVersion>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
         <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>

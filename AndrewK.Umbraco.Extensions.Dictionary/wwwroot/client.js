@@ -1,22 +1,22 @@
-import { nothing as L, when as lt, html as v, css as R, state as w, property as r, query as T, customElement as S, repeat as pt } from "@umbraco-cms/backoffice/external/lit";
-import { UmbValidationContext as dt, umbBindToValidation as ht } from "@umbraco-cms/backoffice/validation";
-import { UmbLitElement as B } from "@umbraco-cms/backoffice/lit-element";
-import { UMB_PROPERTY_CONTEXT as ut } from "@umbraco-cms/backoffice/property";
-import { UmbDeleteEvent as ct, UmbInputEvent as z, UmbChangeEvent as f } from "@umbraco-cms/backoffice/event";
-import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT as mt, UmbSubmittableWorkspaceContextBase as vt } from "@umbraco-cms/backoffice/workspace";
-import { UmbSorterController as _t } from "@umbraco-cms/backoffice/sorter";
+import { nothing as T, when as pt, html as u, css as L, state as b, property as n, query as S, customElement as B, repeat as dt } from "@umbraco-cms/backoffice/external/lit";
+import { UmbValidationContext as ht, umbBindToValidation as ut } from "@umbraco-cms/backoffice/validation";
+import { UmbLitElement as W } from "@umbraco-cms/backoffice/lit-element";
+import { UMB_PROPERTY_CONTEXT as ct } from "@umbraco-cms/backoffice/property";
+import { UmbDeleteEvent as mt, UmbInputEvent as R, UmbChangeEvent as f } from "@umbraco-cms/backoffice/event";
+import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT as vt, UmbSubmittableWorkspaceContextBase as _t } from "@umbraco-cms/backoffice/workspace";
+import { UmbSorterController as yt } from "@umbraco-cms/backoffice/sorter";
 import { UUIFormControlMixin as F } from "@umbraco-cms/backoffice/external/uui";
-import { umbConfirmModal as yt } from "@umbraco-cms/backoffice/modal";
-var ft = Object.defineProperty, gt = Object.getOwnPropertyDescriptor, G = (t) => {
+import { umbConfirmModal as ft } from "@umbraco-cms/backoffice/modal";
+var gt = Object.defineProperty, kt = Object.getOwnPropertyDescriptor, G = (t) => {
   throw TypeError(t);
 }, g = (t, e, i, s) => {
-  for (var a = s > 1 ? void 0 : s ? gt(e, i) : e, n = t.length - 1, o; n >= 0; n--)
-    (o = t[n]) && (a = (s ? o(e, i, a) : o(a)) || a);
-  return s && a && ft(e, i, a), a;
-}, X = (t, e, i) => e.has(t) || G("Cannot " + i), V = (t, e, i) => (X(t, e, "read from private field"), i ? i.call(t) : e.get(t)), P = (t, e, i) => e.has(t) ? G("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), _ = (t, e, i) => (X(t, e, "access private method"), i), d, Y, H, J, x, Q, Z, A, M;
-let u = class extends F(B, void 0) {
+  for (var a = s > 1 ? void 0 : s ? kt(e, i) : e, r = t.length - 1, o; r >= 0; r--)
+    (o = t[r]) && (a = (s ? o(e, i, a) : o(a)) || a);
+  return s && a && gt(e, i, a), a;
+}, X = (t, e, i) => e.has(t) || G("Cannot " + i), K = (t, e, i) => (X(t, e, "read from private field"), i ? i.call(t) : e.get(t)), P = (t, e, i) => e.has(t) ? G("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), y = (t, e, i) => (X(t, e, "access private method"), i), h, Y, H, J, x, Q, Z, A, M;
+let c = class extends F(W, void 0) {
   constructor() {
-    super(), P(this, d), this._kvp = { key: "", value: "" }, this.disabled = !1, this.readonly = !1, P(this, A, (t) => t.stopPropagation()), P(this, M, (t) => t.stopPropagation()), this.getFormElement = () => {
+    super(), P(this, h), this._kvp = { key: "", value: "" }, this.disabled = !1, this.readonly = !1, P(this, A, (t) => t.stopPropagation()), P(this, M, (t) => t.stopPropagation()), this.getFormElement = () => {
     };
   }
   get kvp() {
@@ -30,19 +30,19 @@ let u = class extends F(B, void 0) {
     await this.updateComplete, (t = this._keyInput) == null || t.focus();
   }
   render() {
-    return v`
-          ${this.disabled || this.readonly ? L : v`
+    return u`
+          ${this.disabled || this.readonly ? T : u`
             <uui-icon name="icon-navigation" class="handle"></uui-icon>`}
 
-          <umb-form-validation-message id="validation-message" @invalid=${V(this, M)} @valid=${V(this, A)}>
+          <umb-form-validation-message id="validation-message" @invalid=${K(this, M)} @valid=${K(this, A)}>
             <div class="kvp-holder">
               <uui-input
                 id="input-key"
                 label="Key"
                 value=${this._kvp.key}
-                @keydown=${_(this, d, x)}
-                @input=${_(this, d, H)}
-                @change=${_(this, d, Q)}
+                @keydown=${y(this, h, x)}
+                @input=${y(this, h, H)}
+                @change=${y(this, h, Q)}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
                 required=${this.required}
@@ -52,25 +52,25 @@ let u = class extends F(B, void 0) {
                 id="input-value"
                 label="Value"
                 value=${this._kvp.value}
-                @keydown=${_(this, d, x)}
-                @input=${_(this, d, J)}
-                @change=${_(this, d, Z)}
+                @keydown=${y(this, h, x)}
+                @input=${y(this, h, J)}
+                @change=${y(this, h, Z)}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
               ></uui-input>
             </div>
           </umb-form-validation-message>
 
-          ${lt(
+          ${pt(
       !this.readonly,
-      () => v`
+      () => u`
               <uui-button
                 compact
                 color="danger"
                 label="${this.localize.term("general_remove")} ${this.value}"
                 look="outline"
                 ?disabled=${this.disabled}
-                @click=${_(this, d, Y)}>
+                @click=${y(this, h, Y)}>
                 <uui-icon name="icon-trash"></uui-icon>
               </uui-button>
             `
@@ -78,24 +78,24 @@ let u = class extends F(B, void 0) {
         `;
   }
 };
-d = /* @__PURE__ */ new WeakSet();
+h = /* @__PURE__ */ new WeakSet();
 Y = async function() {
-  await yt(this, {
+  await ft(this, {
     headline: `Delete ${this._kvp.value || "item"}`,
     content: "Are you sure you want to delete this item?",
     color: "danger",
     confirmLabel: "Delete"
-  }), this.dispatchEvent(new ct());
+  }), this.dispatchEvent(new mt());
 };
 H = function(t) {
   t.stopPropagation();
   const e = t.currentTarget;
-  this._kvp = { ...this._kvp, key: e.value }, this.dispatchEvent(new z());
+  this._kvp = { ...this._kvp, key: e.value }, this.dispatchEvent(new R());
 };
 J = function(t) {
   t.stopPropagation();
   const e = t.currentTarget;
-  this._kvp = { ...this._kvp, value: e.value }, this.dispatchEvent(new z());
+  this._kvp = { ...this._kvp, value: e.value }, this.dispatchEvent(new R());
 };
 x = function(t) {
   t.stopPropagation(), t.key === "Enter" && this._kvp.key && this.dispatchEvent(new CustomEvent("enter"));
@@ -112,8 +112,8 @@ Z = function(t) {
 };
 A = /* @__PURE__ */ new WeakMap();
 M = /* @__PURE__ */ new WeakMap();
-u.styles = [
-  R`
+c.styles = [
+  L`
             :host {
                 display: flex;
                 align-items: center;
@@ -142,36 +142,36 @@ u.styles = [
         `
 ];
 g([
-  w()
-], u.prototype, "_kvp", 2);
+  b()
+], c.prototype, "_kvp", 2);
 g([
-  r({ type: Boolean, reflect: !0 })
-], u.prototype, "disabled", 2);
+  n({ type: Boolean, reflect: !0 })
+], c.prototype, "disabled", 2);
 g([
-  r({ type: Boolean, reflect: !0 })
-], u.prototype, "readonly", 2);
+  n({ type: Boolean, reflect: !0 })
+], c.prototype, "readonly", 2);
 g([
-  r({ type: Object })
-], u.prototype, "kvp", 1);
+  n({ type: Object })
+], c.prototype, "kvp", 1);
 g([
-  T("#input-key")
-], u.prototype, "_keyInput", 2);
+  S("#input-key")
+], c.prototype, "_keyInput", 2);
 g([
-  T("#input-value")
-], u.prototype, "_valueInput", 2);
-u = g([
-  S("ak-input-dictionary-item")
-], u);
-var $t = Object.defineProperty, kt = Object.getOwnPropertyDescriptor, j = (t) => {
+  S("#input-value")
+], c.prototype, "_valueInput", 2);
+c = g([
+  B("ak-input-dictionary-item")
+], c);
+var $t = Object.defineProperty, bt = Object.getOwnPropertyDescriptor, j = (t) => {
   throw TypeError(t);
-}, c = (t, e, i, s) => {
-  for (var a = s > 1 ? void 0 : s ? kt(e, i) : e, n = t.length - 1, o; n >= 0; n--)
-    (o = t[n]) && (a = (s ? o(e, i, a) : o(a)) || a);
+}, m = (t, e, i, s) => {
+  for (var a = s > 1 ? void 0 : s ? bt(e, i) : e, r = t.length - 1, o; r >= 0; r--)
+    (o = t[r]) && (a = (s ? o(e, i, a) : o(a)) || a);
   return s && a && $t(e, i, a), a;
-}, W = (t, e, i) => e.has(t) || j("Cannot " + i), $ = (t, e, i) => (W(t, e, "read from private field"), i ? i.call(t) : e.get(t)), b = (t, e, i) => e.has(t) ? j("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), K = (t, e, i, s) => (W(t, e, "write to private field"), e.set(t, i), i), y = (t, e, i) => (W(t, e, "access private method"), i), E, C, k, h, q, tt, et, it, at, st;
-let l = class extends F(B, void 0) {
+}, q = (t, e, i) => e.has(t) || j("Cannot " + i), k = (t, e, i) => (q(t, e, "read from private field"), i ? i.call(t) : e.get(t)), w = (t, e, i) => e.has(t) ? j("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), N = (t, e, i, s) => (q(t, e, "write to private field"), e.set(t, i), i), _ = (t, e, i) => (q(t, e, "access private method"), i), E, C, $, d, V, tt, et, it, at, st, nt;
+let l = class extends F(W, void 0) {
   constructor() {
-    super(), b(this, h), this._items = [], b(this, E, !1), b(this, C, !1), b(this, k, new _t(this, {
+    super(), w(this, d), this._items = [], w(this, E, !1), w(this, C, !1), w(this, $, new yt(this, {
       getUniqueOfElement: (t) => t.getAttribute("data-sort-entry-id"),
       getUniqueOfModel: (t) => t.key,
       identifier: "AndrewK.SorterIdentifier.Dictionary",
@@ -193,22 +193,22 @@ let l = class extends F(B, void 0) {
     );
   }
   set disabled(t) {
-    K(this, E, t), t && $(this, k).disable();
+    N(this, E, t), t && k(this, $).disable();
   }
   get disabled() {
-    return $(this, E);
+    return k(this, E);
   }
   set readonly(t) {
-    K(this, C, t), t && $(this, k).disable();
+    N(this, C, t), t && k(this, $).disable();
   }
   get readonly() {
-    return $(this, C);
+    return k(this, C);
   }
   get items() {
     return this._items;
   }
   set items(t) {
-    this.value = (t == null ? void 0 : t.length) > 0 ? "some value" : "", this._items = t ?? [], $(this, k).setModel(this.items);
+    this.value = (t == null ? void 0 : t.length) > 0 ? "some value" : "", this._items = t ?? [], k(this, $).setModel(this.items);
   }
   // TODO: Some inputs might not have a value that is either FormDataEntryValue or FormData.
   //  How do we handle this?
@@ -222,25 +222,26 @@ let l = class extends F(B, void 0) {
   }
   */
   render() {
-    return v`
+    return u`
           <div id="sorter-wrapper">
-            ${y(this, h, at).call(this)}
+            ${_(this, d, at).call(this)}
           </div>
-          ${y(this, h, st).call(this)}
+          ${_(this, d, nt).call(this)}
+          ${_(this, d, st).call(this)}
         `;
   }
 };
 E = /* @__PURE__ */ new WeakMap();
 C = /* @__PURE__ */ new WeakMap();
-k = /* @__PURE__ */ new WeakMap();
-h = /* @__PURE__ */ new WeakSet();
-q = async function() {
-  this._items = [...this._items, { key: "", value: "" }], this.pristine = !1, this.dispatchEvent(new f()), await y(this, h, et).call(this);
+$ = /* @__PURE__ */ new WeakMap();
+d = /* @__PURE__ */ new WeakSet();
+V = async function() {
+  this._items = [...this._items, { key: "", value: "" }], this.pristine = !1, this.dispatchEvent(new f()), await _(this, d, et).call(this);
 };
 tt = function(t, e) {
   t.stopPropagation();
   const s = t.currentTarget.kvp;
-  this._items = this._items.map((a, n) => n === e ? s : a), this.dispatchEvent(new f());
+  this._items = this._items.map((a, r) => r === e ? s : a), this.dispatchEvent(new f());
 };
 et = async function() {
   var i;
@@ -254,11 +255,11 @@ it = function(t, e) {
   t.stopPropagation(), this._items = this._items.filter((i, s) => s !== e), this.pristine = !1, this.dispatchEvent(new f());
 };
 at = function() {
-  return v`
-          ${pt(
+  return u`
+          ${dt(
     this._items,
     (t, e) => e,
-    (t, e) => v`
+    (t, e) => u`
               <ak-input-dictionary-item
                 name="item-${e}"
                 data-sort-entry-id=${t.key}
@@ -267,28 +268,38 @@ at = function() {
                 .kvp=${t}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
-                @enter=${y(this, h, q)}
-                @delete=${(i) => y(this, h, it).call(this, i, e)}
-                @input=${(i) => y(this, h, tt).call(this, i, e)}
+                @enter=${_(this, d, V)}
+                @delete=${(i) => _(this, d, it).call(this, i, e)}
+                @input=${(i) => _(this, d, tt).call(this, i, e)}
               ></ak-input-dictionary-item>
             `
   )}
         `;
 };
 st = function() {
-  return this.disabled || this.readonly ? L : v`
+  return this.disabled || this.readonly ? T : u`
           <uui-button
             color="default"
             id="action"
             label="Add"
             look="placeholder"
             ?disabled=${this.disabled}
-            @click=${y(this, h, q)}
+            @click=${_(this, d, V)}
           ></uui-button>
         `;
 };
+nt = function() {
+  return this.items.length === new Set(this.items.map((t) => t.key)).size ? T : u`
+          <uui-box class="info-block">
+            <div slot="headline" class="info-block-headline">
+              <uui-icon name="icon-info"></uui-icon>
+              <p>Duplicated keys detected.</p>
+            </div>
+          </uui-box>
+        `;
+};
 l.styles = [
-  R`
+  L`
             #action {
                 display: block;
             }
@@ -305,59 +316,70 @@ l.styles = [
                 border-radius: var(--uui-border-radius);
                 border: 1px dashed var(--uui-color-divider-emphasis);
             }
+            
+            .info-block {
+                background-color: var(--uui-color-disabled-standalone);
+                margin-bottom: var(--uui-size-space-3);
+            }
+            
+            .info-block-headline {
+                display: flex;
+                align-items: center;
+                gap: var(--uui-size-space-3);
+            }
         `
 ];
-c([
-  w()
+m([
+  b()
 ], l.prototype, "_items", 2);
-c([
-  r({ type: Number })
+m([
+  n({ type: Number })
 ], l.prototype, "min", 2);
-c([
-  r({ type: String, attribute: "min-message" })
+m([
+  n({ type: String, attribute: "min-message" })
 ], l.prototype, "minMessage", 2);
-c([
-  r({ type: Number })
+m([
+  n({ type: Number })
 ], l.prototype, "max", 2);
-c([
-  r({ type: String, attribute: "min-message" })
+m([
+  n({ type: String, attribute: "min-message" })
 ], l.prototype, "maxMessage", 2);
-c([
-  r({ type: Boolean, reflect: !0 })
+m([
+  n({ type: Boolean, reflect: !0 })
 ], l.prototype, "disabled", 1);
-c([
-  r({ type: Boolean, reflect: !0 })
+m([
+  n({ type: Boolean, reflect: !0 })
 ], l.prototype, "readonly", 1);
-c([
-  r({ type: Array })
+m([
+  n({ type: Array })
 ], l.prototype, "items", 1);
-l = c([
-  S("ak-input-dictionary")
+l = m([
+  B("ak-input-dictionary")
 ], l);
-var wt = Object.defineProperty, bt = Object.getOwnPropertyDescriptor, rt = (t) => {
+var wt = Object.defineProperty, Et = Object.getOwnPropertyDescriptor, rt = (t) => {
   throw TypeError(t);
-}, m = (t, e, i, s) => {
-  for (var a = s > 1 ? void 0 : s ? bt(e, i) : e, n = t.length - 1, o; n >= 0; n--)
-    (o = t[n]) && (a = (s ? o(e, i, a) : o(a)) || a);
+}, v = (t, e, i, s) => {
+  for (var a = s > 1 ? void 0 : s ? Et(e, i) : e, r = t.length - 1, o; r >= 0; r--)
+    (o = t[r]) && (a = (s ? o(e, i, a) : o(a)) || a);
   return s && a && wt(e, i, a), a;
-}, nt = (t, e, i) => e.has(t) || rt("Cannot " + i), N = (t, e, i) => (nt(t, e, "read from private field"), i ? i.call(t) : e.get(t)), I = (t, e, i) => e.has(t) ? rt("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), Et = (t, e, i) => (nt(t, e, "access private method"), i), O, ot, U, D;
-let p = class extends B {
+}, ot = (t, e, i) => e.has(t) || rt("Cannot " + i), z = (t, e, i) => (ot(t, e, "read from private field"), i ? i.call(t) : e.get(t)), I = (t, e, i) => e.has(t) ? rt("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), Ct = (t, e, i) => (ot(t, e, "access private method"), i), D, lt, O, U;
+let p = class extends W {
   constructor() {
-    super(), I(this, O), this._min = 0, this._max = 1 / 0, this._validationContext = new dt(this), this.disabled = !1, this.readonly = !1, this.required = !1, I(this, U, (t) => t.stopPropagation()), I(this, D, (t) => t.stopPropagation()), this.consumeContext(ut, (t) => {
+    super(), I(this, D), this._min = 0, this._max = 1 / 0, this._validationContext = new ht(this), this.disabled = !1, this.readonly = !1, this.required = !1, I(this, O, (t) => t.stopPropagation()), I(this, U, (t) => t.stopPropagation()), this.consumeContext(ct, (t) => {
       this._label = t == null ? void 0 : t.getLabel();
-    }), this.consumeContext(mt, (t) => {
-      t instanceof vt && t.addValidationContext(this._validationContext);
+    }), this.consumeContext(vt, (t) => {
+      t instanceof _t && t.addValidationContext(this._validationContext);
     });
   }
   set config(t) {
     t && (this._min = Number(t.getValueByAlias("min")) || 0, this._max = Number(t.getValueByAlias("max")) || 1 / 0);
   }
   render() {
-    return v`
+    return u`
           <umb-form-validation-message
             id="validation-message"
-            @invalid=${N(this, D)}
-            @valid=${N(this, U)}
+            @invalid=${z(this, U)}
+            @valid=${z(this, O)}
           >
             <ak-input-dictionary
               id="input"
@@ -367,8 +389,8 @@ let p = class extends B {
               ?disabled=${this.disabled}
               ?readonly=${this.readonly}
               ?required=${this.required}
-              @change=${Et(this, O, ot)}
-              ${ht(this)}
+              @change=${Ct(this, D, lt)}
+              ${ut(this)}
             ></ak-input-dictionary>
           </umb-form-validation-message>
         `;
@@ -380,44 +402,44 @@ let p = class extends B {
     );
   }
 };
-O = /* @__PURE__ */ new WeakSet();
-ot = function(t) {
+D = /* @__PURE__ */ new WeakSet();
+lt = function(t) {
   t.stopPropagation();
   const e = t.currentTarget;
   this.value = e.items, this.dispatchEvent(new f());
 };
+O = /* @__PURE__ */ new WeakMap();
 U = /* @__PURE__ */ new WeakMap();
-D = /* @__PURE__ */ new WeakMap();
-m([
-  w()
+v([
+  b()
 ], p.prototype, "_label", 2);
-m([
-  w()
+v([
+  b()
 ], p.prototype, "_min", 2);
-m([
-  w()
+v([
+  b()
 ], p.prototype, "_max", 2);
-m([
-  T("#input", !0)
+v([
+  S("#input", !0)
 ], p.prototype, "_inputElement", 2);
-m([
-  r({ type: Array })
+v([
+  n({ type: Array })
 ], p.prototype, "value", 2);
-m([
-  r({ type: Boolean, reflect: !0 })
+v([
+  n({ type: Boolean, reflect: !0 })
 ], p.prototype, "disabled", 2);
-m([
-  r({ type: Boolean, reflect: !0 })
+v([
+  n({ type: Boolean, reflect: !0 })
 ], p.prototype, "readonly", 2);
-m([
-  r({ type: Boolean, reflect: !0 })
+v([
+  n({ type: Boolean, reflect: !0 })
 ], p.prototype, "required", 2);
-p = m([
-  S("ak-property-editor-ui-dictionary")
+p = v([
+  B("ak-property-editor-ui-dictionary")
 ], p);
-const Tt = p;
+const St = p;
 export {
   p as AkPropertyEditorUIDictionaryElement,
-  Tt as default
+  St as default
 };
 //# sourceMappingURL=client.js.map

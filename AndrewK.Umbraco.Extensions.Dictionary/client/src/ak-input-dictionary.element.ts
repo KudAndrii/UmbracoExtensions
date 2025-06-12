@@ -114,6 +114,7 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
           <div id="sorter-wrapper">
             ${ this.#renderItems() }
           </div>
+          ${ this.#renderInfoBlock() }
           ${ this.#renderAddButton() }
         `
     }
@@ -186,6 +187,18 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
           ></uui-button>
         `
     }
+    
+    #renderInfoBlock() {
+        if (this.items.length === new Set(this.items.map(x => x.key)).size) return nothing
+        return html`
+          <uui-box class="info-block">
+            <div slot="headline" class="info-block-headline">
+              <uui-icon name="icon-info"></uui-icon>
+              <p>Duplicated keys detected.</p>
+            </div>
+          </uui-box>
+        `
+    }
 
     static override styles = [
         css`
@@ -204,6 +217,17 @@ export class AkInputDictionaryElement extends UUIFormControlMixin(UmbLitElement,
                 inset: 0;
                 border-radius: var(--uui-border-radius);
                 border: 1px dashed var(--uui-color-divider-emphasis);
+            }
+            
+            .info-block {
+                background-color: var(--uui-color-disabled-standalone);
+                margin-bottom: var(--uui-size-space-3);
+            }
+            
+            .info-block-headline {
+                display: flex;
+                align-items: center;
+                gap: var(--uui-size-space-3);
             }
         `,
     ]
