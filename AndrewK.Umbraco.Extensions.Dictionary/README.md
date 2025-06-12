@@ -57,3 +57,26 @@ public class MyController : Controller
     }
 }
 ```
+
+### Example Of Setting Dictionary Data in Controllers/Services
+
+```csharp
+public class MyController : Controller
+{
+    public IActionResult Index()
+    {
+        var collectionOfKeys = // ... your collection, serializable to list of key-value pairs
+        
+        // needed to serialize property names (e.g., 'key' or 'value') in a way the converter can deserialize them
+        var settings = new JsonSerializerSettings
+        {
+            ContractResolver = new CamelCasePropertyNamesContractResolver()
+        };
+        
+        // set serialized object
+        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(values, settings));
+        
+        return View();
+    }
+}
+```
