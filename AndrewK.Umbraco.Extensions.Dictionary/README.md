@@ -18,7 +18,7 @@ It provides an intuitive user interface for adding, editing, and removing dictio
 
 ## Installation
 
-You can install the package via NuGet:
+You can install the package via NuGet
 
 ---
 

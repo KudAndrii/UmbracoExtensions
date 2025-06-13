@@ -18,7 +18,7 @@ AndrewK.Umbraco.Dropdown is a custom property editor for Umbraco 16 that enhance
 
 ## Installation
 
-You can install the package via NuGet:
+You can install the package via NuGet
 
 ---
 
