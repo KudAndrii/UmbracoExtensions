@@ -1,3 +1,4 @@
+using AndrewK.Umbraco.Extensions.Dropdown.PropertyValueConverters;
 using AndrewK.Umbraco.Extensions.Tests.Abstractions;
 using Newtonsoft.Json;
 using Umbraco.Cms.Core.Models;
@@ -54,7 +55,7 @@ public class DropdownPropertyTests(
         var dataTypeSaveAttempt = await DataTypeCreator.CreateAsync(
             DataEditor(),
             ValueStorageType.Ntext,
-            "AndrewK.Umbraco.Dropdown",
+            AndrewKDropdownPropertyValueConverter.EditorUiAlias,
             new Dictionary<string, object>
             {
                 ["multiple"] = multiple,

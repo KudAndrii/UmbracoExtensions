@@ -9,3 +9,11 @@
 	<h2>Dictionary</h2>
 	<p>@(JsonConvert.SerializeObject(Model.Value<IEnumerable<KeyValuePair<string, string>>>("dictionary")))</p>
 </section>
+<section>
+	<h2>Single Dropdown</h2>
+	<p>@(JsonConvert.SerializeObject(Model.Value<string>("singleDropdown")))</p>
+</section>
+<section>
+	<h2>Multiple Dropdown</h2>
+	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<string>>("multipleDropdown")))</p>
+</section>
