@@ -61,3 +61,20 @@ public class MyController : Controller
     }
 }
 ```
+
+### Example Of Setting Dropdown Data in Controllers/Services
+
+```csharp
+public class MyController : Controller
+{
+    public IActionResult Index()
+    {
+        var collection = // ... your collection, serializable to a list of strings
+        
+        // set serialized object
+        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(collection));
+        
+        return View();
+    }
+}
+```

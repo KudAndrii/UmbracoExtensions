@@ -65,7 +65,7 @@ public class MyController : Controller
 {
     public IActionResult Index()
     {
-        var collectionOfKeys = // ... your collection, serializable to list of key-value pairs
+        var collectionOfKeyValuePairs = // ... your collection, serializable to a list of key-value pairs
         
         // needed to serialize property names (e.g., 'key' or 'value') in a way the converter can deserialize them
         var settings = new JsonSerializerSettings
@@ -74,7 +74,7 @@ public class MyController : Controller
         };
         
         // set serialized object
-        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(values, settings));
+        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(collectionOfKeyValuePairs, settings));
         
         return View();
     }
