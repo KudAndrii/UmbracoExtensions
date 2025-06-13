@@ -50,7 +50,7 @@ public class MyController : Controller
         var singleValue = content.Value<string>("mySingleDropdownProperty");
 
         // For multiple selection
-        var multipleValues = content.Value<IEnumerable<string>>("myMultiDropdownProperty");
+        var multipleValues = content.Value<ICollection<string>>("myMultiDropdownProperty");
 
         foreach (var value in multipleValues ?? Enumerable.Empty<string>())
         {

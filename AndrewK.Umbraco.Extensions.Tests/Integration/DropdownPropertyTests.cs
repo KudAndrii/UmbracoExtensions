@@ -86,7 +86,7 @@ public class DropdownPropertyTests(
         using var contextReference = umbracoContextFactory.EnsureUmbracoContext();
         var retrievedContent = await contextReference.UmbracoContext.Content.GetByIdAsync(content.Id);
         ICollection<string?> retrievedValues = multiple
-            ? retrievedContent?.Value<IEnumerable<string?>>(PropertyAlias)?.ToList() ?? []
+            ? retrievedContent?.Value<ICollection<string?>>(PropertyAlias)?.ToList() ?? []
             : [retrievedContent?.Value<string>(PropertyAlias)];
 
         #endregion
