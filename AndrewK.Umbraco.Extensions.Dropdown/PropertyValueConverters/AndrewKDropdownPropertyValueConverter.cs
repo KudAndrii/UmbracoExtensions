@@ -8,11 +8,12 @@ namespace AndrewK.Umbraco.Extensions.Dropdown.PropertyValueConverters;
 public class AndrewKDropdownPropertyValueConverter(IJsonSerializer jsonSerializer)
     : FlexibleDropdownPropertyValueConverter(jsonSerializer)
 {
+    public const string EditorUiAlias = "AndrewK.Umbraco.Dropdown";
     public override bool IsConverter(IPublishedPropertyType propertyType)
-        => propertyType.EditorUiAlias == "AndrewK.Umbraco.Dropdown";
+        => propertyType.EditorUiAlias == EditorUiAlias;
 
     public override Type GetPropertyValueType(IPublishedPropertyType propertyType) =>
-        IsMultiple(propertyType) ? typeof(IEnumerable<string>) : typeof(string);
+        IsMultiple(propertyType) ? typeof(ICollection<string>) : typeof(string);
 
     public override object? ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType,
         PropertyCacheLevel referenceCacheLevel, object? inter, bool preview)

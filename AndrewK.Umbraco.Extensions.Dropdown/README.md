@@ -50,13 +50,30 @@ public class MyController : Controller
         var singleValue = content.Value<string>("mySingleDropdownProperty");
 
         // For multiple selection
-        var multipleValues = content.Value<IEnumerable<string>>("myMultiDropdownProperty");
+        var multipleValues = content.Value<ICollection<string>>("myMultiDropdownProperty");
 
         foreach (var value in multipleValues ?? Enumerable.Empty<string>())
         {
             // Process your values
         }
 
+        return View();
+    }
+}
+```
+
+### Example Of Setting Dropdown Data in Controllers/Services
+
+```csharp
+public class MyController : Controller
+{
+    public IActionResult Index()
+    {
+        var collection = // ... your collection, serializable to a list of strings
+        
+        // set serialized object
+        content.SetValue(PropertyAlias, JsonConvert.SerializeObject(collection));
+        
         return View();
     }
 }
