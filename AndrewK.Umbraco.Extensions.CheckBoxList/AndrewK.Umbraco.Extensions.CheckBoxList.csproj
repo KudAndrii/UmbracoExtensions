@@ -7,16 +7,16 @@
 
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>AndrewK.Umbraco.Dropdown</PackageId>
-        <Version>1.0.0</Version>
+        <PackageId>AndrewK.Umbraco.CheckBoxList</PackageId>
+        <Version>0.9.0</Version>
         <Authors>Andrew Kud</Authors>
-        <Product>Dropdown</Product>
-        <Title>AndrewK.Umbraco.Dropdown</Title>
+        <Product>CheckBoxList</Product>
+        <Title>AndrewK.Umbraco.CheckBoxList</Title>
         <Description>Makes it possible to work with label on UI and values on the server side</Description>
         <PackageDescription>Makes it possible to work with label on UI and values on the server side</PackageDescription>
-        <PackageTags>Umbraco;Extension;Dropdown;Backoffice</PackageTags>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <PackageTags>Umbraco;Extension;CheckBox;CheckBoxList;Backoffice</PackageTags>
+        <AssemblyVersion>0.9.0</AssemblyVersion>
+        <FileVersion>0.9.0</FileVersion>
         <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -26,8 +26,9 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <StaticWebAssetBasePath>App_Plugins/AndrewKDropdown</StaticWebAssetBasePath>
+        <StaticWebAssetBasePath>App_Plugins/AndrewKCheckBoxList</StaticWebAssetBasePath>
     </PropertyGroup>
+
 
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
