@@ -9,8 +9,7 @@ using Umbraco.Cms.Core.Web;
 
 namespace AndrewK.Umbraco.Extensions.Tests.Integration;
 
-public class DictionaryPropertyTests(
-    SharedWebApplicationFactory sharedFactory) : IntegrationTestBase(sharedFactory)
+public class DictionaryPropertyTests(SharedWebApplicationFactory sharedFactory) : IntegrationTestBase(sharedFactory)
 {
     private const string PropertyAlias = "testDictionary";
 
