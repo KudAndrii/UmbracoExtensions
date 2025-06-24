@@ -43,10 +43,6 @@
             <Pack>true</Pack>
             <PackagePath>\</PackagePath>
         </Content>
-        <Content Update="README.md">
-          <Pack>true</Pack>
-          <PackagePath>/</PackagePath>
-        </Content>
         <Content Include="README.md">
             <Pack>true</Pack>
             <PackagePath>\</PackagePath>
