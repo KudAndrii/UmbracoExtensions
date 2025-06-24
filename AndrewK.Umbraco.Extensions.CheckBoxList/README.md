@@ -1,13 +1,12 @@
 # AndrewK.Umbraco.CheckBoxList
 
-A custom CheckBoxList property editor for Umbraco that provides enhanced functionality for managing multiple selections.
+A custom CheckBoxList property editor for Umbraco that provides enhanced functionality for dealing with keys on the backend and labels in the backoffice.
 
 ## Features
 
 - Multiple item selection support
 - Integration with AndrewK.Umbraco.Dictionary for options management
 - Default value specification
-- Support for readonly mode
 - Server-side value conversion to `ICollection<string>`
 - Full validation support
 - Seamless integration with Umbraco backoffice
@@ -17,7 +16,7 @@ A custom CheckBoxList property editor for Umbraco that provides enhanced functio
 You can install the package via NuGet:
 
 ```bash
-dotnet add package AndrewK.Umbraco.CheckBoxList
+  dotnet add package AndrewK.Umbraco.CheckBoxList
 ```
 
 ## Usage
@@ -31,7 +30,7 @@ dotnet add package AndrewK.Umbraco.CheckBoxList
 
 ### Configuration Options
 
-- **Items:** Define the dropdown options as key-value pairs
+- **Items:** Define the checkbox-list options as key-value pairs
 - **Default:** Set a default value for new content items
 
 ### Accessing CheckBoxList Data in Controllers/Services/Templates
