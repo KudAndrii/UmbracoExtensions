@@ -20,6 +20,10 @@ It provides an intuitive user interface for adding, editing, and removing dictio
 
 You can install the package via NuGet:
 
+```bash
+  dotnet add package AndrewK.Umbraco.Dictionary
+```
+
 ---
 
 ## Usage

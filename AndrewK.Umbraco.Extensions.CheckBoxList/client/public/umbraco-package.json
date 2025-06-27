@@ -1,0 +1,44 @@
+{
+  "name": "AndrewK Umbraco CheckBoxList",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "AndrewK.Umbraco.CheckBoxList",
+      "name": "AndrewK CheckBoxList",
+      "element": "/App_Plugins/AndrewKCheckBoxList/client.js",
+      "elementName": "andrew-k-check-box-list",
+      "meta": {
+        "label": "AndrewK CheckBoxList",
+        "propertyEditorSchemaAlias": "Umbraco.Plain.Json",
+        "icon": "icon-bulleted-list",
+        "group": "lists",
+        "supportsReadOnly": true,
+        "settings": {
+          "properties": [
+            {
+              "alias": "items",
+              "label": "Add options",
+              "propertyEditorUiAlias": "AndrewK.Umbraco.Dictionary"
+            },
+            {
+              "alias": "default",
+              "label": "Specify default value, multiple values possible (separated by comma)",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+            }
+          ],
+          "defaultData": [
+            {
+              "alias": "items",
+              "value": []
+            },
+            {
+              "alias": "default",
+              "value": ""
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
