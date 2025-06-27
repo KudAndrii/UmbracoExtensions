@@ -2,13 +2,13 @@ import { html as v, property as h, state as E, customElement as g } from "@umbra
 import { UmbChangeEvent as _ } from "@umbraco-cms/backoffice/event";
 import { UmbLitElement as A } from "@umbraco-cms/backoffice/lit-element";
 import { UmbFormControlMixin as k, UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as C } from "@umbraco-cms/backoffice/validation";
-var x = Object.defineProperty, w = Object.getOwnPropertyDescriptor, f = (t) => {
+var x = Object.defineProperty, w = Object.getOwnPropertyDescriptor, m = (t) => {
   throw TypeError(t);
 }, l = (t, e, r, s) => {
   for (var i = s > 1 ? void 0 : s ? w(e, r) : e, p = t.length - 1, c; p >= 0; p--)
     (c = t[p]) && (i = (s ? c(e, r, i) : c(i)) || i);
   return s && i && x(e, r, i), i;
-}, y = (t, e, r) => e.has(t) || f("Cannot " + r), n = (t, e, r) => (y(t, e, "read from private field"), r ? r.call(t) : e.get(t)), u = (t, e, r) => e.has(t) ? f("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, r), M = (t, e, r, s) => (y(t, e, "write to private field"), e.set(t, r), r), B = (t, e, r) => (y(t, e, "access private method"), r), a, d, m;
+}, y = (t, e, r) => e.has(t) || m("Cannot " + r), n = (t, e, r) => (y(t, e, "read from private field"), r ? r.call(t) : e.get(t)), u = (t, e, r) => e.has(t) ? m("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, r), M = (t, e, r, s) => (y(t, e, "write to private field"), e.set(t, r), r), B = (t, e, r) => (y(t, e, "access private method"), r), a, d, f;
 let o = class extends k(
   A,
   void 0
@@ -25,7 +25,7 @@ let o = class extends k(
   set config(t) {
     if (!t) return;
     const e = t.getValueByAlias("items"), r = t.getValueByAlias("default");
-    r && n(this, a).length === 0 && (n(this, a).push(r), this.dispatchEvent(new _())), Array.isArray(e) && e.length && (this._list = e.map((s) => ({
+    r && n(this, a).length === 0 && (r.split(",").map((s) => s.trim()).forEach((s) => n(this, a).push(s)), this.dispatchEvent(new _())), Array.isArray(e) && e.length && (this._list = e.map((s) => ({
       label: s.value,
       value: s.key,
       checked: n(this, a).includes(s.key)
@@ -44,14 +44,14 @@ let o = class extends k(
 				.requiredMessage=${this.mandatoryMessage}
 				.selection=${n(this, a)}
 				?readonly=${this.readonly}
-				@change=${B(this, d, m)}>
+				@change=${B(this, d, f)}>
 			</umb-input-checkbox-list>
 		`;
   }
 };
 a = /* @__PURE__ */ new WeakMap();
 d = /* @__PURE__ */ new WeakSet();
-m = function(t) {
+f = function(t) {
   t != null && t.target && "selection" in t.target && (this.value = t.target.selection, this.dispatchEvent(new _()));
 };
 l([

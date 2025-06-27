@@ -29,10 +29,12 @@ export class AkPropertyEditorUICheckBoxListElement
 		if (!config) return
 
 		const items: Array<{ key: string, value: string }> | undefined = config.getValueByAlias('items')
-		const defaultValue: string | undefined = config.getValueByAlias('default')
+		const defaultValuesString: string | undefined = config.getValueByAlias('default')
 
-		if (!!defaultValue && this.#selection.length === 0) {
-			this.#selection.push(defaultValue)
+		if (!!defaultValuesString && this.#selection.length === 0) {
+			defaultValuesString.split(',')
+				.map((value) => value.trim())
+				.forEach((value) => this.#selection.push(value))
 			this.dispatchEvent(new UmbChangeEvent())
 		}
 

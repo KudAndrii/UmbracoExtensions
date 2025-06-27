@@ -1,6 +1,6 @@
 {
   "name": "AndrewK Umbraco CheckBoxList",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "extensions": [
     {
       "type": "propertyEditorUi",
@@ -23,7 +23,7 @@
             },
             {
               "alias": "default",
-              "label": "Specify default value",
+              "label": "Specify default value, multiple values possible (separated by comma)",
               "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
             }
           ],
