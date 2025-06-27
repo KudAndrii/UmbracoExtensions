@@ -6,7 +6,7 @@ A custom CheckBoxList property editor for Umbraco that provides enhanced functio
 
 - Multiple item selection support
 - Integration with AndrewK.Umbraco.Dictionary for options management
-- Default value specification
+- Default value specification (multiple default values possible)
 - Server-side value conversion to `ICollection<string>`
 - Full validation support
 - Seamless integration with Umbraco backoffice

@@ -34,6 +34,7 @@ export class AkPropertyEditorUICheckBoxListElement
 		if (!!defaultValuesString && this.#selection.length === 0) {
 			defaultValuesString.split(',')
 				.map((value) => value.trim())
+				.filter(Boolean)
 				.forEach((value) => this.#selection.push(value))
 			this.dispatchEvent(new UmbChangeEvent())
 		}
