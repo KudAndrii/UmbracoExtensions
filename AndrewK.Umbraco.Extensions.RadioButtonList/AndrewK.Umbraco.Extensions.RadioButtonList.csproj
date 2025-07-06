@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <!-- NuGet Package Properties -->
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>AndrewK.Umbraco.RadioButtonList</PackageId>
+        <Version>0.9.0</Version>
+        <Authors>Andrew Kud</Authors>
+        <Product>RadioButtonList</Product>
+        <Title>AndrewK.Umbraco.RadioButtonList</Title>
+        <Description>Makes it possible to work with label on UI and values on the server side</Description>
+        <PackageDescription>Makes it possible to work with label on UI and values on the server side</PackageDescription>
+        <PackageTags>Umbraco;Extension;RadioButton;RadioButtonList;Backoffice</PackageTags>
+        <AssemblyVersion>0.9.0</AssemblyVersion>
+        <FileVersion>0.9.0</FileVersion>
+        <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>Icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <StaticWebAssetBasePath>App_Plugins/AndrewKRadioButtonList</StaticWebAssetBasePath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="1.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Icon.png">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+        <Content Include="README.md">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+        <Content Include="LICENSE">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+    </ItemGroup>
+
+</Project>

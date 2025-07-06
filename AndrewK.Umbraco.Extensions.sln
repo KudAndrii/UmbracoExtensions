@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.CheckBoxList", "AndrewK.Umbraco.Extensions.CheckBoxList\AndrewK.Umbraco.Extensions.CheckBoxList.csproj", "{D079BDDA-060A-47E3-93AC-9C576F64C39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.RadioButtonList", "AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj", "{A98DC845-75A3-4490-A63A-15764DC34ED9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,9 @@ Global
 		{D079BDDA-060A-47E3-93AC-9C576F64C39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D079BDDA-060A-47E3-93AC-9C576F64C39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D079BDDA-060A-47E3-93AC-9C576F64C39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
