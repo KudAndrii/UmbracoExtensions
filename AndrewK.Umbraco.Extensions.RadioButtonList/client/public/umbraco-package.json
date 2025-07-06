@@ -1,0 +1,44 @@
+{
+  "name": "AndrewK Umbraco RadioButtonList",
+  "version": "0.9.0",
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "AndrewK.Umbraco.RadioButtonList",
+      "name": "AndrewK RadioButtonList",
+      "element": "/App_Plugins/AndrewKRadioButtonList/client.js",
+      "elementName": "andrew-k-radio-button-list",
+      "meta": {
+        "label": "AndrewK RadioButtonList",
+        "propertyEditorSchemaAlias": "Umbraco.Plain.Json",
+        "icon": "icon-bulleted-list",
+        "group": "lists",
+        "supportsReadOnly": true,
+        "settings": {
+          "properties": [
+            {
+              "alias": "items",
+              "label": "Add options",
+              "propertyEditorUiAlias": "AndrewK.Umbraco.Dictionary"
+            },
+            {
+              "alias": "default",
+              "label": "Specify default value",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+            }
+          ],
+          "defaultData": [
+            {
+              "alias": "items",
+              "value": []
+            },
+            {
+              "alias": "default",
+              "value": ""
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

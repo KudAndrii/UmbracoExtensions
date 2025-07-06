@@ -21,6 +21,7 @@
       <ProjectReference Include="..\AndrewK.Umbraco.Extensions.CheckBoxList\AndrewK.Umbraco.Extensions.CheckBoxList.csproj" />
       <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj" />
       <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dropdown\AndrewK.Umbraco.Extensions.Dropdown.csproj" />
+      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
