@@ -6,7 +6,8 @@ on:
       - 'dictionary-v*.*.*'  # For dictionary package
       - 'dropdown-v*.*.*'    # For dropdown package
       - 'checkbox-v*.*.*'    # For checkbox package
-      - 'all-v*.*.*'         # For both packages
+      - 'radio-v*.*.*'       # For radio-button-list package
+      - 'all-v*.*.*'         # For all packages
   workflow_dispatch:
     inputs:
       package:
@@ -18,7 +19,8 @@ on:
           - dictionary
           - dropdown
           - checkbox
-          - both
+          - radio
+          - all
       version:
         description: 'Version to publish (e.g., 1.0.0)'
         required: true
@@ -29,6 +31,7 @@ env:
   DICTIONARY_PATH: AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj
   DROPDOWN_PATH: AndrewK.Umbraco.Extensions.Dropdown/AndrewK.Umbraco.Extensions.Dropdown.csproj
   CHECKBOX_PATH: AndrewK.Umbraco.Extensions.CheckBoxList/AndrewK.Umbraco.Extensions.CheckBoxList.csproj
+  RADIO_PATH: AndrewK.Umbraco.Extensions.RadioButtonList/AndrewK.Umbraco.Extensions.RadioButtonList.csproj
 
 jobs:
   determine-packages:
@@ -37,6 +40,7 @@ jobs:
       publish-dictionary: ${{ steps.determine.outputs.publish-dictionary }}
       publish-dropdown: ${{ steps.determine.outputs.publish-dropdown }}
       publish-checkbox: ${{ steps.determine.outputs.publish-checkbox }}
+      publish-radio: ${{ steps.determine.outputs.publish-radio }}
       version: ${{ steps.determine.outputs.version }}
     steps:
       - name: Determine packages to publish
@@ -49,21 +53,31 @@ jobs:
                 echo "publish-dictionary=true" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=false" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
                 ;;
               "dropdown")
                 echo "publish-dictionary=false" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=true" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
                 ;;
               "checkbox")
                 echo "publish-dictionary=false" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=false" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=true" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
+                ;;
+              "radio")
+                echo "publish-dictionary=false" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=false" >> $GITHUB_OUTPUT
+                echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=true" >> $GITHUB_OUTPUT
                 ;;
               "all")
                 echo "publish-dictionary=true" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=true" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=true" >> $GITHUB_OUTPUT
+                echo "publish-radio=true" >> $GITHUB_OUTPUT
                 ;;
             esac
             echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
@@ -78,21 +92,31 @@ jobs:
                 echo "publish-dictionary=true" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=false" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
                 ;;
               dropdown-v*)
                 echo "publish-dictionary=false" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=true" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
                 ;;
               checkbox-v*)
                 echo "publish-dictionary=false" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=false" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=true" >> $GITHUB_OUTPUT
+                echo "publish-radio=false" >> $GITHUB_OUTPUT
+                ;;
+              radio-v*)
+                echo "publish-dictionary=false" >> $GITHUB_OUTPUT
+                echo "publish-dropdown=false" >> $GITHUB_OUTPUT
+                echo "publish-checkbox=false" >> $GITHUB_OUTPUT
+                echo "publish-radio=true" >> $GITHUB_OUTPUT
                 ;;
               all-v*)
                 echo "publish-dictionary=true" >> $GITHUB_OUTPUT
                 echo "publish-dropdown=true" >> $GITHUB_OUTPUT
                 echo "publish-checkbox=true" >> $GITHUB_OUTPUT
+                echo "publish-radio=true" >> $GITHUB_OUTPUT
                 ;;
             esac
           fi
@@ -213,3 +237,42 @@ jobs:
 
       - name: Push CheckBoxList package
         run: dotnet nuget push ./nupkg-checkbox/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+  publish-radio:
+    runs-on: ubuntu-latest
+    needs: determine-packages
+    if: needs.determine-packages.outputs.publish-radio == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.RADIO_PATH }}
+
+      - name: Build project
+        run: dotnet build ${{ env.RADIO_PATH }} --configuration Release --no-restore
+
+      - name: Pack RadioButtonList package
+        run: |
+          dotnet pack ${{ env.RADIO_PATH }} \
+            --configuration Release \
+            --no-build \
+            --output ./nupkg-radio \
+            /p:PackageVersion=${{ needs.determine-packages.outputs.version }}
+
+      - name: Verify RadioButtonList package
+        run: |
+          if [ ! -f ./nupkg-radio/*.nupkg ]; then
+            echo "No RadioButtonList NuGet package found"
+            exit 1
+          fi
+          echo "RadioButtonList package created:"
+          ls -la ./nupkg-radio/
+
+      - name: Push RadioButtonList package
+        run: dotnet nuget push ./nupkg-radio/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

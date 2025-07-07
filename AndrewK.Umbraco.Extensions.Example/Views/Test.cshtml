@@ -21,3 +21,7 @@
 	<h2>Keyed Check Box List</h2>
 	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<string>>("keyedCheckBoxList")))</p>
 </section>
+<section>
+	<h2>Keyed Radio Button List</h2>
+	<p>@(Model.Value<string>("keyedRadioButtonList"))</p>
+</section>
