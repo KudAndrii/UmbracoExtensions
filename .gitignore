@@ -35,3 +35,4 @@ dist-ssr
 **/umbraco/models/**
 *.sln.DotSettings.user
 **/TestResults/**
+/AndrewK.Umbraco.Extensions.Example/uSync/
