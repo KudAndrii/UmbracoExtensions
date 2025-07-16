@@ -19,6 +19,7 @@ export class AkPropertyEditorUIDictionaryElement extends UmbLitElement implement
     @state() private _label?: string
     @state() private _min = 0
     @state() private _max = Infinity
+    private _value: Array<{ key: string, value: string }> = []
 
     protected _validationContext = new UmbValidationContext(this)
 
@@ -38,7 +39,30 @@ export class AkPropertyEditorUIDictionaryElement extends UmbLitElement implement
         })
     }
 
-    @property({ type: Array }) value?: Array<{ key: string, value: string }>
+    @property({ type: Array })
+    public get value(): Array<{ key: string, value: string }> {
+        return this._value || []
+    }
+
+    public set value(value: unknown) {
+        let newValues: Array<{ key: string, value: string }> = []
+
+        switch (typeof value) {
+            case 'string':
+                newValues.push({ key: value, value: value })
+                break;
+
+            case 'object':
+                if (Array.isArray(value)) {
+                    newValues = this.updateFromArray((value as Array<unknown>))
+                }
+                break;
+        }
+
+        this._value = newValues
+        this.dispatchEvent(new UmbChangeEvent())
+    }
+
     @property({ type: Boolean, reflect: true }) disabled = false
     @property({ type: Boolean, reflect: true }) readonly = false
     @property({ type: Boolean, reflect: true }) required = false
@@ -89,6 +113,36 @@ export class AkPropertyEditorUIDictionaryElement extends UmbLitElement implement
                 this,
             )
         }
+    }
+
+    private updateFromArray(newValue: Array<unknown>): Array<{ key: string, value: string }> {
+        const result: Array<{ key: string, value: string }> = []
+
+        for (let newValueItem of newValue) {
+            let resultItem: { key: string, value: string } | undefined = undefined
+
+            switch (typeof newValueItem) {
+                case 'string':
+                    resultItem = { key: newValueItem, value: newValueItem }
+                    break;
+
+                case 'object':
+                    if (!!newValueItem && 'key' in newValueItem && typeof newValueItem.key === 'string') {
+                        resultItem = { key: newValueItem.key, value: '' }
+
+                        if ('value' in newValueItem && typeof newValueItem.value === 'string' && !!newValueItem.value) {
+                            resultItem.value = newValueItem.value
+                        }
+                    }
+                    break;
+            }
+
+            if (!!resultItem) {
+                result.push(resultItem)
+            }
+        }
+
+        return result
     }
 }
 
