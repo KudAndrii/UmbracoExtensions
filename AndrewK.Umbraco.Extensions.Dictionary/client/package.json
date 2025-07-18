@@ -6,7 +6,8 @@
   "scripts": {
     "test": "web-test-runner",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run test && tsc && vite build",
+    "build-only": "tsc && vite build",
     "watch": "vite build --watch",
     "preview": "vite preview"
   },

@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// `npx playwright install` needs to be run
 export default defineConfig({
     testDir: './src',
     fullyParallel: true,
