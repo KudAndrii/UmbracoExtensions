@@ -9,7 +9,7 @@ on:
 permissions:
   checks: write
   contents: read
-  
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,13 +23,36 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Restore dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Restore .NET dependencies
         run: dotnet restore
 
-      - name: Build solution
+      - name: Build .NET solution
         run: dotnet build --configuration Release --no-restore
 
-      - name: Run tests
+      - name: Install Dictionary client dependencies
+        run: npm ci
+        working-directory: ./AndrewK.Umbraco.Extensions.Dictionary/client
+
+      - name: Build Dictionary client
+        run: npm run build
+        working-directory: ./AndrewK.Umbraco.Extensions.Dictionary/client
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+        working-directory: ./AndrewK.Umbraco.Extensions.Dictionary/client
+
+      - name: Run Dictionary client tests
+        run: npm run test
+        working-directory: ./AndrewK.Umbraco.Extensions.Dictionary/client
+
+      - name: Run .NET tests
         run: dotnet test --configuration Release --verbosity normal --logger trx --results-directory "TestResults"
         continue-on-error: false
 
@@ -38,7 +61,10 @@ jobs:
         if: always()
         with:
           name: test-results
-          path: TestResults/*.trx
+          path: |
+            TestResults/*.trx
+            **/test-results/
+            **/playwright-report/
 
       - name: Test Summary
         if: ${{ github.event_name != 'pull_request' || github.repository == github.event.pull_request.head.repo.full_name }}
