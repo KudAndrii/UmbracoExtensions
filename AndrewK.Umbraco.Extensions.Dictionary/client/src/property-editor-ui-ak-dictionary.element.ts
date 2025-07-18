@@ -5,7 +5,7 @@ import type {
 import type { UmbInputEvent, UmbDeleteEvent } from '@umbraco-cms/backoffice/event'
 import type { KeyValuePair } from "./types"
 
-import { css, customElement, html, state, property, repeat, nothing } from '@umbraco-cms/backoffice/external/lit'
+import { css, customElement, html, state, property, queryAll, repeat, nothing } from '@umbraco-cms/backoffice/external/lit'
 import { UmbValidationContext } from '@umbraco-cms/backoffice/validation'
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event'
@@ -137,6 +137,8 @@ export class AkPropertyEditorUIDictionaryElement
         return this._readonly
     }
 
+    @queryAll('ak-input-dictionary-item') protected _items?: NodeListOf<AkInputDictionaryItemElement>
+
     public set config(config: UmbPropertyEditorConfigCollection | undefined) {
         if (!config) return
 
@@ -146,6 +148,7 @@ export class AkPropertyEditorUIDictionaryElement
 
     async #onAdd() {
         this._value = [ ...this._value, { key: '', value: '' } ]
+
         this.pristine = false
         this.dispatchEvent(new UmbChangeEvent())
         await this.#focusNewItem()
@@ -158,6 +161,7 @@ export class AkPropertyEditorUIDictionaryElement
         const value = target.value
         this._value = this._value
             .map((item, index) => (index === currentIndex ? value : item))
+
         this.pristine = false
         this.dispatchEvent(new UmbChangeEvent())
     }
@@ -166,21 +170,19 @@ export class AkPropertyEditorUIDictionaryElement
         event.stopPropagation()
 
         this._value = this._value.filter((_item, index) => index !== itemIndex)
+
         this.pristine = false
         this.dispatchEvent(new UmbChangeEvent())
     }
 
     async #focusNewItem() {
         await this.updateComplete
-        const items = this.shadowRoot?.querySelectorAll(
-            'ak-input-dictionary-item',
-        ) as NodeListOf<AkInputDictionaryItemElement>
 
-        if (!items?.length) {
+        if (!this._items?.length) {
             return
         }
 
-        const newItem = items[items.length - 1]
+        const newItem = this._items[this._items.length - 1]
         await newItem.focus()
     }
 
