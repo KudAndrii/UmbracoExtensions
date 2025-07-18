@@ -1,76 +1,78 @@
-import { nothing as T, when as pe, html as u, css as F, state as $, property as r, query as S, customElement as B, repeat as de } from "@umbraco-cms/backoffice/external/lit";
-import { UmbValidationContext as he, umbBindToValidation as ue } from "@umbraco-cms/backoffice/validation";
-import { UmbLitElement as V } from "@umbraco-cms/backoffice/lit-element";
-import { UMB_PROPERTY_CONTEXT as ce } from "@umbraco-cms/backoffice/property";
-import { UmbDeleteEvent as me, UmbInputEvent as L, UmbChangeEvent as _ } from "@umbraco-cms/backoffice/event";
-import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT as ve, UmbSubmittableWorkspaceContextBase as ye } from "@umbraco-cms/backoffice/workspace";
-import { UmbSorterController as _e } from "@umbraco-cms/backoffice/sorter";
-import { UUIFormControlMixin as R } from "@umbraco-cms/backoffice/external/uui";
-import { umbConfirmModal as fe } from "@umbraco-cms/backoffice/modal";
-var ge = Object.defineProperty, ke = Object.getOwnPropertyDescriptor, G = (e) => {
+import { nothing as I, when as H, html as p, css as x, state as m, property as f, query as U, customElement as O, repeat as Q } from "@umbraco-cms/backoffice/external/lit";
+import { UmbValidationContext as Z } from "@umbraco-cms/backoffice/validation";
+import { UmbLitElement as D } from "@umbraco-cms/backoffice/lit-element";
+import { UmbDeleteEvent as ee, UmbInputEvent as V, UmbChangeEvent as y } from "@umbraco-cms/backoffice/event";
+import { UMB_PROPERTY_CONTEXT as te } from "@umbraco-cms/backoffice/property";
+import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT as ie, UmbSubmittableWorkspaceContextBase as ae } from "@umbraco-cms/backoffice/workspace";
+import { UUIFormControlMixin as B } from "@umbraco-cms/backoffice/external/uui";
+import { UmbSorterController as ne } from "@umbraco-cms/backoffice/sorter";
+import { umbConfirmModal as se } from "@umbraco-cms/backoffice/modal";
+var re = Object.defineProperty, oe = Object.getOwnPropertyDescriptor, S = (e) => {
   throw TypeError(e);
-}, g = (e, t, i, a) => {
-  for (var s = a > 1 ? void 0 : a ? ke(t, i) : t, n = e.length - 1, o; n >= 0; n--)
-    (o = e[n]) && (s = (a ? o(t, i, s) : o(s)) || s);
-  return a && s && ge(t, i, s), s;
-}, X = (e, t, i) => t.has(e) || G("Cannot " + i), K = (e, t, i) => (X(e, t, "read from private field"), i ? i.call(e) : t.get(e)), I = (e, t, i) => t.has(e) ? G("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), f = (e, t, i) => (X(e, t, "access private method"), i), h, Y, H, J, x, Q, Z, A, M;
-let c = class extends R(V, void 0) {
+}, _ = (e, t, i, a) => {
+  for (var n = a > 1 ? void 0 : a ? oe(t, i) : t, l = e.length - 1, c; l >= 0; l--)
+    (c = e[l]) && (n = (a ? c(t, i, n) : c(n)) || n);
+  return a && n && re(t, i, n), n;
+}, M = (e, t, i) => t.has(e) || S("Cannot " + i), P = (e, t, i) => (M(e, t, "read from private field"), i ? i.call(e) : t.get(e)), b = (e, t, i) => t.has(e) ? S("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), v = (e, t, i) => (M(e, t, "access private method"), i), u, T, q, K, w, W, N, $, E;
+let h = class extends B(D, void 0) {
   constructor() {
-    super(), I(this, h), this._kvp = { key: "", value: "" }, this.disabled = !1, this.readonly = !1, I(this, A, (e) => e.stopPropagation()), I(this, M, (e) => e.stopPropagation()), this.getFormElement = () => {
+    super(), b(this, u), this._value = { key: "", value: "" }, this.disabled = !1, this.readonly = !1, b(this, $, (e) => e.stopPropagation()), b(this, E, (e) => e.stopPropagation()), this.getFormElement = () => {
     };
   }
-  get kvp() {
-    return this._kvp;
+  get value() {
+    return this._value;
   }
-  set kvp(e) {
-    this._kvp = e ?? { key: "", value: "" };
+  set value(e) {
+    this._value = e || { key: "", value: "" };
   }
   async focus() {
     var e;
     await this.updateComplete, (e = this._keyInput) == null || e.focus();
   }
   render() {
-    return u`
-          ${this.disabled || this.readonly ? T : u`
+    return p`
+          ${this.disabled || this.readonly ? I : p`
             <uui-icon name="icon-navigation" class="handle"></uui-icon>`}
 
-          <umb-form-validation-message id="validation-message" @invalid=${K(this, M)} @valid=${K(this, A)}>
+          <umb-form-validation-message id="validation-message" @invalid=${P(this, E)} @valid=${P(this, $)}>
             <div class="kvp-holder">
               <uui-input
                 id="input-key"
                 label="Key"
-                value=${this._kvp.key}
-                @keydown=${f(this, h, x)}
-                @input=${f(this, h, H)}
-                @change=${f(this, h, Q)}
+                placeholder="Key"
+                value=${this._value.key}
+                @keydown=${v(this, u, w)}
+                @input=${v(this, u, q)}
+                @change=${v(this, u, W)}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
-                required=${this.required}
+                required
                 required-message="Key is missing"
               ></uui-input>
               <uui-input
                 id="input-value"
                 label="Value"
-                value=${this._kvp.value}
-                @keydown=${f(this, h, x)}
-                @input=${f(this, h, J)}
-                @change=${f(this, h, Z)}
+                placeholder="Value"
+                value=${this._value.value}
+                @keydown=${v(this, u, w)}
+                @input=${v(this, u, K)}
+                @change=${v(this, u, N)}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
               ></uui-input>
             </div>
           </umb-form-validation-message>
 
-          ${pe(
+          ${H(
       !this.readonly,
-      () => u`
+      () => p`
               <uui-button
                 compact
                 color="danger"
                 label="${this.localize.term("general_remove")} ${this.value}"
                 look="outline"
                 ?disabled=${this.disabled}
-                @click=${f(this, h, Y)}>
+                @click=${v(this, u, T)}>
                 <uui-icon name="icon-trash"></uui-icon>
               </uui-button>
             `
@@ -78,42 +80,43 @@ let c = class extends R(V, void 0) {
         `;
   }
 };
-h = /* @__PURE__ */ new WeakSet();
-Y = async function() {
-  await fe(this, {
-    headline: `Delete ${this._kvp.value || "item"}`,
+u = /* @__PURE__ */ new WeakSet();
+T = async function() {
+  await se(this, {
+    headline: `Delete ${this._value.key || "item"}`,
     content: "Are you sure you want to delete this item?",
     color: "danger",
     confirmLabel: "Delete"
-  }), this.dispatchEvent(new me());
+  }), this.dispatchEvent(new ee());
 };
-H = function(e) {
+q = function(e) {
   e.stopPropagation();
   const t = e.currentTarget;
-  this._kvp = { ...this._kvp, key: t.value }, this.dispatchEvent(new L());
+  this._value = { ...this._value, key: t.value }, this.dispatchEvent(new V());
 };
-J = function(e) {
+K = function(e) {
   e.stopPropagation();
   const t = e.currentTarget;
-  this._kvp = { ...this._kvp, value: t.value }, this.dispatchEvent(new L());
+  this._value = { ...this._value, value: t.value }, this.dispatchEvent(new V());
 };
-x = function(e) {
-  e.stopPropagation(), e.key === "Enter" && this._kvp.key && this.dispatchEvent(new CustomEvent("enter"));
+w = function(e) {
+  var t, i;
+  e.stopPropagation(), e.key === "Enter" && (this._value.key ? this._value.value ? this.dispatchEvent(new CustomEvent("enter")) : (i = this._valueInput) == null || i.focus() : (t = this._keyInput) == null || t.focus());
 };
-Q = function(e) {
+W = function(e) {
   e.stopPropagation();
   const t = e.currentTarget;
-  this._kvp = { ...this._kvp, key: t.value }, this.dispatchEvent(new _());
+  this._value = { ...this._value, key: t.value }, this.dispatchEvent(new y());
 };
-Z = function(e) {
+N = function(e) {
   e.stopPropagation();
   const t = e.currentTarget;
-  this._kvp = { ...this._kvp, value: t.value }, this.dispatchEvent(new _());
+  this._value = { ...this._value, value: t.value }, this.dispatchEvent(new y());
 };
-A = /* @__PURE__ */ new WeakMap();
-M = /* @__PURE__ */ new WeakMap();
-c.styles = [
-  F`
+$ = /* @__PURE__ */ new WeakMap();
+E = /* @__PURE__ */ new WeakMap();
+h.styles = [
+  x`
             :host {
                 display: flex;
                 align-items: center;
@@ -141,155 +144,183 @@ c.styles = [
             }
         `
 ];
-g([
-  $()
-], c.prototype, "_kvp", 2);
-g([
-  r({ type: Boolean, reflect: !0 })
-], c.prototype, "disabled", 2);
-g([
-  r({ type: Boolean, reflect: !0 })
-], c.prototype, "readonly", 2);
-g([
-  r({ type: Object })
-], c.prototype, "kvp", 1);
-g([
-  S("#input-key")
-], c.prototype, "_keyInput", 2);
-g([
-  S("#input-value")
-], c.prototype, "_valueInput", 2);
-c = g([
-  B("ak-input-dictionary-item")
-], c);
-var be = Object.defineProperty, $e = Object.getOwnPropertyDescriptor, j = (e) => {
+_([
+  m()
+], h.prototype, "_value", 2);
+_([
+  f({ type: Boolean, reflect: !0 })
+], h.prototype, "disabled", 2);
+_([
+  f({ type: Boolean, reflect: !0 })
+], h.prototype, "readonly", 2);
+_([
+  f({ type: Object })
+], h.prototype, "value", 1);
+_([
+  U("#input-key")
+], h.prototype, "_keyInput", 2);
+_([
+  U("#input-value")
+], h.prototype, "_valueInput", 2);
+h = _([
+  O("ak-input-dictionary-item")
+], h);
+var le = Object.defineProperty, ue = Object.getOwnPropertyDescriptor, z = (e) => {
   throw TypeError(e);
-}, m = (e, t, i, a) => {
-  for (var s = a > 1 ? void 0 : a ? $e(t, i) : t, n = e.length - 1, o; n >= 0; n--)
-    (o = e[n]) && (s = (a ? o(t, i, s) : o(s)) || s);
-  return a && s && be(t, i, s), s;
-}, W = (e, t, i) => t.has(e) || j("Cannot " + i), k = (e, t, i) => (W(e, t, "read from private field"), i ? i.call(e) : t.get(e)), w = (e, t, i) => t.has(e) ? j("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), N = (e, t, i, a) => (W(e, t, "write to private field"), t.set(e, i), i), y = (e, t, i) => (W(e, t, "access private method"), i), E, C, b, d, q, ee, te, ie, ae, se, re;
-let l = class extends R(V, void 0) {
+}, o = (e, t, i, a) => {
+  for (var n = a > 1 ? void 0 : a ? ue(t, i) : t, l = e.length - 1, c; l >= 0; l--)
+    (c = e[l]) && (n = (a ? c(t, i, n) : c(n)) || n);
+  return a && n && le(t, i, n), n;
+}, F = (e, t, i) => t.has(e) || z("Cannot " + i), k = (e, t, i) => (F(e, t, "read from private field"), i ? i.call(e) : t.get(e)), A = (e, t, i) => t.has(e) ? z("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), d = (e, t, i) => (F(e, t, "access private method"), i), g, r, C, L, R, G, J, X, Y, j;
+let s = class extends B(D, void 0) {
   constructor() {
-    super(), w(this, d), this._items = [], w(this, E, !1), w(this, C, !1), w(this, b, new _e(this, {
+    super(), A(this, r), A(this, g, new ne(this, {
       getUniqueOfElement: (e) => e.getAttribute("data-sort-entry-id"),
       getUniqueOfModel: (e) => e.key,
       identifier: "AndrewK.SorterIdentifier.Dictionary",
       itemSelector: "ak-input-dictionary-item",
       containerSelector: "#sorter-wrapper",
       onChange: ({ model: e }) => {
-        const t = this._items;
-        this._items = e, this.requestUpdate("_items", t), this.dispatchEvent(new _());
+        this._value = e, this.dispatchEvent(new y());
       }
-    })), this.minMessage = "This field need more items", this.maxMessage = "This field exceeds the allowed amount of items", this.getFormElement = () => {
+    })), this._min = 0, this._max = 1 / 0, this._disabled = !1, this._readonly = !1, this._value = [], this._validationContext = new Z(this), this.mandatory = !1, this.getFormElement = () => {
     }, this.addValidator(
+      "valueMissing",
+      () => "Value is required",
+      () => {
+        var e;
+        return !this.readonly && this.mandatory && !((e = this.value) != null && e.length);
+      }
+    ), this.addValidator(
+      "badInput",
+      () => "A key is missing",
+      () => !this.readonly && !this.value.map((e) => e.key).every(Boolean)
+    ), this.addValidator(
       "rangeUnderflow",
-      () => this.minMessage,
-      () => !!this.min && this._items.length < this.min
+      () => `At least ${this._min} items are required`,
+      () => !!this._min && this._value.length < this._min
     ), this.addValidator(
       "rangeOverflow",
-      () => this.maxMessage,
-      () => !!this.max && this._items.length > this.max
-    );
+      () => `Maximum ${this._max} items allowed`,
+      () => !!this._max && this._value.length > this._max
+    ), this.consumeContext(te, (e) => {
+      this._label = e == null ? void 0 : e.getLabel();
+    }), this.consumeContext(ie, (e) => {
+      e instanceof ae && e.addValidationContext(this._validationContext);
+    });
+  }
+  get value() {
+    return this._value || [];
+  }
+  set value(e) {
+    let t = [];
+    switch (typeof e) {
+      case "string":
+        t.push({ key: e, value: e });
+        break;
+      case "object":
+        Array.isArray(e) && (t = d(this, r, j).call(this, e));
+        break;
+    }
+    JSON.stringify(this._value) !== JSON.stringify(t) && (this._value = t, this.dispatchEvent(new y())), k(this, g).setModel(this.value);
   }
   set disabled(e) {
-    N(this, E, e), e && k(this, b).disable();
+    this._disabled = e, e && k(this, g).disable();
   }
   get disabled() {
-    return k(this, E);
+    return this._disabled;
   }
   set readonly(e) {
-    N(this, C, e), e && k(this, b).disable();
+    this._readonly = e, e && k(this, g).disable();
   }
   get readonly() {
-    return k(this, C);
+    return this._readonly;
   }
-  get items() {
-    return this._items;
+  set config(e) {
+    e && (this._min = Number(e.getValueByAlias("min")) || 0, this._max = Number(e.getValueByAlias("max")) || 1 / 0);
   }
-  set items(e) {
-    this.value = (e == null ? void 0 : e.length) > 0 ? "some value" : "", this._items = e ?? [], k(this, b).setModel(this.items);
-  }
-  // TODO: Some inputs might not have a value that is either FormDataEntryValue or FormData.
-  //  How do we handle this?
-  /*
-  @property()
-  public set value(value: FormDataEntryValue | FormData) {
-      throw new Error(`${this} does not support to set the value directly. Use items instead.`)
-  }
-  public get value() {
-      throw new Error(`${this} does not support to get the value directly. Use items instead.`)
-  }
-  */
   render() {
-    return u`
-          <div id="sorter-wrapper">
-            ${y(this, d, ae).call(this)}
-          </div>
-          ${y(this, d, re).call(this)}
-          ${y(this, d, se).call(this)}
+    return p`
+          <umb-form-validation-message
+            id="validation-message"
+            @invalid=${(e) => e.stopPropagation()}
+            @valid=${(e) => e.stopPropagation()}
+          >
+            <div id="sorter-wrapper">
+              ${d(this, r, J).call(this)}
+            </div>
+            ${d(this, r, Y).call(this)}
+            ${d(this, r, X).call(this)}
+          </umb-form-validation-message>
         `;
   }
+  firstUpdated() {
+    this._min && this._max && this._min > this._max && console.warn(
+      `Property '${this._label}' (Dictionary) has been misconfigured, 'min' is greater than 'max'. Please correct your data type configuration.`,
+      this
+    );
+  }
 };
-E = /* @__PURE__ */ new WeakMap();
-C = /* @__PURE__ */ new WeakMap();
-b = /* @__PURE__ */ new WeakMap();
-d = /* @__PURE__ */ new WeakSet();
-q = async function() {
-  this._items = [...this._items, { key: "", value: "" }], this.pristine = !1, this.dispatchEvent(new _()), await y(this, d, te).call(this);
+g = /* @__PURE__ */ new WeakMap();
+r = /* @__PURE__ */ new WeakSet();
+C = async function() {
+  this._value = [...this._value, { key: "", value: "" }], this.pristine = !1, this.dispatchEvent(new y()), await d(this, r, G).call(this);
 };
-ee = function(e, t) {
+L = function(e, t) {
   e.stopPropagation();
-  const a = e.currentTarget.kvp;
-  this._items = this._items.map((s, n) => n === t ? a : s), this.dispatchEvent(new _());
+  const a = e.currentTarget.value;
+  this._value = this._value.map((n, l) => l === t ? a : n), this.pristine = !1, this.dispatchEvent(new y());
 };
-te = async function() {
+R = function(e, t) {
+  e.stopPropagation(), this._value = this._value.filter((i, a) => a !== t), this.pristine = !1, this.dispatchEvent(new y());
+};
+G = async function() {
   var i;
   await this.updateComplete;
   const e = (i = this.shadowRoot) == null ? void 0 : i.querySelectorAll(
     "ak-input-dictionary-item"
   );
+  if (!(e != null && e.length))
+    return;
   await e[e.length - 1].focus();
 };
-ie = function(e, t) {
-  e.stopPropagation(), this._items = this._items.filter((i, a) => a !== t), this.pristine = !1, this.dispatchEvent(new _());
-};
-ae = function() {
-  return u`
-          ${de(
-    this._items,
+J = function() {
+  return p`
+          ${Q(
+    this._value,
     (e, t) => t,
-    (e, t) => u`
+    (e, t) => p`
               <ak-input-dictionary-item
                 name="item-${t}"
                 data-sort-entry-id=${e.key}
                 required
                 required-message="Item ${t + 1} is missing a value"
-                .kvp=${e}
+                .value=${e}
                 ?disabled=${this.disabled}
                 ?readonly=${this.readonly}
-                @enter=${y(this, d, q)}
-                @delete=${(i) => y(this, d, ie).call(this, i, t)}
-                @input=${(i) => y(this, d, ee).call(this, i, t)}
+                @enter=${d(this, r, C)}
+                @delete=${(i) => d(this, r, R).call(this, i, t)}
+                @input=${(i) => d(this, r, L).call(this, i, t)}
               ></ak-input-dictionary-item>
             `
   )}
         `;
 };
-se = function() {
-  return this.disabled || this.readonly ? T : u`
+X = function() {
+  return this.disabled || this.readonly ? I : p`
           <uui-button
             color="default"
             id="action"
             label="Add"
             look="placeholder"
             ?disabled=${this.disabled}
-            @click=${y(this, d, q)}
+            @click=${d(this, r, C)}
           ></uui-button>
         `;
 };
-re = function() {
-  return this.items.length === new Set(this.items.map((e) => e.key)).size ? T : u`
+Y = function() {
+  const e = this._value.map((i) => i.key), t = new Set(e);
+  return !e.length || e.length === t.size ? I : p`
           <uui-box class="info-block">
             <div slot="headline" class="info-block-headline">
               <uui-icon name="icon-info"></uui-icon>
@@ -298,8 +329,24 @@ re = function() {
           </uui-box>
         `;
 };
-l.styles = [
-  F`
+j = function(e) {
+  const t = [];
+  for (let i of e) {
+    let a;
+    switch (typeof i) {
+      case "string":
+        a = { key: i, value: i };
+        break;
+      case "object":
+        i && "key" in i && typeof i.key == "string" && (a = { key: i.key, value: "" }, "value" in i && typeof i.value == "string" && i.value && (a.value = i.value));
+        break;
+    }
+    a && t.push(a);
+  }
+  return t;
+};
+s.styles = [
+  x`
             #action {
                 display: block;
             }
@@ -316,12 +363,12 @@ l.styles = [
                 border-radius: var(--uui-border-radius);
                 border: 1px dashed var(--uui-color-divider-emphasis);
             }
-            
+
             .info-block {
                 background-color: var(--uui-color-disabled-standalone);
                 margin-bottom: var(--uui-size-space-3);
             }
-            
+
             .info-block-headline {
                 display: flex;
                 align-items: center;
@@ -329,148 +376,42 @@ l.styles = [
             }
         `
 ];
-m([
-  $()
-], l.prototype, "_items", 2);
-m([
-  r({ type: Number })
-], l.prototype, "min", 2);
-m([
-  r({ type: String, attribute: "min-message" })
-], l.prototype, "minMessage", 2);
-m([
-  r({ type: Number })
-], l.prototype, "max", 2);
-m([
-  r({ type: String, attribute: "min-message" })
-], l.prototype, "maxMessage", 2);
-m([
-  r({ type: Boolean, reflect: !0 })
-], l.prototype, "disabled", 1);
-m([
-  r({ type: Boolean, reflect: !0 })
-], l.prototype, "readonly", 1);
-m([
-  r({ type: Array })
-], l.prototype, "items", 1);
-l = m([
-  B("ak-input-dictionary")
-], l);
-var we = Object.defineProperty, Ee = Object.getOwnPropertyDescriptor, ne = (e) => {
-  throw TypeError(e);
-}, v = (e, t, i, a) => {
-  for (var s = a > 1 ? void 0 : a ? Ee(t, i) : t, n = e.length - 1, o; n >= 0; n--)
-    (o = e[n]) && (s = (a ? o(t, i, s) : o(s)) || s);
-  return a && s && we(t, i, s), s;
-}, oe = (e, t, i) => t.has(e) || ne("Cannot " + i), z = (e, t, i) => (oe(e, t, "read from private field"), i ? i.call(e) : t.get(e)), P = (e, t, i) => t.has(e) ? ne("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), Ce = (e, t, i) => (oe(e, t, "access private method"), i), D, le, O, U;
-let p = class extends V {
-  constructor() {
-    super(), P(this, D), this._min = 0, this._max = 1 / 0, this._value = [], this._validationContext = new he(this), this.disabled = !1, this.readonly = !1, this.required = !1, P(this, O, (e) => e.stopPropagation()), P(this, U, (e) => e.stopPropagation()), this.consumeContext(ce, (e) => {
-      this._label = e == null ? void 0 : e.getLabel();
-    }), this.consumeContext(ve, (e) => {
-      e instanceof ye && e.addValidationContext(this._validationContext);
-    });
-  }
-  get value() {
-    return this._value || [];
-  }
-  set value(e) {
-    let t = [];
-    switch (typeof e) {
-      case "string":
-        t.push({ key: e, value: e });
-        break;
-      case "object":
-        Array.isArray(e) && (t = this.updateFromArray(e));
-        break;
-    }
-    this._value = t, this.dispatchEvent(new _());
-  }
-  set config(e) {
-    e && (this._min = Number(e.getValueByAlias("min")) || 0, this._max = Number(e.getValueByAlias("max")) || 1 / 0);
-  }
-  render() {
-    return u`
-          <umb-form-validation-message
-            id="validation-message"
-            @invalid=${z(this, U)}
-            @valid=${z(this, O)}
-          >
-            <ak-input-dictionary
-              id="input"
-              max=${this._max}
-              min=${this._min}
-              .items=${this.value ?? []}
-              ?disabled=${this.disabled}
-              ?readonly=${this.readonly}
-              ?required=${this.required}
-              @change=${Ce(this, D, le)}
-              ${ue(this)}
-            ></ak-input-dictionary>
-          </umb-form-validation-message>
-        `;
-  }
-  firstUpdated() {
-    this._min && this._max && this._min > this._max && console.warn(
-      `Property '${this._label}' (Dictionary) has been misconfigured, 'min' is greater than 'max'. Please correct your data type configuration.`,
-      this
-    );
-  }
-  updateFromArray(e) {
-    const t = [];
-    for (let i of e) {
-      let a;
-      switch (typeof i) {
-        case "string":
-          a = { key: i, value: i };
-          break;
-        case "object":
-          i && "key" in i && typeof i.key == "string" && (a = { key: i.key, value: "" }, "value" in i && typeof i.value == "string" && i.value && (a.value = i.value));
-          break;
-      }
-      a && t.push(a);
-    }
-    return t;
-  }
-};
-D = /* @__PURE__ */ new WeakSet();
-le = function(e) {
-  e.stopPropagation();
-  const t = e.currentTarget;
-  this.value = t.items, this.dispatchEvent(new _());
-};
-O = /* @__PURE__ */ new WeakMap();
-U = /* @__PURE__ */ new WeakMap();
-v([
-  $()
-], p.prototype, "_label", 2);
-v([
-  $()
-], p.prototype, "_min", 2);
-v([
-  $()
-], p.prototype, "_max", 2);
-v([
-  S("#input", !0)
-], p.prototype, "_inputElement", 2);
-v([
-  r({ type: Array })
-], p.prototype, "value", 1);
-v([
-  r({ type: Boolean, reflect: !0 })
-], p.prototype, "disabled", 2);
-v([
-  r({ type: Boolean, reflect: !0 })
-], p.prototype, "readonly", 2);
-v([
-  r({ type: Boolean, reflect: !0 })
-], p.prototype, "required", 2);
-p = v([
-  B("ak-property-editor-ui-dictionary")
-], p);
-const Se = p;
+o([
+  m()
+], s.prototype, "_label", 2);
+o([
+  m()
+], s.prototype, "_min", 2);
+o([
+  m()
+], s.prototype, "_max", 2);
+o([
+  m()
+], s.prototype, "_disabled", 2);
+o([
+  m()
+], s.prototype, "_readonly", 2);
+o([
+  m()
+], s.prototype, "_value", 2);
+o([
+  f({ type: Boolean, reflect: !0 })
+], s.prototype, "mandatory", 2);
+o([
+  f({ type: Array })
+], s.prototype, "value", 1);
+o([
+  f({ type: Boolean, reflect: !0 })
+], s.prototype, "disabled", 1);
+o([
+  f({ type: Boolean, reflect: !0 })
+], s.prototype, "readonly", 1);
+s = o([
+  O("ak-property-editor-ui-dictionary")
+], s);
+const ge = s;
 export {
-  p as AkPropertyEditorUIDictionaryElement,
-  Se as default
+  s as AkPropertyEditorUIDictionaryElement,
+  ge as default
 };
 //# sourceMappingURL=client.js.map
