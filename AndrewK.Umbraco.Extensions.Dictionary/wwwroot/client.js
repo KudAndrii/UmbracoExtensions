@@ -216,7 +216,7 @@ let s = class extends B(D, void 0) {
     let t = [];
     switch (typeof e) {
       case "string":
-        t.push({ key: e, value: e });
+        e && t.push({ key: e, value: e });
         break;
       case "object":
         Array.isArray(e) && (t = d(this, r, j).call(this, e));

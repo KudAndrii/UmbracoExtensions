@@ -93,7 +93,9 @@ export class AkPropertyEditorUIDictionaryElement
 
         switch (typeof value) {
             case 'string':
-                newValues.push({ key: value, value: value })
+                if (!!value) {
+                    newValues.push({ key: value, value: value })
+                }
                 break;
 
             case 'object':
