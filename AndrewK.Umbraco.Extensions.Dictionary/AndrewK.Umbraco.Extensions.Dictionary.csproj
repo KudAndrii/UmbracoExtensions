@@ -26,6 +26,7 @@
         <PackageReleaseNotes>
             Version 1.0.1:
             - Improved FE value migration from `string` or `array` type properties
+            - native and custom validation improvements
         </PackageReleaseNotes>
     </PropertyGroup>
 
