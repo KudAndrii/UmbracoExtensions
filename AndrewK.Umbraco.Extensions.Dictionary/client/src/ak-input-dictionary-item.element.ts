@@ -5,9 +5,12 @@ import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
 import { UUIFormControlMixin } from '@umbraco-cms/backoffice/external/uui'
 import type { UUIInputElement, UUIInputEvent } from '@umbraco-cms/backoffice/external/uui'
 
+import type { KeyValuePair } from "./types"
+
 @customElement('ak-input-dictionary-item')
-export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElement, undefined) {
-    @state() private _kvp: { key: string, value: string } = { key: '', value: '' }
+export class AkInputDictionaryItemElement
+    extends UUIFormControlMixin<KeyValuePair, typeof UmbLitElement, undefined>(UmbLitElement, undefined) {
+    @state() private _value: KeyValuePair = { key: '', value: '' }
 
     constructor() {
         super()
@@ -17,12 +20,12 @@ export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElem
     @property({ type: Boolean, reflect: true }) readonly = false
 
     @property({ type: Object})
-    public get kvp(): { key: string, value: string } {
-        return this._kvp
+    public get value(): KeyValuePair {
+        return this._value
     }
 
-    public set kvp(kvp: { key: string, value: string }) {
-        this._kvp = kvp ?? { key: '', value: '' }
+    public set value(kvp: KeyValuePair) {
+        this._value = kvp || { key: '', value: '' }
     }
 
     @query('#input-key') protected _keyInput?: UUIInputElement
@@ -30,7 +33,7 @@ export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElem
 
     async #onDelete() {
         await umbConfirmModal(this, {
-            headline: `Delete ${ this._kvp.value || 'item' }`,
+            headline: `Delete ${ this._value.key || 'item' }`,
             content: 'Are you sure you want to delete this item?',
             color: 'danger',
             confirmLabel: 'Delete',
@@ -42,36 +45,48 @@ export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElem
     #onKeyInput(event: UUIInputEvent) {
         event.stopPropagation()
         const target = event.currentTarget as UUIInputElement
-        this._kvp = { ...this._kvp, key: target.value as string }
+        this._value = { ...this._value, key: target.value as string }
         this.dispatchEvent(new UmbInputEvent())
     }
 
     #onValueInput(event: UUIInputEvent) {
         event.stopPropagation()
         const target = event.currentTarget as UUIInputElement
-        this._kvp = { ...this._kvp, value: target.value as string }
+        this._value = { ...this._value, value: target.value as string }
         this.dispatchEvent(new UmbInputEvent())
     }
 
     #onKeydown(event: KeyboardEvent) {
         event.stopPropagation()
-        //TODO: focus empty input (either key or value) if any, then dispatch 'enter'
-        if (event.key === 'Enter' && !!this._kvp.key) {
+
+        if (event.key !== 'Enter') {
+            return
+        }
+
+        if (!this._value.key) {
+            this._keyInput?.focus()
+        } else if (!this._value.value) {
+            this._valueInput?.focus()
+        } else {
             this.dispatchEvent(new CustomEvent('enter'))
         }
     }
 
     #onKeyChange(event: UUIInputEvent) {
         event.stopPropagation()
+
         const target = event.currentTarget as UUIInputElement
-        this._kvp = { ...this._kvp, key: target.value as string }
+        this._value = { ...this._value, key: target.value as string }
+
         this.dispatchEvent(new UmbChangeEvent())
     }
     
     #onValueChange(event: UUIInputEvent) {
         event.stopPropagation()
+
         const target = event.currentTarget as UUIInputElement
-        this._kvp = { ...this._kvp, value: target.value as string }
+        this._value = { ...this._value, value: target.value as string }
+
         this.dispatchEvent(new UmbChangeEvent())
     }
 
@@ -93,19 +108,21 @@ export class AkInputDictionaryItemElement extends UUIFormControlMixin(UmbLitElem
               <uui-input
                 id="input-key"
                 label="Key"
-                value=${ this._kvp.key }
+                placeholder="Key"
+                value=${ this._value.key }
                 @keydown=${ this.#onKeydown }
                 @input=${ this.#onKeyInput }
                 @change=${ this.#onKeyChange }
                 ?disabled=${ this.disabled }
                 ?readonly=${ this.readonly }
-                required=${ this.required }
+                required
                 required-message="Key is missing"
               ></uui-input>
               <uui-input
                 id="input-value"
                 label="Value"
-                value=${ this._kvp.value }
+                placeholder="Value"
+                value=${ this._value.value }
                 @keydown=${ this.#onKeydown }
                 @input=${ this.#onValueInput }
                 @change=${ this.#onValueChange }
