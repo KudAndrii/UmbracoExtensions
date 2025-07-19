@@ -1,11 +1,14 @@
 import { fixture, html, expect } from '@open-wc/testing'
-import type { UmbInputRadioButtonListElement } from '@umbraco-cms/backoffice/dist-cms/packages/core/components'
+import type {
+    UmbInputRadioButtonListElement,
+    UmbRadioButtonItem
+// @ts-ignore
+} from '@umbraco-cms/backoffice/dist-cms/packages/core/components'
 import {
     AkPropertyEditorUIRadioButtonListElement
 } from '../../../AndrewK.Umbraco.Extensions.RadioButtonList/client/src/property-editor-ui-ak-radio-button-list.element'
 import type {
     UmbPropertyEditorConfigCollection,
-    KeyValuePair,
     CustomElement,
     CustomPropertyEditorElement
 } from '../shared/import-utils'
@@ -143,7 +146,8 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
             expect(element.value).to.equal(invalidOption)
             const radioButtonList = getRadioButtonList()
             expect(radioButtonList?.list).to.have.length(3)
-            const invalidItem = radioButtonList?.list.find(item => item.value === 'invalidOption')
+            const invalidItem = radioButtonList?.list
+                .find((item: UmbRadioButtonItem) => item.value === 'invalidOption')
             expect(invalidItem).to.exist
             expect(invalidItem?.invalid).to.be.true
             expect(invalidItem?.label).to.equal(invalidOption)
@@ -168,7 +172,7 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
 
             const radioButtonList = getRadioButtonList()
             expect(radioButtonList?.list).to.have.length(2)
-            expect(radioButtonList?.list.every(item => !item.invalid)).to.be.true
+            expect(radioButtonList?.list.every((item: UmbRadioButtonItem) => !item.invalid)).to.be.true
         })
 
         it('should not set invalid option when list is defined', async () => {
@@ -191,7 +195,7 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
             const radioButtonList = getRadioButtonList()
             expect(element.value).to.be.equal(initialValue)
             expect(radioButtonList?.list).to.have.length(2)
-            expect(radioButtonList?.list.every(item => !item.invalid)).to.be.true
+            expect(radioButtonList?.list.every((item: UmbRadioButtonItem) => !item.invalid)).to.be.true
         })
     })
 
@@ -448,7 +452,7 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
 
         it('should handle config without items or default', async () => {
             element.config = {
-                getValueByAlias: (alias: string) => undefined
+                getValueByAlias: (_: string) => undefined
             } as UmbPropertyEditorConfigCollection
 
             await element.updateComplete
