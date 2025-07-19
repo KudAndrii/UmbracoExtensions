@@ -25,6 +25,12 @@
       <ProjectReference Include="..\AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Content Include="App_Plugins\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
     <PropertyGroup>
         <!-- Razor files are needed for the backoffice to work correctly -->
         <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
