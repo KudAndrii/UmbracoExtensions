@@ -11,15 +11,35 @@ import type {
 
 @customElement('ak-property-editor-ui-radio-button-list')
 export class AkPropertyEditorUIRadioButtonListElement
-    extends UUIFormControlMixin<string | undefined, typeof UmbLitElement, undefined>(UmbLitElement)
+    extends UUIFormControlMixin<string | undefined, typeof UmbLitElement, undefined>(UmbLitElement, undefined)
     implements UmbPropertyEditorUiElement {
     @state() private _list: Array<UmbRadioButtonItem> = []
+    @state() private _value?: string = undefined
 
     @property({ type: Boolean, reflect: true }) readonly = false
 
-    @property({ type: Boolean }) mandatory?: boolean
+    @property({ type: Boolean, reflect: true }) mandatory = false
 
     @property({ type: String }) mandatoryMessage = UMB_VALIDATION_EMPTY_LOCALIZATION_KEY
+
+    @property({ type: String })
+    public get value(): string | undefined {
+        return this._value
+    }
+
+    public set value(value: unknown) {
+        if (!value || typeof value !== 'string') {
+            return
+        }
+
+        if (!!this._list?.length && !this._list.some(item => item.value === value) ||
+            this._value === value) {
+            return
+        }
+
+        this._value = value
+        this.dispatchEvent(new UmbChangeEvent())
+    }
 
     @query('umb-input-radio-button-list') _input?: UmbInputRadioButtonListElement
 
@@ -35,8 +55,8 @@ export class AkPropertyEditorUIRadioButtonListElement
         }
 
         if (Array.isArray(items) && !!items.length) {
-            this._list = items.map((item) => ({
-                label: this.localize.string(item.value),
+            this._list = items.filter(item => !!item?.key).map(item => ({
+                label: this.localize.string(item.value) || item.key,
                 value: item.key
             }))
 

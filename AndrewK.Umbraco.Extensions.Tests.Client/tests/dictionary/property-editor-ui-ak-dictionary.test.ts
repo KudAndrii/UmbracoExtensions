@@ -1,9 +1,15 @@
-import type { UmbPropertyEditorConfigCollection } from '@umbraco-cms/backoffice/property-editor'
 import { expect, fixture, html } from '@open-wc/testing'
-import { AkPropertyEditorUIDictionaryElement } from './property-editor-ui-ak-dictionary.element.ts'
+import { AkPropertyEditorUIDictionaryElement } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/property-editor-ui-ak-dictionary.element'
+import { AkInputDictionaryItemElement } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/ak-input-dictionary-item.element'
+import type {
+    UmbPropertyEditorConfigCollection,
+    KeyValuePair,
+    CustomElement,
+    CustomPropertyEditorElement
+} from '../shared/import-utils'
 
 describe('AkPropertyEditorUIDictionaryElement', () => {
-    let element: AkPropertyEditorUIDictionaryElement
+    let element: CustomPropertyEditorElement<AkPropertyEditorUIDictionaryElement, Array<KeyValuePair>>
 
     beforeEach(async () => {
         element = await fixture(html`
@@ -100,6 +106,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
 
     describe('Value Handling', () => {
         it('should handle string value', () => {
+            // @ts-ignore
             element.value = 'test-key'
             expect(element.value).to.deep.equal([ { key: 'test-key', value: 'test-key' } ])
         })
@@ -125,10 +132,13 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
 
         it('should handle mixed array types', () => {
             element.value = [
+                // @ts-ignore
                 'string-item',
                 { key: 'object-key', value: 'object-value' },
+                // @ts-ignore
                 { key: 'partial-key' },
                 null,
+                // @ts-ignore
                 123
             ]
 
@@ -194,7 +204,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.value = [ { key: 'test', value: 'value' } ]
             await element.updateComplete
 
-            const item = element.shadowRoot?.querySelector('ak-input-dictionary-item')
+            const item = element.shadowRoot?.querySelector('ak-input-dictionary-item') as CustomElement<AkInputDictionaryItemElement, KeyValuePair>
             expect(item?.hasAttribute('disabled')).to.be.true
             expect(item?.hasAttribute('readonly')).to.be.true
             expect(item?.hasAttribute('required')).to.be.true
@@ -234,7 +244,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.addEventListener('change', () => {
                 changeEventFired = true
             })
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
             const deleteEvent = new CustomEvent('delete', { bubbles: true })
 
             items?.[1].dispatchEvent(deleteEvent)
@@ -262,7 +272,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.addEventListener('change', () => {
                 changeEventFired = true
             })
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
             const inputEvent = new CustomEvent('input', {
                 bubbles: true,
                 detail: { value: { key: 'updated-key', value: 'updated-value' } }
@@ -388,7 +398,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.value = [ { key: 'key1', value: 'value1' } ]
             await element.updateComplete
 
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
             const enterEvent = new CustomEvent('enter', { bubbles: true })
 
             items?.[0].dispatchEvent(enterEvent)
@@ -401,6 +411,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
     describe('Error Handling', () => {
         it('should handle corrupt data gracefully', () => {
             expect(() => {
+                // @ts-ignore
                 element.value = { corrupted: 'data' }
             }).to.not.throw()
         })

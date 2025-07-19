@@ -1,27 +1,27 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@using Newtonsoft.Json;
+﻿@using Umbraco.Cms.Core.Serialization
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject IJsonSerializer JsonSerializer
 @{
 	Layout = null;
 }
 
 <section>
 	<h2>Dictionary</h2>
-	<p>@(JsonConvert.SerializeObject(Model.Value<IEnumerable<KeyValuePair<string, string>>>("dictionary")))</p>
+	<p>@(JsonSerializer.Serialize(Model.Value<IEnumerable<KeyValuePair<string, string>>>("dictionary")))</p>
 </section>
 <section>
 	<h2>Single Dropdown</h2>
-	<p>@(JsonConvert.SerializeObject(Model.Value<string>("singleDropdown")))</p>
+	<p>@(JsonSerializer.Serialize(Model.Value<string>("singleDropdown")))</p>
 </section>
 <section>
 	<h2>Multiple Dropdown</h2>
-	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<string>>("multipleDropdown")))</p>
+	<p>@(JsonSerializer.Serialize(Model.Value<ICollection<string>>("multipleDropdown")))</p>
 </section>
 <section>
 	<h2>Keyed Check Box List</h2>
-	<p>@(JsonConvert.SerializeObject(Model.Value<ICollection<string>>("keyedCheckBoxList")))</p>
+	<p>@(JsonSerializer.Serialize(Model.Value<ICollection<string>>("keyedCheckBoxList")))</p>
 </section>
 <section>
 	<h2>Keyed Radio Button List</h2>
-	<p>@(Model.Value<string>("keyedRadioButtonList"))</p>
+	<p>@(JsonSerializer.Serialize(Model.Value<string>("keyedRadioButtonList")))</p>
 </section>

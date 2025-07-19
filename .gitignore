@@ -35,3 +35,4 @@ dist-ssr
 *.sln.DotSettings.user
 **/TestResults/**
 /AndrewK.Umbraco.Extensions.Example/uSync/
+coverage/
