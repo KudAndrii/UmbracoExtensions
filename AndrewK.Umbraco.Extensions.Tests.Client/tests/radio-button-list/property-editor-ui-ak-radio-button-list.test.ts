@@ -123,12 +123,13 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
         })
 
         it('should add invalid option when value is not in list', async () => {
+            const invalidOption = 'invalidOption'
             const testItems = [
                 { key: 'option1', value: 'Option One' },
                 { key: 'option2', value: 'Option Two' }
             ]
 
-            element.value = 'invalidOption'
+            element.value = invalidOption
 
             element.config = {
                 getValueByAlias: (alias: string) => {
@@ -139,12 +140,13 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
 
             await element.updateComplete
 
+            expect(element.value).to.equal(invalidOption)
             const radioButtonList = getRadioButtonList()
             expect(radioButtonList?.list).to.have.length(3)
             const invalidItem = radioButtonList?.list.find(item => item.value === 'invalidOption')
             expect(invalidItem).to.exist
             expect(invalidItem?.invalid).to.be.true
-            expect(invalidItem?.label).to.equal('invalidOption')
+            expect(invalidItem?.label).to.equal(invalidOption)
         })
 
         it('should not add invalid option when value is in list', async () => {

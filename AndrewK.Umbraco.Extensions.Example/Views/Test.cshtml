@@ -23,5 +23,5 @@
 </section>
 <section>
 	<h2>Keyed Radio Button List</h2>
-	<p>@(Model.Value<string>("keyedRadioButtonList"))</p>
+	<p>@(JsonConvert.SerializeObject(Model.Value<string>("keyedRadioButtonList")))</p>
 </section>
