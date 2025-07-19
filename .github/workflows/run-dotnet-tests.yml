@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  tests:
+  dotnet-tests:
     runs-on: ubuntu-latest
     
     steps:
@@ -37,14 +37,14 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-results
+          name: dotnet-test-results
           path: TestResults/*.trx
 
       - name: Test Summary
         if: ${{ github.event_name != 'pull_request' || github.repository == github.event.pull_request.head.repo.full_name }}
         uses: dorny/test-reporter@v1
         with:
-          name: Test Results
+          name: .NET Test Results
           path: TestResults/*.trx
           reporter: dotnet-trx
           fail-on-error: true

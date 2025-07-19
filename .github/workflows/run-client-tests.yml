@@ -17,9 +17,10 @@ on:
 permissions:
   checks: write
   contents: read
+  pull-requests: write
 
 jobs:
-  tests:
+  client-tests:
     runs-on: ubuntu-latest
     
     steps:
@@ -31,11 +32,34 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'AndrewK.Umbraco.Extensions.Tests.Client/package-lock.json'
+          cache-dependency-path: |
+            AndrewK.Umbraco.Extensions.Tests.Client/package-lock.json
+            AndrewK.Umbraco.Extensions.Dictionary/client/package-lock.json
+            AndrewK.Umbraco.Extensions.Dropdown/client/package-lock.json
+            AndrewK.Umbraco.Extensions.CheckBoxList/client/package-lock.json
+            AndrewK.Umbraco.Extensions.RadioButtonList/client/package-lock.json
 
-      - name: Install dependencies
+      - name: Install test project dependencies
         working-directory: AndrewK.Umbraco.Extensions.Tests.Client
         run: npm ci
+
+      - name: Install Dictionary client dependencies
+        working-directory: AndrewK.Umbraco.Extensions.Dictionary/client
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found in Dictionary client"
+          fi
+
+      - name: Install RadioButtonList client dependencies
+        working-directory: AndrewK.Umbraco.Extensions.RadioButtonList/client
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found in RadioButtonList client"
+          fi
 
       - name: Install Playwright browsers
         working-directory: AndrewK.Umbraco.Extensions.Tests.Client
@@ -75,3 +99,11 @@ jobs:
           fail-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Coverage Report
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: AndrewK.Umbraco.Extensions.Tests.Client/coverage/coverage-summary.json
+          json-final-path: AndrewK.Umbraco.Extensions.Tests.Client/coverage/coverage-final.json
+          vite-config-path: AndrewK.Umbraco.Extensions.Tests.Client/web-test-runner.config.mjs
