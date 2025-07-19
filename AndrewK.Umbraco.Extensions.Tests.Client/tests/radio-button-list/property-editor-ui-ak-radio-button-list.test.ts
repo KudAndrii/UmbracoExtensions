@@ -206,11 +206,22 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
             expect(element.value).to.be.equal('1')
         })
 
-        it('should handle null/undefined value', () => {
+        it('should handle falsy or non string values as undefined', () => {
             element.value = null
-            expect(element.value).to.be.equal(null)
+            expect(element.value).to.be.equal(undefined)
 
             element.value = undefined
+            expect(element.value).to.be.equal(undefined)
+
+            // @ts-ignore
+            element.value = 0
+            expect(element.value).to.be.equal(undefined)
+
+            // @ts-ignore
+            element.value = []
+            expect(element.value).to.be.equal(undefined)
+            // @ts-ignore
+            element.value = true
             expect(element.value).to.be.equal(undefined)
         })
 
@@ -250,6 +261,53 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
             expect(radioButtonList?.value).to.equal('option2')
         })
 
+        it('should dispatch change event when value changes', async () => {
+            let changeEventFired = false
+            element.addEventListener('change', () => {
+                changeEventFired = true
+            })
+            const testItems = [
+                { key: 'option1', value: 'Option One' },
+                { key: 'option2', value: 'Option Two' }
+            ]
+            element.config = {
+                getValueByAlias: (alias: string) => {
+                    if (alias === 'items') return testItems
+                    return undefined
+                }
+            } as UmbPropertyEditorConfigCollection
+
+            element.value = 'option1'
+            await element.updateComplete
+
+            expect(changeEventFired).to.be.true
+        })
+
+        it('should not dispatch change event when value stays the same', async () => {
+            const testItems = [
+                { key: 'option1', value: 'Option One' },
+                { key: 'option2', value: 'Option Two' }
+            ]
+            element.config = {
+                getValueByAlias: (alias: string) => {
+                    if (alias === 'items') return testItems
+                    return undefined
+                }
+            } as UmbPropertyEditorConfigCollection
+            const initialValue = 'option1'
+            element.value = initialValue
+            await element.updateComplete
+
+            let changeEventCount = 0
+            element.addEventListener('change', () => {
+                changeEventCount++
+            })
+
+            element.value = initialValue
+            await element.updateComplete
+
+            expect(changeEventCount).to.equal(0)
+        })
     })
 
     describe('Event Handling', () => {
@@ -384,14 +442,6 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
             // Should not throw and should handle valid items
             const radioButtonList = getRadioButtonList()
             expect(radioButtonList).to.exist
-        })
-
-        it('should handle non-string values', () => {
-            element.value = 123 as any
-            expect(element.value).to.equal(123)
-
-            element.value = true as any
-            expect(element.value).to.equal(true)
         })
 
         it('should handle config without items or default', async () => {
