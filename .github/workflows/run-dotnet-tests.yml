@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run .NET Tests
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
 permissions:
   checks: write
   contents: read
-  
+
 jobs:
   test:
     runs-on: ubuntu-latest

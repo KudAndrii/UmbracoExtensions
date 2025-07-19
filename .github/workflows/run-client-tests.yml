@@ -1,0 +1,77 @@
+name: Run Client Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master, develop ]
+    types: [ opened, synchronize, reopened ]
+    paths:
+      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
+      - 'AndrewK.Umbraco.Extensions.*/client/**'
+  push:
+    branches: [ master, develop ]
+    paths:
+      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
+      - 'AndrewK.Umbraco.Extensions.*/client/**'
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  client-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'AndrewK.Umbraco.Extensions.Tests.Client/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npx playwright install --with-deps
+
+      - name: Run TypeScript compilation check
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npx tsc --noEmit
+
+      - name: Run client tests
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npm run test:ci
+        continue-on-error: true
+
+      - name: Run tests with coverage
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npm run test:coverage:ci
+        continue-on-error: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: client-test-results
+          path: |
+            AndrewK.Umbraco.Extensions.Tests.Client/test-results.xml
+            AndrewK.Umbraco.Extensions.Tests.Client/coverage-results.json
+            AndrewK.Umbraco.Extensions.Tests.Client/coverage/
+
+      - name: Publish Client Test Results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Client Test Results
+          path: AndrewK.Umbraco.Extensions.Tests.Client/test-results.xml
+          reporter: java-junit
+          fail-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -24,4 +24,12 @@ export default {
             timeout: 5000,
         },
     },
+    coverage: true,
+    coverageConfig: {
+        report: true,
+        reportDir: 'coverage',
+        reporters: ['html', 'lcovonly', 'json-summary', 'json'],
+        include: ['src/**/*.ts'],
+        exclude: ['tests/**/*', 'node_modules/**/*'],
+    },
 };
