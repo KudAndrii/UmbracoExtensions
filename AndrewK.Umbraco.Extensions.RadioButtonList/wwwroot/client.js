@@ -18,7 +18,7 @@ let i = class extends E(f) {
     if (!t) return;
     const e = t.getValueByAlias("items"), r = t.getValueByAlias("default");
     !this.value && r && (this.value = r, this.dispatchEvent(new h())), Array.isArray(e) && e.length && (this._list = e.map((a) => ({
-      label: this.localize.string(a.value) || a.value,
+      label: this.localize.string(a.value),
       value: a.key
     })), this.value && !this._list.find((a) => a.value === this.value) && this._list.push({ label: this.value, value: this.value, invalid: !0 }));
   }

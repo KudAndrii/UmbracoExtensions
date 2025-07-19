@@ -36,7 +36,7 @@ export class AkPropertyEditorUIRadioButtonListElement
 
         if (Array.isArray(items) && !!items.length) {
             this._list = items.map((item) => ({
-                label: this.localize.string(item.value) || item.value,
+                label: this.localize.string(item.value),
                 value: item.key
             }))
 
