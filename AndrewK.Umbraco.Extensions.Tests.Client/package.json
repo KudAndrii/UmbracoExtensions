@@ -16,8 +16,6 @@
     "test:radio-button-list": "web-test-runner 'tests/radio-button-list/**/*.test.ts'",
     "test:unit": "web-test-runner 'tests/**/*.test.ts' --group unit",
     "test:integration": "web-test-runner 'tests/**/*.test.ts' --group integration",
-    "test:coverage": "web-test-runner --coverage",
-    "test:coverage:ci": "web-test-runner --coverage --config web-test-runner.ci.config.js",
     "test:debug": "web-test-runner --manual",
     "test:chromium": "web-test-runner --playwright --browsers chromium",
     "test:firefox": "web-test-runner --playwright --browsers firefox",
