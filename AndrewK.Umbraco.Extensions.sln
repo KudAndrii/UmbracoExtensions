@@ -5,7 +5,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		README.md = README.md
 		.github\workflows\publish-nuget.yml = .github\workflows\publish-nuget.yml
-		.github\workflows\run-tests.yml = .github\workflows\run-tests.yml
+		.github\workflows\run-dotnet-tests.yml = .github\workflows\run-dotnet-tests.yml
+		.github\workflows\run-client-tests.yml = .github\workflows\run-client-tests.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.Dictionary", "AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj", "{63DD9123-C717-4D5A-8953-1458CD64E6E8}"
@@ -19,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.CheckBoxList", "AndrewK.Umbraco.Extensions.CheckBoxList\AndrewK.Umbraco.Extensions.CheckBoxList.csproj", "{D079BDDA-060A-47E3-93AC-9C576F64C39B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.RadioButtonList", "AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj", "{A98DC845-75A3-4490-A63A-15764DC34ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewK.Umbraco.Extensions.Tests.Client", "AndrewK.Umbraco.Extensions.Tests.Client\AndrewK.Umbraco.Extensions.Tests.Client.csproj", "{0F98E120-5806-4349-8D5C-AD82102F7B00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,5 +53,9 @@ Global
 		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A98DC845-75A3-4490-A63A-15764DC34ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F98E120-5806-4349-8D5C-AD82102F7B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F98E120-5806-4349-8D5C-AD82102F7B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F98E120-5806-4349-8D5C-AD82102F7B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F98E120-5806-4349-8D5C-AD82102F7B00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

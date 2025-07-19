@@ -1,0 +1,94 @@
+name: Run Client Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master, develop ]
+    types: [ opened, synchronize, reopened ]
+    paths:
+      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
+      - 'AndrewK.Umbraco.Extensions.*/client/**'
+  push:
+    branches: [ master, develop ]
+    paths:
+      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
+      - 'AndrewK.Umbraco.Extensions.*/client/**'
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  client-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            AndrewK.Umbraco.Extensions.Tests.Client/package-lock.json
+            AndrewK.Umbraco.Extensions.Dictionary/client/package-lock.json
+            AndrewK.Umbraco.Extensions.Dropdown/client/package-lock.json
+            AndrewK.Umbraco.Extensions.CheckBoxList/client/package-lock.json
+            AndrewK.Umbraco.Extensions.RadioButtonList/client/package-lock.json
+
+      - name: Install test project dependencies
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npm ci
+
+      - name: Install Dictionary client dependencies
+        working-directory: AndrewK.Umbraco.Extensions.Dictionary/client
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found in Dictionary client"
+          fi
+
+      - name: Install RadioButtonList client dependencies
+        working-directory: AndrewK.Umbraco.Extensions.RadioButtonList/client
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found in RadioButtonList client"
+          fi
+
+      - name: Install Playwright browsers
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+#        run: npx playwright install --with-deps
+        run: npx playwright install
+
+      - name: Run TypeScript compilation check
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npx tsc --noEmit
+
+      - name: Run client tests
+        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
+        run: npm run test:ci
+        continue-on-error: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: client-test-results
+          path: AndrewK.Umbraco.Extensions.Tests.Client/test-results.xml
+
+      - name: Publish Client Test Results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Client Test Results
+          path: AndrewK.Umbraco.Extensions.Tests.Client/test-results.xml
+          reporter: java-junit
+          fail-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,7 +5,6 @@ riderModule.iml
 /_ReSharper.Caches/
 .idea/
 node_modules/
-App_Plugins/
 
 # Logs
 logs
@@ -36,3 +35,5 @@ dist-ssr
 *.sln.DotSettings.user
 **/TestResults/**
 /AndrewK.Umbraco.Extensions.Example/uSync/
+coverage/
+**/test-results.xml

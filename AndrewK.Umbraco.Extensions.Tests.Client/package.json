@@ -1,0 +1,41 @@
+{
+  "name": "andrewk-umbraco-extensions-tests-client",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Client-side tests for AndrewK Umbraco Extensions",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "watch": "vite build --watch",
+    "preview": "vite preview",
+    "test": "web-test-runner",
+    "test:ci": "web-test-runner --config web-test-runner.ci.config.js",
+    "test:watch": "web-test-runner --watch",
+    "test:dictionary": "web-test-runner 'tests/dictionary/**/*.test.ts'",
+    "test:radio-button-list": "web-test-runner 'tests/radio-button-list/**/*.test.ts'",
+    "test:unit": "web-test-runner 'tests/**/*.test.ts' --group unit",
+    "test:integration": "web-test-runner 'tests/**/*.test.ts' --group integration",
+    "test:debug": "web-test-runner --manual",
+    "test:chromium": "web-test-runner --playwright --browsers chromium",
+    "test:firefox": "web-test-runner --playwright --browsers firefox",
+    "test:webkit": "web-test-runner --playwright --browsers webkit"
+  },
+  "dependencies": {
+    "lit": "^3.3.0"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^4.0.0",
+    "@playwright/test": "^1.54.1",
+    "@types/chai": "^5.2.1",
+    "@types/mocha": "^10.0.10",
+    "@umbraco-cms/backoffice": "^16.0.0",
+    "@web/dev-server-esbuild": "^1.0.4",
+    "@web/test-runner": "^0.20.1",
+    "@web/test-runner-junit-reporter": "^0.7.1",
+    "@web/test-runner-playwright": "^0.11.0",
+    "playwright": "^1.52.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}
