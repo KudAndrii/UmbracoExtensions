@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"],
+  "include": ["tests"],
   "types": [
     "@umbraco-cms/backoffice/dist-cms/packages/extension-types"
   ]
