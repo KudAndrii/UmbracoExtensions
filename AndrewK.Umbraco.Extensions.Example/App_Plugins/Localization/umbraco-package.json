@@ -1,0 +1,23 @@
+{
+  "name": "MyPackage",
+  "extensions": [
+    {
+      "type": "localization",
+      "alias": "MyPackage.Localize.EnUS",
+      "name": "English",
+      "meta": {
+        "culture": "en"
+      },
+      "js": "/App_Plugins/Localization/en.js"
+    },
+    {
+      "type": "localization",
+      "alias": "MyPackage.Localize.UkUA",
+      "name": "Ukrainian",
+      "meta": {
+        "culture": "uk"
+      },
+      "js": "/App_Plugins/Localization/uk.js"
+    }
+  ]
+}
