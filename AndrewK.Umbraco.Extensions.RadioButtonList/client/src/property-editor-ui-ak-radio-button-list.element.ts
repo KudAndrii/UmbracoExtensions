@@ -11,13 +11,13 @@ import type {
 
 @customElement('ak-property-editor-ui-radio-button-list')
 export class AkPropertyEditorUIRadioButtonListElement
-    extends UUIFormControlMixin<string | undefined, typeof UmbLitElement, undefined>(UmbLitElement)
+    extends UUIFormControlMixin<string | undefined, typeof UmbLitElement, undefined>(UmbLitElement, undefined)
     implements UmbPropertyEditorUiElement {
     @state() private _list: Array<UmbRadioButtonItem> = []
 
     @property({ type: Boolean, reflect: true }) readonly = false
 
-    @property({ type: Boolean }) mandatory?: boolean
+    @property({ type: Boolean, reflect: true }) mandatory = false
 
     @property({ type: String }) mandatoryMessage = UMB_VALIDATION_EMPTY_LOCALIZATION_KEY
 
@@ -35,8 +35,8 @@ export class AkPropertyEditorUIRadioButtonListElement
         }
 
         if (Array.isArray(items) && !!items.length) {
-            this._list = items.map((item) => ({
-                label: this.localize.string(item.value),
+            this._list = items.filter(item => !!item?.key).map(item => ({
+                label: this.localize.string(item.value) || item.key,
                 value: item.key
             }))
 
