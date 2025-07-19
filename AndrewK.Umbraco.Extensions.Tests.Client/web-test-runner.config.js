@@ -24,4 +24,5 @@ export default {
             timeout: 5000,
         },
     },
+    coverage: false
 };

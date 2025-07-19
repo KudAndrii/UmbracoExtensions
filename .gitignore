@@ -36,3 +36,4 @@ dist-ssr
 **/TestResults/**
 /AndrewK.Umbraco.Extensions.Example/uSync/
 coverage/
+**/test-results.xml
