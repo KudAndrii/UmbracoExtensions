@@ -8,6 +8,7 @@ A custom RadioButtonList property editor for Umbraco that provides enhanced func
 - Default value specification
 - Full validation support
 - Seamless integration with Umbraco backoffice
+- Labels localization via backoffice localization files
 
 ## Installation
 
@@ -61,4 +62,37 @@ public class MyController : Controller
         return View();
     }
 }
+```
+
+### Using backoffice localization files
+
+#### Let's say your localization file looks like the following
+
+```js
+export default {
+    dataLabels: {
+        one: 'One EN',
+        two: 'Two EN'
+    }
+}
+```
+
+#### In this case here's what your configuration should look like
+
+```json
+[
+  {
+    "alias": "items",
+    "value": [
+      {
+        "key": "1",
+        "value": "#dataLabels_one" // "#{section}_{key}"
+      },
+      {
+        "key": "2",
+        "value": "#dataLabels_two" // "#{section}_{key}"
+      }
+    ]
+  }
+]
 ```
