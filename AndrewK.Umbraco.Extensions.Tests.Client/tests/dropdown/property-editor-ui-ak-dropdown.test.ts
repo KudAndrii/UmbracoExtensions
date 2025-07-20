@@ -116,12 +116,13 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
         })
 
         it('should handle multiple default values', async () => {
+            // in some cases shoelace-style/shoelace has issue with locales for headless browsers used for testing
             document.documentElement.lang = 'en'
             Object.defineProperty(window.navigator, 'language', {
                 value: 'en-US',
                 configurable: true,
             })
-            console.warn('setupTests.ts loaded')
+
             element.config = {
                 getValueByAlias: (alias: string) => {
                     if (alias === 'items') return [ { key: '0', value: 'zero' }, { key: '1', value: 'one' } ]
