@@ -30,7 +30,7 @@ export class UmbPropertyEditorUIDropdownElement extends UmbLitElement implements
         const defaultValue: string | undefined = config.getValueByAlias('default')
 
         if (!!defaultValue && this.#selection.length === 0) {
-            this.#setValue([defaultValue])
+            this.#setValue([ defaultValue ])
         }
 
         if (Array.isArray(items) && items.length > 0) {
@@ -105,7 +105,8 @@ export class UmbPropertyEditorUIDropdownElement extends UmbLitElement implements
           <umb-input-dropdown-list
             .options=${ this._options }
             @change=${ this.#onChange }
-            ?readonly=${ this.readonly }></umb-input-dropdown-list>
+            ?readonly=${ this.readonly }
+          ></umb-input-dropdown-list>
           ${ this.#renderDropdownValidation() }
         `
     }
