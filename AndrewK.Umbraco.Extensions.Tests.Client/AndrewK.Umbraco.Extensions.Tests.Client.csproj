@@ -22,7 +22,6 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="tests\checkbox-list\"/>
-        <Folder Include="tests\dropdown\"/>
     </ItemGroup>
 
 </Project>

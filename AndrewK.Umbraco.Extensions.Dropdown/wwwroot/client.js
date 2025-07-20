@@ -2,7 +2,6 @@ import { map as Xs, html as He, css as Zs, state as Se, property as Ee, query as
 import { UUIFormControlMixin as Qs } from "@umbraco-cms/backoffice/external/uui";
 import { UmbLitElement as to } from "@umbraco-cms/backoffice/lit-element";
 import { UmbChangeEvent as eo } from "@umbraco-cms/backoffice/event";
-const so = ':root,:host,.sl-theme-light{color-scheme:light;--sl-color-gray-50: hsl(0 0% 97.5%);--sl-color-gray-100: hsl(240 4.8% 95.9%);--sl-color-gray-200: hsl(240 5.9% 90%);--sl-color-gray-300: hsl(240 4.9% 83.9%);--sl-color-gray-400: hsl(240 5% 64.9%);--sl-color-gray-500: hsl(240 3.8% 46.1%);--sl-color-gray-600: hsl(240 5.2% 33.9%);--sl-color-gray-700: hsl(240 5.3% 26.1%);--sl-color-gray-800: hsl(240 3.7% 15.9%);--sl-color-gray-900: hsl(240 5.9% 10%);--sl-color-gray-950: hsl(240 7.3% 8%);--sl-color-red-50: hsl(0 85.7% 97.3%);--sl-color-red-100: hsl(0 93.3% 94.1%);--sl-color-red-200: hsl(0 96.3% 89.4%);--sl-color-red-300: hsl(0 93.5% 81.8%);--sl-color-red-400: hsl(0 90.6% 70.8%);--sl-color-red-500: hsl(0 84.2% 60.2%);--sl-color-red-600: hsl(0 72.2% 50.6%);--sl-color-red-700: hsl(0 73.7% 41.8%);--sl-color-red-800: hsl(0 70% 35.3%);--sl-color-red-900: hsl(0 62.8% 30.6%);--sl-color-red-950: hsl(0 60% 19.6%);--sl-color-orange-50: hsl(33.3 100% 96.5%);--sl-color-orange-100: hsl(34.3 100% 91.8%);--sl-color-orange-200: hsl(32.1 97.7% 83.1%);--sl-color-orange-300: hsl(30.7 97.2% 72.4%);--sl-color-orange-400: hsl(27 96% 61%);--sl-color-orange-500: hsl(24.6 95% 53.1%);--sl-color-orange-600: hsl(20.5 90.2% 48.2%);--sl-color-orange-700: hsl(17.5 88.3% 40.4%);--sl-color-orange-800: hsl(15 79.1% 33.7%);--sl-color-orange-900: hsl(15.3 74.6% 27.8%);--sl-color-orange-950: hsl(15.2 69.1% 19%);--sl-color-amber-50: hsl(48 100% 96.1%);--sl-color-amber-100: hsl(48 96.5% 88.8%);--sl-color-amber-200: hsl(48 96.6% 76.7%);--sl-color-amber-300: hsl(45.9 96.7% 64.5%);--sl-color-amber-400: hsl(43.3 96.4% 56.3%);--sl-color-amber-500: hsl(37.7 92.1% 50.2%);--sl-color-amber-600: hsl(32.1 94.6% 43.7%);--sl-color-amber-700: hsl(26 90.5% 37.1%);--sl-color-amber-800: hsl(22.7 82.5% 31.4%);--sl-color-amber-900: hsl(21.7 77.8% 26.5%);--sl-color-amber-950: hsl(22.9 74.1% 16.7%);--sl-color-yellow-50: hsl(54.5 91.7% 95.3%);--sl-color-yellow-100: hsl(54.9 96.7% 88%);--sl-color-yellow-200: hsl(52.8 98.3% 76.9%);--sl-color-yellow-300: hsl(50.4 97.8% 63.5%);--sl-color-yellow-400: hsl(47.9 95.8% 53.1%);--sl-color-yellow-500: hsl(45.4 93.4% 47.5%);--sl-color-yellow-600: hsl(40.6 96.1% 40.4%);--sl-color-yellow-700: hsl(35.5 91.7% 32.9%);--sl-color-yellow-800: hsl(31.8 81% 28.8%);--sl-color-yellow-900: hsl(28.4 72.5% 25.7%);--sl-color-yellow-950: hsl(33.1 69% 13.9%);--sl-color-lime-50: hsl(78.3 92% 95.1%);--sl-color-lime-100: hsl(79.6 89.1% 89.2%);--sl-color-lime-200: hsl(80.9 88.5% 79.6%);--sl-color-lime-300: hsl(82 84.5% 67.1%);--sl-color-lime-400: hsl(82.7 78% 55.5%);--sl-color-lime-500: hsl(83.7 80.5% 44.3%);--sl-color-lime-600: hsl(84.8 85.2% 34.5%);--sl-color-lime-700: hsl(85.9 78.4% 27.3%);--sl-color-lime-800: hsl(86.3 69% 22.7%);--sl-color-lime-900: hsl(87.6 61.2% 20.2%);--sl-color-lime-950: hsl(86.5 60.6% 13.9%);--sl-color-green-50: hsl(138.5 76.5% 96.7%);--sl-color-green-100: hsl(140.6 84.2% 92.5%);--sl-color-green-200: hsl(141 78.9% 85.1%);--sl-color-green-300: hsl(141.7 76.6% 73.1%);--sl-color-green-400: hsl(141.9 69.2% 58%);--sl-color-green-500: hsl(142.1 70.6% 45.3%);--sl-color-green-600: hsl(142.1 76.2% 36.3%);--sl-color-green-700: hsl(142.4 71.8% 29.2%);--sl-color-green-800: hsl(142.8 64.2% 24.1%);--sl-color-green-900: hsl(143.8 61.2% 20.2%);--sl-color-green-950: hsl(144.3 60.7% 12%);--sl-color-emerald-50: hsl(151.8 81% 95.9%);--sl-color-emerald-100: hsl(149.3 80.4% 90%);--sl-color-emerald-200: hsl(152.4 76% 80.4%);--sl-color-emerald-300: hsl(156.2 71.6% 66.9%);--sl-color-emerald-400: hsl(158.1 64.4% 51.6%);--sl-color-emerald-500: hsl(160.1 84.1% 39.4%);--sl-color-emerald-600: hsl(161.4 93.5% 30.4%);--sl-color-emerald-700: hsl(162.9 93.5% 24.3%);--sl-color-emerald-800: hsl(163.1 88.1% 19.8%);--sl-color-emerald-900: hsl(164.2 85.7% 16.5%);--sl-color-emerald-950: hsl(164.3 87.5% 9.4%);--sl-color-teal-50: hsl(166.2 76.5% 96.7%);--sl-color-teal-100: hsl(167.2 85.5% 89.2%);--sl-color-teal-200: hsl(168.4 83.8% 78.2%);--sl-color-teal-300: hsl(170.6 76.9% 64.3%);--sl-color-teal-400: hsl(172.5 66% 50.4%);--sl-color-teal-500: hsl(173.4 80.4% 40%);--sl-color-teal-600: hsl(174.7 83.9% 31.6%);--sl-color-teal-700: hsl(175.3 77.4% 26.1%);--sl-color-teal-800: hsl(176.1 69.4% 21.8%);--sl-color-teal-900: hsl(175.9 60.8% 19%);--sl-color-teal-950: hsl(176.5 58.6% 11.4%);--sl-color-cyan-50: hsl(183.2 100% 96.3%);--sl-color-cyan-100: hsl(185.1 95.9% 90.4%);--sl-color-cyan-200: hsl(186.2 93.5% 81.8%);--sl-color-cyan-300: hsl(187 92.4% 69%);--sl-color-cyan-400: hsl(187.9 85.7% 53.3%);--sl-color-cyan-500: hsl(188.7 94.5% 42.7%);--sl-color-cyan-600: hsl(191.6 91.4% 36.5%);--sl-color-cyan-700: hsl(192.9 82.3% 31%);--sl-color-cyan-800: hsl(194.4 69.6% 27.1%);--sl-color-cyan-900: hsl(196.4 63.6% 23.7%);--sl-color-cyan-950: hsl(196.8 61% 16.1%);--sl-color-sky-50: hsl(204 100% 97.1%);--sl-color-sky-100: hsl(204 93.8% 93.7%);--sl-color-sky-200: hsl(200.6 94.4% 86.1%);--sl-color-sky-300: hsl(199.4 95.5% 73.9%);--sl-color-sky-400: hsl(198.4 93.2% 59.6%);--sl-color-sky-500: hsl(198.6 88.7% 48.4%);--sl-color-sky-600: hsl(200.4 98% 39.4%);--sl-color-sky-700: hsl(201.3 96.3% 32.2%);--sl-color-sky-800: hsl(201 90% 27.5%);--sl-color-sky-900: hsl(202 80.3% 23.9%);--sl-color-sky-950: hsl(202.3 73.8% 16.5%);--sl-color-blue-50: hsl(213.8 100% 96.9%);--sl-color-blue-100: hsl(214.3 94.6% 92.7%);--sl-color-blue-200: hsl(213.3 96.9% 87.3%);--sl-color-blue-300: hsl(211.7 96.4% 78.4%);--sl-color-blue-400: hsl(213.1 93.9% 67.8%);--sl-color-blue-500: hsl(217.2 91.2% 59.8%);--sl-color-blue-600: hsl(221.2 83.2% 53.3%);--sl-color-blue-700: hsl(224.3 76.3% 48%);--sl-color-blue-800: hsl(225.9 70.7% 40.2%);--sl-color-blue-900: hsl(224.4 64.3% 32.9%);--sl-color-blue-950: hsl(226.2 55.3% 18.4%);--sl-color-indigo-50: hsl(225.9 100% 96.7%);--sl-color-indigo-100: hsl(226.5 100% 93.9%);--sl-color-indigo-200: hsl(228 96.5% 88.8%);--sl-color-indigo-300: hsl(229.7 93.5% 81.8%);--sl-color-indigo-400: hsl(234.5 89.5% 73.9%);--sl-color-indigo-500: hsl(238.7 83.5% 66.7%);--sl-color-indigo-600: hsl(243.4 75.4% 58.6%);--sl-color-indigo-700: hsl(244.5 57.9% 50.6%);--sl-color-indigo-800: hsl(243.7 54.5% 41.4%);--sl-color-indigo-900: hsl(242.2 47.4% 34.3%);--sl-color-indigo-950: hsl(243.5 43.6% 22.9%);--sl-color-violet-50: hsl(250 100% 97.6%);--sl-color-violet-100: hsl(251.4 91.3% 95.5%);--sl-color-violet-200: hsl(250.5 95.2% 91.8%);--sl-color-violet-300: hsl(252.5 94.7% 85.1%);--sl-color-violet-400: hsl(255.1 91.7% 76.3%);--sl-color-violet-500: hsl(258.3 89.5% 66.3%);--sl-color-violet-600: hsl(262.1 83.3% 57.8%);--sl-color-violet-700: hsl(263.4 70% 50.4%);--sl-color-violet-800: hsl(263.4 69.3% 42.2%);--sl-color-violet-900: hsl(263.5 67.4% 34.9%);--sl-color-violet-950: hsl(265.1 61.5% 21.4%);--sl-color-purple-50: hsl(270 100% 98%);--sl-color-purple-100: hsl(268.7 100% 95.5%);--sl-color-purple-200: hsl(268.6 100% 91.8%);--sl-color-purple-300: hsl(269.2 97.4% 85.1%);--sl-color-purple-400: hsl(270 95.2% 75.3%);--sl-color-purple-500: hsl(270.7 91% 65.1%);--sl-color-purple-600: hsl(271.5 81.3% 55.9%);--sl-color-purple-700: hsl(272.1 71.7% 47.1%);--sl-color-purple-800: hsl(272.9 67.2% 39.4%);--sl-color-purple-900: hsl(273.6 65.6% 32%);--sl-color-purple-950: hsl(276 59.5% 16.5%);--sl-color-fuchsia-50: hsl(289.1 100% 97.8%);--sl-color-fuchsia-100: hsl(287 100% 95.5%);--sl-color-fuchsia-200: hsl(288.3 95.8% 90.6%);--sl-color-fuchsia-300: hsl(291.1 93.1% 82.9%);--sl-color-fuchsia-400: hsl(292 91.4% 72.5%);--sl-color-fuchsia-500: hsl(292.2 84.1% 60.6%);--sl-color-fuchsia-600: hsl(293.4 69.5% 48.8%);--sl-color-fuchsia-700: hsl(294.7 72.4% 39.8%);--sl-color-fuchsia-800: hsl(295.4 70.2% 32.9%);--sl-color-fuchsia-900: hsl(296.7 63.6% 28%);--sl-color-fuchsia-950: hsl(297.1 56.8% 14.5%);--sl-color-pink-50: hsl(327.3 73.3% 97.1%);--sl-color-pink-100: hsl(325.7 77.8% 94.7%);--sl-color-pink-200: hsl(325.9 84.6% 89.8%);--sl-color-pink-300: hsl(327.4 87.1% 81.8%);--sl-color-pink-400: hsl(328.6 85.5% 70.2%);--sl-color-pink-500: hsl(330.4 81.2% 60.4%);--sl-color-pink-600: hsl(333.3 71.4% 50.6%);--sl-color-pink-700: hsl(335.1 77.6% 42%);--sl-color-pink-800: hsl(335.8 74.4% 35.3%);--sl-color-pink-900: hsl(335.9 69% 30.4%);--sl-color-pink-950: hsl(336.2 65.4% 15.9%);--sl-color-rose-50: hsl(355.7 100% 97.3%);--sl-color-rose-100: hsl(355.6 100% 94.7%);--sl-color-rose-200: hsl(352.7 96.1% 90%);--sl-color-rose-300: hsl(352.6 95.7% 81.8%);--sl-color-rose-400: hsl(351.3 94.5% 71.4%);--sl-color-rose-500: hsl(349.7 89.2% 60.2%);--sl-color-rose-600: hsl(346.8 77.2% 49.8%);--sl-color-rose-700: hsl(345.3 82.7% 40.8%);--sl-color-rose-800: hsl(343.4 79.7% 34.7%);--sl-color-rose-900: hsl(341.5 75.5% 30.4%);--sl-color-rose-950: hsl(341.3 70.1% 17.1%);--sl-color-primary-50: var(--sl-color-sky-50);--sl-color-primary-100: var(--sl-color-sky-100);--sl-color-primary-200: var(--sl-color-sky-200);--sl-color-primary-300: var(--sl-color-sky-300);--sl-color-primary-400: var(--sl-color-sky-400);--sl-color-primary-500: var(--sl-color-sky-500);--sl-color-primary-600: var(--sl-color-sky-600);--sl-color-primary-700: var(--sl-color-sky-700);--sl-color-primary-800: var(--sl-color-sky-800);--sl-color-primary-900: var(--sl-color-sky-900);--sl-color-primary-950: var(--sl-color-sky-950);--sl-color-success-50: var(--sl-color-green-50);--sl-color-success-100: var(--sl-color-green-100);--sl-color-success-200: var(--sl-color-green-200);--sl-color-success-300: var(--sl-color-green-300);--sl-color-success-400: var(--sl-color-green-400);--sl-color-success-500: var(--sl-color-green-500);--sl-color-success-600: var(--sl-color-green-600);--sl-color-success-700: var(--sl-color-green-700);--sl-color-success-800: var(--sl-color-green-800);--sl-color-success-900: var(--sl-color-green-900);--sl-color-success-950: var(--sl-color-green-950);--sl-color-warning-50: var(--sl-color-amber-50);--sl-color-warning-100: var(--sl-color-amber-100);--sl-color-warning-200: var(--sl-color-amber-200);--sl-color-warning-300: var(--sl-color-amber-300);--sl-color-warning-400: var(--sl-color-amber-400);--sl-color-warning-500: var(--sl-color-amber-500);--sl-color-warning-600: var(--sl-color-amber-600);--sl-color-warning-700: var(--sl-color-amber-700);--sl-color-warning-800: var(--sl-color-amber-800);--sl-color-warning-900: var(--sl-color-amber-900);--sl-color-warning-950: var(--sl-color-amber-950);--sl-color-danger-50: var(--sl-color-red-50);--sl-color-danger-100: var(--sl-color-red-100);--sl-color-danger-200: var(--sl-color-red-200);--sl-color-danger-300: var(--sl-color-red-300);--sl-color-danger-400: var(--sl-color-red-400);--sl-color-danger-500: var(--sl-color-red-500);--sl-color-danger-600: var(--sl-color-red-600);--sl-color-danger-700: var(--sl-color-red-700);--sl-color-danger-800: var(--sl-color-red-800);--sl-color-danger-900: var(--sl-color-red-900);--sl-color-danger-950: var(--sl-color-red-950);--sl-color-neutral-50: var(--sl-color-gray-50);--sl-color-neutral-100: var(--sl-color-gray-100);--sl-color-neutral-200: var(--sl-color-gray-200);--sl-color-neutral-300: var(--sl-color-gray-300);--sl-color-neutral-400: var(--sl-color-gray-400);--sl-color-neutral-500: var(--sl-color-gray-500);--sl-color-neutral-600: var(--sl-color-gray-600);--sl-color-neutral-700: var(--sl-color-gray-700);--sl-color-neutral-800: var(--sl-color-gray-800);--sl-color-neutral-900: var(--sl-color-gray-900);--sl-color-neutral-950: var(--sl-color-gray-950);--sl-color-neutral-0: hsl(0, 0%, 100%);--sl-color-neutral-1000: hsl(0, 0%, 0%);--sl-border-radius-small: .1875rem;--sl-border-radius-medium: .25rem;--sl-border-radius-large: .5rem;--sl-border-radius-x-large: 1rem;--sl-border-radius-circle: 50%;--sl-border-radius-pill: 9999px;--sl-shadow-x-small: 0 1px 2px hsl(240 3.8% 46.1% / 6%);--sl-shadow-small: 0 1px 2px hsl(240 3.8% 46.1% / 12%);--sl-shadow-medium: 0 2px 4px hsl(240 3.8% 46.1% / 12%);--sl-shadow-large: 0 2px 8px hsl(240 3.8% 46.1% / 12%);--sl-shadow-x-large: 0 4px 16px hsl(240 3.8% 46.1% / 12%);--sl-spacing-3x-small: .125rem;--sl-spacing-2x-small: .25rem;--sl-spacing-x-small: .5rem;--sl-spacing-small: .75rem;--sl-spacing-medium: 1rem;--sl-spacing-large: 1.25rem;--sl-spacing-x-large: 1.75rem;--sl-spacing-2x-large: 2.25rem;--sl-spacing-3x-large: 3rem;--sl-spacing-4x-large: 4.5rem;--sl-transition-x-slow: 1s;--sl-transition-slow: .5s;--sl-transition-medium: .25s;--sl-transition-fast: .15s;--sl-transition-x-fast: 50ms;--sl-font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;--sl-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";--sl-font-serif: Georgia, "Times New Roman", serif;--sl-font-size-2x-small: .625rem;--sl-font-size-x-small: .75rem;--sl-font-size-small: .875rem;--sl-font-size-medium: 1rem;--sl-font-size-large: 1.25rem;--sl-font-size-x-large: 1.5rem;--sl-font-size-2x-large: 2.25rem;--sl-font-size-3x-large: 3rem;--sl-font-size-4x-large: 4.5rem;--sl-font-weight-light: 300;--sl-font-weight-normal: 400;--sl-font-weight-semibold: 500;--sl-font-weight-bold: 700;--sl-letter-spacing-denser: -.03em;--sl-letter-spacing-dense: -.015em;--sl-letter-spacing-normal: normal;--sl-letter-spacing-loose: .075em;--sl-letter-spacing-looser: .15em;--sl-line-height-denser: 1;--sl-line-height-dense: 1.4;--sl-line-height-normal: 1.8;--sl-line-height-loose: 2.2;--sl-line-height-looser: 2.6;--sl-focus-ring-color: var(--sl-color-primary-600);--sl-focus-ring-style: solid;--sl-focus-ring-width: 3px;--sl-focus-ring: var(--sl-focus-ring-style) var(--sl-focus-ring-width) var(--sl-focus-ring-color);--sl-focus-ring-offset: 1px;--sl-button-font-size-small: var(--sl-font-size-x-small);--sl-button-font-size-medium: var(--sl-font-size-small);--sl-button-font-size-large: var(--sl-font-size-medium);--sl-input-height-small: 1.875rem;--sl-input-height-medium: 2.5rem;--sl-input-height-large: 3.125rem;--sl-input-background-color: var(--sl-color-neutral-0);--sl-input-background-color-hover: var(--sl-input-background-color);--sl-input-background-color-focus: var(--sl-input-background-color);--sl-input-background-color-disabled: var(--sl-color-neutral-100);--sl-input-border-color: var(--sl-color-neutral-300);--sl-input-border-color-hover: var(--sl-color-neutral-400);--sl-input-border-color-focus: var(--sl-color-primary-500);--sl-input-border-color-disabled: var(--sl-color-neutral-300);--sl-input-border-width: 1px;--sl-input-required-content: "*";--sl-input-required-content-offset: -2px;--sl-input-required-content-color: var(--sl-input-label-color);--sl-input-border-radius-small: var(--sl-border-radius-medium);--sl-input-border-radius-medium: var(--sl-border-radius-medium);--sl-input-border-radius-large: var(--sl-border-radius-medium);--sl-input-font-family: var(--sl-font-sans);--sl-input-font-weight: var(--sl-font-weight-normal);--sl-input-font-size-small: var(--sl-font-size-small);--sl-input-font-size-medium: var(--sl-font-size-medium);--sl-input-font-size-large: var(--sl-font-size-large);--sl-input-letter-spacing: var(--sl-letter-spacing-normal);--sl-input-color: var(--sl-color-neutral-700);--sl-input-color-hover: var(--sl-color-neutral-700);--sl-input-color-focus: var(--sl-color-neutral-700);--sl-input-color-disabled: var(--sl-color-neutral-900);--sl-input-icon-color: var(--sl-color-neutral-500);--sl-input-icon-color-hover: var(--sl-color-neutral-600);--sl-input-icon-color-focus: var(--sl-color-neutral-600);--sl-input-placeholder-color: var(--sl-color-neutral-500);--sl-input-placeholder-color-disabled: var(--sl-color-neutral-600);--sl-input-spacing-small: var(--sl-spacing-small);--sl-input-spacing-medium: var(--sl-spacing-medium);--sl-input-spacing-large: var(--sl-spacing-large);--sl-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);--sl-input-focus-ring-offset: 0;--sl-input-filled-background-color: var(--sl-color-neutral-100);--sl-input-filled-background-color-hover: var(--sl-color-neutral-100);--sl-input-filled-background-color-focus: var(--sl-color-neutral-100);--sl-input-filled-background-color-disabled: var(--sl-color-neutral-100);--sl-input-filled-color: var(--sl-color-neutral-800);--sl-input-filled-color-hover: var(--sl-color-neutral-800);--sl-input-filled-color-focus: var(--sl-color-neutral-700);--sl-input-filled-color-disabled: var(--sl-color-neutral-800);--sl-input-label-font-size-small: var(--sl-font-size-small);--sl-input-label-font-size-medium: var(--sl-font-size-medium);--sl-input-label-font-size-large: var(--sl-font-size-large);--sl-input-label-color: inherit;--sl-input-help-text-font-size-small: var(--sl-font-size-x-small);--sl-input-help-text-font-size-medium: var(--sl-font-size-small);--sl-input-help-text-font-size-large: var(--sl-font-size-medium);--sl-input-help-text-color: var(--sl-color-neutral-500);--sl-toggle-size-small: .875rem;--sl-toggle-size-medium: 1.125rem;--sl-toggle-size-large: 1.375rem;--sl-overlay-background-color: hsl(240 3.8% 46.1% / 33%);--sl-panel-background-color: var(--sl-color-neutral-0);--sl-panel-border-color: var(--sl-color-neutral-200);--sl-panel-border-width: 1px;--sl-tooltip-border-radius: var(--sl-border-radius-medium);--sl-tooltip-background-color: var(--sl-color-neutral-800);--sl-tooltip-color: var(--sl-color-neutral-0);--sl-tooltip-font-family: var(--sl-font-sans);--sl-tooltip-font-weight: var(--sl-font-weight-normal);--sl-tooltip-font-size: var(--sl-font-size-small);--sl-tooltip-line-height: var(--sl-line-height-dense);--sl-tooltip-padding: var(--sl-spacing-2x-small) var(--sl-spacing-x-small);--sl-tooltip-arrow-size: 6px;--sl-z-index-drawer: 700;--sl-z-index-dialog: 800;--sl-z-index-dropdown: 900;--sl-z-index-toast: 950;--sl-z-index-tooltip: 1000}@supports (scrollbar-gutter: stable){.sl-scroll-lock{scrollbar-gutter:var(--sl-scroll-lock-gutter)!important}.sl-scroll-lock body{overflow:hidden!important}}@supports not (scrollbar-gutter: stable){.sl-scroll-lock body{padding-right:var(--sl-scroll-lock-size)!important;overflow:hidden!important}}.sl-toast-stack{position:fixed;top:0;inset-inline-end:0;z-index:var(--sl-z-index-toast);width:28rem;max-width:100%;max-height:100%;overflow:auto}.sl-toast-stack sl-alert{margin:var(--sl-spacing-medium)}.sl-toast-stack sl-alert::part(base){box-shadow:var(--sl-shadow-large)}';
 /**
  * @license
  * Copyright 2019 Google LLC
@@ -27,14 +26,14 @@ let vs = class {
     return this.cssText;
   }
 };
-const oo = (e) => new vs(typeof e == "string" ? e : e + "", void 0, Oe), ct = (e, ...t) => {
+const so = (e) => new vs(typeof e == "string" ? e : e + "", void 0, Oe), Q = (e, ...t) => {
   const s = e.length === 1 ? e[0] : t.reduce((o, l, i) => o + ((r) => {
     if (r._$cssResult$ === !0) return r.cssText;
     if (typeof r == "number") return r;
     throw Error("Value passed to 'css' function must be a 'css' function result: " + r + ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.");
   })(l) + e[i + 1], e[0]);
   return new vs(s, e, Oe);
-}, lo = (e, t) => {
+}, oo = (e, t) => {
   if (ke) e.adoptedStyleSheets = t.map((s) => s instanceof CSSStyleSheet ? s : s.styleSheet);
   else for (const s of t) {
     const o = document.createElement("style"), l = Kt.litNonce;
@@ -43,17 +42,17 @@ const oo = (e) => new vs(typeof e == "string" ? e : e + "", void 0, Oe), ct = (e
 }, Fe = ke ? (e) => e : (e) => e instanceof CSSStyleSheet ? ((t) => {
   let s = "";
   for (const o of t.cssRules) s += o.cssText;
-  return oo(s);
+  return so(s);
 })(e) : e;
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const { is: io, defineProperty: ro, getOwnPropertyDescriptor: no, getOwnPropertyNames: ao, getOwnPropertySymbols: co, getPrototypeOf: ho } = Object, lt = globalThis, Ue = lt.trustedTypes, uo = Ue ? Ue.emptyScript : "", ce = lt.reactiveElementPolyfillSupport, Mt = (e, t) => e, Gt = { toAttribute(e, t) {
+const { is: lo, defineProperty: io, getOwnPropertyDescriptor: ro, getOwnPropertyNames: no, getOwnPropertySymbols: ao, getPrototypeOf: co } = Object, it = globalThis, Ue = it.trustedTypes, ho = Ue ? Ue.emptyScript : "", ce = it.reactiveElementPolyfillSupport, Mt = (e, t) => e, Gt = { toAttribute(e, t) {
   switch (t) {
     case Boolean:
-      e = e ? uo : null;
+      e = e ? ho : null;
       break;
     case Object:
     case Array:
@@ -78,9 +77,9 @@ const { is: io, defineProperty: ro, getOwnPropertyDescriptor: no, getOwnProperty
       }
   }
   return s;
-} }, ze = (e, t) => !io(e, t), je = { attribute: !0, type: String, converter: Gt, reflect: !1, useDefault: !1, hasChanged: ze };
-Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), lt.litPropertyMetadata ?? (lt.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
-let xt = class extends HTMLElement {
+} }, ze = (e, t) => !lo(e, t), je = { attribute: !0, type: String, converter: Gt, reflect: !1, useDefault: !1, hasChanged: ze };
+Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), it.litPropertyMetadata ?? (it.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
+let _t = class extends HTMLElement {
   static addInitializer(t) {
     this._$Ei(), (this.l ?? (this.l = [])).push(t);
   }
@@ -90,11 +89,11 @@ let xt = class extends HTMLElement {
   static createProperty(t, s = je) {
     if (s.state && (s.attribute = !1), this._$Ei(), this.prototype.hasOwnProperty(t) && ((s = Object.create(s)).wrapped = !0), this.elementProperties.set(t, s), !s.noAccessor) {
       const o = Symbol(), l = this.getPropertyDescriptor(t, o, s);
-      l !== void 0 && ro(this.prototype, t, l);
+      l !== void 0 && io(this.prototype, t, l);
     }
   }
   static getPropertyDescriptor(t, s, o) {
-    const { get: l, set: i } = no(this.prototype, t) ?? { get() {
+    const { get: l, set: i } = ro(this.prototype, t) ?? { get() {
       return this[s];
     }, set(r) {
       this[s] = r;
@@ -109,13 +108,13 @@ let xt = class extends HTMLElement {
   }
   static _$Ei() {
     if (this.hasOwnProperty(Mt("elementProperties"))) return;
-    const t = ho(this);
+    const t = co(this);
     t.finalize(), t.l !== void 0 && (this.l = [...t.l]), this.elementProperties = new Map(t.elementProperties);
   }
   static finalize() {
     if (this.hasOwnProperty(Mt("finalized"))) return;
     if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(Mt("properties"))) {
-      const s = this.properties, o = [...ao(s), ...co(s)];
+      const s = this.properties, o = [...no(s), ...ao(s)];
       for (const l of o) this.createProperty(l, s[l]);
     }
     const t = this[Symbol.metadata];
@@ -164,7 +163,7 @@ let xt = class extends HTMLElement {
   }
   createRenderRoot() {
     const t = this.shadowRoot ?? this.attachShadow(this.constructor.shadowRootOptions);
-    return lo(t, this.constructor.elementStyles), t;
+    return oo(t, this.constructor.elementStyles), t;
   }
   connectedCallback() {
     var t;
@@ -281,20 +280,20 @@ let xt = class extends HTMLElement {
   firstUpdated(t) {
   }
 };
-xt.elementStyles = [], xt.shadowRootOptions = { mode: "open" }, xt[Mt("elementProperties")] = /* @__PURE__ */ new Map(), xt[Mt("finalized")] = /* @__PURE__ */ new Map(), ce == null || ce({ ReactiveElement: xt }), (lt.reactiveElementVersions ?? (lt.reactiveElementVersions = [])).push("2.1.0");
+_t.elementStyles = [], _t.shadowRootOptions = { mode: "open" }, _t[Mt("elementProperties")] = /* @__PURE__ */ new Map(), _t[Mt("finalized")] = /* @__PURE__ */ new Map(), ce == null || ce({ ReactiveElement: _t }), (it.reactiveElementVersions ?? (it.reactiveElementVersions = [])).push("2.1.0");
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const Vt = globalThis, Jt = Vt.trustedTypes, We = Jt ? Jt.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, bs = "$lit$", ot = `lit$${Math.random().toFixed(9).slice(2)}$`, ys = "?" + ot, po = `<${ys}>`, vt = document, It = () => vt.createComment(""), Ht = (e) => e === null || typeof e != "object" && typeof e != "function", Pe = Array.isArray, fo = (e) => Pe(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", he = `[ 	
+const Vt = globalThis, Jt = Vt.trustedTypes, We = Jt ? Jt.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, bs = "$lit$", lt = `lit$${Math.random().toFixed(9).slice(2)}$`, ys = "?" + lt, uo = `<${ys}>`, vt = document, It = () => vt.createComment(""), Ht = (e) => e === null || typeof e != "object" && typeof e != "function", Pe = Array.isArray, po = (e) => Pe(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", he = `[ 	
 \f\r]`, Pt = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, qe = /-->/g, Ye = />/g, pt = RegExp(`>|${he}(?:([^\\s"'>=/]+)(${he}*=${he}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), Ke = /'/g, Xe = /"/g, ws = /^(?:script|style|textarea|title)$/i, mo = (e) => (t, ...s) => ({ _$litType$: e, strings: t, values: s }), O = mo(1), it = Symbol.for("lit-noChange"), C = Symbol.for("lit-nothing"), Ze = /* @__PURE__ */ new WeakMap(), mt = vt.createTreeWalker(vt, 129);
-function _s(e, t) {
+\f\r"'\`<>=]|("|')|))|$)`, "g"), Ke = /'/g, Xe = /"/g, ws = /^(?:script|style|textarea|title)$/i, fo = (e) => (t, ...s) => ({ _$litType$: e, strings: t, values: s }), O = fo(1), rt = Symbol.for("lit-noChange"), C = Symbol.for("lit-nothing"), Ze = /* @__PURE__ */ new WeakMap(), mt = vt.createTreeWalker(vt, 129);
+function xs(e, t) {
   if (!Pe(e) || !e.hasOwnProperty("raw")) throw Error("invalid template strings array");
   return We !== void 0 ? We.createHTML(t) : t;
 }
-const go = (e, t) => {
+const mo = (e, t) => {
   const s = e.length - 1, o = [];
   let l, i = t === 2 ? "<svg>" : t === 3 ? "<math>" : "", r = Pt;
   for (let n = 0; n < s; n++) {
@@ -302,16 +301,16 @@ const go = (e, t) => {
     let c, h, d = -1, m = 0;
     for (; m < a.length && (r.lastIndex = m, h = r.exec(a), h !== null); ) m = r.lastIndex, r === Pt ? h[1] === "!--" ? r = qe : h[1] !== void 0 ? r = Ye : h[2] !== void 0 ? (ws.test(h[2]) && (l = RegExp("</" + h[2], "g")), r = pt) : h[3] !== void 0 && (r = pt) : r === pt ? h[0] === ">" ? (r = l ?? Pt, d = -1) : h[1] === void 0 ? d = -2 : (d = r.lastIndex - h[2].length, c = h[1], r = h[3] === void 0 ? pt : h[3] === '"' ? Xe : Ke) : r === Xe || r === Ke ? r = pt : r === qe || r === Ye ? r = Pt : (r = pt, l = void 0);
     const p = r === pt && e[n + 1].startsWith("/>") ? " " : "";
-    i += r === Pt ? a + po : d >= 0 ? (o.push(c), a.slice(0, d) + bs + a.slice(d) + ot + p) : a + ot + (d === -2 ? n : p);
+    i += r === Pt ? a + uo : d >= 0 ? (o.push(c), a.slice(0, d) + bs + a.slice(d) + lt + p) : a + lt + (d === -2 ? n : p);
   }
-  return [_s(e, i + (e[s] || "<?>") + (t === 2 ? "</svg>" : t === 3 ? "</math>" : "")), o];
+  return [xs(e, i + (e[s] || "<?>") + (t === 2 ? "</svg>" : t === 3 ? "</math>" : "")), o];
 };
 class Nt {
   constructor({ strings: t, _$litType$: s }, o) {
     let l;
     this.parts = [];
     let i = 0, r = 0;
-    const n = t.length - 1, a = this.parts, [c, h] = go(t, s);
+    const n = t.length - 1, a = this.parts, [c, h] = mo(t, s);
     if (this.el = Nt.createElement(c, o), mt.currentNode = this.el.content, s === 2 || s === 3) {
       const d = this.el.content.firstChild;
       d.replaceWith(...d.childNodes);
@@ -319,11 +318,11 @@ class Nt {
     for (; (l = mt.nextNode()) !== null && a.length < n; ) {
       if (l.nodeType === 1) {
         if (l.hasAttributes()) for (const d of l.getAttributeNames()) if (d.endsWith(bs)) {
-          const m = h[r++], p = l.getAttribute(d).split(ot), g = /([.?@])?(.*)/.exec(m);
-          a.push({ type: 1, index: i, name: g[2], strings: p, ctor: g[1] === "." ? bo : g[1] === "?" ? yo : g[1] === "@" ? wo : se }), l.removeAttribute(d);
-        } else d.startsWith(ot) && (a.push({ type: 6, index: i }), l.removeAttribute(d));
+          const m = h[r++], p = l.getAttribute(d).split(lt), g = /([.?@])?(.*)/.exec(m);
+          a.push({ type: 1, index: i, name: g[2], strings: p, ctor: g[1] === "." ? vo : g[1] === "?" ? bo : g[1] === "@" ? yo : se }), l.removeAttribute(d);
+        } else d.startsWith(lt) && (a.push({ type: 6, index: i }), l.removeAttribute(d));
         if (ws.test(l.tagName)) {
-          const d = l.textContent.split(ot), m = d.length - 1;
+          const d = l.textContent.split(lt), m = d.length - 1;
           if (m > 0) {
             l.textContent = Jt ? Jt.emptyScript : "";
             for (let p = 0; p < m; p++) l.append(d[p], It()), mt.nextNode(), a.push({ type: 2, index: ++i });
@@ -333,7 +332,7 @@ class Nt {
       } else if (l.nodeType === 8) if (l.data === ys) a.push({ type: 2, index: i });
       else {
         let d = -1;
-        for (; (d = l.data.indexOf(ot, d + 1)) !== -1; ) a.push({ type: 7, index: i }), d += ot.length - 1;
+        for (; (d = l.data.indexOf(lt, d + 1)) !== -1; ) a.push({ type: 7, index: i }), d += lt.length - 1;
       }
       i++;
     }
@@ -345,12 +344,12 @@ class Nt {
 }
 function Ct(e, t, s = e, o) {
   var r, n;
-  if (t === it) return t;
+  if (t === rt) return t;
   let l = o !== void 0 ? (r = s._$Co) == null ? void 0 : r[o] : s._$Cl;
   const i = Ht(t) ? void 0 : t._$litDirective$;
   return (l == null ? void 0 : l.constructor) !== i && ((n = l == null ? void 0 : l._$AO) == null || n.call(l, !1), i === void 0 ? l = void 0 : (l = new i(e), l._$AT(e, s, o)), o !== void 0 ? (s._$Co ?? (s._$Co = []))[o] = l : s._$Cl = l), l !== void 0 && (t = Ct(e, l._$AS(e, t.values), l, o)), t;
 }
-class vo {
+class go {
   constructor(t, s) {
     this._$AV = [], this._$AN = void 0, this._$AD = t, this._$AM = s;
   }
@@ -367,7 +366,7 @@ class vo {
     for (; a !== void 0; ) {
       if (r === a.index) {
         let c;
-        a.type === 2 ? c = new Ut(i, i.nextSibling, this, t) : a.type === 1 ? c = new a.ctor(i, a.name, a.strings, this, t) : a.type === 6 && (c = new _o(i, this, t)), this._$AV.push(c), a = o[++n];
+        a.type === 2 ? c = new Ut(i, i.nextSibling, this, t) : a.type === 1 ? c = new a.ctor(i, a.name, a.strings, this, t) : a.type === 6 && (c = new wo(i, this, t)), this._$AV.push(c), a = o[++n];
       }
       r !== (a == null ? void 0 : a.index) && (i = mt.nextNode(), r++);
     }
@@ -398,7 +397,7 @@ class Ut {
     return this._$AB;
   }
   _$AI(t, s = this) {
-    t = Ct(this, t, s), Ht(t) ? t === C || t == null || t === "" ? (this._$AH !== C && this._$AR(), this._$AH = C) : t !== this._$AH && t !== it && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : fo(t) ? this.k(t) : this._(t);
+    t = Ct(this, t, s), Ht(t) ? t === C || t == null || t === "" ? (this._$AH !== C && this._$AR(), this._$AH = C) : t !== this._$AH && t !== rt && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : po(t) ? this.k(t) : this._(t);
   }
   O(t) {
     return this._$AA.parentNode.insertBefore(t, this._$AB);
@@ -411,10 +410,10 @@ class Ut {
   }
   $(t) {
     var i;
-    const { values: s, _$litType$: o } = t, l = typeof o == "number" ? this._$AC(t) : (o.el === void 0 && (o.el = Nt.createElement(_s(o.h, o.h[0]), this.options)), o);
+    const { values: s, _$litType$: o } = t, l = typeof o == "number" ? this._$AC(t) : (o.el === void 0 && (o.el = Nt.createElement(xs(o.h, o.h[0]), this.options)), o);
     if (((i = this._$AH) == null ? void 0 : i._$AD) === l) this._$AH.p(s);
     else {
-      const r = new vo(l, this), n = r.u(this.options);
+      const r = new go(l, this), n = r.u(this.options);
       r.p(s), this.T(n), this._$AH = r;
     }
   }
@@ -454,11 +453,11 @@ class se {
   _$AI(t, s = this, o, l) {
     const i = this.strings;
     let r = !1;
-    if (i === void 0) t = Ct(this, t, s, 0), r = !Ht(t) || t !== this._$AH && t !== it, r && (this._$AH = t);
+    if (i === void 0) t = Ct(this, t, s, 0), r = !Ht(t) || t !== this._$AH && t !== rt, r && (this._$AH = t);
     else {
       const n = t;
       let a, c;
-      for (t = i[0], a = 0; a < i.length - 1; a++) c = Ct(this, n[o + a], s, a), c === it && (c = this._$AH[a]), r || (r = !Ht(c) || c !== this._$AH[a]), c === C ? t = C : t !== C && (t += (c ?? "") + i[a + 1]), this._$AH[a] = c;
+      for (t = i[0], a = 0; a < i.length - 1; a++) c = Ct(this, n[o + a], s, a), c === rt && (c = this._$AH[a]), r || (r = !Ht(c) || c !== this._$AH[a]), c === C ? t = C : t !== C && (t += (c ?? "") + i[a + 1]), this._$AH[a] = c;
     }
     r && !l && this.j(t);
   }
@@ -466,7 +465,7 @@ class se {
     t === C ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t ?? "");
   }
 }
-class bo extends se {
+class vo extends se {
   constructor() {
     super(...arguments), this.type = 3;
   }
@@ -474,7 +473,7 @@ class bo extends se {
     this.element[this.name] = t === C ? void 0 : t;
   }
 }
-class yo extends se {
+class bo extends se {
   constructor() {
     super(...arguments), this.type = 4;
   }
@@ -482,12 +481,12 @@ class yo extends se {
     this.element.toggleAttribute(this.name, !!t && t !== C);
   }
 }
-class wo extends se {
+class yo extends se {
   constructor(t, s, o, l, i) {
     super(t, s, o, l, i), this.type = 5;
   }
   _$AI(t, s = this) {
-    if ((t = Ct(this, t, s, 0) ?? C) === it) return;
+    if ((t = Ct(this, t, s, 0) ?? C) === rt) return;
     const o = this._$AH, l = t === C && o !== C || t.capture !== o.capture || t.once !== o.once || t.passive !== o.passive, i = t !== C && (o === C || l);
     l && this.element.removeEventListener(this.name, this, o), i && this.element.addEventListener(this.name, this, t), this._$AH = t;
   }
@@ -496,7 +495,7 @@ class wo extends se {
     typeof this._$AH == "function" ? this._$AH.call(((s = this.options) == null ? void 0 : s.host) ?? this.element, t) : this._$AH.handleEvent(t);
   }
 }
-class _o {
+class wo {
   constructor(t, s, o) {
     this.element = t, this.type = 6, this._$AN = void 0, this._$AM = s, this.options = o;
   }
@@ -524,7 +523,7 @@ const xo = (e, t, s) => {
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const gt = globalThis;
-let Bt = class extends xt {
+let Bt = class extends _t {
   constructor() {
     super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
   }
@@ -546,7 +545,7 @@ let Bt = class extends xt {
     super.disconnectedCallback(), (t = this._$Do) == null || t.setConnected(!1);
   }
   render() {
-    return it;
+    return rt;
   }
 };
 var gs;
@@ -554,7 +553,494 @@ Bt._$litElement$ = !0, Bt.finalized = !0, (gs = gt.litElementHydrateSupport) == 
 const ue = gt.litElementPolyfillSupport;
 ue == null || ue({ LitElement: Bt });
 (gt.litElementVersions ?? (gt.litElementVersions = [])).push("4.2.0");
-var $o = ct`
+const _o = Q`
+  :root,
+  :host,
+  .sl-theme-light {
+    color-scheme: light;
+
+    --sl-color-gray-50: hsl(0 0% 97.5%);
+    --sl-color-gray-100: hsl(240 4.8% 95.9%);
+    --sl-color-gray-200: hsl(240 5.9% 90%);
+    --sl-color-gray-300: hsl(240 4.9% 83.9%);
+    --sl-color-gray-400: hsl(240 5% 64.9%);
+    --sl-color-gray-500: hsl(240 3.8% 46.1%);
+    --sl-color-gray-600: hsl(240 5.2% 33.9%);
+    --sl-color-gray-700: hsl(240 5.3% 26.1%);
+    --sl-color-gray-800: hsl(240 3.7% 15.9%);
+    --sl-color-gray-900: hsl(240 5.9% 10%);
+    --sl-color-gray-950: hsl(240 7.3% 8%);
+
+    --sl-color-red-50: hsl(0 85.7% 97.3%);
+    --sl-color-red-100: hsl(0 93.3% 94.1%);
+    --sl-color-red-200: hsl(0 96.3% 89.4%);
+    --sl-color-red-300: hsl(0 93.5% 81.8%);
+    --sl-color-red-400: hsl(0 90.6% 70.8%);
+    --sl-color-red-500: hsl(0 84.2% 60.2%);
+    --sl-color-red-600: hsl(0 72.2% 50.6%);
+    --sl-color-red-700: hsl(0 73.7% 41.8%);
+    --sl-color-red-800: hsl(0 70% 35.3%);
+    --sl-color-red-900: hsl(0 62.8% 30.6%);
+    --sl-color-red-950: hsl(0 60% 19.6%);
+
+    --sl-color-orange-50: hsl(33.3 100% 96.5%);
+    --sl-color-orange-100: hsl(34.3 100% 91.8%);
+    --sl-color-orange-200: hsl(32.1 97.7% 83.1%);
+    --sl-color-orange-300: hsl(30.7 97.2% 72.4%);
+    --sl-color-orange-400: hsl(27 96% 61%);
+    --sl-color-orange-500: hsl(24.6 95% 53.1%);
+    --sl-color-orange-600: hsl(20.5 90.2% 48.2%);
+    --sl-color-orange-700: hsl(17.5 88.3% 40.4%);
+    --sl-color-orange-800: hsl(15 79.1% 33.7%);
+    --sl-color-orange-900: hsl(15.3 74.6% 27.8%);
+    --sl-color-orange-950: hsl(15.2 69.1% 19%);
+
+    --sl-color-amber-50: hsl(48 100% 96.1%);
+    --sl-color-amber-100: hsl(48 96.5% 88.8%);
+    --sl-color-amber-200: hsl(48 96.6% 76.7%);
+    --sl-color-amber-300: hsl(45.9 96.7% 64.5%);
+    --sl-color-amber-400: hsl(43.3 96.4% 56.3%);
+    --sl-color-amber-500: hsl(37.7 92.1% 50.2%);
+    --sl-color-amber-600: hsl(32.1 94.6% 43.7%);
+    --sl-color-amber-700: hsl(26 90.5% 37.1%);
+    --sl-color-amber-800: hsl(22.7 82.5% 31.4%);
+    --sl-color-amber-900: hsl(21.7 77.8% 26.5%);
+    --sl-color-amber-950: hsl(22.9 74.1% 16.7%);
+
+    --sl-color-yellow-50: hsl(54.5 91.7% 95.3%);
+    --sl-color-yellow-100: hsl(54.9 96.7% 88%);
+    --sl-color-yellow-200: hsl(52.8 98.3% 76.9%);
+    --sl-color-yellow-300: hsl(50.4 97.8% 63.5%);
+    --sl-color-yellow-400: hsl(47.9 95.8% 53.1%);
+    --sl-color-yellow-500: hsl(45.4 93.4% 47.5%);
+    --sl-color-yellow-600: hsl(40.6 96.1% 40.4%);
+    --sl-color-yellow-700: hsl(35.5 91.7% 32.9%);
+    --sl-color-yellow-800: hsl(31.8 81% 28.8%);
+    --sl-color-yellow-900: hsl(28.4 72.5% 25.7%);
+    --sl-color-yellow-950: hsl(33.1 69% 13.9%);
+
+    --sl-color-lime-50: hsl(78.3 92% 95.1%);
+    --sl-color-lime-100: hsl(79.6 89.1% 89.2%);
+    --sl-color-lime-200: hsl(80.9 88.5% 79.6%);
+    --sl-color-lime-300: hsl(82 84.5% 67.1%);
+    --sl-color-lime-400: hsl(82.7 78% 55.5%);
+    --sl-color-lime-500: hsl(83.7 80.5% 44.3%);
+    --sl-color-lime-600: hsl(84.8 85.2% 34.5%);
+    --sl-color-lime-700: hsl(85.9 78.4% 27.3%);
+    --sl-color-lime-800: hsl(86.3 69% 22.7%);
+    --sl-color-lime-900: hsl(87.6 61.2% 20.2%);
+    --sl-color-lime-950: hsl(86.5 60.6% 13.9%);
+
+    --sl-color-green-50: hsl(138.5 76.5% 96.7%);
+    --sl-color-green-100: hsl(140.6 84.2% 92.5%);
+    --sl-color-green-200: hsl(141 78.9% 85.1%);
+    --sl-color-green-300: hsl(141.7 76.6% 73.1%);
+    --sl-color-green-400: hsl(141.9 69.2% 58%);
+    --sl-color-green-500: hsl(142.1 70.6% 45.3%);
+    --sl-color-green-600: hsl(142.1 76.2% 36.3%);
+    --sl-color-green-700: hsl(142.4 71.8% 29.2%);
+    --sl-color-green-800: hsl(142.8 64.2% 24.1%);
+    --sl-color-green-900: hsl(143.8 61.2% 20.2%);
+    --sl-color-green-950: hsl(144.3 60.7% 12%);
+
+    --sl-color-emerald-50: hsl(151.8 81% 95.9%);
+    --sl-color-emerald-100: hsl(149.3 80.4% 90%);
+    --sl-color-emerald-200: hsl(152.4 76% 80.4%);
+    --sl-color-emerald-300: hsl(156.2 71.6% 66.9%);
+    --sl-color-emerald-400: hsl(158.1 64.4% 51.6%);
+    --sl-color-emerald-500: hsl(160.1 84.1% 39.4%);
+    --sl-color-emerald-600: hsl(161.4 93.5% 30.4%);
+    --sl-color-emerald-700: hsl(162.9 93.5% 24.3%);
+    --sl-color-emerald-800: hsl(163.1 88.1% 19.8%);
+    --sl-color-emerald-900: hsl(164.2 85.7% 16.5%);
+    --sl-color-emerald-950: hsl(164.3 87.5% 9.4%);
+
+    --sl-color-teal-50: hsl(166.2 76.5% 96.7%);
+    --sl-color-teal-100: hsl(167.2 85.5% 89.2%);
+    --sl-color-teal-200: hsl(168.4 83.8% 78.2%);
+    --sl-color-teal-300: hsl(170.6 76.9% 64.3%);
+    --sl-color-teal-400: hsl(172.5 66% 50.4%);
+    --sl-color-teal-500: hsl(173.4 80.4% 40%);
+    --sl-color-teal-600: hsl(174.7 83.9% 31.6%);
+    --sl-color-teal-700: hsl(175.3 77.4% 26.1%);
+    --sl-color-teal-800: hsl(176.1 69.4% 21.8%);
+    --sl-color-teal-900: hsl(175.9 60.8% 19%);
+    --sl-color-teal-950: hsl(176.5 58.6% 11.4%);
+
+    --sl-color-cyan-50: hsl(183.2 100% 96.3%);
+    --sl-color-cyan-100: hsl(185.1 95.9% 90.4%);
+    --sl-color-cyan-200: hsl(186.2 93.5% 81.8%);
+    --sl-color-cyan-300: hsl(187 92.4% 69%);
+    --sl-color-cyan-400: hsl(187.9 85.7% 53.3%);
+    --sl-color-cyan-500: hsl(188.7 94.5% 42.7%);
+    --sl-color-cyan-600: hsl(191.6 91.4% 36.5%);
+    --sl-color-cyan-700: hsl(192.9 82.3% 31%);
+    --sl-color-cyan-800: hsl(194.4 69.6% 27.1%);
+    --sl-color-cyan-900: hsl(196.4 63.6% 23.7%);
+    --sl-color-cyan-950: hsl(196.8 61% 16.1%);
+
+    --sl-color-sky-50: hsl(204 100% 97.1%);
+    --sl-color-sky-100: hsl(204 93.8% 93.7%);
+    --sl-color-sky-200: hsl(200.6 94.4% 86.1%);
+    --sl-color-sky-300: hsl(199.4 95.5% 73.9%);
+    --sl-color-sky-400: hsl(198.4 93.2% 59.6%);
+    --sl-color-sky-500: hsl(198.6 88.7% 48.4%);
+    --sl-color-sky-600: hsl(200.4 98% 39.4%);
+    --sl-color-sky-700: hsl(201.3 96.3% 32.2%);
+    --sl-color-sky-800: hsl(201 90% 27.5%);
+    --sl-color-sky-900: hsl(202 80.3% 23.9%);
+    --sl-color-sky-950: hsl(202.3 73.8% 16.5%);
+
+    --sl-color-blue-50: hsl(213.8 100% 96.9%);
+    --sl-color-blue-100: hsl(214.3 94.6% 92.7%);
+    --sl-color-blue-200: hsl(213.3 96.9% 87.3%);
+    --sl-color-blue-300: hsl(211.7 96.4% 78.4%);
+    --sl-color-blue-400: hsl(213.1 93.9% 67.8%);
+    --sl-color-blue-500: hsl(217.2 91.2% 59.8%);
+    --sl-color-blue-600: hsl(221.2 83.2% 53.3%);
+    --sl-color-blue-700: hsl(224.3 76.3% 48%);
+    --sl-color-blue-800: hsl(225.9 70.7% 40.2%);
+    --sl-color-blue-900: hsl(224.4 64.3% 32.9%);
+    --sl-color-blue-950: hsl(226.2 55.3% 18.4%);
+
+    --sl-color-indigo-50: hsl(225.9 100% 96.7%);
+    --sl-color-indigo-100: hsl(226.5 100% 93.9%);
+    --sl-color-indigo-200: hsl(228 96.5% 88.8%);
+    --sl-color-indigo-300: hsl(229.7 93.5% 81.8%);
+    --sl-color-indigo-400: hsl(234.5 89.5% 73.9%);
+    --sl-color-indigo-500: hsl(238.7 83.5% 66.7%);
+    --sl-color-indigo-600: hsl(243.4 75.4% 58.6%);
+    --sl-color-indigo-700: hsl(244.5 57.9% 50.6%);
+    --sl-color-indigo-800: hsl(243.7 54.5% 41.4%);
+    --sl-color-indigo-900: hsl(242.2 47.4% 34.3%);
+    --sl-color-indigo-950: hsl(243.5 43.6% 22.9%);
+
+    --sl-color-violet-50: hsl(250 100% 97.6%);
+    --sl-color-violet-100: hsl(251.4 91.3% 95.5%);
+    --sl-color-violet-200: hsl(250.5 95.2% 91.8%);
+    --sl-color-violet-300: hsl(252.5 94.7% 85.1%);
+    --sl-color-violet-400: hsl(255.1 91.7% 76.3%);
+    --sl-color-violet-500: hsl(258.3 89.5% 66.3%);
+    --sl-color-violet-600: hsl(262.1 83.3% 57.8%);
+    --sl-color-violet-700: hsl(263.4 70% 50.4%);
+    --sl-color-violet-800: hsl(263.4 69.3% 42.2%);
+    --sl-color-violet-900: hsl(263.5 67.4% 34.9%);
+    --sl-color-violet-950: hsl(265.1 61.5% 21.4%);
+
+    --sl-color-purple-50: hsl(270 100% 98%);
+    --sl-color-purple-100: hsl(268.7 100% 95.5%);
+    --sl-color-purple-200: hsl(268.6 100% 91.8%);
+    --sl-color-purple-300: hsl(269.2 97.4% 85.1%);
+    --sl-color-purple-400: hsl(270 95.2% 75.3%);
+    --sl-color-purple-500: hsl(270.7 91% 65.1%);
+    --sl-color-purple-600: hsl(271.5 81.3% 55.9%);
+    --sl-color-purple-700: hsl(272.1 71.7% 47.1%);
+    --sl-color-purple-800: hsl(272.9 67.2% 39.4%);
+    --sl-color-purple-900: hsl(273.6 65.6% 32%);
+    --sl-color-purple-950: hsl(276 59.5% 16.5%);
+
+    --sl-color-fuchsia-50: hsl(289.1 100% 97.8%);
+    --sl-color-fuchsia-100: hsl(287 100% 95.5%);
+    --sl-color-fuchsia-200: hsl(288.3 95.8% 90.6%);
+    --sl-color-fuchsia-300: hsl(291.1 93.1% 82.9%);
+    --sl-color-fuchsia-400: hsl(292 91.4% 72.5%);
+    --sl-color-fuchsia-500: hsl(292.2 84.1% 60.6%);
+    --sl-color-fuchsia-600: hsl(293.4 69.5% 48.8%);
+    --sl-color-fuchsia-700: hsl(294.7 72.4% 39.8%);
+    --sl-color-fuchsia-800: hsl(295.4 70.2% 32.9%);
+    --sl-color-fuchsia-900: hsl(296.7 63.6% 28%);
+    --sl-color-fuchsia-950: hsl(297.1 56.8% 14.5%);
+
+    --sl-color-pink-50: hsl(327.3 73.3% 97.1%);
+    --sl-color-pink-100: hsl(325.7 77.8% 94.7%);
+    --sl-color-pink-200: hsl(325.9 84.6% 89.8%);
+    --sl-color-pink-300: hsl(327.4 87.1% 81.8%);
+    --sl-color-pink-400: hsl(328.6 85.5% 70.2%);
+    --sl-color-pink-500: hsl(330.4 81.2% 60.4%);
+    --sl-color-pink-600: hsl(333.3 71.4% 50.6%);
+    --sl-color-pink-700: hsl(335.1 77.6% 42%);
+    --sl-color-pink-800: hsl(335.8 74.4% 35.3%);
+    --sl-color-pink-900: hsl(335.9 69% 30.4%);
+    --sl-color-pink-950: hsl(336.2 65.4% 15.9%);
+
+    --sl-color-rose-50: hsl(355.7 100% 97.3%);
+    --sl-color-rose-100: hsl(355.6 100% 94.7%);
+    --sl-color-rose-200: hsl(352.7 96.1% 90%);
+    --sl-color-rose-300: hsl(352.6 95.7% 81.8%);
+    --sl-color-rose-400: hsl(351.3 94.5% 71.4%);
+    --sl-color-rose-500: hsl(349.7 89.2% 60.2%);
+    --sl-color-rose-600: hsl(346.8 77.2% 49.8%);
+    --sl-color-rose-700: hsl(345.3 82.7% 40.8%);
+    --sl-color-rose-800: hsl(343.4 79.7% 34.7%);
+    --sl-color-rose-900: hsl(341.5 75.5% 30.4%);
+    --sl-color-rose-950: hsl(341.3 70.1% 17.1%);
+
+    --sl-color-primary-50: var(--sl-color-sky-50);
+    --sl-color-primary-100: var(--sl-color-sky-100);
+    --sl-color-primary-200: var(--sl-color-sky-200);
+    --sl-color-primary-300: var(--sl-color-sky-300);
+    --sl-color-primary-400: var(--sl-color-sky-400);
+    --sl-color-primary-500: var(--sl-color-sky-500);
+    --sl-color-primary-600: var(--sl-color-sky-600);
+    --sl-color-primary-700: var(--sl-color-sky-700);
+    --sl-color-primary-800: var(--sl-color-sky-800);
+    --sl-color-primary-900: var(--sl-color-sky-900);
+    --sl-color-primary-950: var(--sl-color-sky-950);
+
+    --sl-color-success-50: var(--sl-color-green-50);
+    --sl-color-success-100: var(--sl-color-green-100);
+    --sl-color-success-200: var(--sl-color-green-200);
+    --sl-color-success-300: var(--sl-color-green-300);
+    --sl-color-success-400: var(--sl-color-green-400);
+    --sl-color-success-500: var(--sl-color-green-500);
+    --sl-color-success-600: var(--sl-color-green-600);
+    --sl-color-success-700: var(--sl-color-green-700);
+    --sl-color-success-800: var(--sl-color-green-800);
+    --sl-color-success-900: var(--sl-color-green-900);
+    --sl-color-success-950: var(--sl-color-green-950);
+
+    --sl-color-warning-50: var(--sl-color-amber-50);
+    --sl-color-warning-100: var(--sl-color-amber-100);
+    --sl-color-warning-200: var(--sl-color-amber-200);
+    --sl-color-warning-300: var(--sl-color-amber-300);
+    --sl-color-warning-400: var(--sl-color-amber-400);
+    --sl-color-warning-500: var(--sl-color-amber-500);
+    --sl-color-warning-600: var(--sl-color-amber-600);
+    --sl-color-warning-700: var(--sl-color-amber-700);
+    --sl-color-warning-800: var(--sl-color-amber-800);
+    --sl-color-warning-900: var(--sl-color-amber-900);
+    --sl-color-warning-950: var(--sl-color-amber-950);
+
+    --sl-color-danger-50: var(--sl-color-red-50);
+    --sl-color-danger-100: var(--sl-color-red-100);
+    --sl-color-danger-200: var(--sl-color-red-200);
+    --sl-color-danger-300: var(--sl-color-red-300);
+    --sl-color-danger-400: var(--sl-color-red-400);
+    --sl-color-danger-500: var(--sl-color-red-500);
+    --sl-color-danger-600: var(--sl-color-red-600);
+    --sl-color-danger-700: var(--sl-color-red-700);
+    --sl-color-danger-800: var(--sl-color-red-800);
+    --sl-color-danger-900: var(--sl-color-red-900);
+    --sl-color-danger-950: var(--sl-color-red-950);
+
+    --sl-color-neutral-50: var(--sl-color-gray-50);
+    --sl-color-neutral-100: var(--sl-color-gray-100);
+    --sl-color-neutral-200: var(--sl-color-gray-200);
+    --sl-color-neutral-300: var(--sl-color-gray-300);
+    --sl-color-neutral-400: var(--sl-color-gray-400);
+    --sl-color-neutral-500: var(--sl-color-gray-500);
+    --sl-color-neutral-600: var(--sl-color-gray-600);
+    --sl-color-neutral-700: var(--sl-color-gray-700);
+    --sl-color-neutral-800: var(--sl-color-gray-800);
+    --sl-color-neutral-900: var(--sl-color-gray-900);
+    --sl-color-neutral-950: var(--sl-color-gray-950);
+
+    --sl-color-neutral-0: hsl(0, 0%, 100%);
+    --sl-color-neutral-1000: hsl(0, 0%, 0%);
+
+    --sl-border-radius-small: 0.1875rem;
+    --sl-border-radius-medium: 0.25rem;
+    --sl-border-radius-large: 0.5rem;
+    --sl-border-radius-x-large: 1rem;
+
+    --sl-border-radius-circle: 50%;
+    --sl-border-radius-pill: 9999px;
+
+    --sl-shadow-x-small: 0 1px 2px hsl(240 3.8% 46.1% / 6%);
+    --sl-shadow-small: 0 1px 2px hsl(240 3.8% 46.1% / 12%);
+    --sl-shadow-medium: 0 2px 4px hsl(240 3.8% 46.1% / 12%);
+    --sl-shadow-large: 0 2px 8px hsl(240 3.8% 46.1% / 12%);
+    --sl-shadow-x-large: 0 4px 16px hsl(240 3.8% 46.1% / 12%);
+
+    --sl-spacing-3x-small: 0.125rem;
+    --sl-spacing-2x-small: 0.25rem;
+    --sl-spacing-x-small: 0.5rem;
+    --sl-spacing-small: 0.75rem;
+    --sl-spacing-medium: 1rem;
+    --sl-spacing-large: 1.25rem;
+    --sl-spacing-x-large: 1.75rem;
+    --sl-spacing-2x-large: 2.25rem;
+    --sl-spacing-3x-large: 3rem;
+    --sl-spacing-4x-large: 4.5rem;
+
+    --sl-transition-x-slow: 1000ms;
+    --sl-transition-slow: 500ms;
+    --sl-transition-medium: 250ms;
+    --sl-transition-fast: 150ms;
+    --sl-transition-x-fast: 50ms;
+
+    --sl-font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+      monospace;
+    --sl-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    --sl-font-serif: Georgia, "Times New Roman", serif;
+
+    --sl-font-size-2x-small: 0.625rem;
+    --sl-font-size-x-small: 0.75rem;
+    --sl-font-size-small: 0.875rem;
+    --sl-font-size-medium: 1rem;
+    --sl-font-size-large: 1.25rem;
+    --sl-font-size-x-large: 1.5rem;
+    --sl-font-size-2x-large: 2.25rem;
+    --sl-font-size-3x-large: 3rem;
+    --sl-font-size-4x-large: 4.5rem;
+
+    --sl-font-weight-light: 300;
+    --sl-font-weight-normal: 400;
+    --sl-font-weight-semibold: 500;
+    --sl-font-weight-bold: 700;
+
+    --sl-letter-spacing-denser: -0.03em;
+    --sl-letter-spacing-dense: -0.015em;
+    --sl-letter-spacing-normal: normal;
+    --sl-letter-spacing-loose: 0.075em;
+    --sl-letter-spacing-looser: 0.15em;
+
+    --sl-line-height-denser: 1;
+    --sl-line-height-dense: 1.4;
+    --sl-line-height-normal: 1.8;
+    --sl-line-height-loose: 2.2;
+    --sl-line-height-looser: 2.6;
+
+    --sl-focus-ring-color: var(--sl-color-primary-600);
+    --sl-focus-ring-style: solid;
+    --sl-focus-ring-width: 3px;
+    --sl-focus-ring: var(--sl-focus-ring-style) var(--sl-focus-ring-width)
+      var(--sl-focus-ring-color);
+    --sl-focus-ring-offset: 1px;
+
+    --sl-button-font-size-small: var(--sl-font-size-x-small);
+    --sl-button-font-size-medium: var(--sl-font-size-small);
+    --sl-button-font-size-large: var(--sl-font-size-medium);
+
+    --sl-input-height-small: 1.875rem;
+    --sl-input-height-medium: 2.5rem;
+    --sl-input-height-large: 3.125rem;
+
+    --sl-input-background-color: var(--sl-color-neutral-0);
+    --sl-input-background-color-hover: var(--sl-input-background-color);
+    --sl-input-background-color-focus: var(--sl-input-background-color);
+    --sl-input-background-color-disabled: var(--sl-color-neutral-100);
+    --sl-input-border-color: var(--sl-color-neutral-300);
+    --sl-input-border-color-hover: var(--sl-color-neutral-400);
+    --sl-input-border-color-focus: var(--sl-color-primary-500);
+    --sl-input-border-color-disabled: var(--sl-color-neutral-300);
+    --sl-input-border-width: 1px;
+    --sl-input-required-content: "*";
+    --sl-input-required-content-offset: -2px;
+    --sl-input-required-content-color: var(--sl-input-label-color);
+
+    --sl-input-border-radius-small: var(--sl-border-radius-medium);
+    --sl-input-border-radius-medium: var(--sl-border-radius-medium);
+    --sl-input-border-radius-large: var(--sl-border-radius-medium);
+
+    --sl-input-font-family: var(--sl-font-sans);
+    --sl-input-font-weight: var(--sl-font-weight-normal);
+    --sl-input-font-size-small: var(--sl-font-size-small);
+    --sl-input-font-size-medium: var(--sl-font-size-medium);
+    --sl-input-font-size-large: var(--sl-font-size-large);
+    --sl-input-letter-spacing: var(--sl-letter-spacing-normal);
+
+    --sl-input-color: var(--sl-color-neutral-700);
+    --sl-input-color-hover: var(--sl-color-neutral-700);
+    --sl-input-color-focus: var(--sl-color-neutral-700);
+    --sl-input-color-disabled: var(--sl-color-neutral-900);
+    --sl-input-icon-color: var(--sl-color-neutral-500);
+    --sl-input-icon-color-hover: var(--sl-color-neutral-600);
+    --sl-input-icon-color-focus: var(--sl-color-neutral-600);
+    --sl-input-placeholder-color: var(--sl-color-neutral-500);
+    --sl-input-placeholder-color-disabled: var(--sl-color-neutral-600);
+    --sl-input-spacing-small: var(--sl-spacing-small);
+    --sl-input-spacing-medium: var(--sl-spacing-medium);
+    --sl-input-spacing-large: var(--sl-spacing-large);
+
+    --sl-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);
+    --sl-input-focus-ring-offset: 0;
+
+    --sl-input-filled-background-color: var(--sl-color-neutral-100);
+    --sl-input-filled-background-color-hover: var(--sl-color-neutral-100);
+    --sl-input-filled-background-color-focus: var(--sl-color-neutral-100);
+    --sl-input-filled-background-color-disabled: var(--sl-color-neutral-100);
+    --sl-input-filled-color: var(--sl-color-neutral-800);
+    --sl-input-filled-color-hover: var(--sl-color-neutral-800);
+    --sl-input-filled-color-focus: var(--sl-color-neutral-700);
+    --sl-input-filled-color-disabled: var(--sl-color-neutral-800);
+
+    --sl-input-label-font-size-small: var(--sl-font-size-small);
+    --sl-input-label-font-size-medium: var(--sl-font-size-medium);
+    --sl-input-label-font-size-large: var(--sl-font-size-large);
+    --sl-input-label-color: inherit;
+
+    --sl-input-help-text-font-size-small: var(--sl-font-size-x-small);
+    --sl-input-help-text-font-size-medium: var(--sl-font-size-small);
+    --sl-input-help-text-font-size-large: var(--sl-font-size-medium);
+    --sl-input-help-text-color: var(--sl-color-neutral-500);
+
+    --sl-toggle-size-small: 0.875rem;
+    --sl-toggle-size-medium: 1.125rem;
+    --sl-toggle-size-large: 1.375rem;
+
+    --sl-overlay-background-color: hsl(240 3.8% 46.1% / 33%);
+
+    --sl-panel-background-color: var(--sl-color-neutral-0);
+    --sl-panel-border-color: var(--sl-color-neutral-200);
+    --sl-panel-border-width: 1px;
+
+    --sl-tooltip-border-radius: var(--sl-border-radius-medium);
+    --sl-tooltip-background-color: var(--sl-color-neutral-800);
+    --sl-tooltip-color: var(--sl-color-neutral-0);
+    --sl-tooltip-font-family: var(--sl-font-sans);
+    --sl-tooltip-font-weight: var(--sl-font-weight-normal);
+    --sl-tooltip-font-size: var(--sl-font-size-small);
+    --sl-tooltip-line-height: var(--sl-line-height-dense);
+    --sl-tooltip-padding: var(--sl-spacing-2x-small) var(--sl-spacing-x-small);
+    --sl-tooltip-arrow-size: 6px;
+
+    --sl-z-index-drawer: 700;
+    --sl-z-index-dialog: 800;
+    --sl-z-index-dropdown: 900;
+    --sl-z-index-toast: 950;
+    --sl-z-index-tooltip: 1000;
+  }
+
+  @supports (scrollbar-gutter: stable) {
+    .sl-scroll-lock {
+      scrollbar-gutter: var(--sl-scroll-lock-gutter) !important;
+    }
+
+    .sl-scroll-lock body {
+      overflow: hidden !important;
+    }
+  }
+
+  @supports not (scrollbar-gutter: stable) {
+    .sl-scroll-lock body {
+      padding-right: var(--sl-scroll-lock-size) !important;
+      overflow: hidden !important;
+    }
+  }
+
+  .sl-toast-stack {
+    position: fixed;
+    top: 0;
+    inset-inline-end: 0;
+    z-index: var(--sl-z-index-toast);
+    width: 28rem;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  .sl-toast-stack sl-alert {
+    margin: var(--sl-spacing-medium);
+  }
+
+  .sl-toast-stack sl-alert::part(base) {
+    box-shadow: var(--sl-shadow-large);
+  }
+`;
+var $o = Q`
   :host {
     display: inline-block;
   }
@@ -667,7 +1153,7 @@ var $o = ct`
   .tag--pill {
     border-radius: var(--sl-border-radius-pill);
   }
-`, Ao = ct`
+`, Ao = Q`
   :host {
     display: inline-block;
     color: var(--sl-color-neutral-600);
@@ -858,7 +1344,7 @@ function Lo(e) {
 function Qe(e) {
   return zo.find((t) => t.name === e);
 }
-var To = ct`
+var To = Q`
   :host {
     display: inline-block;
     width: 1em;
@@ -871,9 +1357,9 @@ var To = ct`
     height: 100%;
     width: 100%;
   }
-`, xs = Object.defineProperty, Ro = Object.defineProperties, Do = Object.getOwnPropertyDescriptor, Mo = Object.getOwnPropertyDescriptors, ts = Object.getOwnPropertySymbols, Vo = Object.prototype.hasOwnProperty, Bo = Object.prototype.propertyIsEnumerable, $s = (e) => {
+`, _s = Object.defineProperty, Ro = Object.defineProperties, Do = Object.getOwnPropertyDescriptor, Mo = Object.getOwnPropertyDescriptors, ts = Object.getOwnPropertySymbols, Vo = Object.prototype.hasOwnProperty, Bo = Object.prototype.propertyIsEnumerable, $s = (e) => {
   throw TypeError(e);
-}, es = (e, t, s) => t in e ? xs(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, wt = (e, t) => {
+}, es = (e, t, s) => t in e ? _s(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, wt = (e, t) => {
   for (var s in t || (t = {}))
     Vo.call(t, s) && es(e, s, t[s]);
   if (ts)
@@ -883,7 +1369,7 @@ var To = ct`
 }, oe = (e, t) => Ro(e, Mo(t)), u = (e, t, s, o) => {
   for (var l = o > 1 ? void 0 : o ? Do(t, s) : t, i = e.length - 1, r; i >= 0; i--)
     (r = e[i]) && (l = (o ? r(t, s, l) : r(l)) || l);
-  return o && l && xs(t, s, l), l;
+  return o && l && _s(t, s, l), l;
 }, As = (e, t, s) => t.has(e) || $s("Cannot " + s), Io = (e, t, s) => (As(e, t, "read from private field"), t.get(e)), Ho = (e, t, s) => t.has(e) ? $s("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, s), No = (e, t, s, o) => (As(e, t, "write to private field"), t.set(e, s), s);
 function ht(e, t) {
   const s = wt({
@@ -902,7 +1388,7 @@ function ht(e, t) {
     };
   };
 }
-var Et = ct`
+var Et = Q`
   :host {
     box-sizing: border-box;
   }
@@ -968,7 +1454,7 @@ const jo = (e, t, s) => (s.configurable = !0, s.enumerable = !0, Reflect.decorat
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-function Q(e, t) {
+function tt(e, t) {
   return (s, o, l) => {
     const i = (r) => {
       var n;
@@ -1194,7 +1680,7 @@ const bt = Ss(class extends Es {
       const r = !!t[i];
       r === this.st.has(i) || (l = this.nt) != null && l.has(i) || (r ? (s.add(i), this.st.add(i)) : (s.remove(i), this.st.delete(i)));
     }
-    return it;
+    return rt;
   }
 });
 /**
@@ -1292,7 +1778,7 @@ var L = class extends K {
 L.styles = [Et, Ao];
 L.dependencies = { "sl-icon": F };
 u([
-  Q(".icon-button")
+  tt(".icon-button")
 ], L.prototype, "button", 2);
 u([
   N()
@@ -1422,7 +1908,7 @@ zs(Ls);
 var Zo = Ls, le = class extends Xo {
 };
 zs(Zo);
-var _t = class extends K {
+var xt = class extends K {
   constructor() {
     super(...arguments), this.localize = new le(this), this.variant = "neutral", this.size = "medium", this.pill = !1, this.removable = !1;
   }
@@ -1469,21 +1955,21 @@ var _t = class extends K {
     `;
   }
 };
-_t.styles = [Et, $o];
-_t.dependencies = { "sl-icon-button": L };
+xt.styles = [Et, $o];
+xt.dependencies = { "sl-icon-button": L };
 u([
   f({ reflect: !0 })
-], _t.prototype, "variant", 2);
+], xt.prototype, "variant", 2);
 u([
   f({ reflect: !0 })
-], _t.prototype, "size", 2);
+], xt.prototype, "size", 2);
 u([
   f({ type: Boolean, reflect: !0 })
-], _t.prototype, "pill", 2);
+], xt.prototype, "pill", 2);
 u([
   f({ type: Boolean })
-], _t.prototype, "removable", 2);
-var Go = ct`
+], xt.prototype, "removable", 2);
+var Go = Q`
   :host {
     display: block;
   }
@@ -1836,7 +2322,7 @@ function Qo(e, t, s = "vertical", o = "smooth") {
   const l = Jo(e, t), i = l.top + t.scrollTop, r = l.left + t.scrollLeft, n = t.scrollLeft, a = t.scrollLeft + t.offsetWidth, c = t.scrollTop, h = t.scrollTop + t.offsetHeight;
   (s === "horizontal" || s === "both") && (r < n ? t.scrollTo({ left: r, behavior: o }) : r + e.clientWidth > a && t.scrollTo({ left: r - t.offsetWidth + e.clientWidth, behavior: o })), (s === "vertical" || s === "both") && (i < c ? t.scrollTo({ top: i, behavior: o }) : i + e.clientHeight > h && t.scrollTo({ top: i - t.offsetHeight + e.clientHeight, behavior: o }));
 }
-var tl = ct`
+var tl = Q`
   .form-control .form-control__label {
     display: none;
   }
@@ -1892,7 +2378,7 @@ var tl = ct`
   .form-control--has-help-text.form-control--radio-group .form-control__help-text {
     margin-top: var(--sl-spacing-2x-small);
   }
-`, el = ct`
+`, el = Q`
   :host {
     --arrow-color: var(--sl-color-neutral-1000);
     --arrow-size: 6px;
@@ -1951,7 +2437,7 @@ var tl = ct`
     );
   }
 `;
-const rt = Math.min, z = Math.max, Qt = Math.round, qt = Math.floor, q = (e) => ({
+const nt = Math.min, z = Math.max, Qt = Math.round, qt = Math.floor, q = (e) => ({
   x: e,
   y: e
 }), sl = {
@@ -1963,13 +2449,13 @@ const rt = Math.min, z = Math.max, Qt = Math.round, qt = Math.floor, q = (e) => 
   start: "end",
   end: "start"
 };
-function _e(e, t, s) {
-  return z(e, rt(t, s));
+function xe(e, t, s) {
+  return z(e, nt(t, s));
 }
 function kt(e, t) {
   return typeof e == "function" ? e(t) : e;
 }
-function nt(e) {
+function at(e) {
   return e.split("-")[0];
 }
 function Ot(e) {
@@ -1983,7 +2469,7 @@ function Re(e) {
 }
 const ll = /* @__PURE__ */ new Set(["top", "bottom"]);
 function J(e) {
-  return ll.has(nt(e)) ? "y" : "x";
+  return ll.has(at(e)) ? "y" : "x";
 }
 function De(e) {
   return Ts(J(e));
@@ -1996,9 +2482,9 @@ function il(e, t, s) {
 }
 function rl(e) {
   const t = te(e);
-  return [xe(e), t, xe(t)];
+  return [_e(e), t, _e(t)];
 }
-function xe(e) {
+function _e(e) {
   return e.replace(/start|end/g, (t) => ol[t]);
 }
 const ls = ["left", "right"], is = ["right", "left"], nl = ["top", "bottom"], al = ["bottom", "top"];
@@ -2016,8 +2502,8 @@ function cl(e, t, s) {
 }
 function hl(e, t, s, o) {
   const l = Ot(e);
-  let i = cl(nt(e), s === "start", o);
-  return l && (i = i.map((r) => r + "-" + l), t && (i = i.concat(i.map(xe)))), i;
+  let i = cl(at(e), s === "start", o);
+  return l && (i = i.map((r) => r + "-" + l), t && (i = i.concat(i.map(_e)))), i;
 }
 function te(e) {
   return e.replace(/left|right|bottom|top/g, (t) => sl[t]);
@@ -2062,7 +2548,7 @@ function rs(e, t, s) {
     reference: o,
     floating: l
   } = e;
-  const i = J(t), r = De(t), n = Re(r), a = nt(t), c = i === "y", h = o.x + o.width / 2 - l.width / 2, d = o.y + o.height / 2 - l.height / 2, m = o[n] / 2 - l[n] / 2;
+  const i = J(t), r = De(t), n = Re(r), a = at(t), c = i === "y", h = o.x + o.width / 2 - l.width / 2, d = o.y + o.height / 2 - l.height / 2, m = o[n] / 2 - l[n] / 2;
   let p;
   switch (a) {
     case "top":
@@ -2125,8 +2611,8 @@ const ul = async (e, t, s) => {
       name: w,
       fn: b
     } = n[v], {
-      x: _,
-      y: x,
+      x,
+      y: _,
       data: S,
       reset: A
     } = await b({
@@ -2143,7 +2629,7 @@ const ul = async (e, t, s) => {
         floating: t
       }
     });
-    h = _ ?? h, d = x ?? d, p = {
+    h = x ?? h, d = _ ?? d, p = {
       ...p,
       [w]: {
         ...p[w],
@@ -2187,12 +2673,12 @@ async function Me(e, t) {
     boundary: c,
     rootBoundary: h,
     strategy: a
-  })), _ = d === "floating" ? {
+  })), x = d === "floating" ? {
     x: o,
     y: l,
     width: r.floating.width,
     height: r.floating.height
-  } : r.reference, x = await (i.getOffsetParent == null ? void 0 : i.getOffsetParent(n.floating)), S = await (i.isElement == null ? void 0 : i.isElement(x)) ? await (i.getScale == null ? void 0 : i.getScale(x)) || {
+  } : r.reference, _ = await (i.getOffsetParent == null ? void 0 : i.getOffsetParent(n.floating)), S = await (i.isElement == null ? void 0 : i.isElement(_)) ? await (i.getScale == null ? void 0 : i.getScale(_)) || {
     x: 1,
     y: 1
   } : {
@@ -2200,10 +2686,10 @@ async function Me(e, t) {
     y: 1
   }, A = ee(i.convertOffsetParentRelativeRectToViewportRelativeRect ? await i.convertOffsetParentRelativeRectToViewportRelativeRect({
     elements: n,
-    rect: _,
-    offsetParent: x,
+    rect: x,
+    offsetParent: _,
     strategy: a
-  }) : _);
+  }) : x);
   return {
     top: (b.top - A.top + g.top) / S.y,
     bottom: (A.bottom - b.bottom + g.bottom) / S.y,
@@ -2232,17 +2718,17 @@ const pl = (e) => ({
     const d = Rs(h), m = {
       x: s,
       y: o
-    }, p = De(l), g = Re(p), v = await r.getDimensions(c), w = p === "y", b = w ? "top" : "left", _ = w ? "bottom" : "right", x = w ? "clientHeight" : "clientWidth", S = i.reference[g] + i.reference[p] - m[p] - i.floating[g], A = m[p] - i.reference[p], M = await (r.getOffsetParent == null ? void 0 : r.getOffsetParent(c));
-    let E = M ? M[x] : 0;
-    (!E || !await (r.isElement == null ? void 0 : r.isElement(M))) && (E = n.floating[x] || i.floating[g]);
-    const Z = S / 2 - A / 2, U = E / 2 - v[g] / 2 - 1, T = rt(d[b], U), tt = rt(d[_], U), j = T, et = E - v[g] - tt, k = E / 2 - v[g] / 2 + Z, ut = _e(j, k, et), G = !a.arrow && Ot(l) != null && k !== ut && i.reference[g] / 2 - (k < j ? T : tt) - v[g] / 2 < 0, V = G ? k < j ? k - j : k - et : 0;
+    }, p = De(l), g = Re(p), v = await r.getDimensions(c), w = p === "y", b = w ? "top" : "left", x = w ? "bottom" : "right", _ = w ? "clientHeight" : "clientWidth", S = i.reference[g] + i.reference[p] - m[p] - i.floating[g], A = m[p] - i.reference[p], D = await (r.getOffsetParent == null ? void 0 : r.getOffsetParent(c));
+    let E = D ? D[_] : 0;
+    (!E || !await (r.isElement == null ? void 0 : r.isElement(D))) && (E = n.floating[_] || i.floating[g]);
+    const Z = S / 2 - A / 2, U = E / 2 - v[g] / 2 - 1, T = nt(d[b], U), et = nt(d[x], U), j = T, st = E - v[g] - et, k = E / 2 - v[g] / 2 + Z, ut = xe(j, k, st), G = !a.arrow && Ot(l) != null && k !== ut && i.reference[g] / 2 - (k < j ? T : et) - v[g] / 2 < 0, M = G ? k < j ? k - j : k - st : 0;
     return {
-      [p]: m[p] + V,
+      [p]: m[p] + M,
       data: {
         [p]: ut,
-        centerOffset: k - ut - V,
+        centerOffset: k - ut - M,
         ...G && {
-          alignmentOffset: V
+          alignmentOffset: M
         }
       },
       reset: G
@@ -2272,8 +2758,8 @@ const pl = (e) => ({
       } = kt(e, t);
       if ((s = i.arrow) != null && s.alignmentOffset)
         return {};
-      const b = nt(l), _ = J(n), x = nt(n) === n, S = await (a.isRTL == null ? void 0 : a.isRTL(c.floating)), A = m || (x || !v ? [te(n)] : rl(n)), M = g !== "none";
-      !m && M && A.push(...hl(n, v, g, S));
+      const b = at(l), x = J(n), _ = at(n) === n, S = await (a.isRTL == null ? void 0 : a.isRTL(c.floating)), A = m || (_ || !v ? [te(n)] : rl(n)), D = g !== "none";
+      !m && D && A.push(...hl(n, v, g, S));
       const E = [n, ...A], Z = await Me(t, w), U = [];
       let T = ((o = i.flip) == null ? void 0 : o.overflows) || [];
       if (h && U.push(Z[b]), d) {
@@ -2284,11 +2770,11 @@ const pl = (e) => ({
         placement: l,
         overflows: U
       }], !U.every((k) => k <= 0)) {
-        var tt, j;
-        const k = (((tt = i.flip) == null ? void 0 : tt.index) || 0) + 1, ut = E[k];
-        if (ut && (!(d === "alignment" ? _ !== J(ut) : !1) || // We leave the current main axis only if every placement on that axis
+        var et, j;
+        const k = (((et = i.flip) == null ? void 0 : et.index) || 0) + 1, ut = E[k];
+        if (ut && (!(d === "alignment" ? x !== J(ut) : !1) || // We leave the current main axis only if every placement on that axis
         // overflows the main axis.
-        T.every((B) => B.overflows[0] > 0 && J(B.placement) === _)))
+        T.every((V) => V.overflows[0] > 0 && J(V.placement) === x)))
           return {
             data: {
               index: k,
@@ -2298,21 +2784,21 @@ const pl = (e) => ({
               placement: ut
             }
           };
-        let G = (j = T.filter((V) => V.overflows[0] <= 0).sort((V, B) => V.overflows[1] - B.overflows[1])[0]) == null ? void 0 : j.placement;
+        let G = (j = T.filter((M) => M.overflows[0] <= 0).sort((M, V) => M.overflows[1] - V.overflows[1])[0]) == null ? void 0 : j.placement;
         if (!G)
           switch (p) {
             case "bestFit": {
-              var et;
-              const V = (et = T.filter((B) => {
-                if (M) {
-                  const st = J(B.placement);
-                  return st === _ || // Create a bias to the `y` side axis due to horizontal
+              var st;
+              const M = (st = T.filter((V) => {
+                if (D) {
+                  const ot = J(V.placement);
+                  return ot === x || // Create a bias to the `y` side axis due to horizontal
                   // reading directions favoring greater width.
-                  st === "y";
+                  ot === "y";
                 }
                 return !0;
-              }).map((B) => [B.placement, B.overflows.filter((st) => st > 0).reduce((st, Ks) => st + Ks, 0)]).sort((B, st) => B[1] - st[1])[0]) == null ? void 0 : et[0];
-              V && (G = V);
+              }).map((V) => [V.placement, V.overflows.filter((ot) => ot > 0).reduce((ot, Ks) => ot + Ks, 0)]).sort((V, ot) => V[1] - ot[1])[0]) == null ? void 0 : st[0];
+              M && (G = M);
               break;
             }
             case "initialPlacement":
@@ -2335,7 +2821,7 @@ async function gl(e, t) {
     placement: s,
     platform: o,
     elements: l
-  } = e, i = await (o.isRTL == null ? void 0 : o.isRTL(l.floating)), r = nt(s), n = Ot(s), a = J(s) === "y", c = ml.has(r) ? -1 : 1, h = i && a ? -1 : 1, d = kt(t, e);
+  } = e, i = await (o.isRTL == null ? void 0 : o.isRTL(l.floating)), r = at(s), n = Ot(s), a = J(s) === "y", c = ml.has(r) ? -1 : 1, h = i && a ? -1 : 1, d = kt(t, e);
   let {
     mainAxis: m,
     crossAxis: p,
@@ -2395,11 +2881,11 @@ const vl = function(e) {
           fn: (w) => {
             let {
               x: b,
-              y: _
+              y: x
             } = w;
             return {
               x: b,
-              y: _
+              y: x
             };
           }
         },
@@ -2407,15 +2893,15 @@ const vl = function(e) {
       } = kt(e, t), c = {
         x: s,
         y: o
-      }, h = await Me(t, a), d = J(nt(l)), m = Ts(d);
+      }, h = await Me(t, a), d = J(at(l)), m = Ts(d);
       let p = c[m], g = c[d];
       if (i) {
-        const w = m === "y" ? "top" : "left", b = m === "y" ? "bottom" : "right", _ = p + h[w], x = p - h[b];
-        p = _e(_, p, x);
+        const w = m === "y" ? "top" : "left", b = m === "y" ? "bottom" : "right", x = p + h[w], _ = p - h[b];
+        p = xe(x, p, _);
       }
       if (r) {
-        const w = d === "y" ? "top" : "left", b = d === "y" ? "bottom" : "right", _ = g + h[w], x = g - h[b];
-        g = _e(_, g, x);
+        const w = d === "y" ? "top" : "left", b = d === "y" ? "bottom" : "right", x = g + h[w], _ = g - h[b];
+        g = xe(x, g, _);
       }
       const v = n.fn({
         ...t,
@@ -2450,17 +2936,17 @@ const vl = function(e) {
         apply: a = () => {
         },
         ...c
-      } = kt(e, t), h = await Me(t, c), d = nt(l), m = Ot(l), p = J(l) === "y", {
+      } = kt(e, t), h = await Me(t, c), d = at(l), m = Ot(l), p = J(l) === "y", {
         width: g,
         height: v
       } = i.floating;
       let w, b;
       d === "top" || d === "bottom" ? (w = d, b = m === (await (r.isRTL == null ? void 0 : r.isRTL(n.floating)) ? "start" : "end") ? "left" : "right") : (b = d, w = m === "end" ? "top" : "bottom");
-      const _ = v - h.top - h.bottom, x = g - h.left - h.right, S = rt(v - h[w], _), A = rt(g - h[b], x), M = !t.middlewareData.shift;
+      const x = v - h.top - h.bottom, _ = g - h.left - h.right, S = nt(v - h[w], x), A = nt(g - h[b], _), D = !t.middlewareData.shift;
       let E = S, Z = A;
-      if ((s = t.middlewareData.shift) != null && s.enabled.x && (Z = x), (o = t.middlewareData.shift) != null && o.enabled.y && (E = _), M && !m) {
-        const T = z(h.left, 0), tt = z(h.right, 0), j = z(h.top, 0), et = z(h.bottom, 0);
-        p ? Z = g - 2 * (T !== 0 || tt !== 0 ? T + tt : z(h.left, h.right)) : E = v - 2 * (j !== 0 || et !== 0 ? j + et : z(h.top, h.bottom));
+      if ((s = t.middlewareData.shift) != null && s.enabled.x && (Z = _), (o = t.middlewareData.shift) != null && o.enabled.y && (E = x), D && !m) {
+        const T = z(h.left, 0), et = z(h.right, 0), j = z(h.top, 0), st = z(h.bottom, 0);
+        p ? Z = g - 2 * (T !== 0 || et !== 0 ? T + et : z(h.left, h.right)) : E = v - 2 * (j !== 0 || st !== 0 ? j + st : z(h.top, h.bottom));
       }
       await a({
         ...t,
@@ -2493,7 +2979,7 @@ function X(e) {
 function Ds(e) {
   return ie() ? e instanceof Node || e instanceof P(e).Node : !1;
 }
-function I(e) {
+function B(e) {
   return ie() ? e instanceof Element || e instanceof P(e).Element : !1;
 }
 function Y(e) {
@@ -2509,12 +2995,12 @@ function jt(e) {
     overflowX: s,
     overflowY: o,
     display: l
-  } = H(e);
+  } = I(e);
   return /auto|scroll|overlay|hidden|clip/.test(t + o + s) && !wl.has(l);
 }
-const _l = /* @__PURE__ */ new Set(["table", "td", "th"]);
-function xl(e) {
-  return _l.has(zt(e));
+const xl = /* @__PURE__ */ new Set(["table", "td", "th"]);
+function _l(e) {
+  return xl.has(zt(e));
 }
 const $l = [":popover-open", ":modal"];
 function re(e) {
@@ -2528,17 +3014,17 @@ function re(e) {
 }
 const Al = ["transform", "translate", "scale", "rotate", "perspective"], Cl = ["transform", "translate", "scale", "rotate", "perspective", "filter"], Sl = ["paint", "layout", "strict", "content"];
 function ne(e) {
-  const t = Ve(), s = I(e) ? H(e) : e;
+  const t = Ve(), s = B(e) ? I(e) : e;
   return Al.some((o) => s[o] ? s[o] !== "none" : !1) || (s.containerType ? s.containerType !== "normal" : !1) || !t && (s.backdropFilter ? s.backdropFilter !== "none" : !1) || !t && (s.filter ? s.filter !== "none" : !1) || Cl.some((o) => (s.willChange || "").includes(o)) || Sl.some((o) => (s.contain || "").includes(o));
 }
 function El(e) {
-  let t = at(e);
+  let t = ct(e);
   for (; Y(t) && !St(t); ) {
     if (ne(t))
       return t;
     if (re(t))
       return null;
-    t = at(t);
+    t = ct(t);
   }
   return null;
 }
@@ -2549,11 +3035,11 @@ const kl = /* @__PURE__ */ new Set(["html", "body", "#document"]);
 function St(e) {
   return kl.has(zt(e));
 }
-function H(e) {
+function I(e) {
   return P(e).getComputedStyle(e);
 }
 function ae(e) {
-  return I(e) ? {
+  return B(e) ? {
     scrollLeft: e.scrollLeft,
     scrollTop: e.scrollTop
   } : {
@@ -2561,7 +3047,7 @@ function ae(e) {
     scrollTop: e.scrollY
   };
 }
-function at(e) {
+function ct(e) {
   if (zt(e) === "html")
     return e;
   const t = (
@@ -2574,7 +3060,7 @@ function at(e) {
   return ns(t) ? t.host : t;
 }
 function Ms(e) {
-  const t = at(e);
+  const t = ct(e);
   return St(t) ? e.ownerDocument ? e.ownerDocument.body : e.body : Y(t) && jt(t) ? t : Ms(t);
 }
 function Ft(e, t, s) {
@@ -2591,7 +3077,7 @@ function $e(e) {
   return e.parent && Object.getPrototypeOf(e.parent) ? e.frameElement : null;
 }
 function Vs(e) {
-  const t = H(e);
+  const t = I(e);
   let s = parseFloat(t.width) || 0, o = parseFloat(t.height) || 0;
   const l = Y(e), i = l ? e.offsetWidth : s, r = l ? e.offsetHeight : o, n = Qt(s) !== i || Qt(o) !== r;
   return n && (s = i, o = r), {
@@ -2601,7 +3087,7 @@ function Vs(e) {
   };
 }
 function Be(e) {
-  return I(e) ? e : e.contextElement;
+  return B(e) ? e : e.contextElement;
 }
 function At(e) {
   const t = Be(e);
@@ -2633,15 +3119,15 @@ function yt(e, t, s, o) {
   t === void 0 && (t = !1), s === void 0 && (s = !1);
   const l = e.getBoundingClientRect(), i = Be(e);
   let r = q(1);
-  t && (o ? I(o) && (r = At(o)) : r = At(e));
+  t && (o ? B(o) && (r = At(o)) : r = At(e));
   const n = zl(i, s, o) ? Bs(i) : q(0);
   let a = (l.left + n.x) / r.x, c = (l.top + n.y) / r.y, h = l.width / r.x, d = l.height / r.y;
   if (i) {
-    const m = P(i), p = o && I(o) ? P(o) : o;
+    const m = P(i), p = o && B(o) ? P(o) : o;
     let g = m, v = $e(g);
     for (; v && o && p !== g; ) {
-      const w = At(v), b = v.getBoundingClientRect(), _ = H(v), x = b.left + (v.clientLeft + parseFloat(_.paddingLeft)) * w.x, S = b.top + (v.clientTop + parseFloat(_.paddingTop)) * w.y;
-      a *= w.x, c *= w.y, h *= w.x, d *= w.y, a += x, c += S, g = P(v), v = $e(g);
+      const w = At(v), b = v.getBoundingClientRect(), x = I(v), _ = b.left + (v.clientLeft + parseFloat(x.paddingLeft)) * w.x, S = b.top + (v.clientTop + parseFloat(x.paddingTop)) * w.y;
+      a *= w.x, c *= w.y, h *= w.x, d *= w.y, a += _, c += S, g = P(v), v = $e(g);
     }
   }
   return ee({
@@ -2700,7 +3186,7 @@ function Tl(e) {
   const t = X(e), s = ae(e), o = e.ownerDocument.body, l = z(t.scrollWidth, t.clientWidth, o.scrollWidth, o.clientWidth), i = z(t.scrollHeight, t.clientHeight, o.scrollHeight, o.clientHeight);
   let r = -s.scrollLeft + Ie(e);
   const n = -s.scrollTop;
-  return H(o).direction === "rtl" && (r += z(t.clientWidth, o.clientWidth) - l), {
+  return I(o).direction === "rtl" && (r += z(t.clientWidth, o.clientWidth) - l), {
     width: l,
     height: i,
     x: r,
@@ -2738,7 +3224,7 @@ function as(e, t, s) {
     o = Rl(e, s);
   else if (t === "document")
     o = Tl(X(e));
-  else if (I(t))
+  else if (B(t))
     o = Ml(t, s);
   else {
     const l = Bs(e);
@@ -2752,19 +3238,19 @@ function as(e, t, s) {
   return ee(o);
 }
 function Hs(e, t) {
-  const s = at(e);
-  return s === t || !I(s) || St(s) ? !1 : H(s).position === "fixed" || Hs(s, t);
+  const s = ct(e);
+  return s === t || !B(s) || St(s) ? !1 : I(s).position === "fixed" || Hs(s, t);
 }
 function Vl(e, t) {
   const s = t.get(e);
   if (s)
     return s;
-  let o = Ft(e, [], !1).filter((n) => I(n) && zt(n) !== "body"), l = null;
-  const i = H(e).position === "fixed";
-  let r = i ? at(e) : e;
-  for (; I(r) && !St(r); ) {
-    const n = H(r), a = ne(r);
-    !a && n.position === "fixed" && (l = null), (i ? !a && !l : !a && n.position === "static" && !!l && Dl.has(l.position) || jt(r) && !a && Hs(e, r)) ? o = o.filter((h) => h !== r) : l = n, r = at(r);
+  let o = Ft(e, [], !1).filter((n) => B(n) && zt(n) !== "body"), l = null;
+  const i = I(e).position === "fixed";
+  let r = i ? ct(e) : e;
+  for (; B(r) && !St(r); ) {
+    const n = I(r), a = ne(r);
+    !a && n.position === "fixed" && (l = null), (i ? !a && !l : !a && n.position === "static" && !!l && Dl.has(l.position) || jt(r) && !a && Hs(e, r)) ? o = o.filter((h) => h !== r) : l = n, r = ct(r);
   }
   return t.set(e, o), o;
 }
@@ -2777,7 +3263,7 @@ function Bl(e) {
   } = e;
   const r = [...s === "clippingAncestors" ? re(t) ? [] : Vl(t, this._c) : [].concat(s), o], n = r[0], a = r.reduce((c, h) => {
     const d = as(t, h, l);
-    return c.top = z(d.top, c.top), c.right = rt(d.right, c.right), c.bottom = rt(d.bottom, c.bottom), c.left = z(d.left, c.left), c;
+    return c.top = z(d.top, c.top), c.right = nt(d.right, c.right), c.bottom = nt(d.bottom, c.bottom), c.left = z(d.left, c.left), c;
   }, as(t, n, l));
   return {
     width: a.right - a.left,
@@ -2821,10 +3307,10 @@ function Hl(e, t, s) {
   };
 }
 function me(e) {
-  return H(e).position === "static";
+  return I(e).position === "static";
 }
 function cs(e, t) {
-  if (!Y(e) || H(e).position === "fixed")
+  if (!Y(e) || I(e).position === "fixed")
     return null;
   if (t)
     return t(e);
@@ -2836,16 +3322,16 @@ function Ns(e, t) {
   if (re(e))
     return s;
   if (!Y(e)) {
-    let l = at(e);
+    let l = ct(e);
     for (; l && !St(l); ) {
-      if (I(l) && !me(l))
+      if (B(l) && !me(l))
         return l;
-      l = at(l);
+      l = ct(l);
     }
     return s;
   }
   let o = cs(e, t);
-  for (; o && xl(o) && me(o); )
+  for (; o && _l(o) && me(o); )
     o = cs(o, t);
   return o && St(o) && me(o) && !ne(o) ? s : o || El(e) || s;
 }
@@ -2862,7 +3348,7 @@ const Nl = async function(e) {
   };
 };
 function Fl(e) {
-  return H(e).direction === "rtl";
+  return I(e).direction === "rtl";
 }
 const Zt = {
   convertOffsetParentRelativeRectToViewportRelativeRect: Pl,
@@ -2873,7 +3359,7 @@ const Zt = {
   getClientRects: Ll,
   getDimensions: Il,
   getScale: At,
-  isElement: I,
+  isElement: B,
   isRTL: Fl
 };
 function Fs(e, t) {
@@ -2896,13 +3382,13 @@ function Ul(e, t) {
     } = c;
     if (n || t(), !m || !p)
       return;
-    const g = qt(d), v = qt(l.clientWidth - (h + m)), w = qt(l.clientHeight - (d + p)), b = qt(h), x = {
+    const g = qt(d), v = qt(l.clientWidth - (h + m)), w = qt(l.clientHeight - (d + p)), b = qt(h), _ = {
       rootMargin: -g + "px " + -v + "px " + -w + "px " + -b + "px",
-      threshold: z(0, rt(1, a)) || 1
+      threshold: z(0, nt(1, a)) || 1
     };
     let S = !0;
-    function A(M) {
-      const E = M[0].intersectionRatio;
+    function A(D) {
+      const E = D[0].intersectionRatio;
       if (E !== a) {
         if (!S)
           return r();
@@ -2914,12 +3400,12 @@ function Ul(e, t) {
     }
     try {
       s = new IntersectionObserver(A, {
-        ...x,
+        ..._,
         // Handle <iframe>s
         root: l.ownerDocument
       });
     } catch {
-      s = new IntersectionObserver(A, x);
+      s = new IntersectionObserver(A, _);
     }
     s.observe(e);
   }
@@ -2942,10 +3428,10 @@ function jl(e, t, s, o) {
   const d = c && n ? Ul(c, s) : null;
   let m = -1, p = null;
   r && (p = new ResizeObserver((b) => {
-    let [_] = b;
-    _ && _.target === c && p && (p.unobserve(t), cancelAnimationFrame(m), m = requestAnimationFrame(() => {
-      var x;
-      (x = p) == null || x.observe(t);
+    let [x] = b;
+    x && x.target === c && p && (p.unobserve(t), cancelAnimationFrame(m), m = requestAnimationFrame(() => {
+      var _;
+      (_ = p) == null || _.observe(t);
     })), s();
   }), c && !a && p.observe(c), p.observe(t));
   let g, v = a ? yt(e) : null;
@@ -2956,8 +3442,8 @@ function jl(e, t, s, o) {
   }
   return s(), () => {
     var b;
-    h.forEach((_) => {
-      l && _.removeEventListener("scroll", s), i && _.removeEventListener("resize", s);
+    h.forEach((x) => {
+      l && x.removeEventListener("scroll", s), i && x.removeEventListener("resize", s);
     }), d == null || d(), (b = p) == null || b.disconnect(), p = null, a && cancelAnimationFrame(g);
   };
 }
@@ -3133,10 +3619,10 @@ var $ = class extends K {
 };
 $.styles = [Et, el];
 u([
-  Q(".popup")
+  tt(".popup")
 ], $.prototype, "popup", 2);
 u([
-  Q(".popup__arrow")
+  tt(".popup__arrow")
 ], $.prototype, "arrowEl", 2);
 u([
   f()
@@ -3463,7 +3949,7 @@ class Ae extends Es {
   }
   render(t) {
     if (t === C || t == null) return this._t = void 0, this.it = t;
-    if (t === it) return t;
+    if (t === rt) return t;
     if (typeof t != "string") throw Error(this.constructor.directiveName + "() called with a non-string value");
     if (t === this.it) return this._t;
     this.it = t;
@@ -3886,22 +4372,22 @@ y.styles = [Et, tl, Go];
 y.dependencies = {
   "sl-icon": F,
   "sl-popup": $,
-  "sl-tag": _t
+  "sl-tag": xt
 };
 u([
-  Q(".select")
+  tt(".select")
 ], y.prototype, "popup", 2);
 u([
-  Q(".select__combobox")
+  tt(".select__combobox")
 ], y.prototype, "combobox", 2);
 u([
-  Q(".select__display-input")
+  tt(".select__display-input")
 ], y.prototype, "displayInput", 2);
 u([
-  Q(".select__value-input")
+  tt(".select__value-input")
 ], y.prototype, "valueInput", 2);
 u([
-  Q(".select__listbox")
+  tt(".select__listbox")
 ], y.prototype, "listbox", 2);
 u([
   N()
@@ -3999,7 +4485,7 @@ Ws("select.hide", {
   options: { duration: 100, easing: "ease" }
 });
 y.define("sl-select");
-var ii = ct`
+var ii = Q`
   :host {
     display: block;
     user-select: none;
@@ -4083,7 +4569,7 @@ var ii = ct`
       outline-offset: -1px;
     }
   }
-`, D = class extends K {
+`, R = class extends K {
   constructor() {
     super(...arguments), this.localize = new le(this), this.isInitialized = !1, this.current = !1, this.selected = !1, this.hasHover = !1, this.value = "", this.disabled = !1;
   }
@@ -4141,36 +4627,36 @@ var ii = ct`
     `;
   }
 };
-D.styles = [Et, ii];
-D.dependencies = { "sl-icon": F };
+R.styles = [Et, ii];
+R.dependencies = { "sl-icon": F };
 u([
-  Q(".option__label")
-], D.prototype, "defaultSlot", 2);
-u([
-  N()
-], D.prototype, "current", 2);
+  tt(".option__label")
+], R.prototype, "defaultSlot", 2);
 u([
   N()
-], D.prototype, "selected", 2);
+], R.prototype, "current", 2);
 u([
   N()
-], D.prototype, "hasHover", 2);
+], R.prototype, "selected", 2);
+u([
+  N()
+], R.prototype, "hasHover", 2);
 u([
   f({ reflect: !0 })
-], D.prototype, "value", 2);
+], R.prototype, "value", 2);
 u([
   f({ type: Boolean, reflect: !0 })
-], D.prototype, "disabled", 2);
+], R.prototype, "disabled", 2);
 u([
   ht("disabled")
-], D.prototype, "handleDisabledChange", 1);
+], R.prototype, "handleDisabledChange", 1);
 u([
   ht("selected")
-], D.prototype, "handleSelectedChange", 1);
+], R.prototype, "handleSelectedChange", 1);
 u([
   ht("value")
-], D.prototype, "handleValueChange", 1);
-D.define("sl-option");
+], R.prototype, "handleValueChange", 1);
+R.define("sl-option");
 var ri = Object.defineProperty, ni = Object.getOwnPropertyDescriptor, qs = (e) => {
   throw TypeError(e);
 }, dt = (e, t, s, o) => {
@@ -4178,7 +4664,7 @@ var ri = Object.defineProperty, ni = Object.getOwnPropertyDescriptor, qs = (e) =
     (r = e[i]) && (l = (o ? r(t, s, l) : r(l)) || l);
   return o && l && ri(t, s, l), l;
 }, ai = (e, t, s) => t.has(e) || qs("Cannot " + s), ci = (e, t, s) => t.has(e) ? qs("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, s), hi = (e, t, s) => (ai(e, t, "access private method"), s), Ce, Ys;
-let R = class extends Qs(to, void 0) {
+let H = class extends Qs(to, void 0) {
   constructor() {
     super(), ci(this, Ce), this._multiple = !1, this._options = [], this._value = void 0, this.readonly = !1, this.mandatory = !1, this.getFormElement = () => this._input, this.addValidator(
       "valueMissing",
@@ -4268,10 +4754,6 @@ let R = class extends Qs(to, void 0) {
   toSlSelectAlias(e) {
     return e.trim().replace(/\s+/g, "_");
   }
-  static get _slSelectStyles() {
-    const e = new CSSStyleSheet();
-    return e.replaceSync(so), e;
-  }
 };
 Ce = /* @__PURE__ */ new WeakSet();
 Ys = function(e) {
@@ -4279,8 +4761,8 @@ Ys = function(e) {
   const t = Array.isArray((s = e == null ? void 0 : e.target) == null ? void 0 : s.value) ? e.target.value : [e.target.value];
   this.value = this._options.filter((o) => t.includes(o.alias)).map((o) => o.value);
 };
-R.styles = [
-  R._slSelectStyles,
+H.styles = [
+  _o,
   Zs`
             .error {
                 color: var(--uui-color-danger);
@@ -4290,31 +4772,31 @@ R.styles = [
 ];
 dt([
   Se()
-], R.prototype, "_multiple", 2);
+], H.prototype, "_multiple", 2);
 dt([
   Se()
-], R.prototype, "_options", 2);
+], H.prototype, "_options", 2);
 dt([
   Se()
-], R.prototype, "_value", 2);
+], H.prototype, "_value", 2);
 dt([
   Ee({ type: Array })
-], R.prototype, "value", 1);
+], H.prototype, "value", 1);
 dt([
   Ee({ type: Boolean, reflect: !0 })
-], R.prototype, "readonly", 2);
+], H.prototype, "readonly", 2);
 dt([
   Ee({ type: Boolean, reflect: !0 })
-], R.prototype, "mandatory", 2);
+], H.prototype, "mandatory", 2);
 dt([
   Gs("sl-select")
-], R.prototype, "_input", 2);
-R = dt([
+], H.prototype, "_input", 2);
+H = dt([
   Js("ak-property-editor-ui-dropdown")
-], R);
-const wi = R;
+], H);
+const wi = H;
 export {
-  R as AkPropertyEditorUIDropdownElement,
+  H as AkPropertyEditorUIDropdownElement,
   wi as default
 };
 //# sourceMappingURL=client.js.map

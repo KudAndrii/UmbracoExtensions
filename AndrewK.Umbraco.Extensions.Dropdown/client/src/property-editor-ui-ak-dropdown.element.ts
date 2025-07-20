@@ -1,4 +1,4 @@
-import selectTheme from '@shoelace-style/shoelace/dist/themes/light.css?inline'
+import selectTheme from '@shoelace-style/shoelace/dist/themes/light.styles.js'
 
 import '@shoelace-style/shoelace/dist/components/select/select.js'
 import '@shoelace-style/shoelace/dist/components/option/option.js'
@@ -168,14 +168,8 @@ export class AkPropertyEditorUIDropdownElement
         return value.trim().replace(/\s+/g, '_')
     }
 
-    private static get _slSelectStyles() {
-        const styles = new CSSStyleSheet()
-        styles.replaceSync(selectTheme)
-        return styles
-    }
-
     static override readonly styles = [
-        AkPropertyEditorUIDropdownElement._slSelectStyles,
+        selectTheme,
         css`
             .error {
                 color: var(--uui-color-danger);
