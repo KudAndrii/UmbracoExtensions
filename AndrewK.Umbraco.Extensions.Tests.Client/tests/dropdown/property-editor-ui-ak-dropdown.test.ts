@@ -14,10 +14,6 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
 
     beforeEach(async () => {
         element = await fixture(html`<ak-property-editor-ui-dropdown></ak-property-editor-ui-dropdown>`)
-        Object.defineProperty(window.navigator, 'language', {
-            value: 'en-US',
-            configurable: true,
-        })
     })
 
     describe('Basic Rendering', () => {
@@ -120,6 +116,12 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
         })
 
         it('should handle multiple default values', async () => {
+            document.documentElement.lang = 'en'
+            Object.defineProperty(window.navigator, 'language', {
+                value: 'en-US',
+                configurable: true,
+            })
+            console.warn('setupTests.ts loaded')
             element.config = {
                 getValueByAlias: (alias: string) => {
                     if (alias === 'items') return [ { key: '0', value: 'zero' }, { key: '1', value: 'one' } ]
