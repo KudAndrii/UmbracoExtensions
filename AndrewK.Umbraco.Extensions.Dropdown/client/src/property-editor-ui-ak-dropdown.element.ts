@@ -1,150 +1,188 @@
-import { css, customElement, html, map, nothing, property, state } from '@umbraco-cms/backoffice/external/lit'
+import selectTheme from '@shoelace-style/shoelace/dist/themes/light.styles.js'
+
+import '@shoelace-style/shoelace/dist/components/select/select.js'
+import '@shoelace-style/shoelace/dist/components/option/option.js'
+
+import { css, customElement, html, map, property, state, query } from '@umbraco-cms/backoffice/external/lit'
+import { UUIFormControlMixin } from "@umbraco-cms/backoffice/external/uui"
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event'
-import { UUISelectElement } from '@umbraco-cms/backoffice/external/uui'
 import type {
     UmbPropertyEditorConfigCollection,
     UmbPropertyEditorUiElement,
 } from '@umbraco-cms/backoffice/property-editor'
-import type { UUISelectEvent } from '@umbraco-cms/backoffice/external/uui'
+
+// import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/workspace'
+// import { UMB_VARIANT_CONTEXT } from '@umbraco-cms/backoffice/variant'
 
 @customElement('ak-property-editor-ui-dropdown')
-export class UmbPropertyEditorUIDropdownElement extends UmbLitElement implements UmbPropertyEditorUiElement {
-    #selection: Array<string> = []
+export class AkPropertyEditorUIDropdownElement
+    extends UUIFormControlMixin<Array<string>, typeof UmbLitElement, undefined>(UmbLitElement, undefined)
+    implements UmbPropertyEditorUiElement {
+    private _defaultValues?: Array<string>
+    @state() private _multiple: boolean = false
+    @state() private _options: Array<Option & { alias: string, invalid?: boolean }> = []
+    @state() private _value?: Array<string> = undefined
 
-    @property({ type: Array })
-    public set value(value: Array<string> | string | undefined) {
-        this.#selection = Array.isArray(value) ? value : value ? [ value ] : []
+    constructor() {
+        super()
+
+        this.addValidator(
+            'valueMissing',
+            () => 'Value is required',
+            () => !this.readonly && this.mandatory && !this.value?.length,
+        )
+
+        // this.consumeContext(UMB_SUBMITTABLE_WORKSPACE_CONTEXT, context => {
+        //     this.observe(context?.isNew, isNew => {
+        //         console.warn('node is brand new: ', isNew)
+        //     })
+        // })
+
+        // this.consumeContext(UMB_VARIANT_CONTEXT, context => {
+        //     this.observe(context?.variantId, variantId => {
+        //         console.warn('currently editing culture: ', variantId?.culture)
+        //     })
+        // })
     }
 
-    public get value(): Array<string> | undefined {
-        return this.#selection
+    @property({ type: Array })
+    public set value(value: unknown) {
+        if (JSON.stringify(this._value) === JSON.stringify(value)) {
+            return
+        }
+
+        if (Array.isArray(value)) {
+            this._value = value.filter((item) => !!item && typeof item === 'string')
+        } else if (!!value && typeof value === 'string') {
+            this._value = [ value ]
+        } else {
+            return
+        }
+
+        this.dispatchEvent(new UmbChangeEvent())
+    }
+
+    public get value(): Array<string> {
+        return this._value || []
     }
 
     @property({ type: Boolean, reflect: true }) readonly = false
+    @property({ type: Boolean, reflect: true }) mandatory = false
+
+    @query('sl-select') _input?: HTMLElement
 
     public set config(config: UmbPropertyEditorConfigCollection | undefined) {
         if (!config) return
 
+        this._multiple = !!config.getValueByAlias<boolean>('multiple')
         const items: Array<{ key: string, value: string }> | undefined = config.getValueByAlias('items')
-        const defaultValue: string | undefined = config.getValueByAlias('default')
+        const defaultValueString = config.getValueByAlias<string>('default')
 
-        if (!!defaultValue && this.#selection.length === 0) {
-            this.#setValue([defaultValue])
+        if (this._multiple) {
+            this._defaultValues =
+                defaultValueString?.split(',').map(value => value.trim()).filter(Boolean)
+        } else if (!!defaultValueString) {
+            this._defaultValues = [ defaultValueString ]
         }
 
         if (Array.isArray(items) && items.length > 0) {
-            this._options = items.map((item) => ({
-                name: item.value,
+            this._options = items.filter(item => !!item?.key).map((item) => ({
+                name: this.localize.string(item.value) || item.key,
                 value: item.key,
-                selected: this.#selection.includes(item.key)
+                alias: this.toSlSelectAlias(item.key),
+                selected: !!this._value?.includes(item.key)
             }))
 
-            // If selection includes a value not in the list, add it to the list
-            this.#selection.forEach((value) => {
+            // If selection includes a value not from the list, add it to the list and mark invalid
+            this._value?.forEach((value) => {
                 if (!this._options.find((item) => item.value === value)) {
                     this._options.push({
                         name: `${ value } (${ this.localize.term('validation_legacyOption') })`,
                         value,
+                        alias: this.toSlSelectAlias(value),
                         selected: true,
                         invalid: true,
                     })
                 }
             })
         }
-
-        this._multiple = config.getValueByAlias<boolean>('multiple') ?? false
     }
 
-    @state() private _multiple: boolean = false
+    override getFormElement = () => this._input
 
-    @state() private _options: Array<Option & { invalid?: boolean }> = []
+    #onChange(event: Event & { target: { value?: Array<string> | string } }) {
+        const newValues =
+            Array.isArray(event?.target?.value) ? event.target.value : [ event.target.value ]
 
-    #onChange(event: UUISelectEvent) {
-        const value = event.target.value as string
-        this.#setValue(value ? [ value ] : [])
-    }
-
-    #onChangeMultiple(event: Event & { target: HTMLSelectElement }) {
-        const selected = event.target.selectedOptions
-        const value = selected ? Array.from(selected).map((option) => option.value) : []
-        this.#setValue(value)
-    }
-
-    #setValue(value: Array<string> | string | null | undefined) {
-        if (!value) return
-        this.value = value
-        this.dispatchEvent(new UmbChangeEvent())
+        this.value = this._options
+            .filter(option => newValues.includes(option.alias))
+            .map(option => option.value)
     }
 
     override render() {
-        return this._multiple ? this.#renderDropdownMultiple() : this.#renderDropdownSingle()
-    }
-
-    #renderDropdownMultiple() {
-        if (this.readonly) {
-            return html`
-              <div>${ this.value?.join(', ') }</div>`
-        }
-
         return html`
-          <select id="native" multiple @change=${ this.#onChangeMultiple }>
+          <sl-select
+            value="${ this.value.join(' ') }"
+            @sl-change=${ this.#onChange }
+            placeholder="${ this._multiple ? 'Select multiple' : 'Select one' }"
+            size="small"
+            clearable
+            ?disabled=${ this.readonly }
+            ?multiple=${ this._multiple }
+          >
             ${ map(
               this._options,
               (item) => html`
-                <option value=${ item.value } ?selected=${ item.selected }>${ item.name }</option>
-              `,
+                <sl-option value="${ item.alias }" ?disabled="${ item.invalid }">${ item.name }</sl-option>
+              `
             ) }
-          </select>
-          ${ this.#renderDropdownValidation() }
+            <span slot="help-text" class="error">
+              ${ this._legacyOptionMessage }
+            </span>
+          </sl-select>
         `
     }
 
-    #renderDropdownSingle() {
-        return html`
-          <umb-input-dropdown-list
-            .options=${ this._options }
-            @change=${ this.#onChange }
-            ?readonly=${ this.readonly }></umb-input-dropdown-list>
-          ${ this.#renderDropdownValidation() }
-        `
+    protected override firstUpdated() {
+        if (!!this._defaultValues?.length && !this._value) {
+            this.value = this._defaultValues
+        }
     }
 
-    #renderDropdownValidation() {
-        const selectionHasInvalids = this.#selection.some((value) => {
+    private get _legacyOptionMessage() {
+        const selectionHasInvalids = !!this._value?.some((value) => {
             const option = this._options.find((item) => item.value === value)
             return option ? option.invalid : false
         })
 
-        if (selectionHasInvalids) {
-            return html`
-              <div class="error">
-                <umb-localize key="validation_legacyOptionDescription"></umb-localize>
-              </div>`
-        }
+        return selectionHasInvalids ? this.localize.term('validation_legacyOptionDescription') : ''
+    }
 
-        return nothing
+    /**
+     * <sl-select> doesn't allow spaces for values, so need to format it
+     * @param value - available option value
+     * @return string where all the whitespaces replaced with underscores
+     */
+    private toSlSelectAlias(value: string): string {
+        return value.trim().replace(/\s+/g, '_')
     }
 
     static override readonly styles = [
-        UUISelectElement.styles,
+        selectTheme,
         css`
-            #native {
-                height: auto;
-            }
-
             .error {
                 color: var(--uui-color-danger);
                 font-size: var(--uui-font-size-small);
             }
         `,
-    ];
+    ]
 }
 
-export default UmbPropertyEditorUIDropdownElement
+export default AkPropertyEditorUIDropdownElement
 
 declare global {
     interface HTMLElementTagNameMap {
-        'ak-property-editor-ui-dropdown': UmbPropertyEditorUIDropdownElement
+        'ak-property-editor-ui-dropdown': AkPropertyEditorUIDropdownElement
     }
 }
