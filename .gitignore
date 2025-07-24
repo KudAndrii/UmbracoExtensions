@@ -26,6 +26,7 @@ dist-ssr
 .idea
 .DS_Store
 *.suo
+*.js.map
 *.ntvs*
 *.njsproj
 *.sln
