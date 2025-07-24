@@ -1,4 +1,4 @@
-import { repeat as y, classMap as _, html as c, css as f, state as d, property as l, customElement as m } from "@umbraco-cms/backoffice/external/lit";
+import { repeat as v, classMap as _, html as c, css as f, state as d, property as l, customElement as m } from "@umbraco-cms/backoffice/external/lit";
 import { UmbChangeEvent as g } from "@umbraco-cms/backoffice/event";
 import { UUIFormControlMixin as k } from "@umbraco-cms/backoffice/external/uui";
 import { UmbLitElement as E } from "@umbraco-cms/backoffice/lit-element";
@@ -9,7 +9,7 @@ var x = Object.defineProperty, C = Object.getOwnPropertyDescriptor, u = (e) => {
   for (var r = o > 1 ? void 0 : o ? C(i, t) : i, n = e.length - 1, h; n >= 0; n--)
     (h = e[n]) && (r = (o ? h(i, t, r) : h(r)) || r);
   return o && r && x(i, t, r), r;
-}, O = (e, i, t) => i.has(e) || u("Cannot " + t), $ = (e, i, t) => i.has(e) ? u("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(e) : i.set(e, t), B = (e, i, t) => (O(e, i, "access private method"), t), p, v;
+}, O = (e, i, t) => i.has(e) || u("Cannot " + t), $ = (e, i, t) => i.has(e) ? u("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(e) : i.set(e, t), B = (e, i, t) => (O(e, i, "access private method"), t), p, y;
 let a = class extends k(E, []) {
   constructor() {
     super(), $(this, p), this._value = [], this._options = [], this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = A, this.getFormElement = () => {
@@ -36,7 +36,7 @@ let a = class extends k(E, []) {
   set config(e) {
     if (!e) return;
     const i = e.getValueByAlias("items");
-    this._defaultValues = e.getValueByAlias("default")?.split(",").map((t) => t.trim()).filter(Boolean), Array.isArray(i) && i.length && (this._options = i.map((t) => ({
+    this._defaultValues = e.getValueByAlias("default")?.split(",").map((t) => t.trim()).filter(Boolean), Array.isArray(i) && i.length && (this._options = i.filter((t) => !!t?.key).map((t) => ({
       label: this.localize.string(t.value) || t.key,
       value: t.key,
       checked: this._value.includes(t.key)
@@ -51,7 +51,7 @@ let a = class extends k(E, []) {
   }
   render() {
     return c`
-          ${y(
+          ${v(
       this._options,
       (e) => e.value,
       (e) => c`
@@ -60,7 +60,7 @@ let a = class extends k(E, []) {
                 label=${e.label + (e.invalid ? ` (${this.localize.term("validation_legacyOption")})` : "")}
                 title=${e.invalid ? this.localize.term("validation_legacyOptionDescription") : ""}
                 value=${e.value}
-                @change=${B(this, p, v)}
+                @change=${B(this, p, y)}
                 ?checked=${e.checked}
                 ?readonly=${this.readonly}
               ></uui-checkbox>
@@ -73,7 +73,7 @@ let a = class extends k(E, []) {
   }
 };
 p = /* @__PURE__ */ new WeakSet();
-v = function(e) {
+y = function(e) {
   const i = this._options.findIndex((t) => t.value === e.target.value);
   i !== -1 && (this._options[i].checked = e.target.checked, this.value = this._options.filter((t) => t.checked).map((t) => t.value));
 };
