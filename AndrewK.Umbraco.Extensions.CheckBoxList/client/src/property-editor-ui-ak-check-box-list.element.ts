@@ -62,7 +62,7 @@ export class AkPropertyEditorUICheckBoxListElement
             .map((value) => value.trim()).filter(Boolean)
 
         if (Array.isArray(items) && items.length) {
-            this._options = items.map((item) => ({
+            this._options = items.filter(item => !!item?.key).map((item) => ({
                 label: this.localize.string(item.value) || item.key,
                 value: item.key,
                 checked: this._value.includes(item.key),
