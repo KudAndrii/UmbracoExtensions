@@ -1,96 +1,144 @@
-import { customElement, html, property, state } from '@umbraco-cms/backoffice/external/lit'
+import { customElement, html, css, property, state, classMap, repeat } from '@umbraco-cms/backoffice/external/lit'
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event'
+import { UUIBooleanInputEvent, UUIFormControlMixin } from '@umbraco-cms/backoffice/external/uui'
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
-import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY, UmbFormControlMixin } from '@umbraco-cms/backoffice/validation'
+import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY } from '@umbraco-cms/backoffice/validation'
 import type {
-	UmbPropertyEditorConfigCollection,
-	UmbPropertyEditorUiElement,
+    UmbPropertyEditorConfigCollection,
+    UmbPropertyEditorUiElement,
 } from '@umbraco-cms/backoffice/property-editor'
+import type { KeyValuePair } from "dictionary-client/src/types"
+
+type CheckBoxOption = { label: string, value: string, checked: boolean, invalid?: boolean }
 
 @customElement('ak-property-editor-ui-check-box-list')
 export class AkPropertyEditorUICheckBoxListElement
-	extends UmbFormControlMixin<Array<string> | string | undefined, typeof UmbLitElement, undefined>(
-		UmbLitElement,
-		undefined,
-	)
-	implements UmbPropertyEditorUiElement
-{
-	#selection: Array<string> = []
+    extends UUIFormControlMixin<Array<string>, typeof UmbLitElement, Array<string>>(UmbLitElement, [])
+    implements UmbPropertyEditorUiElement {
+    private _defaultValues?: Array<string>
+    @state() private _value: Array<string> = []
+    @state() private _options: Array<CheckBoxOption> = []
 
-	@property({ type: Array })
-	public override set value(value: Array<string> | string | undefined) {
-		this.#selection = Array.isArray(value) ? value : value ? [value] : []
-	}
-	public override get value(): Array<string> | undefined {
-		return this.#selection
-	}
+    constructor() {
+        super()
 
-	public set config(config: UmbPropertyEditorConfigCollection | undefined) {
-		if (!config) return
+        this.addValidator(
+            'valueMissing',
+            () => this.mandatoryMessage,
+            () => !this.readonly && this.mandatory && !this.value?.length,
+        )
+    }
 
-		const items: Array<{ key: string, value: string }> | undefined = config.getValueByAlias('items')
-		const defaultValuesString: string | undefined = config.getValueByAlias('default')
+    @property({ type: Array })
+    public set value(value: unknown) {
+        if (JSON.stringify(this._value) === JSON.stringify(value)) {
+            return
+        }
 
-		if (!!defaultValuesString && this.#selection.length === 0) {
-			defaultValuesString.split(',')
-				.map((value) => value.trim())
-				.filter(Boolean)
-				.forEach((value) => this.#selection.push(value))
-			this.dispatchEvent(new UmbChangeEvent())
-		}
+        if (Array.isArray(value)) {
+            this._value = value.filter((item) => !!item && typeof item === 'string')
+        } else if (!!value && typeof value === 'string') {
+            this._value = [ value ]
+        } else {
+            return
+        }
 
-		if (Array.isArray(items) && items.length) {
-			this._list = items.map((item) => ({
-				label: item.value,
-				value: item.key,
-				checked: this.#selection.includes(item.key),
-			}))
+        this.dispatchEvent(new UmbChangeEvent())
+    }
 
-			// If selection includes a value that is not in the list, add it to the list
-			this.#selection.forEach((value) => {
-				if (!this._list.find((item) => item.value === value)) {
-					this._list.push({ label: value, value, checked: true, invalid: true })
-				}
-			})
-		}
-	}
+    public get value(): Array<string> {
+        return this._value || []
+    }
 
-	@property({ type: Boolean, reflect: true }) readonly = false
-	@property({ type: Boolean }) mandatory?: boolean
-	@property({ type: String }) mandatoryMessage = UMB_VALIDATION_EMPTY_LOCALIZATION_KEY
+    @property({ type: Boolean, reflect: true }) readonly = false
+    @property({ type: Boolean, reflect: true }) mandatory = false
+    @property({ type: String }) mandatoryMessage = UMB_VALIDATION_EMPTY_LOCALIZATION_KEY
 
-	@state()
-	private _list: Array<{ label: string, value: string, checked: boolean, invalid?: boolean }> = []
+    public set config(config: UmbPropertyEditorConfigCollection | undefined) {
+        if (!config) return
 
-	protected override firstUpdated() {
-		this.addFormControlElement(this.shadowRoot!.querySelector('umb-input-checkbox-list')!)
-	}
+        const items: Array<KeyValuePair> | undefined = config.getValueByAlias('items')
+        this._defaultValues = config.getValueByAlias<string>('default')?.split(',')
+            .map((value) => value.trim()).filter(Boolean)
 
-	#onChange(event: CustomEvent) {
-		if (!!event?.target && 'selection' in event.target) {
-			this.value = event.target.selection as Array<string>
-			this.dispatchEvent(new UmbChangeEvent())	
-		}
-	}
+        if (Array.isArray(items) && items.length) {
+            this._options = items.map((item) => ({
+                label: this.localize.string(item.value) || item.key,
+                value: item.key,
+                checked: this._value.includes(item.key),
+            }))
 
-	override render() {
-		return html`
-			<umb-input-checkbox-list
-				.list=${this._list}
-				.required=${this.mandatory}
-				.requiredMessage=${this.mandatoryMessage}
-				.selection=${this.#selection}
-				?readonly=${this.readonly}
-				@change=${this.#onChange}>
-			</umb-input-checkbox-list>
-		`
-	}
+            // If selection includes a value not in the list, add it to the list
+            this._value.forEach((value) => {
+                if (!this._options.find((item) => item.value === value)) {
+                    this._options.push({
+                        label: value,
+                        value,
+                        checked: true,
+                        invalid: true
+                    })
+                }
+            })
+        }
+    }
+
+    override getFormElement = () => undefined
+
+    #onChange(event: UUIBooleanInputEvent) {
+        const index = this._options.findIndex(x => x.value === event.target.value)
+
+        if (index === -1) {
+            return
+        }
+
+        this._options[index].checked = event.target.checked
+        this.value = this._options.filter(x => x.checked).map(x => x.value)
+    }
+
+    override render() {
+        return html`
+          ${ repeat(
+            this._options,
+            (item) => item.value,
+            (item) => html`
+              <uui-checkbox
+                class=${ classMap({ invalid: !!item.invalid }) }
+                label=${ item.label + (item.invalid ? ` (${ this.localize.term('validation_legacyOption') })` : '') }
+                title=${ item.invalid ? this.localize.term('validation_legacyOptionDescription') : '' }
+                value=${ item.value }
+                @change=${ this.#onChange }
+                ?checked=${ item.checked }
+                ?readonly=${ this.readonly }
+              ></uui-checkbox>
+            `
+          ) }
+        `
+    }
+
+    protected override firstUpdated() {
+        if (!!this._defaultValues?.length && !this.value?.length) {
+            this._options.forEach(option => option.checked = this._defaultValues!.includes(option.value))
+            this.value = this._options.filter(x => x.checked).map(x => x.value)
+        }
+    }
+
+    static override readonly styles = [
+        css`
+            uui-checkbox {
+                width: 100%;
+
+                &.invalid {
+                    text-decoration: line-through;
+                }
+            }
+        `
+    ]
 }
 
 export default AkPropertyEditorUICheckBoxListElement
 
 declare global {
-	interface HTMLElementTagNameMap {
-		'ak-property-editor-ui-check-box-list': AkPropertyEditorUICheckBoxListElement
-	}
+    interface HTMLElementTagNameMap {
+        'ak-property-editor-ui-check-box-list': AkPropertyEditorUICheckBoxListElement
+    }
 }
