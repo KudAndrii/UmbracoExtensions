@@ -6,7 +6,7 @@
       "type": "propertyEditorUi",
       "alias": "AndrewK.Umbraco.Dictionary",
       "name": "AndrewK Dictionary",
-      "element": "/App_Plugins/AndrewKDictionary/client.js",
+      "element": "/App_Plugins/AndrewKDictionary/dictionary-client.js",
       "elementName": "andrew-k-dictionary",
       "meta": {
         "label": "AndrewK Dictionary",

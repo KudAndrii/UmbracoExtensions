@@ -1,12 +1,12 @@
 {
   "name": "AndrewK Umbraco CheckBoxList",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "extensions": [
     {
       "type": "propertyEditorUi",
       "alias": "AndrewK.Umbraco.CheckBoxList",
       "name": "AndrewK CheckBoxList",
-      "element": "/App_Plugins/AndrewKCheckBoxList/client.js",
+      "element": "/App_Plugins/AndrewKCheckBoxList/check-box-list-client.js",
       "elementName": "andrew-k-check-box-list",
       "meta": {
         "label": "AndrewK CheckBoxList",

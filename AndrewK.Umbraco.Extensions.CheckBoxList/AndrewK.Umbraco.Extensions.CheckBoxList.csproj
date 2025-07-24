@@ -8,21 +8,26 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.CheckBoxList</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
         <Authors>Andrew Kud</Authors>
         <Product>CheckBoxList</Product>
         <Title>AndrewK.Umbraco.CheckBoxList</Title>
         <Description>Makes it possible to work with label on UI and values on the server side</Description>
         <PackageDescription>Makes it possible to work with label on UI and values on the server side</PackageDescription>
         <PackageTags>Umbraco;Extension;CheckBox;CheckBoxList;Backoffice</PackageTags>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <AssemblyVersion>1.1.0</AssemblyVersion>
+        <FileVersion>1.1.0</FileVersion>
         <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>Icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReleaseNotes>
+            Version 1.1.0:
+            - Implemented labels localization via backoffice localization files
+            - Bugfixes and improvements
+        </PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -35,7 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="1.0.0" />
+        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="1.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
     </ItemGroup>
 

@@ -6,7 +6,7 @@
       "type": "propertyEditorUi",
       "alias": "AndrewK.Umbraco.Dropdown",
       "name": "AndrewK Dropdown",
-      "element": "/App_Plugins/AndrewKDropdown/client.js",
+      "element": "/App_Plugins/AndrewKDropdown/dropdown-client.js",
       "elementName": "andrew-k-dropdown",
       "meta": {
         "label": "AndrewK Dropdown",

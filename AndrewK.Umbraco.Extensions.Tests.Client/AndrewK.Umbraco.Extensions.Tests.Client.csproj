@@ -20,8 +20,5 @@
         <None Remove="node_modules/**"/>
         <None Remove="coverage/**"/>
     </ItemGroup>
-    <ItemGroup>
-        <Folder Include="tests\checkbox-list\"/>
-    </ItemGroup>
 
 </Project>

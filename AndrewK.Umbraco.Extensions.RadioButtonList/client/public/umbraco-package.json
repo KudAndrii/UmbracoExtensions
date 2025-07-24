@@ -6,7 +6,7 @@
       "type": "propertyEditorUi",
       "alias": "AndrewK.Umbraco.RadioButtonList",
       "name": "AndrewK RadioButtonList",
-      "element": "/App_Plugins/AndrewKRadioButtonList/client.js",
+      "element": "/App_Plugins/AndrewKRadioButtonList/radio-button-list-client.js",
       "elementName": "andrew-k-radio-button-list",
       "meta": {
         "label": "AndrewK RadioButtonList",
