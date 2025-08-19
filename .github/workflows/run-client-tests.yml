@@ -37,10 +37,6 @@ jobs:
       - name: Install dependencies (workspace-aware)
         run: npm ci
 
-      - name: Install test project dependencies
-        working-directory: AndrewK.Umbraco.Extensions.Tests.Client
-        run: npm ci
-
       - name: Install Playwright browsers
         working-directory: AndrewK.Umbraco.Extensions.Tests.Client
         run: npx playwright install
