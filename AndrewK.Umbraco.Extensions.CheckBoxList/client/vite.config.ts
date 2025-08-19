@@ -8,7 +8,7 @@ export default defineConfig({
         },
         outDir: "../wwwroot",
         emptyOutDir: true,
-        sourcemap: true,
+        sourcemap: false,
         rollupOptions: {
             external: [/^@umbraco/], // ignore the Umbraco Backoffice package in the build
         },

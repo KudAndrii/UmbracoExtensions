@@ -1,8 +1,9 @@
 import { customElement, html, css, property, state, classMap, repeat } from '@umbraco-cms/backoffice/external/lit'
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event'
-import { UUIBooleanInputEvent, UUIFormControlMixin } from '@umbraco-cms/backoffice/external/uui'
+import { UUIFormControlMixin } from '@umbraco-cms/backoffice/external/uui'
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
 import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY } from '@umbraco-cms/backoffice/validation'
+import type { UUIBooleanInputEvent } from '@umbraco-cms/backoffice/external/uui'
 import type {
     UmbPropertyEditorConfigCollection,
     UmbPropertyEditorUiElement,

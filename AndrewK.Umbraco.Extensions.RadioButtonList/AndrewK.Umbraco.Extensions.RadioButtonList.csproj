@@ -8,15 +8,16 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.RadioButtonList</PackageId>
-        <Version>1.0.1</Version>
+        <PackageVersion>16.0.0</PackageVersion>
+        <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>RadioButtonList</Product>
         <Title>AndrewK.Umbraco.RadioButtonList</Title>
         <Description>Makes it possible to work with label on UI and values on the server side</Description>
         <PackageDescription>Makes it possible to work with label on UI and values on the server side</PackageDescription>
         <PackageTags>Umbraco;Extension;RadioButton;RadioButtonList;Backoffice</PackageTags>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
+        <AssemblyVersion>$(PackageVersion)</AssemblyVersion>
+        <FileVersion>$(PackageVersion)</FileVersion>
         <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/KudAndrii/UmbracoExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -24,8 +25,9 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
-            Version 1.0.1:
-            - Labels localization via backoffice localization files
+            $(PackageVersion):
+            - Dependencies-versions update.
+            - Magor package version alligned with the dependent Umbraco version.
         </PackageReleaseNotes>
     </PropertyGroup>
 
@@ -38,7 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="1.1.0" />
+        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="16.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
     </ItemGroup>
 
