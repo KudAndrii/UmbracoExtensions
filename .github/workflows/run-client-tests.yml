@@ -9,7 +9,7 @@ on:
       - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
       - 'AndrewK.Umbraco.Extensions.*/client/**'
   push:
-    branches: [ master, develop ]
+    branches: [ develop ]
     paths:
       - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
       - 'AndrewK.Umbraco.Extensions.*/client/**'
