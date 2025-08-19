@@ -1,6 +1,6 @@
 {
   "name": "AndrewK Umbraco CheckBoxList",
-  "version": "1.1.0",
+  "version": "16.0.0",
   "extensions": [
     {
       "type": "propertyEditorUi",
