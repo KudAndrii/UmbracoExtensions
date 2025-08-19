@@ -1,17 +1,18 @@
 {
   "private": true,
   "dependencies": {
-    "lit": "^3.3.0"
+    "lit": "^3.3.1"
   },
   "devDependencies": {
-    "@umbraco-cms/backoffice": "^16.0.0",
+    "@umbraco-cms/backoffice": "^16.1.1",
     "typescript": "~5.8.3",
-    "vite": "^7.0.0"
+    "vite": "^7.1.3"
   },
   "workspaces": [
     "AndrewK.Umbraco.Extensions.CheckBoxList/client",
     "AndrewK.Umbraco.Extensions.Dictionary/client",
     "AndrewK.Umbraco.Extensions.Dropdown/client",
-    "AndrewK.Umbraco.Extensions.RadioButtonList/client"
+    "AndrewK.Umbraco.Extensions.RadioButtonList/client",
+    "AndrewK.Umbraco.Extensions.Tests.Client"
   ]
 }

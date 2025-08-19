@@ -1,4 +1,4 @@
-import { nothing as I, when as H, html as p, css as x, state as m, property as _, query as U, customElement as O, repeat as Q, queryAll as Z } from "@umbraco-cms/backoffice/external/lit";
+import { nothing as I, when as H, html as p, css as A, state as m, property as _, query as U, customElement as O, repeat as Q, queryAll as Z } from "@umbraco-cms/backoffice/external/lit";
 import { UmbValidationContext as ee } from "@umbraco-cms/backoffice/validation";
 import { UmbLitElement as D } from "@umbraco-cms/backoffice/lit-element";
 import { UmbDeleteEvent as te, UmbInputEvent as V, UmbChangeEvent as y } from "@umbraco-cms/backoffice/event";
@@ -13,7 +13,7 @@ var oe = Object.defineProperty, le = Object.getOwnPropertyDescriptor, M = (e) =>
   for (var s = a > 1 ? void 0 : a ? le(t, i) : t, l = e.length - 1, c; l >= 0; l--)
     (c = e[l]) && (s = (a ? c(t, i, s) : c(s)) || s);
   return a && s && oe(t, i, s), s;
-}, S = (e, t, i) => t.has(e) || M("Cannot " + i), P = (e, t, i) => (S(e, t, "read from private field"), i ? i.call(e) : t.get(e)), b = (e, t, i) => t.has(e) ? M("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), v = (e, t, i) => (S(e, t, "access private method"), i), u, T, q, K, w, W, N, $, E;
+}, S = (e, t, i) => t.has(e) || M("Cannot " + i), x = (e, t, i) => (S(e, t, "read from private field"), i ? i.call(e) : t.get(e)), b = (e, t, i) => t.has(e) ? M("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), v = (e, t, i) => (S(e, t, "access private method"), i), u, T, q, K, w, W, N, $, E;
 let h = class extends B(D, void 0) {
   constructor() {
     super(), b(this, u), this._value = { key: "", value: "" }, this.disabled = !1, this.readonly = !1, b(this, $, (e) => e.stopPropagation()), b(this, E, (e) => e.stopPropagation()), this.getFormElement = () => {
@@ -26,15 +26,14 @@ let h = class extends B(D, void 0) {
     this._value = e || { key: "", value: "" };
   }
   async focus() {
-    var e;
-    await this.updateComplete, (e = this._keyInput) == null || e.focus();
+    await this.updateComplete, this._keyInput?.focus();
   }
   render() {
     return p`
           ${this.disabled || this.readonly ? I : p`
             <uui-icon name="icon-navigation" class="handle"></uui-icon>`}
 
-          <umb-form-validation-message id="validation-message" @invalid=${P(this, E)} @valid=${P(this, $)}>
+          <umb-form-validation-message id="validation-message" @invalid=${x(this, E)} @valid=${x(this, $)}>
             <div class="kvp-holder">
               <uui-input
                 id="input-key"
@@ -100,8 +99,7 @@ K = function(e) {
   this._value = { ...this._value, value: t.value }, this.dispatchEvent(new V());
 };
 w = function(e) {
-  var t, i;
-  e.stopPropagation(), e.key === "Enter" && (this._value.key ? this._value.value ? this.dispatchEvent(new CustomEvent("enter")) : (i = this._valueInput) == null || i.focus() : (t = this._keyInput) == null || t.focus());
+  e.stopPropagation(), e.key === "Enter" && (this._value.key ? this._value.value ? this.dispatchEvent(new CustomEvent("enter")) : this._valueInput?.focus() : this._keyInput?.focus());
 };
 W = function(e) {
   e.stopPropagation();
@@ -116,7 +114,7 @@ N = function(e) {
 $ = /* @__PURE__ */ new WeakMap();
 E = /* @__PURE__ */ new WeakMap();
 h.styles = [
-  x`
+  A`
             :host {
                 display: flex;
                 align-items: center;
@@ -171,10 +169,10 @@ var ue = Object.defineProperty, de = Object.getOwnPropertyDescriptor, z = (e) =>
   for (var s = a > 1 ? void 0 : a ? de(t, i) : t, l = e.length - 1, c; l >= 0; l--)
     (c = e[l]) && (s = (a ? c(t, i, s) : c(s)) || s);
   return a && s && ue(t, i, s), s;
-}, F = (e, t, i) => t.has(e) || z("Cannot " + i), k = (e, t, i) => (F(e, t, "read from private field"), i ? i.call(e) : t.get(e)), A = (e, t, i) => t.has(e) ? z("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), d = (e, t, i) => (F(e, t, "access private method"), i), g, o, C, L, R, G, J, X, Y, j;
+}, F = (e, t, i) => t.has(e) || z("Cannot " + i), k = (e, t, i) => (F(e, t, "read from private field"), i ? i.call(e) : t.get(e)), P = (e, t, i) => t.has(e) ? z("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(e) : t.set(e, i), d = (e, t, i) => (F(e, t, "access private method"), i), g, o, C, L, R, G, J, X, Y, j;
 let n = class extends B(D, void 0) {
   constructor() {
-    super(), A(this, o), A(this, g, new ne(this, {
+    super(), P(this, o), P(this, g, new ne(this, {
       getUniqueOfElement: (e) => e.getAttribute("data-sort-entry-id"),
       getUniqueOfModel: (e) => e.key,
       identifier: "AndrewK.SorterIdentifier.Dictionary",
@@ -187,10 +185,7 @@ let n = class extends B(D, void 0) {
     }, this.addValidator(
       "valueMissing",
       () => "Value is required",
-      () => {
-        var e;
-        return !this.readonly && this.mandatory && !((e = this.value) != null && e.length);
-      }
+      () => !this.readonly && this.mandatory && !this.value?.length
     ), this.addValidator(
       "badInput",
       () => "A key is missing",
@@ -204,7 +199,7 @@ let n = class extends B(D, void 0) {
       () => `Maximum ${this._max} items allowed`,
       () => !!this._max && this._value.length > this._max
     ), this.consumeContext(ie, (e) => {
-      this._label = e == null ? void 0 : e.getLabel();
+      this._label = e?.getLabel();
     }), this.consumeContext(ae, (e) => {
       e instanceof se && e.addValidationContext(this._validationContext);
     });
@@ -275,8 +270,7 @@ R = function(e, t) {
   e.stopPropagation(), this._value = this._value.filter((i, a) => a !== t), this.pristine = !1, this.dispatchEvent(new y());
 };
 G = async function() {
-  var t;
-  if (await this.updateComplete, !((t = this._items) != null && t.length))
+  if (await this.updateComplete, !this._items?.length)
     return;
   await this._items[this._items.length - 1].focus();
 };
@@ -342,7 +336,7 @@ j = function(e) {
   return t;
 };
 n.styles = [
-  x`
+  A`
             #action {
                 display: block;
             }
@@ -413,4 +407,4 @@ export {
   n as AkPropertyEditorUIDictionaryElement,
   be as default
 };
-//# sourceMappingURL=client.js.map
+//# sourceMappingURL=dictionary-client.js.map
