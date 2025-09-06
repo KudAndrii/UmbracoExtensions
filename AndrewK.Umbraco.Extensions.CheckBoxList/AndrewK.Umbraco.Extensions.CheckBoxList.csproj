@@ -60,9 +60,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="client\**\*.*">
-            <Pack>False</Pack>
-        </None>
+        <Content Remove="docs\**"/>
+        <Content Remove="client\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="client\**"/>
     </ItemGroup>
 
 </Project>

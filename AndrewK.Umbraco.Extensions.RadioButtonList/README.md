@@ -96,3 +96,13 @@ export default {
   }
 ]
 ```
+
+## UI
+
+### Property
+
+![Property](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.RadioButtonList/docs/property-example.png)
+
+### DataType editor
+
+![DataType editor](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.RadioButtonList/docs/data-type-editor-example.png)

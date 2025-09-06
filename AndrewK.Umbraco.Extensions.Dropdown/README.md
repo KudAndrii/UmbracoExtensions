@@ -82,3 +82,13 @@ public class MyController : Controller
     }
 }
 ```
+
+## UI
+
+### Property
+
+![Property](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dropdown/docs/property-example.png)
+
+### DataType editor
+
+![DataType editor](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dropdown/docs/data-type-editor-example.png)
