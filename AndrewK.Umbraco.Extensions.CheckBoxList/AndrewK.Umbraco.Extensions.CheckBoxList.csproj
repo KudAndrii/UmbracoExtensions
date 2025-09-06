@@ -41,8 +41,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="16.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
+        <PackageReference Include="AndrewK.Umbraco.Dictionary"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
 
     <ItemGroup>

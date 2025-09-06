@@ -8,21 +8,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Umbraco.Cms" Version="16.1.1" />
-        <PackageReference Include="uSync" Version="16.0.0" />
+        <PackageReference Include="Umbraco.Cms"/>
+        <PackageReference Include="uSync"/>
     </ItemGroup>
 
     <ItemGroup>
         <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
-        <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3"/>
+        <PackageReference Include="Microsoft.ICU.ICU4C.Runtime"/>
         <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.CheckBoxList\AndrewK.Umbraco.Extensions.CheckBoxList.csproj" />
-      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj" />
-      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dropdown\AndrewK.Umbraco.Extensions.Dropdown.csproj" />
-      <ProjectReference Include="..\AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj" />
+        <ProjectReference Include="..\AndrewK.Umbraco.Extensions.CheckBoxList\AndrewK.Umbraco.Extensions.CheckBoxList.csproj"/>
+        <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dictionary\AndrewK.Umbraco.Extensions.Dictionary.csproj"/>
+        <ProjectReference Include="..\AndrewK.Umbraco.Extensions.Dropdown\AndrewK.Umbraco.Extensions.Dropdown.csproj"/>
+        <ProjectReference Include="..\AndrewK.Umbraco.Extensions.RadioButtonList\AndrewK.Umbraco.Extensions.RadioButtonList.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
