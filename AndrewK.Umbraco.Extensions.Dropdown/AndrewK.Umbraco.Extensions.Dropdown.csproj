@@ -27,7 +27,6 @@
         <PackageReleaseNotes>
             $(PackageVersion):
             - Dependencies-versions update.
-            - Magor package version alligned with the dependent Umbraco version.
         </PackageReleaseNotes>
     </PropertyGroup>
 
