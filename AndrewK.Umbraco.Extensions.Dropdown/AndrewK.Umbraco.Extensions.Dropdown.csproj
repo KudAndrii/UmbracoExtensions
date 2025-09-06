@@ -8,7 +8,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dropdown</PackageId>
-        <PackageVersion>16.0.0</PackageVersion>
+        <PackageVersion>16.0.1</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dropdown</Product>
@@ -40,8 +40,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AndrewK.Umbraco.Dictionary" Version="16.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
+        <PackageReference Include="AndrewK.Umbraco.Dictionary"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -57,6 +57,12 @@
             <Pack>true</Pack>
             <PackagePath>\</PackagePath>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="client\**\*.*">
+            <Pack>False</Pack>
+        </None>
     </ItemGroup>
 
 </Project>
