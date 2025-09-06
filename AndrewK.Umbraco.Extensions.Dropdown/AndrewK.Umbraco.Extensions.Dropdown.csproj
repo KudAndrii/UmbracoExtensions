@@ -59,4 +59,10 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="client\**\*.*">
+            <Pack>False</Pack>
+        </None>
+    </ItemGroup>
+
 </Project>
