@@ -8,7 +8,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dropdown</PackageId>
-        <PackageVersion>16.0.1</PackageVersion>
+        <PackageVersion>16.0.2</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dropdown</Product>
@@ -27,7 +27,6 @@
         <PackageReleaseNotes>
             $(PackageVersion):
             - Dependencies-versions update.
-            - Magor package version alligned with the dependent Umbraco version.
         </PackageReleaseNotes>
     </PropertyGroup>
 
