@@ -1,7 +1,9 @@
 # AndrewK.Umbraco.Dictionary
 
-AndrewK.Umbraco.Dictionary is a custom property editor for Umbraco 16 that allows content editors to store and manage multiple key-value pairs in a structured way.  
-It provides an intuitive user interface for adding, editing, and removing dictionary-style data directly within the Umbraco backoffice.
+AndrewK.Umbraco.Dictionary is a custom property editor for Umbraco 16 that allows content editors to store and manage
+multiple key-value pairs in a structured way.  
+It provides an intuitive user interface for adding, editing, and removing dictionary-style data directly within the
+Umbraco backoffice.
 
 ---
 
@@ -88,8 +90,9 @@ public class MyController : Controller
 ## UI
 
 ### Property
-![Property](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dictionary/docs/data-type-editor-example.png)
+
+![Property](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dictionary/docs/property-example.png)
 
 ### DataType editor
 
-![DataType editor](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dictionary/docs/backoffice-example.png)
+![DataType editor](https://raw.githubusercontent.com/KudAndrii/UmbracoExtensions/refs/heads/master/AndrewK.Umbraco.Extensions.Dictionary/docs/data-type-editor-example.png)
