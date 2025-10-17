@@ -1,7 +1,6 @@
 {
   "name": "dictionary-client",
   "private": true,
-  "version": "16.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",

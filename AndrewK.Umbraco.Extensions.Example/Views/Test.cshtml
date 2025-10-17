@@ -6,6 +6,12 @@
 }
 
 <section>
+	<h2>Dictionary:</h2>
+	<p>
+		<span>@(JsonSerializer.Serialize(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</span>
+	</p>
+</section>
+<section>
 	<h2>Keyed Dropdown</h2>
 	<p>
 		<span>Single:</span>
