@@ -2,11 +2,6 @@ import { map as qs, html as Ve, css as Xs, state as xe, property as $e, query as
 import { UUIFormControlMixin as Zs } from "@umbraco-cms/backoffice/external/uui";
 import { UmbLitElement as Gs } from "@umbraco-cms/backoffice/lit-element";
 import { UmbChangeEvent as Js } from "@umbraco-cms/backoffice/event";
-/**
- * @license
- * Copyright 2019 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const Wt = globalThis, Ce = Wt.ShadowRoot && (Wt.ShadyCSS === void 0 || Wt.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, Ae = Symbol(), Be = /* @__PURE__ */ new WeakMap();
 let fs = class {
   constructor(e, s, o) {
@@ -44,11 +39,6 @@ const Qs = (t) => new fs(typeof t == "string" ? t : t + "", void 0, Ae), Q = (t,
   for (const o of e.cssRules) s += o.cssText;
   return Qs(s);
 })(t) : t;
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const { is: eo, defineProperty: so, getOwnPropertyDescriptor: oo, getOwnPropertyNames: lo, getOwnPropertySymbols: io, getPrototypeOf: ro } = Object, Qt = globalThis, He = Qt.trustedTypes, no = He ? He.emptyScript : "", ao = Qt.reactiveElementPolyfillSupport, Rt = (t, e) => t, Yt = { toAttribute(t, e) {
   switch (e) {
     case Boolean:
@@ -261,11 +251,6 @@ let wt = class extends HTMLElement {
   }
 };
 wt.elementStyles = [], wt.shadowRootOptions = { mode: "open" }, wt[Rt("elementProperties")] = /* @__PURE__ */ new Map(), wt[Rt("finalized")] = /* @__PURE__ */ new Map(), ao?.({ ReactiveElement: wt }), (Qt.reactiveElementVersions ??= []).push("2.1.1");
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const Ee = globalThis, Kt = Ee.trustedTypes, Fe = Kt ? Kt.createPolicy("lit-html", { createHTML: (t) => t }) : void 0, ms = "$lit$", lt = `lit$${Math.random().toFixed(9).slice(2)}$`, gs = "?" + lt, co = `<${gs}>`, mt = document, Dt = () => mt.createComment(""), Vt = (t) => t === null || typeof t != "object" && typeof t != "function", ke = Array.isArray, ho = (t) => ke(t) || typeof t?.[Symbol.iterator] == "function", ae = `[ 	
 \f\r]`, Ot = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, Ue = /-->/g, je = />/g, ut = RegExp(`>|${ae}(?:([^\\s"'>=/]+)(${ae}*=${ae}*(?:[^ 	
 \f\r"'\`<>=]|("|')|))|$)`, "g"), We = /'/g, qe = /"/g, vs = /^(?:script|style|textarea|title)$/i, uo = (t) => (e, ...s) => ({ _$litType$: t, strings: e, values: s }), O = uo(1), it = Symbol.for("lit-noChange"), A = Symbol.for("lit-nothing"), Xe = /* @__PURE__ */ new WeakMap(), ft = mt.createTreeWalker(mt, 129);
@@ -491,11 +476,6 @@ const wo = (t, e, s) => {
   }
   return l._$AI(t), l;
 };
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const Oe = globalThis;
 let Mt = class extends wt {
   constructor() {
@@ -1373,11 +1353,6 @@ var At = Q`
     display: none !important;
   }
 `;
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const Fo = { attribute: !0, type: String, converter: Yt, reflect: !1, hasChanged: Se }, Uo = (t = Fo, e, s) => {
   const { kind: o, metadata: l } = s;
   let i = globalThis.litPropertyMetadata.get(l);
@@ -1405,25 +1380,10 @@ function f(t) {
     return l.constructor.createProperty(i, o), r ? Object.getOwnPropertyDescriptor(l, i) : void 0;
   })(t, e, s);
 }
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 function N(t) {
   return f({ ...t, state: !0, attribute: !1 });
 }
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const jo = (t, e, s) => (s.configurable = !0, s.enumerable = !0, Reflect.decorate && typeof e != "object" && Object.defineProperty(t, e, s), s);
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 function tt(t, e) {
   return (s, o, l) => {
     const i = (r) => r.renderRoot?.querySelector(t) ?? null;
@@ -1486,11 +1446,6 @@ u([
 u([
   f()
 ], Y.prototype, "lang", 2);
-/**
- * @license
- * Copyright 2020 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const Wo = (t, e) => t?._$litType$ !== void 0;
 var zt = Symbol(), Ft = Symbol(), ce, he = /* @__PURE__ */ new Map(), F = class extends Y {
   constructor() {
@@ -1599,11 +1554,6 @@ u([
 u([
   ct(["name", "src", "library"])
 ], F.prototype, "setIcon", 1);
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const xs = { ATTRIBUTE: 1, CHILD: 2 }, $s = (t) => (...e) => ({ _$litDirective$: t, values: e });
 let Cs = class {
   constructor(e) {
@@ -1621,11 +1571,6 @@ let Cs = class {
     return this.render(...s);
   }
 };
-/**
- * @license
- * Copyright 2018 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const gt = $s(class extends Cs {
   constructor(t) {
     if (super(t), t.type !== xs.ATTRIBUTE || t.name !== "class" || t.strings?.length > 2) throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.");
@@ -1648,11 +1593,6 @@ const gt = $s(class extends Cs {
     return it;
   }
 });
-/**
- * @license
- * Copyright 2020 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const As = Symbol.for(""), qo = (t) => {
   if (t?.r === As) return t?._$litStatic$;
 }, Qe = (t, ...e) => ({ _$litStatic$: e.reduce(((s, o, l) => s + ((i) => {
@@ -1674,11 +1614,6 @@ const As = Symbol.for(""), qo = (t) => {
   }
   return t(e, ...s);
 }, Yo = Xo(O);
-/**
- * @license
- * Copyright 2018 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const W = (t) => t ?? A;
 var L = class extends Y {
   constructor() {
@@ -3905,11 +3840,6 @@ var oi = class {
     this.host.shadowRoot.removeEventListener("slotchange", this.handleSlotChange);
   }
 };
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 class we extends Cs {
   constructor(e) {
     if (super(e), this.it = A, e.type !== xs.CHILD) throw Error(this.constructor.directiveName + "() can only be used in child bindings");
