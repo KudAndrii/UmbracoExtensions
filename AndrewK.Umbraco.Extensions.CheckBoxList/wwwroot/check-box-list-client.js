@@ -1,116 +1,126 @@
-import { repeat as v, classMap as _, html as c, css as f, state as d, property as l, customElement as m } from "@umbraco-cms/backoffice/external/lit";
-import { UmbChangeEvent as g } from "@umbraco-cms/backoffice/event";
-import { UUIFormControlMixin as k } from "@umbraco-cms/backoffice/external/uui";
+import { repeat as y, classMap as v, html as d, css as m, state as u, property as l, customElement as g } from "@umbraco-cms/backoffice/external/lit";
+import { UmbFormControlMixin as k, UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as A } from "@umbraco-cms/backoffice/validation";
+import { UmbChangeEvent as p } from "@umbraco-cms/backoffice/event";
 import { UmbLitElement as E } from "@umbraco-cms/backoffice/lit-element";
-import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as A } from "@umbraco-cms/backoffice/validation";
-var x = Object.defineProperty, C = Object.getOwnPropertyDescriptor, u = (e) => {
-  throw TypeError(e);
-}, s = (e, i, t, o) => {
-  for (var r = o > 1 ? void 0 : o ? C(i, t) : i, n = e.length - 1, h; n >= 0; n--)
-    (h = e[n]) && (r = (o ? h(i, t, r) : h(r)) || r);
-  return o && r && x(i, t, r), r;
-}, O = (e, i, t) => i.has(e) || u("Cannot " + t), $ = (e, i, t) => i.has(e) ? u("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(e) : i.set(e, t), B = (e, i, t) => (O(e, i, "access private method"), t), p, y;
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT as C } from "@umbraco-cms/backoffice/document";
+var O = Object.defineProperty, x = Object.getOwnPropertyDescriptor, f = (t) => {
+  throw TypeError(t);
+}, r = (t, i, e, o) => {
+  for (var s = o > 1 ? void 0 : o ? x(i, e) : i, n = t.length - 1, h; n >= 0; n--)
+    (h = t[n]) && (s = (o ? h(i, e, s) : h(s)) || s);
+  return o && s && O(i, e, s), s;
+}, M = (t, i, e) => i.has(t) || f("Cannot " + e), b = (t, i, e) => i.has(t) ? f("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(t) : i.set(t, e), w = (t, i, e) => (M(t, i, "access private method"), e), c, _;
 let a = class extends k(E, []) {
   constructor() {
-    super(), $(this, p), this._value = [], this._options = [], this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = A, this.getFormElement = () => {
+    super(), b(this, c), this._defaultApplied = !1, this._value = [], this._options = [], this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = A, this.getFormElement = () => {
     }, this.addValidator(
       "valueMissing",
       () => this.mandatoryMessage,
       () => !this.readonly && this.mandatory && !this.value?.length
     );
   }
-  set value(e) {
-    if (JSON.stringify(this._value) !== JSON.stringify(e)) {
-      if (Array.isArray(e))
-        this._value = e.filter((i) => !!i && typeof i == "string");
-      else if (e && typeof e == "string")
-        this._value = [e];
-      else
-        return;
-      this.dispatchEvent(new g());
+  set value(t) {
+    let i;
+    if (Array.isArray(t))
+      i = t.filter((e) => !!e && typeof e == "string");
+    else if (t && typeof t == "string")
+      i = [t];
+    else
+      return;
+    this._value = i;
+    try {
+      JSON.stringify(t) !== JSON.stringify(i) && (this.pristine = !1, this.updateComplete.then(() => {
+        this.dispatchEvent(new p());
+      }));
+    } catch (e) {
+      console.error("Failed to compare items: ", e);
     }
   }
   get value() {
     return this._value || [];
   }
-  set config(e) {
-    if (!e) return;
-    const i = e.getValueByAlias("items");
-    this._defaultValues = e.getValueByAlias("default")?.split(",").map((t) => t.trim()).filter(Boolean), Array.isArray(i) && i.length && (this._options = i.filter((t) => !!t?.key).map((t) => ({
-      label: this.localize.string(t.value) || t.key,
-      value: t.key,
-      checked: this._value.includes(t.key)
-    })), this._value.forEach((t) => {
-      this._options.find((o) => o.value === t) || this._options.push({
-        label: t,
-        value: t,
+  set config(t) {
+    if (!t) return;
+    const i = t.getValueByAlias("items");
+    this._defaultValues = t.getValueByAlias("default")?.split(",").map((e) => e.trim()).filter(Boolean), Array.isArray(i) && i.length && (this._options = i.filter((e) => !!e?.key).map((e) => ({
+      label: this.localize.string(e.value) || e.key,
+      value: e.key,
+      checked: this._value.includes(e.key)
+    })), this._value.forEach((e) => {
+      this._options.find((o) => o.value === e) || this._options.push({
+        label: e,
+        value: e,
         checked: !0,
         invalid: !0
       });
     }));
   }
   render() {
-    return c`
-          ${v(
+    return d`
+      ${y(
       this._options,
-      (e) => e.value,
-      (e) => c`
-              <uui-checkbox
-                class=${_({ invalid: !!e.invalid })}
-                label=${e.label + (e.invalid ? ` (${this.localize.term("validation_legacyOption")})` : "")}
-                title=${e.invalid ? this.localize.term("validation_legacyOptionDescription") : ""}
-                value=${e.value}
-                @change=${B(this, p, y)}
-                ?checked=${e.checked}
-                ?readonly=${this.readonly}
-              ></uui-checkbox>
-            `
+      (t) => t.value,
+      (t) => d`
+          <uui-checkbox
+            class=${v({ invalid: !!t.invalid })}
+            label=${t.label + (t.invalid ? ` (${this.localize.term("validation_legacyOption")})` : "")}
+            title=${t.invalid ? this.localize.term("validation_legacyOptionDescription") : ""}
+            value=${t.value}
+            @change=${w(this, c, _)}
+            ?checked=${t.checked}
+            ?readonly=${this.readonly}
+          ></uui-checkbox>
+        `
     )}
-        `;
+    `;
   }
   firstUpdated() {
-    this._defaultValues?.length && !this.value?.length && (this._options.forEach((e) => e.checked = this._defaultValues.includes(e.value)), this.value = this._options.filter((e) => e.checked).map((e) => e.value));
+    this.consumeContext(C, (t) => {
+      t && this.observe(t.isNew, (i) => {
+        i && !this._defaultApplied && this._defaultValues?.length && !this.value?.length && (this._options.forEach((e) => e.checked = this._defaultValues.includes(e.value)), this.value = this._options.filter((e) => e.checked).map((e) => e.value), this._defaultApplied = !0, this.dispatchEvent(new p()));
+      });
+    });
   }
 };
-p = /* @__PURE__ */ new WeakSet();
-y = function(e) {
-  const i = this._options.findIndex((t) => t.value === e.target.value);
-  i !== -1 && (this._options[i].checked = e.target.checked, this.value = this._options.filter((t) => t.checked).map((t) => t.value));
+c = /* @__PURE__ */ new WeakSet();
+_ = function(t) {
+  const i = this._options.findIndex((e) => e.value === t.target.value);
+  i !== -1 && (this._options[i].checked = t.target.checked, this.value = this._options.filter((e) => e.checked).map((e) => e.value), this.dispatchEvent(new p()));
 };
 a.styles = [
-  f`
-            uui-checkbox {
-                width: 100%;
+  m`
+      uui-checkbox {
+        width: 100%;
 
-                &.invalid {
-                    text-decoration: line-through;
-                }
-            }
-        `
+        &.invalid {
+          text-decoration: line-through;
+        }
+      }
+    `
 ];
-s([
-  d()
+r([
+  u()
 ], a.prototype, "_value", 2);
-s([
-  d()
+r([
+  u()
 ], a.prototype, "_options", 2);
-s([
+r([
   l({ type: Array })
 ], a.prototype, "value", 1);
-s([
+r([
   l({ type: Boolean, reflect: !0 })
 ], a.prototype, "readonly", 2);
-s([
+r([
   l({ type: Boolean, reflect: !0 })
 ], a.prototype, "mandatory", 2);
-s([
+r([
   l({ type: String })
 ], a.prototype, "mandatoryMessage", 2);
-a = s([
-  m("ak-property-editor-ui-check-box-list")
+a = r([
+  g("ak-property-editor-ui-check-box-list")
 ], a);
-const L = a;
+const V = a;
 export {
-  a as AkPropertyEditorUICheckBoxListElement,
-  L as default
+  a as AkPropertyEditorUICheckBoxList,
+  V as default
 };
