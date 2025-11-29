@@ -1,14 +1,14 @@
 import { fixture, html, expect } from '@open-wc/testing'
 import {
-    AkPropertyEditorUIDropdownElement
-} from '../../../AndrewK.Umbraco.Extensions.Dropdown/client/src/property-editor-ui-ak-dropdown.element'
+    AkPropertyEditorUIDropdown
+} from '../../../AndrewK.Umbraco.Extensions.Dropdown/client/src/property-editor-ui-dropdown'
 import type {
     UmbPropertyEditorConfigCollection,
     CustomPropertyEditorElement
 } from '../shared/import-utils'
 
 describe('UmbPropertyEditorUIAkDropdownElement', () => {
-    let element: CustomPropertyEditorElement<AkPropertyEditorUIDropdownElement, Array<string>>
+    let element: CustomPropertyEditorElement<AkPropertyEditorUIDropdown, Array<string>>
     const getSlSelect = () =>
         element?.shadowRoot?.querySelector('sl-select') as HTMLElement & { value: Array<string> | string }
 
@@ -24,11 +24,11 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
 
         it('can be created with its own instance', () => {
             expect(element).to.exist
-            expect(element).to.be.instanceOf(AkPropertyEditorUIDropdownElement)
+            expect(element).to.be.instanceOf(AkPropertyEditorUIDropdown)
         })
 
         it('should be defined in custom elements registry', () => {
-            expect(customElements.get('ak-property-editor-ui-dropdown')).to.equal(AkPropertyEditorUIDropdownElement)
+            expect(customElements.get('ak-property-editor-ui-dropdown')).to.equal(AkPropertyEditorUIDropdown)
         })
     })
 
