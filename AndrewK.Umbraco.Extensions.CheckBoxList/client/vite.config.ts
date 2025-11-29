@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     build: {
         lib: {
-            entry: "src/property-editor-ui-ak-check-box-list.element.ts", // your web component source file
+            entry: "src/property-editor-ui-check-box-list.ts", // your web component source file
             formats: ["es"],
         },
         outDir: "../wwwroot",

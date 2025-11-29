@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     build: {
         lib: {
-            entry: "src/property-editor-ui-ak-dropdown.element.ts", // your web component source file
+            entry: "src/property-editor-ui-dropdown.ts", // your web component source file
             formats: ["es"],
         },
         outDir: "../wwwroot",

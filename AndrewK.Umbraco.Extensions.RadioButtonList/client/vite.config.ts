@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     build: {
         lib: {
-            entry: "src/property-editor-ui-ak-radio-button-list.element.ts", // your web component source file
+            entry: "src/property-editor-ui-radio-button-list.ts", // your web component source file
             formats: ["es"],
         },
         outDir: "../wwwroot",

@@ -9,7 +9,7 @@ import type {
     CustomPropertyEditorElement
 } from '../shared/import-utils'
 
-describe('AkPropertyEditorUIDictionaryElement', () => {
+describe('AkPropertyEditorUIDictionary', () => {
     let element: CustomPropertyEditorElement<AkPropertyEditorUIDictionary, Array<KeyValuePair>>
 
     const getDictionaryElement = () =>

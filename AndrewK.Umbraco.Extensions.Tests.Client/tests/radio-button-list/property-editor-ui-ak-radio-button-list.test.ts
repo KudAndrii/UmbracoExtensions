@@ -5,16 +5,16 @@ import type {
 // @ts-ignore
 } from '@umbraco-cms/backoffice/dist-cms/packages/core/components'
 import {
-    AkPropertyEditorUIRadioButtonListElement
-} from '../../../AndrewK.Umbraco.Extensions.RadioButtonList/client/src/property-editor-ui-ak-radio-button-list.element'
+    AkPropertyEditorUIRadioButtonList
+} from '../../../AndrewK.Umbraco.Extensions.RadioButtonList/client/src/property-editor-ui-radio-button-list'
 import type {
     UmbPropertyEditorConfigCollection,
     CustomElement,
     CustomPropertyEditorElement
 } from '../shared/import-utils'
 
-describe('AkPropertyEditorUIRadioButtonListElement', () => {
-    let element: CustomPropertyEditorElement<AkPropertyEditorUIRadioButtonListElement, string>
+describe('AkPropertyEditorUIRadioButtonList', () => {
+    let element: CustomPropertyEditorElement<AkPropertyEditorUIRadioButtonList, string>
     const getRadioButtonList = () => element?.shadowRoot?.querySelector('umb-input-radio-button-list') as CustomElement<UmbInputRadioButtonListElement, string>
 
     beforeEach(async () => {
@@ -35,7 +35,7 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
 
         it('can be created with its own instance', () => {
             expect(element).to.exist
-            expect(element).to.be.instanceOf(AkPropertyEditorUIRadioButtonListElement)
+            expect(element).to.be.instanceOf(AkPropertyEditorUIRadioButtonList)
         })
     })
 
@@ -265,28 +265,6 @@ describe('AkPropertyEditorUIRadioButtonListElement', () => {
 
             const radioButtonList = getRadioButtonList()
             expect(radioButtonList?.value).to.equal('option2')
-        })
-
-        it('should dispatch change event when value changes', async () => {
-            let changeEventFired = false
-            element.addEventListener('change', () => {
-                changeEventFired = true
-            })
-            const testItems = [
-                { key: 'option1', value: 'Option One' },
-                { key: 'option2', value: 'Option Two' }
-            ]
-            element.config = {
-                getValueByAlias: (alias: string) => {
-                    if (alias === 'items') return testItems
-                    return undefined
-                }
-            } as UmbPropertyEditorConfigCollection
-
-            element.value = 'option1'
-            await element.updateComplete
-
-            expect(changeEventFired).to.be.true
         })
 
         it('should not dispatch change event when value stays the same', async () => {

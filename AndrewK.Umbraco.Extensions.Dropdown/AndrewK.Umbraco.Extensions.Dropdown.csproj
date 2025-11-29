@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dropdown</PackageId>
-        <PackageVersion>16.0.4</PackageVersion>
+        <PackageVersion>17.0.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dropdown</Product>
@@ -22,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies-versions update.
+            - Migration to umbraco 17.
         </PackageReleaseNotes>
     </PropertyGroup>
 

@@ -97,9 +97,7 @@ D = function(e, t) {
 };
 U = function(e, t) {
   e.stopPropagation();
-  const i = e.currentTarget;
-  debugger;
-  const a = this.value ?? { key: "", value: "" };
+  const i = e.currentTarget, a = this.value ?? { key: "", value: "" };
   this.value = {
     ...a,
     [t]: i.value

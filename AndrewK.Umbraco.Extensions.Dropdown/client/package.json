@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "watch": "vite build --watch",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@shoelace-style/shoelace": "^2.20.1"

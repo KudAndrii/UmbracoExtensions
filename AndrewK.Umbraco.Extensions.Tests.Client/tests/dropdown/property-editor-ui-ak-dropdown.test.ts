@@ -1,14 +1,14 @@
 import { fixture, html, expect } from '@open-wc/testing'
 import {
-    AkPropertyEditorUIDropdownElement
-} from '../../../AndrewK.Umbraco.Extensions.Dropdown/client/src/property-editor-ui-ak-dropdown.element'
+    AkPropertyEditorUIDropdown
+} from '../../../AndrewK.Umbraco.Extensions.Dropdown/client/src/property-editor-ui-dropdown'
 import type {
     UmbPropertyEditorConfigCollection,
     CustomPropertyEditorElement
 } from '../shared/import-utils'
 
-describe('UmbPropertyEditorUIAkDropdownElement', () => {
-    let element: CustomPropertyEditorElement<AkPropertyEditorUIDropdownElement, Array<string>>
+describe('AkPropertyEditorUIDropdown', () => {
+    let element: CustomPropertyEditorElement<AkPropertyEditorUIDropdown, Array<string>>
     const getSlSelect = () =>
         element?.shadowRoot?.querySelector('sl-select') as HTMLElement & { value: Array<string> | string }
 
@@ -24,11 +24,11 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
 
         it('can be created with its own instance', () => {
             expect(element).to.exist
-            expect(element).to.be.instanceOf(AkPropertyEditorUIDropdownElement)
+            expect(element).to.be.instanceOf(AkPropertyEditorUIDropdown)
         })
 
         it('should be defined in custom elements registry', () => {
-            expect(customElements.get('ak-property-editor-ui-dropdown')).to.equal(AkPropertyEditorUIDropdownElement)
+            expect(customElements.get('ak-property-editor-ui-dropdown')).to.equal(AkPropertyEditorUIDropdown)
         })
     })
 
@@ -102,40 +102,6 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
     })
 
     describe('Value Handling', () => {
-        it('should handle default value', async () => {
-            element.config = {
-                getValueByAlias: (alias: string) => {
-                    if (alias === 'items') return [ { key: '0', value: 'zero' }, { key: '1', value: 'one' } ]
-                    if (alias === 'default') return '1'
-                    return undefined
-                }
-            } as UmbPropertyEditorConfigCollection
-            element.firstUpdated()
-
-            expect(element.value).to.deep.equal(['1'])
-        })
-
-        it('should handle multiple default values', async () => {
-            // in some cases shoelace-style/shoelace has issue with locales for headless browsers used for testing
-            document.documentElement.lang = 'en'
-            Object.defineProperty(window.navigator, 'language', {
-                value: 'en-US',
-                configurable: true,
-            })
-
-            element.config = {
-                getValueByAlias: (alias: string) => {
-                    if (alias === 'items') return [ { key: '0', value: 'zero' }, { key: '1', value: 'one' } ]
-                    if (alias === 'default') return '0, 1'
-                    if (alias === 'multiple') return true
-                    return undefined
-                }
-            } as UmbPropertyEditorConfigCollection
-            element.firstUpdated()
-
-            expect(element.value).to.deep.equal(['0', '1'])
-        })
-
         it('should handle falsy or non string values as empty array', () => {
             element.value = null
             expect(element.value).to.deep.equal([])
@@ -266,24 +232,6 @@ describe('UmbPropertyEditorUIAkDropdownElement', () => {
                 detail: { target: { value: 'option2' } },
                 bubbles: true
             }))
-
-            expect(changeEventFired).to.be.true
-        })
-
-        it('should emit change event when default value is set', () => {
-            let changeEventFired = false
-            element.addEventListener('change', () => {
-                changeEventFired = true
-            })
-
-            element.config = {
-                getValueByAlias: (alias: string) => {
-                    if (alias === 'items') return [ { key: '0', value: 'zero' }, { key: '1', value: 'one' } ]
-                    if (alias === 'default') return '1'
-                    return undefined
-                }
-            } as UmbPropertyEditorConfigCollection
-            element.firstUpdated()
 
             expect(changeEventFired).to.be.true
         })

@@ -71,7 +71,6 @@ export class AkInputDictionaryItem extends UUIFormControlMixin<KeyValuePair, typ
   #updateValue(event: UUIInputEvent, type: 'key' | 'value') {
     event.stopPropagation()
     const target = event.currentTarget as UUIInputElement
-    debugger
     const currentValue = this.value ?? { key: '', value: '' }
     this.value = {
       ...currentValue,
