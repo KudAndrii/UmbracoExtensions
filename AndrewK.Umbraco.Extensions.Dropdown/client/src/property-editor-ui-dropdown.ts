@@ -12,6 +12,7 @@ import { css, customElement, html, map, property, state, query } from '@umbraco-
 import { UmbFormControlMixin } from '@umbraco-cms/backoffice/validation'
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element'
 import { UmbChangeEvent } from '@umbraco-cms/backoffice/event'
+import { UMB_DOCUMENT_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/document'
 
 // import { UMB_SUBMITTABLE_WORKSPACE_CONTEXT } from '@umbraco-cms/backoffice/workspace'
 // import { UMB_VARIANT_CONTEXT } from '@umbraco-cms/backoffice/variant'
@@ -21,6 +22,7 @@ export class AkPropertyEditorUIDropdown
   extends UmbFormControlMixin<Array<string>, typeof UmbLitElement, undefined>(UmbLitElement)
   implements UmbPropertyEditorUiElement
 {
+  private _defaultApplied: boolean = false
   private _defaultValues?: Array<string>
   @state() private _multiple: boolean = false
   @state() private _options: Array<Option & { alias: string; invalid?: boolean }> = []
@@ -137,10 +139,18 @@ export class AkPropertyEditorUIDropdown
   }
 
   protected override firstUpdated() {
-    if (!!this._defaultValues?.length && !this._value) {
-      this.value = this._defaultValues
-      this.dispatchEvent(new UmbChangeEvent())
-    }
+    this.consumeContext(UMB_DOCUMENT_WORKSPACE_CONTEXT, (context) => {
+      if (!context) return
+
+      // default values must be applied only to the brand new nodes
+      this.observe(context.isNew, (isNew) => {
+        if (!!isNew && !this._defaultApplied && !!this._defaultValues?.length && !this._value) {
+          this.value = this._defaultValues
+          this._defaultApplied = true
+          this.dispatchEvent(new UmbChangeEvent())
+        }
+      })
+    })
   }
 
   private get _legacyOptionMessage() {
