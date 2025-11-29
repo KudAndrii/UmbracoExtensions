@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     build: {
         lib: {
-            entry: "src/property-editor-ui-ak-dictionary.element.ts", // your web component source file
+            entry: "src/property-editor-ui-dictionary.ts", // your web component source file
             formats: ["es"],
         },
         //outDir: "../App_Plugins/client", // all compiled files will be placed here
