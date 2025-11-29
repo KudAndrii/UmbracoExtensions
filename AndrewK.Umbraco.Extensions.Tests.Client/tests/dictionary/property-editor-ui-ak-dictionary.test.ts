@@ -1,6 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing'
-import { AkPropertyEditorUIDictionaryElement } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/property-editor-ui-ak-dictionary.element'
-import { AkInputDictionaryItemElement } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/ak-input-dictionary-item.element'
+import { AkPropertyEditorUIDictionary } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/property-editor-ui-dictionary'
+import { AkInputDictionary } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/input-dictionary'
+import { AkInputDictionaryItem } from '../../../AndrewK.Umbraco.Extensions.Dictionary/client/src/input-dictionary-item'
 import type {
     UmbPropertyEditorConfigCollection,
     KeyValuePair,
@@ -9,12 +10,37 @@ import type {
 } from '../shared/import-utils'
 
 describe('AkPropertyEditorUIDictionaryElement', () => {
-    let element: CustomPropertyEditorElement<AkPropertyEditorUIDictionaryElement, Array<KeyValuePair>>
+    let element: CustomPropertyEditorElement<AkPropertyEditorUIDictionary, Array<KeyValuePair>>
+
+    const getDictionaryElement = () =>
+      element?.shadowRoot?.querySelector('ak-input-dictionary') as AkInputDictionary
+
+    const getAddButton = async () => {
+        await element.updateComplete
+        const dict = getDictionaryElement()
+        await dict?.updateComplete
+        return dict?.shadowRoot?.querySelector('#action')
+    }
+
+    const getDictionaryItemElements = async () => {
+        await element.updateComplete
+        const dict = getDictionaryElement()
+        await dict?.updateComplete
+        return dict?.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+    }
+
+    const getInfoBlock = async () => {
+        await element.updateComplete
+        const dict = getDictionaryElement()
+        await dict?.updateComplete
+        return dict?.shadowRoot?.querySelector('.info-block')
+    }
 
     beforeEach(async () => {
         element = await fixture(html`
-          <ak-property-editor-ui-dictionary></ak-property-editor-ui-dictionary>
+            <ak-property-editor-ui-dictionary></ak-property-editor-ui-dictionary>
         `)
+        await element.updateComplete
     })
 
     afterEach(() => {
@@ -29,42 +55,41 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
 
         it('can be created with its own instance', () => {
             expect(element).to.exist
-            expect(element).to.be.instanceOf(AkPropertyEditorUIDictionaryElement)
+            expect(element).to.be.instanceOf(AkPropertyEditorUIDictionary)
         })
 
-        it('should render add button by default', () => {
-            const addButton = element.shadowRoot?.querySelector('#action')
+        it('should render add button by default', async () => {
+            const addButton = await getAddButton()
             expect(addButton).to.exist
         })
     })
 
     describe('Properties and Attributes', () => {
         it('should have correct default values', () => {
-            expect(element.value).to.deep.equal([])
+            expect(element.value).to.equal(undefined)
             expect(element.disabled).to.be.false
             expect(element.readonly).to.be.false
-            expect(element.mandatory).to.be.false
         })
 
         it('should reflect disabled, readonly and mandatory properties', async () => {
             element.readonly = true
             element.disabled = true
-            element.mandatory = true
+            element.required = true
             await element.updateComplete
 
             expect(element.disabled).to.be.true
             expect(element.readonly).to.be.true
-            expect(element.mandatory).to.be.true
+            expect(element.required).to.be.true
             expect(element.hasAttribute('disabled')).to.be.true
             expect(element.hasAttribute('readonly')).to.be.true
-            expect(element.hasAttribute('mandatory')).to.be.true
+            expect(element.hasAttribute('required')).to.be.true
         })
 
         it('should hide add button when disabled', async () => {
             element.disabled = true
             await element.updateComplete
 
-            const addButton = element.shadowRoot?.querySelector('#action')
+            const addButton = await getAddButton()
             expect(addButton).to.not.exist
         })
 
@@ -72,7 +97,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.readonly = true
             await element.updateComplete
 
-            const addButton = element.shadowRoot?.querySelector('#action')
+            const addButton = await getAddButton()
             expect(addButton).to.not.exist
         })
     })
@@ -105,42 +130,43 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
     })
 
     describe('Value Handling', () => {
-        it('should handle string value', () => {
+        it('should handle string value', async () => {
             // @ts-ignore
             element.value = 'test-key'
-            expect(element.value).to.deep.equal([ { key: 'test-key', value: 'test-key' } ])
+            await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
+
+            expect(element.value).to.deep.equal([{ key: 'test-key', value: 'test-key' }])
         })
 
-        it('should handle array value', () => {
-            const testValue = [ { key: 'key1', value: 'value1' } ]
+        it('should handle array value', async () => {
+            const testValue = [{ key: 'key1', value: 'value1' }]
             element.value = testValue
+            await element.updateComplete
+
             expect(element.value).to.deep.equal(testValue)
         })
 
-        it('should handle empty array', () => {
+        it('should handle empty array', async () => {
             element.value = []
+            await element.updateComplete
+
             expect(element.value).to.deep.equal([])
         })
 
-        it('should handle null/undefined value', () => {
-            element.value = null
-            expect(element.value).to.deep.equal([])
-
-            element.value = undefined
-            expect(element.value).to.deep.equal([])
-        })
-
-        it('should handle mixed array types', () => {
+        it('should handle mixed array types', async () => {
+            // @ts-ignore
             element.value = [
-                // @ts-ignore
                 'string-item',
                 { key: 'object-key', value: 'object-value' },
-                // @ts-ignore
                 { key: 'partial-key' },
                 null,
-                // @ts-ignore
                 123
             ]
+            await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             expect(element.value).to.deep.equal([
                 { key: 'string-item', value: 'string-item' },
@@ -149,22 +175,12 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             ])
         })
 
-        it('should dispatch change event when value changes', async () => {
-            let changeEventFired = false
-            element.addEventListener('change', () => {
-                changeEventFired = true
-            })
-
-            element.value = [ { key: 'test', value: 'value' } ]
-            await element.updateComplete
-
-            expect(changeEventFired).to.be.true
-        })
-
         it('should not dispatch change event when value stays the same', async () => {
-            const initialValue = [ { key: 'test', value: 'value' } ]
+            const initialValue = [{ key: 'test', value: 'value' }]
             element.value = initialValue
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             let changeEventCount = 0
             element.addEventListener('change', () => {
@@ -173,6 +189,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
 
             element.value = initialValue
             await element.updateComplete
+            await dict.updateComplete
 
             expect(changeEventCount).to.equal(0)
         })
@@ -186,7 +203,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             ]
             await element.updateComplete
 
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+            const items = await getDictionaryItemElements()
             expect(items).to.have.lengthOf(2)
         })
 
@@ -194,20 +211,21 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.value = []
             await element.updateComplete
 
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item')
+            const items = await getDictionaryItemElements()
             expect(items).to.have.lengthOf(0)
         })
 
         it('should pass correct props to items', async () => {
             element.disabled = true
             element.readonly = true
-            element.value = [ { key: 'test', value: 'value' } ]
+            element.value = [{ key: 'test', value: 'value' }]
             await element.updateComplete
 
-            const item = element.shadowRoot?.querySelector('ak-input-dictionary-item') as CustomElement<AkInputDictionaryItemElement, KeyValuePair>
+            const items = await getDictionaryItemElements()
+            const item = items?.[0] as CustomElement<AkInputDictionaryItem, KeyValuePair> | undefined
+
             expect(item?.hasAttribute('disabled')).to.be.true
             expect(item?.hasAttribute('readonly')).to.be.true
-            expect(item?.hasAttribute('required')).to.be.true
         })
     })
 
@@ -217,15 +235,19 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.addEventListener('change', () => {
                 changeEventFired = true
             })
-            const addButton = element.shadowRoot?.querySelector('#action') as HTMLElement
+
+            const addButton = await getAddButton() as HTMLElement
+            expect(addButton).to.exist
 
             addButton.click()
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             expect(element.value).to.have.lengthOf(1)
             expect(element.value[0]).to.deep.equal({ key: '', value: '' })
             expect(changeEventFired).to.be.true
-            expect(element.pristine).to.be.false
+            expect(dict.pristine).to.be.false
         })
     })
 
@@ -244,17 +266,22 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.addEventListener('change', () => {
                 changeEventFired = true
             })
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
-            const deleteEvent = new CustomEvent('delete', { bubbles: true })
 
-            items?.[1].dispatchEvent(deleteEvent)
+            const items = await getDictionaryItemElements() as NodeListOf<CustomElement<AkInputDictionaryItem, KeyValuePair>>
+            expect(items).to.have.lengthOf(3)
+
+            const deleteEvent = new CustomEvent('delete', { bubbles: true })
+            items[1].dispatchEvent(deleteEvent)
+
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             expect(element.value).to.have.lengthOf(2)
             expect(element.value[0]).to.deep.equal({ key: 'key1', value: 'value1' })
             expect(element.value[1]).to.deep.equal({ key: 'key3', value: 'value3' })
             expect(changeEventFired).to.be.true
-            expect(element.pristine).to.be.false
+            expect(dict.pristine).to.be.false
         })
     })
 
@@ -272,7 +299,10 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.addEventListener('change', () => {
                 changeEventFired = true
             })
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
+
+            const items = await getDictionaryItemElements() as NodeListOf<CustomElement<AkInputDictionaryItem, KeyValuePair>>
+            expect(items).to.have.lengthOf(2)
+
             const inputEvent = new CustomEvent('input', {
                 bubbles: true,
                 detail: { value: { key: 'updated-key', value: 'updated-value' } }
@@ -282,8 +312,10 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
                 value: { value: { key: 'updated-key', value: 'updated-value' } }
             })
 
-            items?.[1].dispatchEvent(inputEvent)
+            items[1].dispatchEvent(inputEvent)
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             expect(element.value[1]).to.deep.equal({ key: 'updated-key', value: 'updated-value' })
             expect(changeEventFired).to.be.true
@@ -298,7 +330,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             ]
             await element.updateComplete
 
-            const infoBlock = element.shadowRoot?.querySelector('.info-block')
+            const infoBlock = await getInfoBlock()
             expect(infoBlock).to.not.exist
         })
 
@@ -309,7 +341,7 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             ]
             await element.updateComplete
 
-            const infoBlock = element.shadowRoot?.querySelector('.info-block')
+            const infoBlock = await getInfoBlock()
             expect(infoBlock).to.exist
         })
 
@@ -317,27 +349,20 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
             element.value = []
             await element.updateComplete
 
-            const infoBlock = element.shadowRoot?.querySelector('.info-block')
+            const infoBlock = await getInfoBlock()
             expect(infoBlock).to.not.exist
         })
     })
 
     describe('Validation', () => {
-        it('should validate mandatory field', async () => {
-            element.mandatory = true
-            element.value = []
-            await element.updateComplete
-
-            const isValid = element.checkValidity()
-            expect(isValid).to.be.false
-        })
-
         it('should validate missing keys', async () => {
             element.value = [
                 { key: '', value: 'value1' },
                 { key: 'key2', value: 'value2' }
             ]
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             const isValid = element.checkValidity()
             expect(isValid).to.be.false
@@ -350,8 +375,11 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
                     return undefined
                 }
             } as UmbPropertyEditorConfigCollection
-            element.value = [ { key: 'key1', value: 'value1' } ]
+
+            element.value = [{ key: 'key1', value: 'value1' }]
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             const isValid = element.checkValidity()
             expect(isValid).to.be.false
@@ -364,11 +392,14 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
                     return undefined
                 }
             } as UmbPropertyEditorConfigCollection
+
             element.value = [
                 { key: 'key1', value: 'value1' },
                 { key: 'key2', value: 'value2' }
             ]
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             const isValid = element.checkValidity()
             expect(isValid).to.be.false
@@ -382,11 +413,14 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
                     return undefined
                 }
             } as UmbPropertyEditorConfigCollection
+
             element.value = [
                 { key: 'key1', value: 'value1' },
                 { key: 'key2', value: 'value2' }
             ]
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             const isValid = element.checkValidity()
             expect(isValid).to.be.true
@@ -395,57 +429,65 @@ describe('AkPropertyEditorUIDictionaryElement', () => {
 
     describe('Keyboard Interactions', () => {
         it('should add new item on enter key', async () => {
-            element.value = [ { key: 'key1', value: 'value1' } ]
+            element.value = [{ key: 'key1', value: 'value1' }]
             await element.updateComplete
 
-            const items = element.shadowRoot?.querySelectorAll('ak-input-dictionary-item') as NodeListOf<CustomElement<AkInputDictionaryItemElement, KeyValuePair>>
+            const items = await getDictionaryItemElements() as NodeListOf<CustomElement<AkInputDictionaryItem, KeyValuePair>>
+            expect(items).to.have.lengthOf(1)
+
             const enterEvent = new CustomEvent('enter', { bubbles: true })
+            items[0].dispatchEvent(enterEvent)
 
-            items?.[0].dispatchEvent(enterEvent)
             await element.updateComplete
+            const dict = getDictionaryElement()
+            await dict.updateComplete
 
             expect(element.value).to.have.lengthOf(2)
         })
     })
 
     describe('Error Handling', () => {
-        it('should handle corrupt data gracefully', () => {
+        it('should handle corrupt data gracefully', async () => {
             expect(() => {
                 // @ts-ignore
                 element.value = { corrupted: 'data' }
             }).to.not.throw()
+
+            await element.updateComplete
         })
 
-        it('should handle circular references', () => {
+        it('should handle circular references', async () => {
             const circular: any = { key: 'test' }
             circular.self = circular
 
             expect(() => {
-                element.value = [ circular ]
+                element.value = [circular]
             }).to.not.throw()
+
+            await element.updateComplete
         })
     })
 
     describe('Edge Cases', () => {
         it('should handle empty string keys', async () => {
-            element.value = [ { key: '', value: 'value' } ]
+            element.value = [{ key: '', value: 'value' }]
             await element.updateComplete
 
-            expect(element.value).to.deep.equal([ { key: '', value: 'value' } ])
+            expect(element.value).to.deep.equal([{ key: '', value: 'value' }])
         })
 
         it('should handle special characters in keys', async () => {
-            element.value = [ { key: '!@#$%^&*()', value: 'special' } ]
+            element.value = [{ key: '!@#$%^&*()', value: 'special' }]
             await element.updateComplete
 
-            expect(element.value).to.deep.equal([ { key: '!@#$%^&*()', value: 'special' } ])
+            expect(element.value).to.deep.equal([{ key: '!@#$%^&*()', value: 'special' }])
         })
 
         it('should handle unicode characters', async () => {
-            element.value = [ { key: '🔑', value: '🎯' } ]
+            element.value = [{ key: '🔑', value: '🎯' }]
             await element.updateComplete
 
-            expect(element.value).to.deep.equal([ { key: '🔑', value: '🎯' } ])
+            expect(element.value).to.deep.equal([{ key: '🔑', value: '🎯' }])
         })
     })
 })

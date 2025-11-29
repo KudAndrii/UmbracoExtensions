@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dictionary</PackageId>
-        <PackageVersion>16.0.4</PackageVersion>
+        <PackageVersion>17.0.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dictionary</Product>
@@ -26,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies-versions update.
+            - Migration to umbraco 17.
         </PackageReleaseNotes>
     </PropertyGroup>
 
