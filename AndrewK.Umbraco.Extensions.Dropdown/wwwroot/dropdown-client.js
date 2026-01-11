@@ -3,7 +3,7 @@ import { UmbFormControlMixin as Gs } from "@umbraco-cms/backoffice/validation";
 import { UmbLitElement as Js } from "@umbraco-cms/backoffice/lit-element";
 import { UmbChangeEvent as fe } from "@umbraco-cms/backoffice/event";
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT as Qs } from "@umbraco-cms/backoffice/document";
-const Wt = globalThis, Ae = Wt.ShadowRoot && (Wt.ShadyCSS === void 0 || Wt.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, Se = Symbol(), Ie = /* @__PURE__ */ new WeakMap();
+const Wt = globalThis, Ae = Wt.ShadowRoot && (Wt.ShadyCSS === void 0 || Wt.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, Se = /* @__PURE__ */ Symbol(), Ie = /* @__PURE__ */ new WeakMap();
 let ms = class {
   constructor(e, s, o) {
     if (this._$cssResult$ = !0, o !== Se) throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");
@@ -69,7 +69,7 @@ const { is: so, defineProperty: oo, getOwnPropertyDescriptor: lo, getOwnProperty
   }
   return s;
 } }, Ee = (t, e) => !so(t, e), Fe = { attribute: !0, type: String, converter: Yt, reflect: !1, useDefault: !1, hasChanged: Ee };
-Symbol.metadata ??= Symbol("metadata"), Qt.litPropertyMetadata ??= /* @__PURE__ */ new WeakMap();
+Symbol.metadata ??= /* @__PURE__ */ Symbol("metadata"), Qt.litPropertyMetadata ??= /* @__PURE__ */ new WeakMap();
 let wt = class extends HTMLElement {
   static addInitializer(e) {
     this._$Ei(), (this.l ??= []).push(e);
@@ -79,7 +79,7 @@ let wt = class extends HTMLElement {
   }
   static createProperty(e, s = Fe) {
     if (s.state && (s.attribute = !1), this._$Ei(), this.prototype.hasOwnProperty(e) && ((s = Object.create(s)).wrapped = !0), this.elementProperties.set(e, s), !s.noAccessor) {
-      const o = Symbol(), l = this.getPropertyDescriptor(e, o, s);
+      const o = /* @__PURE__ */ Symbol(), l = this.getPropertyDescriptor(e, o, s);
       l !== void 0 && oo(this.prototype, e, l);
     }
   }
@@ -254,7 +254,7 @@ let wt = class extends HTMLElement {
 wt.elementStyles = [], wt.shadowRootOptions = { mode: "open" }, wt[Rt("elementProperties")] = /* @__PURE__ */ new Map(), wt[Rt("finalized")] = /* @__PURE__ */ new Map(), co?.({ ReactiveElement: wt }), (Qt.reactiveElementVersions ??= []).push("2.1.1");
 const ke = globalThis, Kt = ke.trustedTypes, Ue = Kt ? Kt.createPolicy("lit-html", { createHTML: (t) => t }) : void 0, gs = "$lit$", lt = `lit$${Math.random().toFixed(9).slice(2)}$`, vs = "?" + lt, ho = `<${vs}>`, mt = document, Dt = () => mt.createComment(""), Vt = (t) => t === null || typeof t != "object" && typeof t != "function", Oe = Array.isArray, uo = (t) => Oe(t) || typeof t?.[Symbol.iterator] == "function", ae = `[ 	
 \f\r]`, Ot = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, je = /-->/g, We = />/g, ut = RegExp(`>|${ae}(?:([^\\s"'>=/]+)(${ae}*=${ae}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), qe = /'/g, Xe = /"/g, bs = /^(?:script|style|textarea|title)$/i, po = (t) => (e, ...s) => ({ _$litType$: t, strings: e, values: s }), O = po(1), it = Symbol.for("lit-noChange"), A = Symbol.for("lit-nothing"), Ye = /* @__PURE__ */ new WeakMap(), ft = mt.createTreeWalker(mt, 129);
+\f\r"'\`<>=]|("|')|))|$)`, "g"), qe = /'/g, Xe = /"/g, bs = /^(?:script|style|textarea|title)$/i, po = (t) => (e, ...s) => ({ _$litType$: t, strings: e, values: s }), O = po(1), it = /* @__PURE__ */ Symbol.for("lit-noChange"), A = /* @__PURE__ */ Symbol.for("lit-nothing"), Ye = /* @__PURE__ */ new WeakMap(), ft = mt.createTreeWalker(mt, 129);
 function ys(t, e) {
   if (!Oe(t) || !t.hasOwnProperty("raw")) throw Error("invalid template strings array");
   return Ue !== void 0 ? Ue.createHTML(e) : e;
@@ -1448,7 +1448,7 @@ u([
   f()
 ], Y.prototype, "lang", 2);
 const qo = (t, e) => t?._$litType$ !== void 0;
-var zt = Symbol(), Ft = Symbol(), ce, he = /* @__PURE__ */ new Map(), F = class extends Y {
+var zt = /* @__PURE__ */ Symbol(), Ft = /* @__PURE__ */ Symbol(), ce, he = /* @__PURE__ */ new Map(), F = class extends Y {
   constructor() {
     super(...arguments), this.initialRender = !1, this.svg = null, this.label = "", this.library = "default";
   }
@@ -1594,7 +1594,7 @@ const gt = Cs(class extends As {
     return it;
   }
 });
-const Ss = Symbol.for(""), Xo = (t) => {
+const Ss = /* @__PURE__ */ Symbol.for(""), Xo = (t) => {
   if (t?.r === Ss) return t?._$litStatic$;
 }, ts = (t, ...e) => ({ _$litStatic$: e.reduce(((s, o, l) => s + ((i) => {
   if (i._$litStatic$ !== void 0) return i._$litStatic$;
