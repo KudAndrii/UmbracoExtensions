@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/Github Actions/">
+    <File Path=".github/workflows/publish-nuget.yml" />
+    <File Path=".github/workflows/run-client-tests.yml" />
+    <File Path=".github/workflows/run-dotnet-tests.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="nuget.config" />
+    <File Path="package-lock.json" />
+    <File Path="package.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="AndrewK.Umbraco.Extensions.CheckBoxList/AndrewK.Umbraco.Extensions.CheckBoxList.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.Dictionary/AndrewK.Umbraco.Extensions.Dictionary.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.Dropdown/AndrewK.Umbraco.Extensions.Dropdown.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.Example/AndrewK.Umbraco.Extensions.Example.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.RadioButtonList/AndrewK.Umbraco.Extensions.RadioButtonList.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.Tests.Client/AndrewK.Umbraco.Extensions.Tests.Client.csproj" />
+  <Project Path="AndrewK.Umbraco.Extensions.Tests/AndrewK.Umbraco.Extensions.Tests.csproj" />
+</Solution>
