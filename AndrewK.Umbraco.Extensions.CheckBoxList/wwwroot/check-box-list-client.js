@@ -1,4 +1,4 @@
-import { repeat as y, classMap as v, html as d, css as m, state as u, property as l, customElement as g } from "@umbraco-cms/backoffice/external/lit";
+import { repeat as y, classMap as v, html as c, css as m, state as u, property as l, customElement as g } from "@umbraco-cms/backoffice/external/lit";
 import { UmbFormControlMixin as k, UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as A } from "@umbraco-cms/backoffice/validation";
 import { UmbChangeEvent as p } from "@umbraco-cms/backoffice/event";
 import { UmbLitElement as E } from "@umbraco-cms/backoffice/lit-element";
@@ -9,10 +9,10 @@ var O = Object.defineProperty, x = Object.getOwnPropertyDescriptor, f = (t) => {
   for (var s = o > 1 ? void 0 : o ? x(i, e) : i, n = t.length - 1, h; n >= 0; n--)
     (h = t[n]) && (s = (o ? h(i, e, s) : h(s)) || s);
   return o && s && O(i, e, s), s;
-}, M = (t, i, e) => i.has(t) || f("Cannot " + e), b = (t, i, e) => i.has(t) ? f("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(t) : i.set(t, e), w = (t, i, e) => (M(t, i, "access private method"), e), c, _;
+}, M = (t, i, e) => i.has(t) || f("Cannot " + e), b = (t, i, e) => i.has(t) ? f("Cannot add the same private member more than once") : i instanceof WeakSet ? i.add(t) : i.set(t, e), w = (t, i, e) => (M(t, i, "access private method"), e), d, _;
 let a = class extends k(E, []) {
   constructor() {
-    super(), b(this, c), this._defaultApplied = !1, this._value = [], this._options = [], this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = A, this.getFormElement = () => {
+    super(), b(this, d), this._defaultApplied = !1, this._value = [], this._options = [], this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = A, this.getFormElement = () => {
     }, this.addValidator(
       "valueMissing",
       () => this.mandatoryMessage,
@@ -56,17 +56,17 @@ let a = class extends k(E, []) {
     }));
   }
   render() {
-    return d`
+    return c`
       ${y(
       this._options,
       (t) => t.value,
-      (t) => d`
+      (t) => c`
           <uui-checkbox
             class=${v({ invalid: !!t.invalid })}
             label=${t.label + (t.invalid ? ` (${this.localize.term("validation_legacyOption")})` : "")}
             title=${t.invalid ? this.localize.term("validation_legacyOptionDescription") : ""}
             value=${t.value}
-            @change=${w(this, c, _)}
+            @change=${w(this, d, _)}
             ?checked=${t.checked}
             ?readonly=${this.readonly}
           ></uui-checkbox>
@@ -82,7 +82,7 @@ let a = class extends k(E, []) {
     });
   }
 };
-c = /* @__PURE__ */ new WeakSet();
+d = /* @__PURE__ */ new WeakSet();
 _ = function(t) {
   const i = this._options.findIndex((e) => e.value === t.target.value);
   i !== -1 && (this._options[i].checked = t.target.checked, this.value = this._options.filter((e) => e.checked).map((e) => e.value), this.dispatchEvent(new p()));

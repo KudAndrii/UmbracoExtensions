@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.CheckBoxList</PackageId>
-        <PackageVersion>17.0.1</PackageVersion>
+        <PackageVersion>17.0.2</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>CheckBoxList</Product>
@@ -22,8 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - PackageTags improved.
-            - Package dependenciew updated.
+            - Updated dependencies.
         </PackageReleaseNotes>
     </PropertyGroup>
 
