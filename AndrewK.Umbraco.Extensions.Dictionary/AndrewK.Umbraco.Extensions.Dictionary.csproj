@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dictionary</PackageId>
-        <PackageVersion>17.0.2</PackageVersion>
+        <PackageVersion>17.0.3</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dictionary</Product>
@@ -22,8 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - PackageTags improved.
-            - Package dependenciew updated.
+            - Dependencies updated (Umbraco 17.2.1, Lit 3.3.2).
         </PackageReleaseNotes>
     </PropertyGroup>
 
