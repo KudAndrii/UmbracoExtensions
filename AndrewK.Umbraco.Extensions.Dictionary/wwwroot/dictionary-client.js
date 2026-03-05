@@ -1,4 +1,4 @@
-import { nothing as $, when as ee, html as c, css as x, property as o, query as T, customElement as M, repeat as te, state as C } from "@umbraco-cms/backoffice/external/lit";
+import { nothing as $, html as c, when as ee, css as x, property as o, query as T, customElement as M, state as C, repeat as te } from "@umbraco-cms/backoffice/external/lit";
 import { UmbFormControlMixin as W, umbBindToValidation as ie } from "@umbraco-cms/backoffice/validation";
 import { UmbLitElement as S } from "@umbraco-cms/backoffice/lit-element";
 import { UMB_PROPERTY_CONTEXT as ae } from "@umbraco-cms/backoffice/property";
