@@ -1,75 +1,61 @@
-import { UmbFormControlMixin as _, UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as m } from "@umbraco-cms/backoffice/validation";
-import { UmbChangeEvent as h } from "@umbraco-cms/backoffice/event";
-import { html as f, state as d, property as n, query as c, customElement as g } from "@umbraco-cms/backoffice/external/lit";
-import { UmbLitElement as E } from "@umbraco-cms/backoffice/lit-element";
-var A = Object.defineProperty, b = Object.getOwnPropertyDescriptor, v = (t) => {
-  throw TypeError(t);
-}, s = (t, e, r, i) => {
-  for (var o = i > 1 ? void 0 : i ? b(e, r) : e, l = t.length - 1, u; l >= 0; l--)
-    (u = t[l]) && (o = (i ? u(e, r, o) : u(o)) || o);
-  return i && o && A(e, r, o), o;
-}, B = (t, e, r) => e.has(t) || v("Cannot " + r), C = (t, e, r) => e.has(t) ? v("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, r), M = (t, e, r) => (B(t, e, "access private method"), r), p, y;
-let a = class extends _(E, void 0) {
-  constructor() {
-    super(...arguments), C(this, p), this._list = [], this._value = void 0, this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = m, this.getFormElement = () => this._input;
-  }
-  get value() {
-    return this._value;
-  }
-  set value(t) {
-    !t || typeof t != "string" || this._list?.length && !this._list.some((e) => e.value === t) || this._value === t || (this._value = t);
-  }
-  set config(t) {
-    if (!t) return;
-    const e = t.getValueByAlias("items"), r = t.getValueByAlias("default");
-    !this.value && r && (this.value = r, this.dispatchEvent(new h())), Array.isArray(e) && e.length && (this._list = e.filter((i) => !!i?.key).map((i) => ({
-      label: this.localize.string(i.value) || i.key,
-      value: i.key
-    })), this.value && !this._list.find((i) => i.value === this.value) && this._list.push({ label: this.value, value: this.value, invalid: !0 }));
-  }
-  render() {
-    return f`
+import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as e, UmbFormControlMixin as t } from "@umbraco-cms/backoffice/validation";
+import { UmbChangeEvent as n } from "@umbraco-cms/backoffice/event";
+import { customElement as r, html as i, property as a, query as o, state as s } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement as c } from "@umbraco-cms/backoffice/lit-element";
+//#region \0@oxc-project+runtime@0.126.0/helpers/decorate.js
+function l(e, t, n, r) {
+	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
+	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);
+	else for (var s = e.length - 1; s >= 0; s--) (o = e[s]) && (a = (i < 3 ? o(a) : i > 3 ? o(t, n, a) : o(t, n)) || a);
+	return i > 3 && a && Object.defineProperty(t, n, a), a;
+}
+//#endregion
+//#region src/property-editor-ui-radio-button-list.ts
+var u = class extends t(c, void 0) {
+	constructor(...t) {
+		super(...t), this._list = [], this._value = void 0, this.readonly = !1, this.mandatory = !1, this.mandatoryMessage = e, this.getFormElement = () => this._input;
+	}
+	get value() {
+		return this._value;
+	}
+	set value(e) {
+		!e || typeof e != "string" || this._list?.length && !this._list.some((t) => t.value === e) || this._value === e || (this._value = e);
+	}
+	set config(e) {
+		if (!e) return;
+		let t = e.getValueByAlias("items"), r = e.getValueByAlias("default");
+		!this.value && r && (this.value = r, this.dispatchEvent(new n())), Array.isArray(t) && t.length && (this._list = t.filter((e) => !!e?.key).map((e) => ({
+			label: this.localize.string(e.value) || e.key,
+			value: e.key
+		})), this.value && !this._list.find((e) => e.value === this.value) && this._list.push({
+			label: this.value,
+			value: this.value,
+			invalid: !0
+		}));
+	}
+	#e(e) {
+		this.value = e.target.value, this.dispatchEvent(new n());
+	}
+	render() {
+		return i`
       <umb-input-radio-button-list
         .list=${this._list}
         .required=${this.mandatory}
         .requiredMessage=${this.mandatoryMessage}
         .value=${this.value ?? ""}
         ?readonly=${this.readonly}
-        @change=${M(this, p, y)}
+        @change=${this.#e}
       ></umb-input-radio-button-list>
     `;
-  }
+	}
 };
-p = /* @__PURE__ */ new WeakSet();
-y = function(t) {
-  this.value = t.target.value, this.dispatchEvent(new h());
-};
-s([
-  d()
-], a.prototype, "_list", 2);
-s([
-  d()
-], a.prototype, "_value", 2);
-s([
-  n({ type: Boolean, reflect: !0 })
-], a.prototype, "readonly", 2);
-s([
-  n({ type: Boolean, reflect: !0 })
-], a.prototype, "mandatory", 2);
-s([
-  n({ type: String })
-], a.prototype, "mandatoryMessage", 2);
-s([
-  n({ type: String })
-], a.prototype, "value", 1);
-s([
-  c("umb-input-radio-button-list")
-], a.prototype, "_input", 2);
-a = s([
-  g("ak-property-editor-ui-radio-button-list")
-], a);
-const U = a;
-export {
-  a as AkPropertyEditorUIRadioButtonList,
-  U as default
-};
+l([s()], u.prototype, "_list", void 0), l([s()], u.prototype, "_value", void 0), l([a({
+	type: Boolean,
+	reflect: !0
+})], u.prototype, "readonly", void 0), l([a({
+	type: Boolean,
+	reflect: !0
+})], u.prototype, "mandatory", void 0), l([a({ type: String })], u.prototype, "mandatoryMessage", void 0), l([a({ type: String })], u.prototype, "value", null), l([o("umb-input-radio-button-list")], u.prototype, "_input", void 0), u = l([r("ak-property-editor-ui-radio-button-list")], u);
+var d = u;
+//#endregion
+export { u as AkPropertyEditorUIRadioButtonList, d as default };

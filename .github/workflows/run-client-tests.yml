@@ -8,11 +8,6 @@ on:
     paths:
       - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
       - 'AndrewK.Umbraco.Extensions.*/client/**'
-  push:
-    branches: [ develop ]
-    paths:
-      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
-      - 'AndrewK.Umbraco.Extensions.*/client/**'
 
 permissions:
   checks: write

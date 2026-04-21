@@ -38,3 +38,5 @@ dist-ssr
 /AndrewK.Umbraco.Extensions.Example/uSync/
 coverage/
 **/test-results.xml
+
+.claude/settings.local.json
