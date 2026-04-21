@@ -4,15 +4,15 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.3" />
-    <PackageVersion Include="Umbraco.Cms.Core" Version="17.2.1" />
-    <PackageVersion Include="Umbraco.Cms" Version="17.2.1" />
-    <PackageVersion Include="uSync" Version="17.0.4" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.6" />
+    <PackageVersion Include="Umbraco.Cms.Core" Version="17.3.4" />
+    <PackageVersion Include="Umbraco.Cms" Version="17.3.4" />
+    <PackageVersion Include="uSync" Version="17.3.0" />
     <PackageVersion Include="AndrewK.Umbraco.Dictionary" Version="17.0.3" />
-    <PackageVersion Include="coverlet.collector" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.3" />
-    <PackageVersion Include="Microsoft.Data.Sqlite" Version="10.0.3" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
+    <PackageVersion Include="coverlet.collector" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.6" />
+    <PackageVersion Include="Microsoft.Data.Sqlite" Version="10.0.6" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
     <PackageVersion Include="Moq" Version="4.20.72" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />

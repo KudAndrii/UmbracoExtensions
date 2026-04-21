@@ -21,7 +21,7 @@ You can install the package via NuGet:
 
 ## Usage
 
-### Creating a Dropdown Property
+### Creating a CheckBoxList Property
 
 1. **Create a new Data Type** in the Umbraco backoffice
 2. **Select "AndrewK CheckBoxList"** as the property editor

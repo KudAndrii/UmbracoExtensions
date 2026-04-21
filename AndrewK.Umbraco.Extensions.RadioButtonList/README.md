@@ -32,7 +32,7 @@ You can install the package via NuGet:
 - **Items:** Define the radio-button-list options as key-value pairs
 - **Default:** Set a default value for new content items
 
-### Accessing CheckBoxList Data in Controllers/Services/Templates
+### Accessing RadioButtonList Data in Controllers/Services/Templates
 
 ```csharp
 public class MyController : Controller
@@ -48,7 +48,7 @@ public class MyController : Controller
 }
 ```
 
-### Example Of Setting CheckBoxList Data in Controllers/Services
+### Example Of Setting RadioButtonList Data in Controllers/Services
 
 ```csharp
 public class MyController : Controller

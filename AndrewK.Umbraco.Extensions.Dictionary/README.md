@@ -1,6 +1,6 @@
 # AndrewK.Umbraco.Dictionary
 
-AndrewK.Umbraco.Dictionary is a custom property editor for Umbraco 16 that allows content editors to store and manage
+AndrewK.Umbraco.Dictionary is a custom property editor for Umbraco 17 that allows content editors to store and manage
 multiple key-value pairs in a structured way.  
 It provides an intuitive user interface for adding, editing, and removing dictionary-style data directly within the
 Umbraco backoffice.
@@ -14,7 +14,7 @@ Umbraco backoffice.
 - **Drag & Drop Reordering:** Reorder dictionary items using drag handles.
 - **Validation Support:** Built-in validation for required keys and proper form handling.
 - **Type-Safe Access:** Strong-typed property value converter returns `ICollection<KeyValuePair<string, string>>`.
-- **Umbraco 16 Compatible:** Built specifically for Umbraco 16 using modern Lit elements and TypeScript.
+- **Umbraco 17 Compatible:** Built specifically for Umbraco 17 using modern Lit elements and TypeScript.
 
 ---
 

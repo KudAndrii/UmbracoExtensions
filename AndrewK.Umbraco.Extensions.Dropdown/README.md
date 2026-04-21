@@ -1,6 +1,6 @@
 # AndrewK.Umbraco.Dropdown
 
-AndrewK.Umbraco.Dropdown is a custom property editor for Umbraco 16 that enhances the default dropdown functionality with advanced features and improved user experience. It provides a flexible and intuitive dropdown interface for selecting single or multiple values within the Umbraco backoffice.
+AndrewK.Umbraco.Dropdown is a custom property editor for Umbraco 17 that enhances the default dropdown functionality with advanced features and improved user experience. It provides a flexible and intuitive dropdown interface for selecting single or multiple values within the Umbraco backoffice.
 
 ---
 
@@ -12,7 +12,7 @@ AndrewK.Umbraco.Dropdown is a custom property editor for Umbraco 16 that enhance
 - **Validation Support:** Provides visual feedback for invalid selections.
 - **Responsive UI:** Modern interface built with Lit elements.
 - **Type-Safe Access:** Returns string for single selection or IEnumerable<string> for multiple selections.
-- **Umbraco 16 Compatible:** Built specifically for Umbraco 16 using modern web standards.
+- **Umbraco 17 Compatible:** Built specifically for Umbraco 17 using modern web standards.
 
 ---
 

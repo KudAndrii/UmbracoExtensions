@@ -4,14 +4,14 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dictionary</PackageId>
-        <PackageVersion>17.0.3</PackageVersion>
+        <PackageVersion>17.0.4</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dictionary</Product>
         <Title>AndrewK.Umbraco.Dictionary</Title>
         <Description>Makes it possible to store multiple key-value pairs or use it as UI property editor</Description>
         <PackageDescription>Makes it possible to store multiple key-value pairs or use it as UI property editor</PackageDescription>
-        <PackageTags>Umbraco;Extension;Dictionary;Backoffice;Key;Value;KeyValue;DataType</PackageTags>
+        <PackageTags>Umbraco;Umbraco17;Extension;PropertyEditor;Dictionary;Backoffice;Key;Value;KeyValue;DataType;CMS;Lit;WebComponent</PackageTags>
         <AssemblyVersion>$(PackageVersion)</AssemblyVersion>
         <FileVersion>$(PackageVersion)</FileVersion>
         <PackageProjectUrl>https://github.com/KudAndrii/UmbracoExtensions</PackageProjectUrl>
@@ -22,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies updated (Umbraco 17.2.1, Lit 3.3.2).
+            - Dependencies updated (Umbraco 17.3.4, Lit 3.3.2, TypeScript 6.0.3, Vite 8.0.9).
         </PackageReleaseNotes>
     </PropertyGroup>
 
