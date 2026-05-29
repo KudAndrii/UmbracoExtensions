@@ -4089,7 +4089,7 @@ Z.styles = [wt, _i], Z.dependencies = { "sl-icon": P }, O([M(".option__label")],
 	reflect: !0
 })], Z.prototype, "disabled", 2), O([k("disabled")], Z.prototype, "handleDisabledChange", 1), O([k("selected")], Z.prototype, "handleSelectedChange", 1), O([k("value")], Z.prototype, "handleValueChange", 1), Z.define("sl-option");
 //#endregion
-//#region \0@oxc-project+runtime@0.126.0/helpers/decorate.js
+//#region \0@oxc-project+runtime@0.132.0/helpers/decorate.js
 function Q(e, t, n, r) {
 	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
 	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);

@@ -1,6 +1,6 @@
 {
   "name": "AndrewK Umbraco RadioButtonList",
-  "version": "17.0.3",
+  "version": "17.0.4",
   "extensions": [
     {
       "type": "propertyEditorUi",

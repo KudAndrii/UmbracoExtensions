@@ -2,6 +2,11 @@ name: Run Client Tests
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths:
+      - 'AndrewK.Umbraco.Extensions.Tests.Client/**'
+      - 'AndrewK.Umbraco.Extensions.*/client/**'
   pull_request:
     branches: [ master, develop ]
     types: [ opened, synchronize, reopened ]

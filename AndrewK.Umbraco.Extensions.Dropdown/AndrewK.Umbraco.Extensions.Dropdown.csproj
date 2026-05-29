@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dropdown</PackageId>
-        <PackageVersion>17.0.3</PackageVersion>
+        <PackageVersion>17.0.4</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dropdown</Product>
@@ -22,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies updated (Umbraco 17.3.4, TypeScript 6.0.3, Vite 8.0.9).
+            - Dependencies updated (Umbraco 17.4.2, AndrewK.Umbraco.Dictionary 17.0.5, TypeScript 6.0.3, Vite 8.0.14).
         </PackageReleaseNotes>
     </PropertyGroup>
 
