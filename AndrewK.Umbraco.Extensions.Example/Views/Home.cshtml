@@ -1,0 +1,13 @@
+﻿@using Umbraco.Cms.Core.Serialization
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject IJsonSerializer JsonSerializer
+@{
+    Layout = null;
+}
+
+<section>
+    <h2>Dictionary:</h2>
+    <p>
+        <span>@(JsonSerializer.Serialize(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</span>
+    </p>
+</section>

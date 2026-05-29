@@ -77,3 +77,7 @@ TypeScript → Vite → bundled into `wwwroot/` → included in NuGet package vi
 
 ## Versioning & Publishing
 Packages are published to NuGet via GitHub Actions (`.github/workflows/publish-nuget.yml`) triggered by git tags. Each of the four packages has an independent version. Tests run in CI via `run-dotnet-tests.yml` and `run-client-tests.yml`.
+
+## When Making Changes
+
+- **No Anthropic attribution**: Do not add `Co-Authored-By: Claude ...` trailers or any other Anthropic/Claude attribution to commit messages or PR descriptions.
