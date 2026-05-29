@@ -11,3 +11,22 @@
         <span>@(JsonSerializer.Serialize(Model.Value<ICollection<KeyValuePair<string, string>>>("dictionary")))</span>
     </p>
 </section>
+<section>
+    <h2>Dropdown</h2>
+    <p>
+        <span>Single:</span>
+        <span>@(JsonSerializer.Serialize(Model.Value<string>("dropdown")))</span>
+    </p>
+    <p>
+        <span>Multiple:</span>
+        <span>@(JsonSerializer.Serialize(Model.Value<ICollection<string>>("dropdownMultiple")))</span>
+    </p>
+</section>
+<section>
+    <h2>Checkbox</h2>
+    <p>@(JsonSerializer.Serialize(Model.Value<ICollection<string>>("checkboxlist")))</p>
+</section>
+<section>
+    <h2>Radiobutton</h2>
+    <p>@(JsonSerializer.Serialize(Model.Value<string>("radiobuttonlist")))</p>
+</section>
