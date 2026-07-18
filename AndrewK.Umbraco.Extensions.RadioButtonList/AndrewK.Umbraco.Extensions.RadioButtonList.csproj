@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.RadioButtonList</PackageId>
-        <PackageVersion>17.0.4</PackageVersion>
+        <PackageVersion>17.0.5</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>RadioButtonList</Product>
@@ -22,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies updated (Umbraco 17.4.2, AndrewK.Umbraco.Dictionary 17.0.5, TypeScript 6.0.3, Vite 8.0.14).
+            - Dependencies updated (Umbraco 17.5.3, AndrewK.Umbraco.Dictionary 17.0.6, ASP.NET Core 10.0.10, Vite 8.1.5).
         </PackageReleaseNotes>
     </PropertyGroup>
 

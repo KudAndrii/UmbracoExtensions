@@ -1,6 +1,6 @@
 {
   "name": "AndrewK Umbraco Dropdown",
-  "version": "17.0.4",
+  "version": "17.0.5",
   "extensions": [
     {
       "type": "propertyEditorUi",
