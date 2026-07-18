@@ -103,21 +103,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -134,6 +119,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -170,6 +167,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -275,21 +278,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -306,6 +294,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -342,6 +342,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -611,21 +617,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -642,6 +633,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -678,6 +681,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -777,21 +786,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -808,6 +802,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -844,6 +850,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -942,21 +954,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -973,6 +970,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -1009,6 +1018,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -1216,21 +1231,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -1247,6 +1247,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -1283,6 +1295,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -1373,21 +1391,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -1404,6 +1407,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -1440,6 +1455,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -1506,6 +1527,171 @@
             },
             "required": [
                 "alias",
+                "meta",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "ManifestCollectionViewTableKind": {
+            "description": "Manifest type for the `table` kind of `collectionView`.\nAllows registering a table collection view with custom columns via manifest meta.",
+            "properties": {
+                "alias": {
+                    "description": "The alias of the extension, ensure it is unique",
+                    "type": "string"
+                },
+                "conditions": {
+                    "description": "Set the conditions for when the extension should be loaded",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/UmbEntityUniqueConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbLanguageUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceContentTypeAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceContentTypeUniqueConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbEntityContentTypeUniqueConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/SectionAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/CollectionAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbCollectionHasItemsConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbCurrentUserGroupIdConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbIsAdminConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbIsServerProductionModeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowChangePassword\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowDeleteAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowDisableAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowEnableAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowExternalLoginAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowMfaAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/DelayConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/SwitchConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbConditionConfigBase<string>"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "element": {
+                    "description": "The file location of the element javascript file to load",
+                    "type": "string"
+                },
+                "elementName": {
+                    "description": "The HTML web component name to use such as 'my-dashboard'\nNote it is NOT <my-dashboard></my-dashboard>, just the element name.",
+                    "type": "string"
+                },
+                "js": {
+                    "description": "The file location of the javascript file to load",
+                    "type": "string"
+                },
+                "kind": {
+                    "const": "table",
+                    "description": "The kind of the extension, used to group extensions together",
+                    "type": "string"
+                },
+                "meta": {
+                    "$ref": "#/definitions/MetaCollectionViewTableKind"
+                },
+                "name": {
+                    "description": "The friendly name of the extension",
+                    "type": "string"
+                },
+                "overwrites": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "Define one or more extension aliases that this extension should overwrite."
+                },
+                "type": {
+                    "const": "collectionView",
+                    "description": "The type of extension such as dashboard etc...",
+                    "type": "string"
+                },
+                "weight": {
+                    "description": "Extensions such as dashboards are ordered by weight with higher numbers being first in the list",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "alias",
+                "kind",
                 "meta",
                 "name",
                 "type"
@@ -1580,21 +1766,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -1611,6 +1782,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -1647,6 +1830,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -1741,21 +1930,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -1772,6 +1946,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -1808,6 +1994,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -1960,21 +2152,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -1991,6 +2168,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2027,6 +2216,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2132,21 +2327,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -2163,6 +2343,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2199,6 +2391,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2304,21 +2502,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -2335,6 +2518,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2371,6 +2566,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2476,21 +2677,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -2507,6 +2693,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2543,6 +2741,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2648,21 +2852,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -2679,6 +2868,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2715,6 +2916,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2820,21 +3027,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -2851,6 +3043,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -2887,6 +3091,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -2992,21 +3202,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3023,6 +3218,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3059,6 +3266,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -3164,21 +3377,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3195,6 +3393,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3231,6 +3441,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -3336,21 +3552,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3367,6 +3568,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3403,6 +3616,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -3508,21 +3727,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3539,6 +3743,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3575,6 +3791,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -3680,21 +3902,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3711,6 +3918,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3747,6 +3966,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -3852,21 +4077,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -3883,6 +4093,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -3919,6 +4141,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4024,21 +4252,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4055,6 +4268,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4091,6 +4316,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4197,21 +4428,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4228,6 +4444,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4264,6 +4492,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4369,21 +4603,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4400,6 +4619,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4436,6 +4667,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4541,21 +4778,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4572,6 +4794,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4608,6 +4842,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4713,21 +4953,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4744,6 +4969,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4780,6 +5017,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -4885,21 +5128,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -4916,6 +5144,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -4952,6 +5192,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -5057,21 +5303,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -5088,6 +5319,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -5124,6 +5367,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -5225,21 +5474,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -5256,6 +5490,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -5292,6 +5538,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -5394,21 +5646,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -5425,6 +5662,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -5461,6 +5710,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -5566,21 +5821,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -5597,6 +5837,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -5633,6 +5885,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -5726,21 +5984,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -5757,6 +6000,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -5793,6 +6048,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -6070,21 +6331,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -6101,6 +6347,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -6137,6 +6395,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -6280,21 +6544,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -6311,6 +6560,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -6347,6 +6608,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -6440,21 +6707,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -6471,6 +6723,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -6507,6 +6771,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -6813,21 +7083,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -6844,6 +7099,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -6880,6 +7147,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -6979,21 +7252,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -7010,6 +7268,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -7046,6 +7316,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -7140,21 +7416,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -7171,6 +7432,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -7207,6 +7480,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -7302,21 +7581,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -7333,6 +7597,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -7369,6 +7645,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -7676,21 +7958,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -7707,6 +7974,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -7743,6 +8022,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -8155,21 +8440,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -8186,6 +8456,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -8222,6 +8504,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -8408,21 +8696,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -8439,6 +8712,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -8475,6 +8760,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -8572,21 +8863,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -8603,6 +8879,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -8639,6 +8927,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -8778,21 +9072,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -8809,6 +9088,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -8845,6 +9136,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -8938,21 +9235,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -8969,6 +9251,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -9005,6 +9299,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -9144,21 +9444,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -9175,6 +9460,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -9211,6 +9508,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -9517,6 +9820,72 @@
             ],
             "type": "object"
         },
+        "ManifestValueSummary": {
+            "properties": {
+                "alias": {
+                    "description": "The alias of the extension, ensure it is unique",
+                    "type": "string"
+                },
+                "api": {
+                    "description": "The file location of the api javascript file to load",
+                    "type": "string"
+                },
+                "element": {
+                    "description": "The file location of the element javascript file to load",
+                    "type": "string"
+                },
+                "elementName": {
+                    "description": "The HTML web component name to use such as 'my-dashboard'\nNote it is NOT <my-dashboard></my-dashboard>, just the element name.",
+                    "type": "string"
+                },
+                "forValueType": {
+                    "description": "The value type this summary is registered for.",
+                    "enum": [
+                        "Umb.ValueType.Section.Aliases",
+                        "Umb.ValueType.User.State",
+                        "Umb.ValueType.UserGroup.References"
+                    ],
+                    "type": "string"
+                },
+                "js": {
+                    "description": "The file location of the javascript file to load",
+                    "type": "string"
+                },
+                "kind": {
+                    "description": "The kind of the extension, used to group extensions together",
+                    "examples": [
+                        "button"
+                    ]
+                },
+                "meta": {
+                    "$ref": "#/definitions/MetaValueSummary"
+                },
+                "name": {
+                    "description": "The friendly name of the extension",
+                    "type": "string"
+                },
+                "type": {
+                    "const": "valueSummary",
+                    "description": "The type of extension such as dashboard etc...",
+                    "type": "string"
+                },
+                "valueResolver": {
+                    "description": "Optional resolver for batch-resolving raw values before rendering.\nUsed by the coordinator for efficient batching across multiple elements.",
+                    "type": "object"
+                },
+                "weight": {
+                    "description": "Extensions such as dashboards are ordered by weight with higher numbers being first in the list",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "alias",
+                "forValueType",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
         "ManifestWorkspace<MetaWorkspace,UmbControllerHostElement,UmbWorkspaceContext>": {
             "properties": {
                 "alias": {
@@ -9597,21 +9966,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -9628,6 +9982,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -9664,6 +10030,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -9762,21 +10134,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -9793,6 +10150,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -9829,6 +10198,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -9927,21 +10302,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -9958,6 +10318,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -9994,6 +10366,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10108,21 +10486,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -10139,6 +10502,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -10175,6 +10550,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10288,21 +10669,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -10319,6 +10685,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -10355,6 +10733,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10440,21 +10824,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -10471,6 +10840,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -10507,6 +10888,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10650,21 +11037,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -10681,6 +11053,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -10717,6 +11101,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10811,21 +11201,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -10842,6 +11217,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -10878,6 +11265,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -10972,21 +11365,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11003,6 +11381,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11039,6 +11429,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11129,21 +11525,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11160,6 +11541,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11196,6 +11589,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11291,21 +11690,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11322,6 +11706,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11358,6 +11754,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11506,21 +11908,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11537,6 +11924,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11573,6 +11972,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11668,21 +12073,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11699,6 +12089,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11735,6 +12137,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11830,21 +12238,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -11861,6 +12254,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -11897,6 +12302,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -11992,21 +12403,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -12023,6 +12419,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -12059,6 +12467,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -12299,6 +12713,62 @@
             ],
             "type": "object"
         },
+        "MetaCollectionViewTableKind": {
+            "description": "Meta configuration for the `table` kind of `collectionView`.",
+            "properties": {
+                "columns": {
+                    "description": "Additional columns to render between the name and entity actions columns.",
+                    "items": {
+                        "$ref": "#/definitions/MetaCollectionViewTableKindColumn"
+                    },
+                    "type": "array"
+                },
+                "icon": {
+                    "description": "An icon to represent the collection view",
+                    "examples": [
+                        "icon-box",
+                        "icon-grid"
+                    ],
+                    "type": "string"
+                },
+                "label": {
+                    "description": "The friendly name of the collection view",
+                    "type": "string"
+                },
+                "pathName": {
+                    "description": "The URL pathname for this collection view that can be deep linked to by sharing the url",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "MetaCollectionViewTableKindColumn": {
+            "description": "Configuration for a single column in a table collection view kind.",
+            "properties": {
+                "field": {
+                    "description": "The property name on the collection item model to display in this column.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "The column header label. Supports localization strings (e.g. `#general_status`).",
+                    "type": "string"
+                },
+                "valueType": {
+                    "description": "Optional value type for rendering a value summary in this column.",
+                    "enum": [
+                        "Umb.ValueType.Section.Aliases",
+                        "Umb.ValueType.User.State",
+                        "Umb.ValueType.UserGroup.References"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "field",
+                "label"
+            ],
+            "type": "object"
+        },
         "MetaCurrentUserAction": {
             "type": "object"
         },
@@ -12347,6 +12817,9 @@
                         "Create",
                         "Create Content Template"
                     ],
+                    "type": "string"
+                },
+                "rollbackNotificationMessage": {
                     "type": "string"
                 },
                 "rollbackRepositoryAlias": {
@@ -12743,21 +13216,6 @@
                                 "$ref": "#/definitions/UmbIsRoutableContextConditionConfig"
                             },
                             {
-                                "$ref": "#/definitions/UmbInModalConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
-                            },
-                            {
-                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
-                            },
-                            {
                                 "$ref": "#/definitions/UmbPropertyHasValueConditionConfig"
                             },
                             {
@@ -12774,6 +13232,18 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbSectionUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/WorkspaceAliasConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityIsNewConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbWorkspaceEntityTypeConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbContentWorkspaceIsLoadedConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/CollectionAliasConditionConfig"
@@ -12810,6 +13280,12 @@
                             },
                             {
                                 "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.User.AllowUnlockAction\">"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbFallbackUserPermissionConditionConfig"
+                            },
+                            {
+                                "$ref": "#/definitions/UmbInModalConditionConfig"
                             },
                             {
                                 "$ref": "#/definitions/DelayConditionConfig"
@@ -13307,6 +13783,13 @@
                 "icon": {
                     "type": "string"
                 },
+                "keywords": {
+                    "description": "A list of keywords that can be used to search for this property editor UI in the property editor picker.\nIf not specified, the property editor UI will not have any keywords.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "label": {
                     "type": "string"
                 },
@@ -13464,6 +13947,9 @@
                 "label",
                 "pathname"
             ],
+            "type": "object"
+        },
+        "MetaValueSummary": {
             "type": "object"
         },
         "MetaWorkspace": {
@@ -13988,6 +14474,18 @@
             ],
             "type": "object"
         },
+        "UmbConditionConfigBase<\"Umb.Condition.UserPermission.Fallback\">": {
+            "properties": {
+                "alias": {
+                    "const": "Umb.Condition.UserPermission.Fallback",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alias"
+            ],
+            "type": "object"
+        },
         "UmbConditionConfigBase<\"Umb.Condition.UserPermission.Language\">": {
             "properties": {
                 "alias": {
@@ -14169,6 +14667,32 @@
                         "oneOf": {
                             "items": {
                                 "$ref": "#/definitions/UmbEntityUnique"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "UmbFallbackUserPermissionConditionConfig": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/UmbConditionConfigBase<\"Umb.Condition.UserPermission.Fallback\">"
+                },
+                {
+                    "properties": {
+                        "allOf": {
+                            "description": "The user must have all of the permissions in this array for the condition to be met.",
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "oneOf": {
+                            "description": "The user must have at least one of the permissions in this array for the condition to be met.",
+                            "items": {
+                                "type": "string"
                             },
                             "type": "array"
                         }
@@ -14474,52 +14998,13 @@
                         "$ref": "#/definitions/ManifestBase"
                     },
                     {
-                        "$ref": "#/definitions/ManifestEntityActionDeleteKind"
+                        "$ref": "#/definitions/ManifestUfmFilter"
                     },
                     {
-                        "$ref": "#/definitions/ManifestEntityActionDefaultKind"
+                        "$ref": "#/definitions/ManifestUfmComponent"
                     },
                     {
-                        "$ref": "#/definitions/ManifestEntityActionCreateKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestSearchProvider"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestSearchResultItem"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestGlobalSearch"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestModal"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceDefaultKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceActionDefaultKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceFooterApp"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceFooterAppMenuBreadcrumbKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceFooterAppVariantMenuBreadcrumbKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceViewContentTypeDesignEditorKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceView<MetaWorkspaceView>"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceRoutableKind"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestWorkspaceContext"
+                        "$ref": "#/definitions/ManifestMarkedExtension"
                     },
                     {
                         "$ref": "#/definitions/ManifestPropertyValueCloner"
@@ -14535,15 +15020,6 @@
                     },
                     {
                         "$ref": "#/definitions/ManifestPropertyValueResolver"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestUfmFilter"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestUfmComponent"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestMarkedExtension"
                     },
                     {
                         "$ref": "#/definitions/ManifestEntityActionDuplicateToKind"
@@ -14571,6 +15047,33 @@
                     },
                     {
                         "$ref": "#/definitions/ManifestDashboard"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceDefaultKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceActionDefaultKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceFooterApp"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceFooterAppMenuBreadcrumbKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceFooterAppVariantMenuBreadcrumbKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceViewContentTypeDesignEditorKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceView<MetaWorkspaceView>"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceRoutableKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestWorkspaceContext"
                     },
                     {
                         "$ref": "#/definitions/ManifestTreeItem"
@@ -14606,6 +15109,9 @@
                         "$ref": "#/definitions/ManifestMenuItemTreeKind"
                     },
                     {
+                        "$ref": "#/definitions/ManifestModal"
+                    },
+                    {
                         "$ref": "#/definitions/ManifestCollectionAction"
                     },
                     {
@@ -14624,7 +15130,13 @@
                         "$ref": "#/definitions/ManifestCollectionView"
                     },
                     {
+                        "$ref": "#/definitions/ManifestCollectionViewTableKind"
+                    },
+                    {
                         "$ref": "#/definitions/ManifestWorkspaceViewCollectionKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestValueSummary"
                     },
                     {
                         "$ref": "#/definitions/ManifestAuditLogActionDefaultKind"
@@ -14669,6 +15181,24 @@
                         "$ref": "#/definitions/ManifestPropertyEditorDataSource"
                     },
                     {
+                        "$ref": "#/definitions/ManifestEntityActionDeleteKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestEntityActionDefaultKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestEntityActionCreateKind"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestSearchProvider"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestSearchResultItem"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestGlobalSearch"
+                    },
+                    {
                         "$ref": "#/definitions/ManifestCondition"
                     },
                     {
@@ -14690,10 +15220,10 @@
                         "$ref": "#/definitions/ManifestDataSourceDataMapping<MetaDataSourceDataMapping>"
                     },
                     {
-                        "$ref": "#/definitions/ManifestEntityAction<MetaEntityAction>"
+                        "$ref": "#/definitions/ManifestPropertyContext<MetaPropertyContext>"
                     },
                     {
-                        "$ref": "#/definitions/ManifestEntityCreateOptionAction<MetaEntityCreateOptionAction>"
+                        "$ref": "#/definitions/ManifestSectionContext<MetaSectionContext>"
                     },
                     {
                         "$ref": "#/definitions/ManifestWorkspaceActionMenuItem<MetaWorkspaceActionMenuItem>"
@@ -14711,12 +15241,6 @@
                         "$ref": "#/definitions/ManifestWorkspace<MetaWorkspace,UmbControllerHostElement,UmbWorkspaceContext>"
                     },
                     {
-                        "$ref": "#/definitions/ManifestPropertyContext<MetaPropertyContext>"
-                    },
-                    {
-                        "$ref": "#/definitions/ManifestSectionContext<MetaSectionContext>"
-                    },
-                    {
                         "$ref": "#/definitions/ManifestEntityCollectionItemCard<MetaEntityCollectionItemCard>"
                     },
                     {
@@ -14730,6 +15254,12 @@
                     },
                     {
                         "$ref": "#/definitions/ManifestPropertyValidationPathTranslator<any>"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestEntityAction<MetaEntityAction>"
+                    },
+                    {
+                        "$ref": "#/definitions/ManifestEntityCreateOptionAction<MetaEntityCreateOptionAction>"
                     },
                     {
                         "$ref": "#/definitions/ManifestEntityBulkActionDeleteKind"

@@ -2282,7 +2282,7 @@ function hn(e) {
 function gn(e) {
 	return e === "y" ? "height" : "width";
 }
-var _n = /* @__PURE__ */ new Set(["top", "bottom"]);
+var _n = /*#__PURE__*/ new Set(["top", "bottom"]);
 function H(e) {
 	return _n.has(V(e)) ? "y" : "x";
 }
@@ -2507,7 +2507,7 @@ var Fn = (e) => ({
 				overflows: x
 			}], !x.every((e) => e <= 0)) {
 				let e = (i.flip?.index || 0) + 1, t = ne[e];
-				if (t && (!(u === "alignment" && _ !== H(t)) || S.every((e) => H(e.placement) === _ ? e.overflows[0] > 0 : !0))) return {
+				if (t && (!(u === "alignment" && _ !== H(t)) || S.every((e) => H(e.placement) !== _ || e.overflows[0] > 0))) return {
 					data: {
 						index: e,
 						overflows: S
@@ -2536,7 +2536,7 @@ var Fn = (e) => ({
 			return {};
 		}
 	};
-}, Ln = /* @__PURE__ */ new Set(["left", "top"]);
+}, Ln = /*#__PURE__*/ new Set(["left", "top"]);
 async function Rn(e, t) {
 	let { placement: n, platform: r, elements: i } = e, a = await (r.isRTL == null ? void 0 : r.isRTL(i.floating)), o = V(n), s = mn(n), c = H(n) === "y", l = Ln.has(o) ? -1 : 1, u = a && c ? -1 : 1, d = pn(t, e), { mainAxis: f, crossAxis: p, alignmentAxis: m } = typeof d == "number" ? {
 		mainAxis: d,
@@ -2663,12 +2663,12 @@ function K(e) {
 function Gn(e) {
 	return !Hn() || typeof ShadowRoot > "u" ? !1 : e instanceof ShadowRoot || e instanceof U(e).ShadowRoot;
 }
-var Kn = /* @__PURE__ */ new Set(["inline", "contents"]);
+var Kn = /*#__PURE__*/ new Set(["inline", "contents"]);
 function qn(e) {
 	let { overflow: t, overflowX: n, overflowY: r, display: i } = q(e);
 	return /auto|scroll|overlay|hidden|clip/.test(t + r + n) && !Kn.has(i);
 }
-var Jn = /* @__PURE__ */ new Set([
+var Jn = /*#__PURE__*/ new Set([
 	"table",
 	"td",
 	"th"
@@ -2721,7 +2721,7 @@ function nr(e) {
 function rr() {
 	return typeof CSS > "u" || !CSS.supports ? !1 : CSS.supports("-webkit-backdrop-filter", "none");
 }
-var ir = /* @__PURE__ */ new Set([
+var ir = /*#__PURE__*/ new Set([
 	"html",
 	"body",
 	"#document"
@@ -2784,7 +2784,7 @@ function fr(e) {
 		y: s
 	};
 }
-var pr = /* @__PURE__ */ B(0);
+var pr = /*#__PURE__*/ B(0);
 function mr(e) {
 	let t = U(e);
 	return !rr() || !t.visualViewport ? pr : {
@@ -2876,7 +2876,7 @@ function Cr(e, t) {
 		y: c
 	};
 }
-var wr = /* @__PURE__ */ new Set(["absolute", "fixed"]);
+var wr = /*#__PURE__*/ new Set(["absolute", "fixed"]);
 function Tr(e, t) {
 	let n = gr(e, !0, t === "fixed"), r = n.top + e.clientTop, i = n.left + e.clientLeft, a = K(e) ? fr(e) : B(1);
 	return {
@@ -3302,8 +3302,8 @@ var Zr = /* @__PURE__ */ new WeakMap(), Qr = /* @__PURE__ */ new WeakMap(), $r =
 			value: (e) => e.value,
 			defaultValue: (e) => e.defaultValue,
 			disabled: (e) => e.disabled ?? !1,
-			reportValidity: (e) => typeof e.reportValidity == "function" ? e.reportValidity() : !0,
-			checkValidity: (e) => typeof e.checkValidity == "function" ? e.checkValidity() : !0,
+			reportValidity: (e) => typeof e.reportValidity != "function" || e.reportValidity(),
+			checkValidity: (e) => typeof e.checkValidity != "function" || e.checkValidity(),
 			setValue: (e, t) => e.value = t,
 			assumeInteractionOn: ["sl-input"]
 		}, t);
@@ -4089,7 +4089,7 @@ Z.styles = [wt, _i], Z.dependencies = { "sl-icon": P }, O([M(".option__label")],
 	reflect: !0
 })], Z.prototype, "disabled", 2), O([k("disabled")], Z.prototype, "handleDisabledChange", 1), O([k("selected")], Z.prototype, "handleSelectedChange", 1), O([k("value")], Z.prototype, "handleValueChange", 1), Z.define("sl-option");
 //#endregion
-//#region \0@oxc-project+runtime@0.132.0/helpers/decorate.js
+//#region \0@oxc-project+runtime@0.139.0/helpers/esm/decorate.js
 function Q(e, t, n, r) {
 	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
 	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);

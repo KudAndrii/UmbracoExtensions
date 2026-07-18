@@ -3,7 +3,7 @@ import { UMB_VALIDATION_EMPTY_LOCALIZATION_KEY as s, UmbFormControlMixin as c } 
 import { UmbChangeEvent as l } from "@umbraco-cms/backoffice/event";
 import { UmbLitElement as u } from "@umbraco-cms/backoffice/lit-element";
 import { UMB_DOCUMENT_WORKSPACE_CONTEXT as d } from "@umbraco-cms/backoffice/document";
-//#region \0@oxc-project+runtime@0.132.0/helpers/decorate.js
+//#region \0@oxc-project+runtime@0.139.0/helpers/esm/decorate.js
 function f(e, t, n, r) {
 	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
 	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);
