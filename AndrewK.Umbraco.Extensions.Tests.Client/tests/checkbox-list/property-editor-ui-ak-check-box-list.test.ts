@@ -4,7 +4,7 @@ import type {
     UmbPropertyEditorConfigCollection,
     CustomPropertyEditorElement
 } from '../shared/import-utils'
-import { UUIBooleanInputElement } from '@umbraco-ui/uui-boolean-input'
+import { UUIBooleanInputElement } from '@umbraco-cms/backoffice/external/uui'
 
 describe('AkPropertyEditorUICheckBoxList', () => {
     let element: CustomPropertyEditorElement<AkPropertyEditorUICheckBoxList, Array<string>>

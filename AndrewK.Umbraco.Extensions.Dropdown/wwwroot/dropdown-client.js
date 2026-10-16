@@ -133,7 +133,7 @@ var ue = class extends HTMLElement {
 	static finalizeStyles(e) {
 		let t = [];
 		if (Array.isArray(e)) {
-			let n = new Set(e.flat(Infinity).reverse());
+			let n = new Set(e.flat(1 / 0).reverse());
 			for (let e of n) t.unshift(y(e));
 		} else e !== void 0 && t.push(y(e));
 		return t;
@@ -312,16 +312,18 @@ var Ne = (e, t) => {
 						i.append(e[t], ve());
 					}
 				}
-			} else if (i.nodeType === 8) if (i.data === he) c.push({
-				type: 2,
-				index: a
-			});
-			else {
-				let e = -1;
-				for (; (e = i.data.indexOf(w, e + 1)) !== -1;) c.push({
-					type: 7,
+			} else if (i.nodeType === 8) {
+				if (i.data === he) c.push({
+					type: 2,
 					index: a
-				}), e += w.length - 1;
+				});
+				else {
+					let e = -1;
+					for (; (e = i.data.indexOf(w, e + 1)) !== -1;) c.push({
+						type: 7,
+						index: a
+					}), e += w.length - 1;
+				}
 			}
 			a++;
 		}
@@ -1472,9 +1474,7 @@ var { I: kt } = Ue, At = (e, t) => t === void 0 ? e?._$litType$ !== void 0 : e?.
 					let e = this.shadowRoot.querySelector("[part='svg']");
 					typeof r.mutator == "function" && e && r.mutator(e);
 				}
-				return;
-			}
-			switch (a) {
+			} else switch (a) {
 				case Mt:
 				case jt:
 					this.svg = null, this.emit("sl-error");
@@ -1550,7 +1550,7 @@ var Ft = {
 }), Vt = /* @__PURE__ */ new Map(), Ht = ((e) => (t, ...n) => {
 	let r = n.length, i, a, o = [], s = [], c, l = 0, u = !1;
 	for (; l < r;) {
-		for (c = t[l]; l < r && (a = n[l], i = zt(a)) !== void 0;) c += i + t[++l], u = !0;
+		for (c = t[l]; l < r && (a = n[l], (i = zt(a)) !== void 0);) c += i + t[++l], u = !0;
 		l !== r && s.push(a), o.push(c), l++;
 	}
 	if (l === r && o.push(t[r]), u) {
@@ -2390,9 +2390,7 @@ function Mn(e, t, n) {
 		case "start":
 			p[o] -= f * (n && l ? -1 : 1);
 			break;
-		case "end":
-			p[o] += f * (n && l ? -1 : 1);
-			break;
+		case "end": p[o] += f * (n && l ? -1 : 1);
 	}
 	return p;
 }
@@ -2507,7 +2505,7 @@ var Fn = (e) => ({
 				overflows: x
 			}], !x.every((e) => e <= 0)) {
 				let e = (i.flip?.index || 0) + 1, t = ne[e];
-				if (t && (!(u === "alignment" && _ !== H(t)) || S.every((e) => H(e.placement) !== _ || e.overflows[0] > 0))) return {
+				if (t && (u !== "alignment" || _ === H(t) || S.every((e) => H(e.placement) !== _ || e.overflows[0] > 0))) return {
 					data: {
 						index: e,
 						overflows: S
@@ -2527,9 +2525,7 @@ var Fn = (e) => ({
 						e && (n = e);
 						break;
 					}
-					case "initialPlacement":
-						n = o;
-						break;
+					case "initialPlacement": n = o;
 				}
 				if (r !== n) return { reset: { placement: n } };
 			}
@@ -2943,10 +2939,12 @@ function jr(e, t, n) {
 	function l() {
 		c.x = _r(i);
 	}
-	if (r || !r && !a) if ((Un(t) !== "body" || qn(i)) && (s = or(t)), r) {
-		let e = gr(t, !0, a, t);
-		c.x = e.x + t.clientLeft, c.y = e.y + t.clientTop;
-	} else i && l();
+	if (r || !r && !a) {
+		if ((Un(t) !== "body" || qn(i)) && (s = or(t)), r) {
+			let e = gr(t, !0, a, t);
+			c.x = e.x + t.clientLeft, c.y = e.y + t.clientTop;
+		} else i && l();
+	}
 	a && !r && i && l();
 	let u = i && !r && !a ? vr(i, s) : B(0);
 	return {
@@ -3130,11 +3128,11 @@ var Y = class extends N {
 		if (await this.stop(), this.anchor && typeof this.anchor == "string") {
 			let e = this.getRootNode();
 			this.anchorEl = e.getElementById(this.anchor);
-		} else this.anchor instanceof Element || Xr(this.anchor) ? this.anchorEl = this.anchor : this.anchorEl = this.querySelector("[slot=\"anchor\"]");
+		} else this.anchorEl = this.anchor instanceof Element || Xr(this.anchor) ? this.anchor : this.querySelector("[slot=\"anchor\"]");
 		this.anchorEl instanceof HTMLSlotElement && (this.anchorEl = this.anchorEl.assignedElements({ flatten: !0 })[0]), this.anchorEl && this.active && this.start();
 	}
 	start() {
-		!this.anchorEl || !this.active || (this.cleanup = Br(this.anchorEl, this.popup, () => {
+		this.anchorEl && this.active && (this.cleanup = Br(this.anchorEl, this.popup, () => {
 			this.reposition();
 		}));
 	}
@@ -3531,29 +3529,29 @@ var gi = It(hi), X = class extends N {
 					this.currentOption && !this.currentOption.disabled && (this.valueHasChanged = !0, this.multiple ? this.toggleOptionSelection(this.currentOption) : this.setSelectedOptions(this.currentOption), this.updateComplete.then(() => {
 						this.emit("sl-input"), this.emit("sl-change");
 					}), this.multiple || (this.hide(), this.displayInput.focus({ preventScroll: !0 })));
-					return;
-				}
-				if ([
-					"ArrowUp",
-					"ArrowDown",
-					"Home",
-					"End"
-				].includes(e.key)) {
-					let t = this.getAllOptions(), n = t.indexOf(this.currentOption), r = Math.max(0, n);
-					if (e.preventDefault(), !this.open && (this.show(), this.currentOption)) return;
-					e.key === "ArrowDown" ? (r = n + 1, r > t.length - 1 && (r = 0)) : e.key === "ArrowUp" ? (r = n - 1, r < 0 && (r = t.length - 1)) : e.key === "Home" ? r = 0 : e.key === "End" && (r = t.length - 1), this.setCurrentOption(t[r]);
-				}
-				if (e.key && e.key.length === 1 || e.key === "Backspace") {
-					let t = this.getAllOptions();
-					if (e.metaKey || e.ctrlKey || e.altKey) return;
-					if (!this.open) {
-						if (e.key === "Backspace") return;
-						this.show();
+				} else {
+					if ([
+						"ArrowUp",
+						"ArrowDown",
+						"Home",
+						"End"
+					].includes(e.key)) {
+						let t = this.getAllOptions(), n = t.indexOf(this.currentOption), r = Math.max(0, n);
+						if (e.preventDefault(), !this.open && (this.show(), this.currentOption)) return;
+						e.key === "ArrowDown" ? (r = n + 1, r > t.length - 1 && (r = 0)) : e.key === "ArrowUp" ? (r = n - 1, r < 0 && (r = t.length - 1)) : e.key === "Home" ? r = 0 : e.key === "End" && (r = t.length - 1), this.setCurrentOption(t[r]);
 					}
-					e.stopPropagation(), e.preventDefault(), clearTimeout(this.typeToSelectTimeout), this.typeToSelectTimeout = window.setTimeout(() => this.typeToSelectString = "", 1e3), e.key === "Backspace" ? this.typeToSelectString = this.typeToSelectString.slice(0, -1) : this.typeToSelectString += e.key.toLowerCase();
-					for (let e of t) if (e.getTextLabel().toLowerCase().startsWith(this.typeToSelectString)) {
-						this.setCurrentOption(e);
-						break;
+					if (e.key && e.key.length === 1 || e.key === "Backspace") {
+						let t = this.getAllOptions();
+						if (e.metaKey || e.ctrlKey || e.altKey) return;
+						if (!this.open) {
+							if (e.key === "Backspace") return;
+							this.show();
+						}
+						e.stopPropagation(), e.preventDefault(), clearTimeout(this.typeToSelectTimeout), this.typeToSelectTimeout = window.setTimeout(() => this.typeToSelectString = "", 1e3), e.key === "Backspace" ? this.typeToSelectString = this.typeToSelectString.slice(0, -1) : this.typeToSelectString += e.key.toLowerCase();
+						for (let e of t) if (e.getTextLabel().toLowerCase().startsWith(this.typeToSelectString)) {
+							this.setCurrentOption(e);
+							break;
+						}
 					}
 				}
 			}
@@ -3645,13 +3643,13 @@ var gi = It(hi), X = class extends N {
 		t.forEach((e) => e.selected = !1), n.length && n.forEach((e) => e.selected = !0), this.selectionChanged();
 	}
 	toggleOptionSelection(e, t) {
-		t === !0 || t === !1 ? e.selected = t : e.selected = !e.selected, this.selectionChanged();
+		e.selected = t === !0 || t === !1 ? t : !e.selected, this.selectionChanged();
 	}
 	selectionChanged() {
 		let e = this.getAllOptions();
 		this.selectedOptions = e.filter((e) => e.selected);
 		let t = this.valueHasChanged;
-		if (this.multiple) this.value = this.selectedOptions.map((e) => e.value), this.placeholder && this.value.length === 0 ? this.displayLabel = "" : this.displayLabel = this.localize.term("numOptionsSelected", this.selectedOptions.length);
+		if (this.multiple) this.value = this.selectedOptions.map((e) => e.value), this.displayLabel = this.placeholder && this.value.length === 0 ? "" : this.localize.term("numOptionsSelected", this.selectedOptions.length);
 		else {
 			let e = this.selectedOptions[0];
 			this.value = e?.value ?? "", this.displayLabel = (e?.getTextLabel)?.call(e) ?? "";
@@ -3667,8 +3665,8 @@ var gi = It(hi), X = class extends N {
 				return T`<div @sl-remove=${(t) => this.handleTagRemove(t, e)}>
           ${typeof n == "string" ? gi(n) : n}
         </div>`;
-			} else if (t === this.maxOptionsVisible) return T`<sl-tag size=${this.size}>+${this.selectedOptions.length - t}</sl-tag>`;
-			return T``;
+			}
+			return t === this.maxOptionsVisible ? T`<sl-tag size=${this.size}>+${this.selectedOptions.length - t}</sl-tag>` : T``;
 		});
 	}
 	handleInvalid(e) {
@@ -3705,18 +3703,12 @@ var gi = It(hi), X = class extends N {
 		}
 	}
 	async show() {
-		if (this.open || this.disabled) {
-			this.open = !1;
-			return;
-		}
-		return this.open = !0, ui(this, "sl-after-show");
+		if (this.open || this.disabled) this.open = !1;
+		else return this.open = !0, ui(this, "sl-after-show");
 	}
 	async hide() {
-		if (!this.open || this.disabled) {
-			this.open = !1;
-			return;
-		}
-		return this.open = !1, ui(this, "sl-after-hide");
+		if (!this.open || this.disabled) this.open = !1;
+		else return this.open = !1, ui(this, "sl-after-hide");
 	}
 	checkValidity() {
 		return this.valueInput.checkValidity();
@@ -4089,7 +4081,7 @@ Z.styles = [wt, _i], Z.dependencies = { "sl-icon": P }, O([M(".option__label")],
 	reflect: !0
 })], Z.prototype, "disabled", 2), O([k("disabled")], Z.prototype, "handleDisabledChange", 1), O([k("selected")], Z.prototype, "handleSelectedChange", 1), O([k("value")], Z.prototype, "handleValueChange", 1), Z.define("sl-option");
 //#endregion
-//#region \0@oxc-project+runtime@0.139.0/helpers/esm/decorate.js
+//#region \0@oxc-project+runtime@0.154.0/helpers/esm/decorate.js
 function Q(e, t, n, r) {
 	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
 	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);

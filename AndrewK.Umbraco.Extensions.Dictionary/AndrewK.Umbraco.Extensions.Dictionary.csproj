@@ -4,7 +4,7 @@
         <!-- NuGet Package Properties -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>AndrewK.Umbraco.Dictionary</PackageId>
-        <PackageVersion>17.0.6</PackageVersion>
+        <PackageVersion>17.0.7</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>Andrew Kud</Authors>
         <Product>Dictionary</Product>
@@ -22,7 +22,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReleaseNotes>
             $(PackageVersion):
-            - Dependencies updated (Umbraco 17.5.3, ASP.NET Core 10.0.10, Vite 8.1.5).
+            - Dependencies updated (Umbraco 17.7.1, ASP.NET Core 10.0.13, Vite 8.3.4).
         </PackageReleaseNotes>
     </PropertyGroup>
 

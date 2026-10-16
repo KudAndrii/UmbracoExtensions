@@ -6,7 +6,7 @@ import { UmbChangeEvent as p, UmbDeleteEvent as m, UmbInputEvent as h } from "@u
 import { UmbSorterController as g } from "@umbraco-cms/backoffice/sorter";
 import { umbConfirmModal as _ } from "@umbraco-cms/backoffice/modal";
 import { UUIFormControlMixin as v } from "@umbraco-cms/backoffice/external/uui";
-//#region \0@oxc-project+runtime@0.139.0/helpers/esm/decorate.js
+//#region \0@oxc-project+runtime@0.154.0/helpers/esm/decorate.js
 function y(e, t, n, r) {
 	var i = arguments.length, a = i < 3 ? t : r === null ? r = Object.getOwnPropertyDescriptor(t, n) : r, o;
 	if (typeof Reflect == "object" && typeof Reflect.decorate == "function") a = Reflect.decorate(e, t, n, r);
@@ -193,9 +193,7 @@ var x = class extends l(d, void 0) {
 					value: e
 				});
 				break;
-			case "object":
-				Array.isArray(e) && (t = this.#s(e));
-				break;
+			case "object": Array.isArray(e) && (t = this.#s(e));
 		}
 		this.value = t?.length > 0 ? "some value" : "", this._items = t, this.#e.setModel(this.items);
 		try {
@@ -237,12 +235,10 @@ var x = class extends l(d, void 0) {
 						value: n
 					};
 					break;
-				case "object":
-					n && "key" in n && typeof n.key == "string" && (e = {
-						key: n.key,
-						value: ""
-					}, "value" in n && typeof n.value == "string" && n.value && (e.value = n.value));
-					break;
+				case "object": n && "key" in n && typeof n.key == "string" && (e = {
+					key: n.key,
+					value: ""
+				}, "value" in n && typeof n.value == "string" && n.value && (e.value = n.value));
 			}
 			e && t.push(e);
 		}
